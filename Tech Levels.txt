@@ -1,0 +1,116 @@
+################################################################
+### STONE TIER #################################################
+################################################################
+Furnace
+    Charcoal
+
+################################################################
+### TINKER TIER ################################################
+################################################################
+Smeltery
+    Seared Brick
+    Bronze
+    Aluminum Brass
+    Manyullyn
+    Alumite
+    Invar
+    Electrum
+    Lumium
+    Signalum
+    Enderium
+    Blood
+    Glue
+    Pig Iron
+
+Infernal Blast Furnace
+    Steel
+
+################################################################
+### ALCHEMY TIER ###############################################
+################################################################
+Alembic
+    All essentias
+
+Crucible
+    Very Seared Brick
+    Thaumium
+    Balanced Shard
+    Nitor
+    Alumite
+
+Petal Apothecary
+    Livingrock
+    Livingwood
+
+Mana Pool
+    Mana Pearl
+    Mana Steel
+    Mana Diamond
+    Mana Powder
+    Mana Glass
+    Mana in a Bottle
+    Mana Quartz
+    Mana String
+
+Alchemy Catalyst
+    Prismarine Shard
+
+Runic Altar
+    Rune of Earth
+    Rune of Fire
+    Rune of Water
+    Rune of Air
+    Rune of Spring
+    Rune of Summer
+    Rune of Autum
+    Rune of Winter
+    Rune of Mana
+    Rune of Lust
+    Rune of Gluttony
+    Rune of Greed
+    Rune of Sloth
+    Rune of Wrath
+    Rune of Envy
+    Rune of Pride
+
+SAG Mill
+    Pulverized Obsidian
+    Sawdust
+
+Redstone Furnace
+
+Sawmill
+
+################################################################
+### INFUSION TIER ##############################################
+################################################################
+Smeltery
+    Enderium
+
+Infusion Altar
+
+Terrestrial Agglomeration Plate
+    Terra Steel
+
+Alloy Smelter
+    Accio Ingot
+
+Magma Crucible
+    Liquid Ender
+
+Botania Brewery
+
+Mana Enchanter
+
+Portal to Alfheim
+
+################################################################
+### VOID TIER ##################################################
+################################################################
+Alloy Smelter
+
+
+################################################################
+### PRIMAL TIER ################################################
+################################################################
+

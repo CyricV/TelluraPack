@@ -1,0 +1,357 @@
+WARP                                                Warp, Flux, and all things bad
+RESEARCH                                            Research
+ENCHANT                                             Enchantments
+NODES                                               Auras and Nodes
+RESEARCHDUPE                                        Research Duplication
+ORE                                                 Ores
+ASPECTS                                             Aspects of Magic
+KNOWFRAG                                            Knowledge Fragments
+RESEARCHER2                                         Research Mastery
+CRIMSON
+NODEJAR                                             Node in a Jar
+RESEARCHER1                                         Research Expertise
+NODECATALYZATION                                    Node Catalyzation (Nodal Mechanics)
+NODETAPPER2                                         Master Node Tapping
+DECONSTRUCTOR                                       Deconstruction Table
+NODETAPPER1                                         Advanced Node Tapping
+THAUMONOMICON                                       Thaumonomicon
+PLANTS                                              Plants & Trees
+NODEPRESERVE                                        Node Preserver
+PECH                                                The Pech
+NODESTABILIZER                                      Node Stabilizer
+WANDPEDFOC                                          Conpound Recharge Focus
+VAMPBAT
+ROD_bone
+BASICTHAUMATURGY                                    Basic Wand Craft
+FOCUSEXCAVATION                                     Wand Focus: Excavation
+SCEPTRE                                             Crafting Sceptres
+ROD_quartz_staff
+FOCUSHELLBAT
+VISCHARGERELAY
+ROD_ice
+NODESTABILIZERADV                                   Advanced Node Stabalizer
+ROD_reed                                            Reed Wand Core
+ROD_greatwood_staff                                 Magic Staves
+ROD_silverwood_staff                                Silverwood Staff Core
+FOCUSFROST                                          Wand Focus: Frost
+VISAMULET
+FOCALMANIPULATION
+FOCUSFIRE                                           Wand Foci
+CAP_gold                                            Gold Wand Caps
+ROD_silverwood                                      Silverwood Wand Core
+VISPOWER                                            Harnessing Vis
+FOCUSPOUCH                                          Focus Pouch
+CAP_copper                                          Copper Wand Caps
+ROD_reed_staff                                      Reed Staff Core
+FOCUSSHOCK                                          Wand Focus: Shock
+CAP_silver                                          Silver Wand Caps
+ROD_quartz
+CAP_iron
+FOCUSWARDING
+ROD_obsidian
+FOCUSPORTABLEHOLE                                   Wand Focus: Portable Hole
+CAP_thaumium
+ROD_wood
+ROD_greatwood                                       Greatwood Wand Core
+ROD_blaze
+ROD_bone_staff
+ROD_obsidian_staff
+FOCUSTRADE                                          Wand Focus: Equal Trade
+ROD_ice_staff
+WANDPED                                             Wand Recharge Pedestal
+ROD_blaze_staff                                     Blaze Rod Staff Core
+
+ALUMENTUM                                           Alumentum
+BATHSALTS
+CRUCIBLE                                            Basic Alchemy
+ENTROPICPROCESSING                                  Entropic Processing
+TRANSIRON                                           Metal Transmutation
+THAUMATORIUM                                        Automated Alchemy
+ALCHEMICALMANUFACTURE                               Alchemical Manufacture
+LIQUIDDEATH
+TUBES                                               Essentia Tubes
+TRANSTIN
+SANESOAP
+ETHEREALBLOOM
+TALLOW                                              Magic Tallow
+PURESILVER
+PURETIN
+TRANSCOPPER
+ESSENTIACRYSTAL                                     Essentia Crystalization
+ARCANESPA
+CENTRIFUGE                                          Alchemical Centrifuge
+TRANSSILVER
+PUREIRON
+ALCHEMICALDUPLICATION                               Alchemical Duplication
+JARVOID                                             Void Jar
+NITOR                                               Nitor
+BOTTLETAINT
+PUREGOLD
+DISTILESSENTIA                                      Essentia Distillation
+PHIAL                                               Glass Phial
+TUBEFILTER                                          Advanced Essentia Tubes
+PURELEAD
+THAUMIUM                                            Magical Metallurgy
+TRANSLEAD
+TRANSGOLD
+PURECOPPER
+JARLABEL                                            Warded Jars and Labels
+
+RUNICEMERGENCY
+GOGGLES                                             Goggles of Revealing
+ENCHFABRIC
+ELEMENTALPICK
+ELEMENTALAXE
+TABLE
+INFERNALFURNACE                                     Infernal Furnace
+BANNERS
+ELEMENTALSHOVEL
+LEVITATOR
+HOVERGIRDLE
+WARDEDARCANA
+BASICARTIFACE
+FLUXSCRUB
+THAUMOMETER
+BOOTSTRAVELLER
+RESTABLE
+MIRRORESSENTIA
+PRIMALARROW
+ARCANEEAR
+GRATE
+RUNICCHARGED
+RUNICHEALING
+HOVERHARNESS
+MIRROR
+LAMPGROWTH
+MASKGRINNINGDEVIL
+ELEMENTALHOE
+MIRRORHAND
+ARCTABLE
+INFUSION                                            Infusion
+RUNICKINETIC
+PAVEWARD
+MASKANGRYGHOST
+MASKSIPPINGFIEND
+ARCANELAMP
+ARMORFORTRESS
+BELLOWS
+HELMGOGGLES
+RUNICARMOR
+RUNICAUGMENTATION
+LAMPFERTILITY
+BONEBOW
+ARCANESTONE
+SINSTONE
+ELEMENTALSWORD
+PAVETRAVEL
+JARBRAIN
+ARCANEBORE
+INFUSIONENCHANTMENT
+GOLEMCLAY
+UPGRADEWATER
+HUNGRYCHEST
+GOLEMTALLOW
+GOLEMWOOD
+GOLEMFLESH
+UPGRADEEARTH
+TINYDART
+UPGRADEFIRE
+UPGRADEENTROPY
+COREUSE                                             Golem Core: Use
+TINYHAMMER
+TRAVELTRUNK
+TINYBOWTIE
+GOLEMBELL
+CORESORTING
+GOLEMTHAUMIUM
+TINYHAT
+TINYFEZ
+CORELUMBER
+TINYGLASSES
+TINYVISOR
+UPGRADEAIR
+COREFISHING
+COREGATHER                                          Golem Core: Gather
+COREHARVEST
+COREBUTCHER
+COREGUARD
+ADVANCEDGOLEM
+TINYARMOR
+COREFILL
+GOLEMFETTER
+GOLEMSTRAW
+COREALCHEMY
+GOLEMSTONE
+GOLEMIRON
+CORELIQUID
+COREEMPTY
+UPGRADEORDER
+ELDRITCHMAJOR
+ADVALCHEMYFURNACE
+ARMORVOIDFORTRESS
+ELDRITCHMINOR
+ENTEROUTER
+FOCUSPRIMAL
+ESSENTIARESERVOIR
+SANITYCHECK
+ROD_primal_staff
+OCULUS
+OUTERREV
+PRIMALCRUSHER
+PRIMPEARL
+PRIMNODE
+CAP_void
+VOIDMETAL
+thaumicenergistics.TEESSVIBCMBR
+thaumicenergistics.Pseudo.COREUSE
+thaumicenergistics.TECERTUSDUPE
+thaumicenergistics.TEARCANETERM
+thaumicenergistics.Pseudo.DISTILESSENTIA
+thaumicenergistics.Pseudo.VISPOWER
+thaumicenergistics.TEARCANEASSEMBLER
+thaumicenergistics.TEINFPROV
+thaumicenergistics.TEFOCUSWRENCH
+thaumicenergistics.TEIO
+thaumicenergistics.TECORES
+thaumicenergistics.TERESEARCH
+thaumicenergistics.Pseudo.TUBEFILTER
+thaumicenergistics.TETHAUMGBOX
+thaumicenergistics.TEVISINT
+thaumicenergistics.Pseudo.INFUSION
+thaumicenergistics.TESTORAGE
+thaumicenergistics.TEKNOWLEDGEINSCRIBER
+thaumicenergistics.Pseudo.ALCHEMICALDUPLICATION     Alchemical Duplication (fake)
+thaumicenergistics.TEIRONGEARBOX
+thaumicenergistics.Pseudo.MIRROR
+thaumicenergistics.TEESSTERM
+thaumicenergistics.TEESSPROV
+thaumicenergistics.Pseudo.WARDEDARCANA
+thaumicenergistics.Pseudo.FOCUSFIRE
+thaumicenergistics.Pseudo.SCEPTRE
+alchIncubation
+blastPhial
+nightmareInfusion
+runicCreature
+horseInfusion
+chickenInfusion
+focusAnimation
+focusLiquefaction
+focusDisintegration
+cloneVillager
+alchemite
+transductionAmplifier
+planarTheory
+pigInfusion
+instilledLoyalty
+fleshLeather
+voidGolem
+eldritchFangs
+lensFire
+thaumiumBoat
+nightmare
+focusIllumination
+silverHeart
+soulExtractor
+vortexStabilizer
+lensCase
+synthSkin
+lensEarth
+mirrorAmulet
+focusContainment
+essentiaInjection
+catInfusion
+amphibious
+selfInfusion
+dogInfusion
+planarRift
+crystalWand
+portability
+lensAir
+visDynamo
+sheederInfusion
+etherealShard
+essentiaDynamo
+injector
+lensOrderEntropy
+chameleonSkin
+nodeMonitor
+lensWater
+cowInfusion
+alcheponics
+sheepInfusion
+humanInfusion
+morphicFingers
+incarnationVat
+wispSpawn
+soulAssembler
+infusionVat
+greatwoodBoat
+golemPowder
+spiderClimb
+shardTrans
+warpedTumor
+recombinator
+soulKnowledge
+healingVat
+cloneSelf
+generalInfusion
+meatGrowth
+voidPutty
+ENCH_BACKSTAB
+PRIMORDIALARMOR
+ENCH_STEALTH
+ENCH_INVISIBLEGEAR
+CALCULATOR
+PRIMORDIALGEARSET
+ENDERBAG
+CLOAK_STORAGE
+HUNGERBAG
+ALCHEMICALTRANSMOGRIFY
+WGFAKEPUREIRON
+WGFAKEBATHSALTS
+GEMCUTTING
+VOIDBAG
+TERRAFORMFOCUS_MUSHROOM
+TERRAFORMFOCUS_COLDTAIGA
+ETHEREALWALL
+ENCH_RIDEPROTECT
+TERRAFORMER
+TERRAFORMFOCUS_TAINT
+STONEEXTRUDER
+WGFAKEALCHEMICALMANUFACTURE
+PURECINNABAR
+TERRAFORMFOCUS_JUNGLE
+PRIMORDIALWEAPONRY
+ROSEVINE
+AGEINGSTONE
+ADVANCEDROBES
+WGFAKEJARLABEL
+WGFAKEELDRITCHMINOR
+CRYSTALCAPSULE
+LABELLIB
+EMPOWERPEARL
+MIRRORPUMP
+WGBAUBLES
+WGFAKEENCHFABRIC
+SPINNINGWHEEL
+WGFAKECENTRIFUGE
+CLOAK_SPECTRAL
+CLOAK_WOLF
+WGFAKEMIRRORESSENTIA
+ENCH_UNVEILING
+WGFAKEPRIMPEARL
+TERRAFORMFOCUS_DESERT
+CLOAK
+LABYRINTHSTRING
+CLOAKKAMA
+WGPOTIONS
+METALLURGICPERFECTION_CLUSTERS
+TERRAFORMFOCUS_HELL
+INFERNALBLASTFURNACE                                Infernal Blast Furnace
+SCANCAMERA
+WGFAKEINFUSIONENCHANTMENT
+PRIMORDIALGLOVE
+WGFAKEARCANESTONE
+WGFAKEINFERNALFURNACE
+BAGOFTRICKS
+SAUNASTOVE
