@@ -19,6 +19,10 @@ var pureCertusQuartz            = <appliedenergistics2:item.ItemMultiMaterial:10
 var pureNetherQuartz            = <appliedenergistics2:item.ItemMultiMaterial:11>;
 var pureFluixCrystal            = <appliedenergistics2:item.ItemMultiMaterial:12>;
 var netherQuartz                = <minecraft:quartz>;
+var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
+var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
+var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
+var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
 
 # Ore Dictionary Names
 var slimeball                   = <ore:slimeball>;
@@ -37,6 +41,13 @@ var anyQuartz                   = <ore:anyQuartz>;
 var anyFluixCrystal             = <ore:anyFluixCrystal>;
 var anyPetal                    = <ore:anyPetal>;
 var allStickyStuff              = <ore:allStickyStuff>;
+var accioMaterial               = <ore:accioMaterial>;
+
+# Removal
+#accioMaterial.remove(fireEssence);
+#accioMaterial.remove(waterEssence);
+#accioMaterial.remove(airEssence);
+#accioMaterial.remove(earthEssence);
 
 # Add beeswax as slimeball
 slimeball.add(beeswax);

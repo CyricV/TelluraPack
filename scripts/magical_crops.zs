@@ -132,7 +132,7 @@ mods.thaumcraft.Arcane.addShaped(
 # Regular Infusion Stone
 recipes.remove(regularInfusionStone);
 mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
+    "ROD_greatwood",
     regularInfusionStone,
     "aer 50, terra 50, ignis 50, aqua 50, ordo 50, perditio 50", [
     [accioEssence,  accioEssence,   accioEssence],
@@ -146,13 +146,13 @@ mods.thaumcraft.Arcane.addShaped(
 # Accio Ingot (Resolute Material)
 recipes.remove(accioIngot);
 accioIngot.displayName = "\u00A76Resolute Material";
-accioIngot.addTooltip(format.lightPurple("You feel dizzy around this thing. You think it might be messing with local gravity."));
+accioIngot.addTooltip(format.gray("You feel dizzy around this thing. You think it might be messing with local gravity."));
 mods.tconstruct.Casting.addTableRecipe(accioIngot, <liquid:petrotheum> * 250, ingotCast, false, 50);
 
 # Crucio Ingot (Ephemeral Material)
 recipes.remove(crucioIngot);
 crucioIngot.displayName = "\u00A7eEphemeral Material ";
-crucioIngot.addTooltip(format.lightPurple("You keep forgetting what this is or why you made it."));
+crucioIngot.addTooltip(format.gray("You keep forgetting what this is or why you made it."));
 mods.tconstruct.Casting.addTableRecipe(crucioIngot, <liquid:aerotheum> * 250, ingotCast, false, 50);
 
 ################################################################

@@ -1,11 +1,17 @@
 # Materials
+var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
+var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
+var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
+var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
+var bedrock                     = <minecraft:bedrock>;
+var blazePowder                 = <minecraft:blaze_powder>;
 var book                        = <minecraft:book>;
 var bucket                      = <minecraft:bucket>;
+var glowstoneDust               = <minecraft:glowstone_dust>;
 var paper                       = <minecraft:paper>;
 var sugarCane                   = <minecraft:reeds>;
 var waterBucket                 = <minecraft:water_bucket>;
 var sawdust                     = <ThermalExpansion:material:512>;
-var bedrock                     = <minecraft:bedrock>;
 
 # Devices
 var hopper                      = <minecraft:hopper>;
@@ -14,10 +20,19 @@ var chest                       = <minecraft:chest>;
 # Ore Dictionary Items
 var allIronNugs                 = <ore:nuggetIron>;
 var allGoldNugs                 = <ore:nuggetGold>;
+# Power Recipe Fluid Transposer Fix
+#var accioMaterial               = <ore:accioMaterial>;
+#accioMaterial.remove(fireEssence);
+#accioMaterial.remove(waterEssence);
+#accioMaterial.remove(airEssence);
+#accioMaterial.remove(earthEssence);
 
 ################################################################
 ### Removal ####################################################
 ################################################################
+
+# Bedrock
+bedrock.displayName = "\u00A70\u00A7kAmalgam";
 
 ################################################################
 ### STONE TIER #################################################
@@ -48,8 +63,6 @@ recipes.addShaped(hopper, [
     [null,          allIronNugs,    null]
 ]);
 
-# Bedrock
-bedrock.displayName = "\u00A70\u00A7kAmalgam";
 
 ################################################################
 ### TINKER TIER ################################################
@@ -58,6 +71,10 @@ bedrock.displayName = "\u00A70\u00A7kAmalgam";
 ################################################################
 ### ALCHEMY TIER ###############################################
 ################################################################
+# Blaze Powder
+#recipes.remove(blazePowder);
+#mods.thermalexpansion.Transposer.removeFillRecipe(glowstoneDust, <liquid:redstone>);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, fireEssence, blazePowder * 2, <liquid:redstone> * 100);
 
 
 ################################################################

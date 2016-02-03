@@ -1,19 +1,29 @@
 # Materials
+var logicProcessor              = <appliedenergistics2:item.ItemMultiMaterial:22>;
+var calculationProcessor        = <appliedenergistics2:item.ItemMultiMaterial:23>;
+var engineeringProcessor        = <appliedenergistics2:item.ItemMultiMaterial:24>;
 var manaSteel                   = <Botania:manaResource>;
 var terraSteel                  = <Botania:manaResource:4>;
 var elementium                  = <Botania:manaResource:7>;
 var fluidConduit                = <EnderIO:itemLiquidConduit>;
 var pressurizedFluidConduit     = <EnderIO:itemLiquidConduit:1>;
+var enderCrystal                = <EnderIO:itemMaterial:8>;
+var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
+var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
+var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
+var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
+var fireSeed                    = <magicalcrops:magicalcrops_FireSeeds>;
+var waterSeed                   = <magicalcrops:magicalcrops_WaterSeeds>;
+var airSeed                     = <magicalcrops:magicalcrops_AirSeeds>;
+var earthSeed                   = <magicalcrops:magicalcrops_EarthSeeds>;
 var blazePowder                 = <minecraft:blaze_powder>;
-var bucket                      = <minecraft:bucket>;
-var chest                       = <minecraft:chest>;
-var craftingTable               = <minecraft:crafting_table>;
 var fire                        = <minecraft:fire>;
+var glowstoneDust               = <minecraft:glowstone_dust>;
 var ironIngot                   = <minecraft:iron_ingot>;
-var lavaBucket                  = <minecraft:lava_bucket>;
 var paper                       = <minecraft:paper>;
 var packedIce                   = <minecraft:packed_ice>;
-var piston                      = <minecraft:piston>;
+var snowball                    = <minecraft:snowball>;
+var sand                        = <minecraft:sand>;
 var searedBrick                 = <TConstruct:materials:2>;
 var searedBrick2                = <TConstruct:materials:37>;
 var steelIngot                  = <TConstruct:materials:16>;
@@ -30,6 +40,7 @@ var resonantCellFrameEmpty      = <ThermalExpansion:Frame:8>;
 var resonantCellFrame           = <ThermalExpansion:Frame:9>;
 var tesseractFrameEmpty         = <ThermalExpansion:Frame:10>;
 var tesseractFrame              = <ThermalExpansion:Frame:11>;
+var hardenedGlass               = <ThermalExpansion:Glass>;
 var ironGear                    = <ThermalFoundation:material:12>;
 var goldGear                    = <ThermalFoundation:material:13>;
 var enderiumBlend               = <ThermalFoundation:material:44>;
@@ -64,9 +75,11 @@ var telluraTumultuous           = <ProjRed|Core:projectred.core.part:10>;
 var telluraDeliquescent         = <ProjRed|Core:projectred.core.part:55>;
 var telluraResolute             = <magicalcrops:magicalcrops_EssenceIngots>;
 var telluraEphemeral            = <magicalcrops:magicalcrops_EssenceIngots:1>;
-var hardenedGlass               = <ThermalExpansion:Glass>;
 
 # Devices
+var chest                       = <minecraft:chest>;
+var craftingTable               = <minecraft:crafting_table>;
+var piston                      = <minecraft:piston>;
 var portableTank                = <ThermalExpansion:Tank:1>;
 var hardenedPortableTank        = <ThermalExpansion:Tank:2>;
 var reinforcedPortableTank      = <ThermalExpansion:Tank:3>;
@@ -134,6 +147,8 @@ var resonantCache               = <ThermalExpansion:Cache:4>;
 # Equipment
 var fluivac                     = <ThermalExpansion:pump>;
 var fluxTransfuser              = <ThermalExpansion:transfuser>;
+var bucket                      = <minecraft:bucket>;
+var lavaBucket                  = <minecraft:lava_bucket>;
 
 # Ore Dictionary Items
 var allLogs                     = <ore:logWood>;
@@ -148,6 +163,10 @@ var allBronzeDust               = <ore:dustBronze>;
 var allInvarDust                = <ore:dustInvar>;
 var allAluminumBrassDust        = <ore:dustAluminumBrass>;
 var allObsidianDust             = <ore:dustObsidian>;
+var accioMaterial               = <ore:accioMaterial>;
+
+#var iron1 = <EnderIO:itemPowderIngot:1>;
+#var iron2 = <ThermalFoundation:material:0>;
 
 ################################################################
 ### Removal ####################################################
@@ -185,6 +204,9 @@ recipes.remove(energeticInfuser);
 # Induction Smelter and all recipes
 recipes.remove(inductionSmelter);
 mods.thermalexpansion.Smelter.removeRecipe(<*>, <*>);
+
+# Phytogenic Insolator recipes
+mods.thermalexpansion.Insolator.removeRecipe(<*>, <*>);
 
 # Enderium Ingot (Only produced by alloying in Smeltery)
 recipes.remove(enderiumBlend);
@@ -299,9 +321,9 @@ recipes.addShaped(redstoneFurnace2, [
     [ironIngot,     reinforcedMachineFrame, ironIngot]
 ]);
 recipes.addShaped(redstoneFurnace2, [
-    [thaumiumIngot, signalumGear,       thaumiumIngot],
-    [terraSteel,    redstoneFurnace1,   terraSteel],
-    [thaumiumIngot, signalumGear,       thaumiumIngot]
+    [thaumiumIngot, signalumGear,           thaumiumIngot],
+    [terraSteel,    redstoneFurnace1,       terraSteel],
+    [thaumiumIngot, calculationProcessor,   thaumiumIngot]
 ]);
 recipes.addShaped(redstoneFurnace3, [
     [ironIngot,     searedBrick,            ironIngot],
@@ -311,7 +333,7 @@ recipes.addShaped(redstoneFurnace3, [
 recipes.addShaped(redstoneFurnace3, [
     [elementium,        enderiumGear,       elementium],
     [telluraResolute,   redstoneFurnace2,   telluraResolute],
-    [elementium,        enderiumGear,       elementium]
+    [elementium,        logicProcessor,     elementium]
 ]);
 
 # Sawmill
@@ -337,9 +359,9 @@ recipes.addShaped(sawmill2, [
     [ironIngot,     reinforcedMachineFrame, ironIngot]
 ]);
 recipes.addShaped(sawmill2, [
-    [thaumiumIngot, signalumGear,   thaumiumIngot],
-    [terraSteel,    sawmill1,       terraSteel],
-    [thaumiumIngot, signalumGear,   thaumiumIngot]
+    [thaumiumIngot, signalumGear,           thaumiumIngot],
+    [terraSteel,    sawmill1,               terraSteel],
+    [thaumiumIngot, calculationProcessor,   thaumiumIngot]
 ]);
 recipes.addShaped(sawmill3, [
     [ironIngot,     null,                   ironIngot],
@@ -349,7 +371,7 @@ recipes.addShaped(sawmill3, [
 recipes.addShaped(sawmill3, [
     [elementium,        enderiumGear,   elementium],
     [telluraResolute,   sawmill2,       telluraResolute],
-    [elementium,        enderiumGear,   elementium]
+    [elementium,        logicProcessor, elementium]
 ]);
 
 # Fluid Transposer
@@ -375,9 +397,9 @@ recipes.addShaped(fluidTransposer2, [
     [ironIngot, reinforcedMachineFrame, ironIngot]
 ]);
 recipes.addShaped(fluidTransposer2, [
-    [thaumiumIngot, signalumGear,       thaumiumIngot],
-    [terraSteel,    fluidTransposer1,   terraSteel],
-    [thaumiumIngot, signalumGear,       thaumiumIngot]
+    [thaumiumIngot, signalumGear,           thaumiumIngot],
+    [terraSteel,    fluidTransposer1,       terraSteel],
+    [thaumiumIngot, calculationProcessor,   thaumiumIngot]
 ]);
 recipes.addShaped(fluidTransposer3, [
     [ironIngot, fluidConduit,           ironIngot],
@@ -387,7 +409,7 @@ recipes.addShaped(fluidTransposer3, [
 recipes.addShaped(fluidTransposer3, [
     [elementium,        enderiumGear,       elementium],
     [telluraResolute,   fluidTransposer2,   telluraResolute],
-    [elementium,        enderiumGear,       elementium]
+    [elementium,        logicProcessor,     elementium]
 ]);
 
 # Glacial Percipitator
@@ -415,7 +437,7 @@ recipes.addShaped(glacialPercipitator2, [
 recipes.addShaped(glacialPercipitator2, [
     [thaumiumIngot, signalumGear,           thaumiumIngot],
     [terraSteel,    glacialPercipitator1,   terraSteel],
-    [thaumiumIngot, signalumGear,           thaumiumIngot]
+    [thaumiumIngot, calculationProcessor,   thaumiumIngot]
 ]);
 recipes.addShaped(glacialPercipitator3, [
     [piston,    fluidConduit,           piston],
@@ -425,7 +447,7 @@ recipes.addShaped(glacialPercipitator3, [
 recipes.addShaped(glacialPercipitator3, [
     [elementium,        enderiumGear,           elementium],
     [telluraResolute,   glacialPercipitator2,   telluraResolute],
-    [elementium,        enderiumGear,           elementium]
+    [elementium,        logicProcessor,         elementium]
 ]);
 
 # Cyrclic Assembler
@@ -512,6 +534,34 @@ mods.thaumcraft.Arcane.addShaped(
     [allInvarDust,  basalzPowder,   allInvarDust]
 ]);
 
+# Blaze Powder
+accioMaterial.remove(fireEssence);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, fireSeed, blazePowder * 2, <liquid:redstone> * 100);
+recipes.remove(blazePowder);
+mods.thermalexpansion.Transposer.removeFillRecipe(glowstoneDust, <liquid:redstone>);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, fireEssence, blazePowder * 2, <liquid:redstone> * 100);
+
+# Blizz Powder
+accioMaterial.remove(waterEssence);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, waterSeed, blizzPowder * 2, <liquid:redstone> * 100);
+recipes.remove(blizzPowder);
+mods.thermalexpansion.Transposer.removeFillRecipe(snowball, <liquid:redstone>);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, waterEssence, blizzPowder * 2, <liquid:redstone> * 100);
+
+# Blitz Powder
+accioMaterial.remove(airEssence);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, airSeed, blitzPowder * 2, <liquid:redstone> * 100);
+recipes.remove(blitzPowder);
+mods.thermalexpansion.Transposer.removeFillRecipe(sand, <liquid:redstone>);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, airEssence, blitzPowder * 2, <liquid:redstone> * 100);
+
+# Basalz Powder
+accioMaterial.remove(earthEssence);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, earthSeed, basalzPowder * 2, <liquid:redstone> * 100);
+recipes.remove(basalzPowder);
+mods.thermalexpansion.Transposer.removeFillRecipe(allObsidianDust, <liquid:redstone>);
+#mods.thermalexpansion.Transposer.addFillRecipe(2000, earthEssence, basalzPowder * 2, <liquid:redstone> * 100);
+
 ################################################################
 ### INFUSTION TIER #############################################
 ################################################################
@@ -520,7 +570,7 @@ recipes.remove(reinforcedMachineFrame);
 recipes.addShaped(reinforcedMachineFrame, [
     [thaumiumIngot, signalumGear,           thaumiumIngot],
     [terraSteel,    hardenedMachineFrame,   terraSteel],
-    [thaumiumIngot, signalumGear,           thaumiumIngot]
+    [thaumiumIngot, calculationProcessor,   thaumiumIngot]
 ]);
 
 # Magma Crucible
@@ -538,7 +588,7 @@ recipes.addShaped(magmaCrucible3, [
 recipes.addShaped(magmaCrucible3, [
     [elementium,        enderiumGear,   elementium],
     [telluraResolute,   magmaCrucible2, telluraResolute],
-    [elementium,        enderiumGear,   elementium]
+    [elementium,        logicProcessor, elementium]
 ]);
 
 # Resonant Machine Frame
@@ -546,7 +596,7 @@ recipes.remove(resonantMachineFrame);
 recipes.addShaped(resonantMachineFrame, [
     [elementium,        enderiumGear,           elementium],
     [telluraResolute,   reinforcedMachineFrame, telluraResolute],
-    [elementium,        enderiumGear,           elementium]
+    [elementium,        logicProcessor,         elementium]
 ]);
 
 
@@ -557,6 +607,6 @@ recipes.addShaped(resonantMachineFrame, [
 recipes.remove(tesseractFrameEmpty);
 recipes.addShaped(tesseractFrameEmpty, [
     [telluraEphemeral,      telluraDeliquescent,    telluraEphemeral],
-    [telluraDeliquescent,   voidMetalNug,           telluraDeliquescent],
+    [telluraDeliquescent,   enderCrystal,           telluraDeliquescent],
     [telluraEphemeral,      telluraDeliquescent,    telluraEphemeral]
 ]);
