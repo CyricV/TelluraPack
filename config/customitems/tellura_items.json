@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "maxStackSize": 1,
+            "textureName": "perpetualMaterial",
+            "name": "\u00A78Perpetual Material"
+        },
+        {
+            "maxStackSize": 1,
+            "textureName": "dynamicMaterial",
+            "name": "\u00A75Dynamic Material"
+        }
+    ]
+}

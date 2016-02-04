@@ -1,9 +1,26 @@
 # Materials
+var runeOfWater                 = <Botania:rune>;
+var runeOfFire                  = <Botania:rune:1>;
+var runeOfEarth                 = <Botania:rune:2>;
+var runeOfAir                   = <Botania:rune:3>;
+var runeOfSpring                = <Botania:rune:4>;
+var runeOfSummer                = <Botania:rune:5>;
+var runeOfAutum                 = <Botania:rune:6>;
+var runeOfWinter                = <Botania:rune:7>;
+var runeOfMana                  = <Botania:rune:8>;
+var runeOfLust                  = <Botania:rune:9>;
+var runeOfGluttony              = <Botania:rune:10>;
+var runeOfGreed                 = <Botania:rune:11>;
+var runeOfSloth                 = <Botania:rune:12>;
+var runeOfWrath                 = <Botania:rune:13>;
+var runeOfEnvy                  = <Botania:rune:14>;
+var runeOfPride                 = <Botania:rune:15>;
 var cobble                      = <minecraft:cobblestone>;
 var ironBinding                 = <TConstruct:binding:2>;
 var copperBinding               = <TConstruct:binding:13>;
 var thaumiumBinding             = <TConstruct:binding:31>;
 var silverBinding               = <TConstruct:binding:1023>;
+var arcaneStoneBricks           = <Thaumcraft:blockCosmeticSolid:7>;
 var airShard                    = <Thaumcraft:ItemShard>;
 var fireShard                   = <Thaumcraft:ItemShard:1>;
 var waterShard                  = <Thaumcraft:ItemShard:2>;
@@ -24,6 +41,7 @@ var emptyCore                   = <Thaumcraft:ItemGolemCore:1>;
 var useCore                     = <Thaumcraft:ItemGolemCore:8>;
 
 # Devices
+var runicMatrix                 = <Thaumcraft:blockStoneDevice:2>;
 
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
@@ -73,6 +91,17 @@ mods.thaumcraft.Arcane.addShaped(
     [goldNug,   goldNug,        goldNug],
     [goldNug,   copperWandCap,  goldNug],
     [null,      null,           null]
+]);
+
+# Runic Matrix
+mods.thaumcraft.Arcane.removeRecipe(runicMatrix);
+mods.thaumcraft.Arcane.addShaped(
+    "INFUSION",
+    runicMatrix,
+    "ordo 40", [
+    [arcaneStoneBricks, runeOfAir,      arcaneStoneBricks],
+    [runeOfWater,       runeOfMana,     runeOfFire],
+    [arcaneStoneBricks, runeOfEarth,    arcaneStoneBricks]
 ]);
 
 ################################################################

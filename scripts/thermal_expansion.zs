@@ -5,6 +5,7 @@ var engineeringProcessor        = <appliedenergistics2:item.ItemMultiMaterial:24
 var manaSteel                   = <Botania:manaResource>;
 var terraSteel                  = <Botania:manaResource:4>;
 var elementium                  = <Botania:manaResource:7>;
+var runeOfWrath                 = <Botania:rune:13>;
 var fluidConduit                = <EnderIO:itemLiquidConduit>;
 var pressurizedFluidConduit     = <EnderIO:itemLiquidConduit:1>;
 var enderCrystal                = <EnderIO:itemMaterial:8>;
@@ -576,12 +577,12 @@ recipes.addShaped(reinforcedMachineFrame, [
 # Magma Crucible
 recipes.remove(magmaCrucible2);
 recipes.addShaped(magmaCrucible2, [
-    [searedBrick2,  pressurizedFluidConduit,    searedBrick2],
+    [searedBrick2,  runeOfWrath,                searedBrick2],
     [searedBrick2,  pressurizedFluidConduit,    searedBrick2],
     [steelIngot,    reinforcedMachineFrame,     steelIngot]
 ]);
 recipes.addShaped(magmaCrucible3, [
-    [searedBrick2,  pressurizedFluidConduit,    searedBrick2],
+    [searedBrick2,  runeOfWrath,                searedBrick2],
     [searedBrick2,  pressurizedFluidConduit,    searedBrick2],
     [steelIngot,    resonantMachineFrame,       steelIngot]
 ]);

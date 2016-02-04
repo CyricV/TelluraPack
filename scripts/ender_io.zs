@@ -10,6 +10,7 @@ var terraSteel                  = <Botania:manaResource:4>;
 var pixieDust                   = <Botania:manaResource:8>;
 var prismarineShard             = <Botania:manaResource:10>;
 var manaweaveCloth              = <Botania:manaResource:22>;
+var runeOfFire                  = <Botania:rune:1>;
 var alphGlass                   = <Botania:elfGlass>;
 var fusedQuartz                 = <EnderIO:blockFusedQuartz>;
 var endermanHead                = <EnderIO:blockEndermanSkull>;
@@ -170,13 +171,12 @@ var allCopperNugs               = <ore:nuggetCopper>;
 var allSilverNug                = <ore:nuggetSilver>;
 var allGoldNugs                 = <ore:nuggetGold>;
 var allTinNug                   = <ore:nuggetTin>;
+var allQuartz                   = <ore:anyQuartz>;
+var allFluixCrystal             = <ore:anyFluixCrystal>;
 
 ################################################################
 ### Removal ####################################################
 ################################################################
-# Machine Chasis (Replaced by Machine Frames)
-recipes.remove(machineChassis);
-
 # Tanks
 recipes.remove(fluidTank);
 recipes.remove(pressurizedFluidTank);
@@ -192,6 +192,9 @@ recipes.remove(enchanter);
 
 # Weather Obelisk
 recipes.remove(weatherObelisk);
+
+# Weather Crystal
+recipes.remove(weatherCrystal);
 
 # Experience Rod
 recipes.remove(experienceRod);
@@ -244,6 +247,20 @@ recipes.addShaped(yetaWrench, [
 # Tier Implies:
 #   Energy Conduit
 #   Basic Capacitor Bank
+
+# Machine Chassis (Used by AE2 Machines)
+machineChassis.displayName = "Vibration Chassis";
+recipes.remove(machineChassis);
+recipes.addShaped(machineChassis, [
+    [ironIngot, allFluixCrystal,    ironIngot],
+    [allQuartz, nitor,              allQuartz],
+    [ironIngot, allFluixCrystal,    ironIngot]
+]);
+recipes.addShaped(machineChassis, [
+    [ironIngot,         allQuartz,  ironIngot],
+    [allFluixCrystal,   nitor,      allFluixCrystal],
+    [ironIngot,         allQuartz,  ironIngot]
+]);
 
 # Basic Capacitor
 recipes.remove(basicCapacitor);
@@ -449,8 +466,8 @@ recipes.addShaped(itemConduit * 4, [
 # Alloy Smelter
 recipes.remove(alloySmelter);
 recipes.addShaped(alloySmelter, [
-    [steelIngot,    searedBrick2,           steelIngot],
-    [searedBrick2,  redstoneFurnace0,       searedBrick2],
+    [searedBrick2,  searedBrick2,           searedBrick2],
+    [runeOfFire,    redstoneFurnace0,       runeOfFire],
     [steelIngot,    reinforcedMachineFrame, steelIngot]
 ]);
 
