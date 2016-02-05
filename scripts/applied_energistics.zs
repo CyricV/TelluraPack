@@ -22,6 +22,9 @@ var oneKStorageCell             = <appliedenergistics2:item.ItemBasicStorageCell
 var fourKStorageCell            = <appliedenergistics2:item.ItemBasicStorageCell.4k>;
 var sixteenKStorageCell         = <appliedenergistics2:item.ItemBasicStorageCell.16k>;
 var sixtyfourKStorageCell       = <appliedenergistics2:item.ItemBasicStorageCell.64k>;
+var twoSpatialCell              = <appliedenergistics2:item.ItemSpatialStorageCell.2Cubed>;
+var sixteenSpatialCell          = <appliedenergistics2:item.ItemSpatialStorageCell.16Cubed>;
+var oneTwentyEightSpatialCell   = <appliedenergistics2:item.ItemSpatialStorageCell.128Cubed>;
 var chargedCertusQuartz         = <appliedenergistics2:item.ItemMultiMaterial:1>;
 var meStorageHousing            = <appliedenergistics2:item.ItemMultiMaterial:39>;
 var fluixCrystal                = <appliedenergistics2:item.ItemMultiMaterial:7>;
@@ -40,6 +43,9 @@ var printedSilicon              = <appliedenergistics2:item.ItemMultiMaterial:20
 var logicProcessor              = <appliedenergistics2:item.ItemMultiMaterial:22>;
 var calculationProcessor        = <appliedenergistics2:item.ItemMultiMaterial:23>;
 var engineeringProcessor        = <appliedenergistics2:item.ItemMultiMaterial:24>;
+var twoSpatialComp              = <appliedenergistics2:item.ItemMultiMaterial:32>;
+var sixteenSpatialComp          = <appliedenergistics2:item.ItemMultiMaterial:33>;
+var oneTwentyEightSpatialComp   = <appliedenergistics2:item.ItemMultiMaterial:34>;
 var oneKStorageComponent        = <appliedenergistics2:item.ItemMultiMaterial:35>;
 var fourKStorageComponent       = <appliedenergistics2:item.ItemMultiMaterial:36>;
 var sixteenKStorageComponent    = <appliedenergistics2:item.ItemMultiMaterial:37>;
@@ -466,6 +472,33 @@ recipes.addShaped(sixtyfourKStorageCell, [
     [allIronNug,    allIronNug,                 allIronNug]
 ]);
 recipes.addShapeless(sixtyfourKStorageCell, [sixtyfourKStorageComponent, meStorageHousing]);
+
+# 2 Cubed Spacial Storage Cell
+recipes.remove(twoSpatialCell);
+recipes.addShaped(twoSpatialCell, [
+    [allIronNug,    quartzGlass,    allIronNug],
+    [redAlloyWire,  twoSpatialComp, redAlloyWire],
+    [allIronNug,    allIronNug,     allIronNug]
+]);
+recipes.addShapeless(twoSpatialCell, [twoSpatialComp, meStorageHousing]);
+
+# 16 Cubed Spacial Storage Cell
+recipes.remove(sixteenSpatialCell);
+recipes.addShaped(sixteenSpatialCell, [
+    [allIronNug,    quartzGlass,        allIronNug],
+    [redAlloyWire,  sixteenSpatialComp, redAlloyWire],
+    [allIronNug,    allIronNug,         allIronNug]
+]);
+recipes.addShapeless(sixteenSpatialCell, [sixteenSpatialComp, meStorageHousing]);
+
+# 128 Cubed Spacial Storage Cell
+recipes.remove(oneTwentyEightSpatialCell);
+recipes.addShaped(oneTwentyEightSpatialCell, [
+    [allIronNug,    quartzGlass,                allIronNug],
+    [redAlloyWire,  oneTwentyEightSpatialComp,  redAlloyWire],
+    [allIronNug,    allIronNug,                 allIronNug]
+]);
+recipes.addShapeless(oneTwentyEightSpatialCell, [oneTwentyEightSpatialComp, meStorageHousing]);
 
 # ME Interface Terminal
 recipes.remove(meInterfaceTerminal);
