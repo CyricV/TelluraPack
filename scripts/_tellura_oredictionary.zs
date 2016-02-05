@@ -11,6 +11,11 @@ var searedRoad                  = <TConstruct:Smeltery:8>;
 var searedFancyBricks           = <TConstruct:Smeltery:9>;
 var searedChisledBricks         = <TConstruct:Smeltery:10>;
 var searedChislerBricks         = <TConstruct:Smeltery:11>;
+var ironOreberry                = <TConstruct:oreBerries>;
+var goldOreberry                = <TConstruct:oreBerries:1>;
+var copperOreberry              = <TConstruct:oreBerries:2>;
+var tinOreberry                 = <TConstruct:oreBerries:3>;
+var aluminumOreberry            = <TConstruct:oreBerries:4>;
 var certusQuartz                = <appliedenergistics2:item.ItemMultiMaterial>;
 var certusQuartzDust            = <appliedenergistics2:item.ItemMultiMaterial:2>;
 var netherQuartzDust            = <appliedenergistics2:item.ItemMultiMaterial:3>;
@@ -25,6 +30,11 @@ var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
 var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
 
 # Ore Dictionary Names
+var allIronNug                  = <ore:nuggetIron>;
+var allGoldNug                  = <ore:nuggetGole>;
+var allCopperNug                = <ore:nuggetCopper>;
+var allTinNug                   = <ore:nuggetTin>;
+var allAluminumNug              = <ore:nuggetAluminum>;
 var slimeball                   = <ore:slimeball>;
 var searedBlock                 = <ore:searedBlock>;
 var allRawMeat                  = <ore:listAllmeatraw>;
@@ -48,6 +58,11 @@ var accioMaterial               = <ore:accioMaterial>;
 #accioMaterial.remove(waterEssence);
 #accioMaterial.remove(airEssence);
 #accioMaterial.remove(earthEssence);
+allIronNug.remove(ironOreberry);
+allGoldNug.remove(goldOreberry);
+allCopperNug.remove(copperOreberry);
+allTinNug.remove(tinOreberry);
+allAluminumNug.remove(aluminumOreberry);
 
 # Add beeswax as slimeball
 slimeball.add(beeswax);
