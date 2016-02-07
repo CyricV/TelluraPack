@@ -507,7 +507,7 @@ recipes.remove(aerotheumDust);
 mods.thaumcraft.Arcane.addShaped(
     "ASPECTS",
     aerotheumDust,
-    "ordo 2, aer 4", [
+    "perditio 2, aer 4", [
     [allAluminumBrassDust,  blitzPowder,    allAluminumBrassDust],
     [blitzPowder,           salisMundus,    blitzPowder],
     [allAluminumBrassDust,   blitzPowder,   allAluminumBrassDust]
@@ -518,7 +518,7 @@ recipes.remove(cryotheumDust);
 mods.thaumcraft.Arcane.addShaped(
     "ASPECTS",
     cryotheumDust,
-    "perditio 2, aqua 4", [
+    "ordo 2, aqua 4", [
     [allElectrumDust,   blizzPowder,    allElectrumDust],
     [blizzPowder,       salisMundus,    blizzPowder],
     [allElectrumDust,   blizzPowder,    allElectrumDust]
@@ -536,32 +536,64 @@ mods.thaumcraft.Arcane.addShaped(
 ]);
 
 # Blaze Powder
-accioMaterial.remove(fireEssence);
+#accioMaterial.remove(fireEssence);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, fireSeed, blazePowder * 2, <liquid:redstone> * 100);
 recipes.remove(blazePowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(glowstoneDust, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, fireEssence, blazePowder * 2, <liquid:redstone> * 100);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    blazePowder,
+    "ignis 4", [
+    [null,          fireEssence,    null],
+    [fireEssence,   allBronzeDust,  fireEssence],
+    [null,          fireEssence,    null]
+]);
 
 # Blizz Powder
-accioMaterial.remove(waterEssence);
+#accioMaterial.remove(waterEssence);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, waterSeed, blizzPowder * 2, <liquid:redstone> * 100);
 recipes.remove(blizzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(snowball, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, waterEssence, blizzPowder * 2, <liquid:redstone> * 100);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    blizzPowder,
+    "aqua 4", [
+    [null,          waterEssence,       null],
+    [waterEssence,  allElectrumDust,    waterEssence],
+    [null,          waterEssence,       null]
+]);
 
 # Blitz Powder
-accioMaterial.remove(airEssence);
+#accioMaterial.remove(airEssence);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, airSeed, blitzPowder * 2, <liquid:redstone> * 100);
 recipes.remove(blitzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(sand, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, airEssence, blitzPowder * 2, <liquid:redstone> * 100);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    blitzPowder,
+    "aer 4", [
+    [null,          airEssence,             null],
+    [airEssence,    allAluminumBrassDust,   airEssence],
+    [null,          airEssence,             null]
+]);
 
 # Basalz Powder
-accioMaterial.remove(earthEssence);
+#accioMaterial.remove(earthEssence);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, earthSeed, basalzPowder * 2, <liquid:redstone> * 100);
 recipes.remove(basalzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(allObsidianDust, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, earthEssence, basalzPowder * 2, <liquid:redstone> * 100);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    basalzPowder,
+    "terra 4", [
+    [null,          earthEssence,   null],
+    [earthEssence,  allInvarDust,   earthEssence],
+    [null,          earthEssence,   null]
+]);
 
 ################################################################
 ### INFUSTION TIER #############################################

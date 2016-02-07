@@ -1,15 +1,17 @@
 # Materials
 var basicGear                   = <EnderIO:itemMachinePart:1>;
 var enderPearl                  = <minecraft:ender_pearl>;
+var goldOre                     = <minecraft:gold_ore>;
 var slimeSoil                   = <TConstruct:CraftedSoil:6>;
-var gearCast                    = <TConstruct:gearCast>;
 var searedBrick                 = <TConstruct:materials:2>;
 var searedBrick2                = <TConstruct:materials:37>;
 var blockOfSolidEnder           = <TConstruct:MetalBlock:10>;
 
 # Devices
+var gearCast                    = <TConstruct:gearCast>;
 
 # Ore Dictionary Items
+var allGoldOre                  = <ore:oreGold>;
 
 ################################################################
 ### Removal ####################################################

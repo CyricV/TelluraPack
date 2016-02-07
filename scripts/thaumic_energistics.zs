@@ -34,13 +34,11 @@ var silverNug                   = <ore:nuggetSilver>;
 ### Removal ####################################################
 ################################################################
 # Iron Gear Box
-mods.thaumcraft.Research.clearPrereqs("thaumicenergistics.TEIRONGEARBOX");
 mods.thaumcraft.Research.removeResearch("thaumicenergistics.TEIRONGEARBOX");
 mods.thaumcraft.Arcane.removeRecipe(ironGearTE);
 mods.thaumcraft.Arcane.removeRecipe(ironGearBox);
 
 # Thaumium Gear Box
-mods.thaumcraft.Research.clearPrereqs("thaumicenergistics.Pseudo.COREUSE");
 mods.thaumcraft.Research.removeResearch("thaumicenergistics.Pseudo.COREUSE");
 mods.thaumcraft.Research.clearPrereqs("thaumicenergistics.TETHAUMGBOX");
 mods.thaumcraft.Research.removeResearch("thaumicenergistics.TETHAUMGBOX");
