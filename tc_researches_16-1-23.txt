@@ -18,6 +18,8 @@ THAUMONOMICON                                       Thaumonomicon
 PLANTS                                              Plants & Trees
 NODEPRESERVE                                        Node Preserver
 PECH                                                The Pech
+
+
 NODESTABILIZER                                      Node Stabilizer
 WANDPEDFOC                                          Conpound Recharge Focus
 VAMPBAT
@@ -35,7 +37,7 @@ ROD_greatwood_staff                                 Magic Staves
 ROD_silverwood_staff                                Silverwood Staff Core
 FOCUSFROST                                          Wand Focus: Frost
 VISAMULET
-FOCALMANIPULATION
+FOCALMANIPULATION                                   Focal Manipulation
 FOCUSFIRE                                           Wand Foci
 CAP_gold                                            Gold Wand Caps
 ROD_silverwood                                      Silverwood Wand Core
@@ -60,6 +62,7 @@ FOCUSTRADE                                          Wand Focus: Equal Trade
 ROD_ice_staff
 WANDPED                                             Wand Recharge Pedestal
 ROD_blaze_staff                                     Blaze Rod Staff Core
+
 
 ALUMENTUM                                           Alumentum
 BATHSALTS
@@ -97,6 +100,7 @@ TRANSGOLD
 PURECOPPER
 JARLABEL                                            Warded Jars and Labels
 
+
 RUNICEMERGENCY
 GOGGLES                                             Goggles of Revealing
 ENCHFABRIC
@@ -108,11 +112,11 @@ BANNERS
 ELEMENTALSHOVEL
 LEVITATOR
 HOVERGIRDLE
-WARDEDARCANA
+WARDEDARCANA                                        Warded Arcana
 BASICARTIFACE
 FLUXSCRUB
 THAUMOMETER
-BOOTSTRAVELLER
+BOOTSTRAVELLER                                      Boots of the Traveller
 RESTABLE
 MIRRORESSENTIA
 PRIMALARROW
@@ -147,6 +151,8 @@ PAVETRAVEL
 JARBRAIN
 ARCANEBORE
 INFUSIONENCHANTMENT
+
+
 GOLEMCLAY
 UPGRADEWATER
 HUNGRYCHEST
@@ -186,6 +192,8 @@ GOLEMIRON
 CORELIQUID
 COREEMPTY
 UPGRADEORDER
+
+
 ELDRITCHMAJOR
 ADVALCHEMYFURNACE
 ARMORVOIDFORTRESS
@@ -202,32 +210,36 @@ PRIMPEARL
 PRIMNODE
 CAP_void
 VOIDMETAL
-thaumicenergistics.TEESSVIBCMBR
-thaumicenergistics.Pseudo.COREUSE
+
+
+thaumicenergistics.TEESSVIBCMBR                     Vibration Chamber
+thaumicenergistics.Pseudo.COREUSE                   Golem Core: Use (fake)
 thaumicenergistics.TECERTUSDUPE
-thaumicenergistics.TEARCANETERM
+thaumicenergistics.TEARCANETERM                     Arcane Crafting Terminal
 thaumicenergistics.Pseudo.DISTILESSENTIA
 thaumicenergistics.Pseudo.VISPOWER
 thaumicenergistics.TEARCANEASSEMBLER
 thaumicenergistics.TEINFPROV
 thaumicenergistics.TEFOCUSWRENCH
-thaumicenergistics.TEIO
-thaumicenergistics.TECORES
+thaumicenergistics.TEIO                             Digi-sentia Transportation
+thaumicenergistics.TECORES                          Digi-sentia
 thaumicenergistics.TERESEARCH
 thaumicenergistics.Pseudo.TUBEFILTER
-thaumicenergistics.TETHAUMGBOX
-thaumicenergistics.TEVISINT
+thaumicenergistics.TETHAUMGBOX                      Thaumium Gear Box
+thaumicenergistics.TEVISINT                         Vis Relay Interface
 thaumicenergistics.Pseudo.INFUSION
-thaumicenergistics.TESTORAGE
+thaumicenergistics.TESTORAGE                        Digi-sentia Storage
 thaumicenergistics.TEKNOWLEDGEINSCRIBER
-thaumicenergistics.Pseudo.ALCHEMICALDUPLICATION     Alchemical Duplication (fake)
-thaumicenergistics.TEIRONGEARBOX
+thaumicenergistics.Pseudo.ALCHEMICALDUPLICATION
+thaumicenergistics.TEIRONGEARBOX                    Iron Gear Box
 thaumicenergistics.Pseudo.MIRROR
 thaumicenergistics.TEESSTERM
 thaumicenergistics.TEESSPROV
 thaumicenergistics.Pseudo.WARDEDARCANA
 thaumicenergistics.Pseudo.FOCUSFIRE
 thaumicenergistics.Pseudo.SCEPTRE
+
+
 alchIncubation
 blastPhial
 nightmareInfusion
@@ -297,6 +309,8 @@ cloneSelf
 generalInfusion
 meatGrowth
 voidPutty
+
+
 ENCH_BACKSTAB
 PRIMORDIALARMOR
 ENCH_STEALTH

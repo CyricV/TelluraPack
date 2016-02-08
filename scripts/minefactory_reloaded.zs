@@ -1,4 +1,104 @@
 import mods.mfr.MiningLaser;
+# Materials
+var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
+var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
+var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
+var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
+var bedrock                     = <minecraft:bedrock>;
+var blazePowder                 = <minecraft:blaze_powder>;
+var book                        = <minecraft:book>;
+var bucket                      = <minecraft:bucket>;
+var glowstoneDust               = <minecraft:glowstone_dust>;
+var paper                       = <minecraft:paper>;
+var sugarCane                   = <minecraft:reeds>;
+var waterBucket                 = <minecraft:water_bucket>;
+var netherrack                  = <minecraft:netherrack>;
+var netherBrickBlock            = <minecraft:nether_brick>;
+var netherBrickStairs           = <minecraft:nether_brick_stairs>;
+var netherBrickFence            = <minecraft:nether_brick_fence>;
+var netherBrickSlab             = <minecraft:stone_slab:6>;
+var netherBrick                 = <minecraft:netherbrick>;
+var rubberBar                   = <MineFactoryReloaded:rubber.bar>;
+var sawdust                     = <ThermalExpansion:material:512>;
+var ironGear                    = <ThermalFoundation:material:12>;
+var goldGear                    = <ThermalFoundation:material:13>;
+var enderiumBlend               = <ThermalFoundation:material:44>;
+var enderiumIngot               = <ThermalFoundation:material:76>;
+var copperGear                  = <ThermalFoundation:material:128>;
+var tinGear                     = <ThermalFoundation:material:129>;
+var silverGear                  = <ThermalFoundation:material:130>;
+var leadGear                    = <ThermalFoundation:material:131>;
+var ferrousGear                 = <ThermalFoundation:material:132>;
+var shinyGear                   = <ThermalFoundation:material:133>;
+var manaInfusedGear             = <ThermalFoundation:material:134>;
+var electrumGear                = <ThermalFoundation:material:135>;
+var invarGear                   = <ThermalFoundation:material:136>;
+var bronzeGear                  = <ThermalFoundation:material:137>;
+var signalumGear                = <ThermalFoundation:material:138>;
+var lumiumGear                  = <ThermalFoundation:material:139>;
+var enderiumGear                = <ThermalFoundation:material:140>;
+
+# Devices
+var hopper                      = <minecraft:hopper>;
+var chest                       = <minecraft:chest>;
+var conveyorBelt                = <MineFactoryReloaded:conveyor:16>;
+
+# Ore Dictionary Items
+var allIronNugs                 = <ore:nuggetIron>;
+var allGoldNugs                 = <ore:nuggetGold>;
+
+################################################################
+### Removal ####################################################
+################################################################
+
+
+################################################################
+### STONE TIER #################################################
+################################################################
+
+
+################################################################
+### TINKER TIER ################################################
+################################################################
+# Conveyor Belt
+recipes.remove(conveyorBelt);
+recipes.addShaped(conveyorBelt, [
+    [rubberBar,     rubberBar,  rubberBar],
+    [copperGear,    ironGear,   copperGear],
+    [null,          null,       null]
+]);
+
+################################################################
+### ALCHEMY TIER ###############################################
+################################################################
+
+
+################################################################
+### INFUSTION TIER #############################################
+################################################################
+
+
+################################################################
+### VOID TIER ##################################################
+################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Laser ores:
 #     (175): <minecraft:coal_ore> (Coal Ore)
 #     (150): <minecraft:iron_ore> (Iron Ore)

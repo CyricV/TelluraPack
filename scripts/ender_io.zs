@@ -109,7 +109,9 @@ var chest                       = <minecraft:chest>;
 var redstoneComparator          = <minecraft:comparator>;
 var piston                      = <minecraft:piston>;
 var furnaceMinecraft            = <minecraft:furnace>;
+var ironPressurePlate           = <minecraft:heavy_weighted_pressure_plate>;
 var tank                        = <OpenBlocks:tank>;
+var darkPressurePlate           = <EnderIO:blockDarkSteelPressurePlate>;
 var stirlingGenerator           = <EnderIO:blockStirlingGenerator>;
 var sagMill                     = <EnderIO:blockSagMill>;
 var alloySmelter                = <EnderIO:blockAlloySmelter>;
@@ -655,6 +657,10 @@ recipes.addShaped(speedUpgrade, [
     [null,          conduitBinder,      null]
 ]);
 
+# Dark Pressure PLate
+recipes.remove(darkPressurePlate);
+recipes.addShapeless(darkPressurePlate, [ironPressurePlate, darkSteel]);
+
 # Ender Fluid Conduit
 recipes.remove(enderFluidConduit);
 recipes.addShaped(enderFluidConduit * 16, [
@@ -670,7 +676,6 @@ recipes.addShaped(itemConduit * 16, [
     [pulsatingIronNug,  pulsatingIronNug,   pulsatingIronNug],
     [conduitBinder,     conduitBinder,      conduitBinder]
 ]);
-
 
 # Fire Water
 #mods.tconstruct.Smeltery.addAlloy(<liquid:rocket_fuel> * 64, [<liquid:fire_water> * 64, <liquid:pyrotheum> * 8]);

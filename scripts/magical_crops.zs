@@ -1,5 +1,6 @@
 # Materials
 var certusQuartzBlock           = <appliedenergistics2:tile.BlockQuartz>;
+var certusQuartzOre             = <appliedenergistics2:tile.OreQuartz>;
 var manaPearl                   = <Botania:manaResource:1>;
 var manaDiamond                 = <Botania:manaResource:2>;
 var dragonstone                 = <Botania:manaResource:9>;
@@ -13,11 +14,29 @@ var accioIngot                  = <magicalcrops:magicalcrops_EssenceIngots>;
 var crucioIngot                 = <magicalcrops:magicalcrops_EssenceIngots:1>;
 var imperioIngot                = <magicalcrops:magicalcrops_EssenceIngots:2>;
 var zivicioIngot                = <magicalcrops:magicalcrops_EssenceIngots:3>;
+var coal                        = <minecraft:coal>;
+var coalOre                     = <minecraft:coal_ore>;
 var cobblestone                 = <minecraft:cobblestone>;
-var wheatSeed                   = <minecraft:wheat_seeds>;
+var diamond                     = <minecraft:diamond>;
+var diamondOre                  = <minecraft:diamond_ore>;
+var lapis                       = <minecraft:dye:4>;
+var emeraldOre                  = <minecraft:emerald_ore>;
+var emerald                     = <minecraft:emerald>;
+var enderPearl                  = <minecraft:ender_pearl>;
 var glowstoneBlock              = <minecraft:glowstone>;
+var glowstoneDust               = <minecraft:glowstone_dust>;
+var goldOre                     = <minecraft:gold_ore>;
+var ironOre                     = <minecraft:iron_ore>;
+var quartz                      = <minecraft:quartz>;
+var quartzOre                   = <minecraft:quartz_ore>;
+var lapisOre                    = <minecraft:lapis_ore>;
+var redstoneDust                = <minecraft:redstone>;
 var redstoneBlock               = <minecraft:redstone_block>;
+var redstoneOre                 = <minecraft:redstone_ore>;
 var witherSkull                 = <minecraft:skull:1>;
+var wheatSeed                   = <minecraft:wheat_seeds>;
+var solidBlockOfEnder           = <TConstruct:MetalBlock:10>;
+var aluminumOre                 = <TConstruct:SearedBrick:5>;
 var primordialPearl             = <Thaumcraft:ItemEldritchObject:3>;
 var airCluster                  = <Thaumcraft:blockCrystal>;
 var fireCluster                 = <Thaumcraft:blockCrystal:1>;
@@ -25,6 +44,11 @@ var waterCluster                = <Thaumcraft:blockCrystal:2>;
 var earthCluster                = <Thaumcraft:blockCrystal:3>;
 var orderCluster                = <Thaumcraft:blockCrystal:4>;
 var entropyCluster              = <Thaumcraft:blockCrystal:5>;
+var copperOre                   = <ThermalFoundation:Ore>;
+var tinOre                      = <ThermalFoundation:Ore:1>;
+var silverOre                   = <ThermalFoundation:Ore:2>;
+var leadOre                     = <ThermalFoundation:Ore:3>;
+var nickelOre                   = <ThermalFoundation:Ore:4>;
 
 var minicioSeed                 = <magicalcrops:magicalcrops_MinicioSeeds>;
 var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
@@ -159,6 +183,7 @@ var allEmeraldBlock             = <ore:blockEmerald>;
 var allDustSulfur               = <ore:dustSulfur>;
 var allDustNiter                = <ore:dustSaltpeter>;
 var allGhastTear                = <ore:itemGhastTear>;
+var allCoalOre                  = <ore:oreCoal>;
 
 ################################################################
 ### Removal ####################################################
@@ -255,7 +280,6 @@ recipes.addShaped(waterSeed, [
 ]);
 recipes.remove(waterEssence);
 
-
 # Fire Seed
 recipes.remove(fireSeed);
 recipes.addShaped(fireSeed, [
@@ -325,6 +349,13 @@ recipes.addShaped(redstoneSeed, [
     [redstoneBlock, crucioEssence,  redstoneBlock]
 ]);
 recipes.remove(redstoneEssence);
+recipes.remove(redstoneDust);
+recipes.addShapeless(redstoneDust*9,[redstoneBlock]);
+recipes.addShaped(redstoneOre, [
+    [redstoneEssence,   redstoneEssence,    redstoneEssence],
+    [redstoneEssence,   redstoneEssence,    redstoneEssence],
+    [redstoneEssence,   redstoneEssence,    redstoneEssence]
+]);
 
 # Glowstone Seeds
 recipes.remove(glowstoneSeed);
@@ -334,6 +365,12 @@ recipes.addShaped(glowstoneSeed, [
     [glowstoneBlock,    crucioEssence,  glowstoneBlock]
 ]);
 recipes.remove(glowstoneEssence);
+recipes.remove(glowstoneDust);
+recipes.addShaped(glowstoneBlock, [
+    [glowstoneEssence,  glowstoneEssence,   glowstoneEssence],
+    [glowstoneEssence,  glowstoneEssence,   glowstoneEssence],
+    [glowstoneEssence,  glowstoneEssence,   glowstoneEssence]
+]);
 
 # Dye Seeds
 recipes.remove(dyeSeed);
@@ -361,6 +398,12 @@ recipes.addShaped(coalSeed, [
     [allCoalBlock,  crucioEssence,  allCoalBlock]
 ]);
 recipes.remove(coalEssence);
+recipes.remove(coalOre);
+recipes.addShaped(coalOre, [
+    [coalEssence,   coalEssence,    coalEssence],
+    [coalEssence,   coalEssence,    coalEssence],
+    [coalEssence,   coalEssence,    coalEssence]
+]);
 
 # Rubber Seeds
 recipes.remove(rubberSeed);
@@ -397,6 +440,12 @@ recipes.addShaped(quartzSeed, [
     [allQuartzBlock,    crucioEssence,  allQuartzBlock]
 ]);
 recipes.remove(quartzEssence);
+recipes.remove(quartz);
+recipes.addShaped(quartzOre, [
+    [quartzEssence, quartzEssence,  quartzEssence],
+    [quartzEssence, quartzEssence,  quartzEssence],
+    [quartzEssence, quartzEssence,  quartzEssence]
+]);
 
 # Lapis Seeds
 recipes.remove(lapisSeed);
@@ -406,6 +455,12 @@ recipes.addShaped(lapisSeed, [
     [allLapisBlock, crucioEssence,  allLapisBlock]
 ]);
 recipes.remove(lapisEssence);
+recipes.remove(lapis);
+recipes.addShaped(lapisOre, [
+    [lapisEssence,  lapisEssence,   lapisEssence],
+    [lapisEssence,  lapisEssence,   lapisEssence],
+    [lapisEssence,  lapisEssence,   lapisEssence]
+]);
 
 # Iron Seeds
 recipes.remove(ironSeed);
@@ -415,6 +470,12 @@ recipes.addShaped(ironSeed, [
     [allIronBlock,      imperioEssence, allIronBlock]
 ]);
 recipes.remove(ironEssence);
+recipes.remove(ironOre);
+recipes.addShaped(ironOre, [
+    [ironEssence,   ironEssence,    ironEssence],
+    [ironEssence,   ironEssence,    ironEssence],
+    [ironEssence,   ironEssence,    ironEssence]
+]);
 
 # Gold Seeds
 recipes.remove(goldSeed);
@@ -424,6 +485,12 @@ recipes.addShaped(goldSeed, [
     [allGoldBlock,      imperioEssence, allGoldBlock]
 ]);
 recipes.remove(goldEssence);
+recipes.remove(goldOre);
+recipes.addShaped(goldOre, [
+    [goldEssence,  goldEssence,   goldEssence],
+    [goldEssence,  goldEssence,   goldEssence],
+    [goldEssence,  goldEssence,   goldEssence]
+]);
 
 # Silver Seeds
 recipes.remove(silverSeed);
@@ -433,6 +500,12 @@ recipes.addShaped(silverSeed, [
     [allSilverBlock,    imperioEssence, allSilverBlock]
 ]);
 recipes.remove(silverEssence);
+recipes.remove(silverOre);
+recipes.addShaped(silverOre, [
+    [silverEssence,  silverEssence,   silverEssence],
+    [silverEssence,  silverEssence,   silverEssence],
+    [silverEssence,  silverEssence,   silverEssence]
+]);
 
 # Tin Seeds
 recipes.remove(tinSeed);
@@ -442,6 +515,12 @@ recipes.addShaped(tinSeed, [
     [allTinBlock,       imperioEssence, allTinBlock]
 ]);
 recipes.remove(tinEssence);
+recipes.remove(tinOre);
+recipes.addShaped(tinOre, [
+    [tinEssence,  tinEssence,   tinEssence],
+    [tinEssence,  tinEssence,   tinEssence],
+    [tinEssence,  tinEssence,   tinEssence]
+]);
 
 # Copper Seeds
 recipes.remove(copperSeed);
@@ -451,6 +530,12 @@ recipes.addShaped(copperSeed, [
     [allCopperBlock,    imperioEssence, allCopperBlock]
 ]);
 recipes.remove(copperEssence);
+recipes.remove(copperOre);
+recipes.addShaped(copperOre, [
+    [copperEssence,  copperEssence,   copperEssence],
+    [copperEssence,  copperEssence,   copperEssence],
+    [copperEssence,  copperEssence,   copperEssence]
+]);
 
 # Lead Seeds
 recipes.remove(leadSeed);
@@ -460,6 +545,12 @@ recipes.addShaped(leadSeed, [
     [allLeadBlock,      imperioEssence, allLeadBlock]
 ]);
 recipes.remove(leadEssence);
+recipes.remove(leadOre);
+recipes.addShaped(leadOre, [
+    [leadEssence,  leadEssence,   leadEssence],
+    [leadEssence,  leadEssence,   leadEssence],
+    [leadEssence,  leadEssence,   leadEssence]
+]);
 
 # Aluminum Seeds
 recipes.remove(aluminumSeed);
@@ -469,6 +560,12 @@ recipes.addShaped(aluminumSeed, [
     [allAluminumBlock,  imperioEssence, allAluminumBlock]
 ]);
 recipes.remove(aluminumEssence);
+recipes.remove(aluminumOre);
+recipes.addShaped(aluminumOre, [
+    [aluminumEssence,  aluminumEssence,   aluminumEssence],
+    [aluminumEssence,  aluminumEssence,   aluminumEssence],
+    [aluminumEssence,  aluminumEssence,   aluminumEssence]
+]);
 
 # Nickel Seeds
 recipes.remove(nickelSeed);
@@ -478,6 +575,12 @@ recipes.addShaped(nickelSeed, [
     [allNickelBlock,    imperioEssence, allNickelBlock]
 ]);
 recipes.remove(nickelEssence);
+recipes.remove(nickelOre);
+recipes.addShaped(nickelOre, [
+    [nickelEssence,  nickelEssence,   nickelEssence],
+    [nickelEssence,  nickelEssence,   nickelEssence],
+    [nickelEssence,  nickelEssence,   nickelEssence]
+]);
 
 # Certus Seeds
 recipes.remove(certusQuartzSeed);
@@ -487,6 +590,11 @@ recipes.addShaped(certusQuartzSeed, [
     [certusQuartzBlock, imperioEssence, certusQuartzBlock]
 ]);
 recipes.remove(certusQuartzEssence);
+recipes.addShaped(certusQuartzOre, [
+    [certusQuartzEssence,   certusQuartzEssence,    certusQuartzEssence],
+    [certusQuartzEssence,   certusQuartzEssence,    certusQuartzEssence],
+    [certusQuartzEssence,   certusQuartzEssence,    certusQuartzEssence]
+]);
 
 # Enderman Seeds
 endermanSeed.displayName = "Ender Seed";
@@ -498,6 +606,12 @@ recipes.addShaped(endermanSeed, [
     [allEnderBlock,     imperioEssence, allEnderBlock]
 ]);
 recipes.remove(endermanEssence);
+recipes.remove(enderPearl);
+recipes.addShaped(solidBlockOfEnder, [
+    [endermanEssence,   endermanEssence,    endermanEssence],
+    [endermanEssence,   endermanEssence,    endermanEssence],
+    [endermanEssence,   endermanEssence,    endermanEssence]
+]);
 
 # Accio Ingot (Resolute Material)
 recipes.remove(accioIngot);
@@ -533,6 +647,12 @@ recipes.addShaped(diamondSeed, [
     [allDiamondBlock,   zivicioEssence,     allDiamondBlock]
 ]);
 recipes.remove(diamondEssence);
+recipes.remove(diamond);
+recipes.addShaped(diamondOre, [
+    [diamondEssence,   diamondEssence,    diamondEssence],
+    [diamondEssence,   diamondEssence,    diamondEssence],
+    [diamondEssence,   diamondEssence,    diamondEssence]
+]);
 
 # Emerald Seeds
 recipes.remove(emeraldSeed);
@@ -542,6 +662,12 @@ recipes.addShaped(emeraldSeed, [
     [allEmeraldBlock,   zivicioEssence, allEmeraldBlock]
 ]);
 recipes.remove(emeraldEssence);
+recipes.remove(emerald);
+recipes.addShaped(emeraldOre, [
+    [emeraldEssence,   emeraldEssence,    emeraldEssence],
+    [emeraldEssence,   emeraldEssence,    emeraldEssence],
+    [emeraldEssence,   emeraldEssence,    emeraldEssence]
+]);
 
 # Ghast Seeds
 recipes.remove(ghastSeed);

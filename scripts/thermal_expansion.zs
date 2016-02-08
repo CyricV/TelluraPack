@@ -6,6 +6,7 @@ var manaSteel                   = <Botania:manaResource>;
 var terraSteel                  = <Botania:manaResource:4>;
 var elementium                  = <Botania:manaResource:7>;
 var runeOfWrath                 = <Botania:rune:13>;
+var basicCapacitor              = <EnderIO:itemBasicCapacitor>;
 var fluidConduit                = <EnderIO:itemLiquidConduit>;
 var pressurizedFluidConduit     = <EnderIO:itemLiquidConduit:1>;
 var enderCrystal                = <EnderIO:itemMaterial:8>;
@@ -25,10 +26,12 @@ var paper                       = <minecraft:paper>;
 var packedIce                   = <minecraft:packed_ice>;
 var snowball                    = <minecraft:snowball>;
 var sand                        = <minecraft:sand>;
+var ironPlate                   = <TConstruct:heavyPlate:2>;
 var searedBrick                 = <TConstruct:materials:2>;
 var searedBrick2                = <TConstruct:materials:37>;
 var steelIngot                  = <TConstruct:materials:16>;
 var invarAxeHead                = <TConstruct:hatchetHead:1020>;
+var rockwool                    = <ThermalExpansion:Rockwool:*>;
 var basicMachineFrame           = <ThermalExpansion:Frame>;
 var hardenedMachineFrame        = <ThermalExpansion:Frame:1>;
 var reinforcedMachineFrame      = <ThermalExpansion:Frame:2>;
@@ -42,6 +45,7 @@ var resonantCellFrame           = <ThermalExpansion:Frame:9>;
 var tesseractFrameEmpty         = <ThermalExpansion:Frame:10>;
 var tesseractFrame              = <ThermalExpansion:Frame:11>;
 var hardenedGlass               = <ThermalExpansion:Glass>;
+var slag                        = <ThermalExpansion:material:514>;
 var ironGear                    = <ThermalFoundation:material:12>;
 var goldGear                    = <ThermalFoundation:material:13>;
 var enderiumBlend               = <ThermalFoundation:material:44>;
@@ -77,10 +81,38 @@ var telluraDeliquescent         = <ProjRed|Core:projectred.core.part:55>;
 var telluraResolute             = <magicalcrops:magicalcrops_EssenceIngots>;
 var telluraEphemeral            = <magicalcrops:magicalcrops_EssenceIngots:1>;
 
+# Upgrades
+var augServoMechanism           = <ThermalExpansion:augment>;
+var augHopperApparatus          = <ThermalExpansion:augment:1>;
+var augModularFramework         = <ThermalExpansion:augment:16>;
+var augRedstoneCircuit          = <ThermalExpansion:augment:32>;
+var augTransmissionCoil         = <ThermalExpansion:augment:48>;
+var augExcitationField          = <ThermalExpansion:augment:49>;
+var augSecondaryGearbox         = <ThermalExpansion:augment:64>;
+var augFluxLinkage              = <ThermalExpansion:augment:65>;
+var augCryoCoil                 = <ThermalExpansion:augment:66>;
+var augSecondaryTransCoil       = <ThermalExpansion:augment:80>;
+var augFluxModulation           = <ThermalExpansion:augment:81>;
+var augCryoAmplifier            = <ThermalExpansion:augment:82>;
+var augSecondarySieve           = <ThermalExpansion:augment:112>;
+var augStabilizedFrame          = <ThermalExpansion:augment:113>;
+var augGyroServo                = <ThermalExpansion:augment:114>;
+var augSecondaryReCoil          = <ThermalExpansion:augment:128>;
+var augOverclockedGearbox       = <ThermalExpansion:augment:129>;
+var augSpaceTimeFlux            = <ThermalExpansion:augment:130>;
+var augNullificationChamber     = <ThermalExpansion:augment:144>;
+var augTrivectionChamber        = <ThermalExpansion:augment:256>;
+var augAcceleratedExtrusion     = <ThermalExpansion:augment:312>;
+var augIgneousCatalyst          = <ThermalExpansion:augment:313>;
+var augPyroclasticGen           = <ThermalExpansion:augment:314>;
+
 # Devices
+var ironPressurePlate           = <minecraft:heavy_weighted_pressure_plate>;
 var chest                       = <minecraft:chest>;
 var craftingTable               = <minecraft:crafting_table>;
 var piston                      = <minecraft:piston>;
+var stickyPiston                = <minecraft:sticky_piston>;
+var oven                        = <harvestcraft:oven>;
 var portableTank                = <ThermalExpansion:Tank:1>;
 var hardenedPortableTank        = <ThermalExpansion:Tank:2>;
 var reinforcedPortableTank      = <ThermalExpansion:Tank:3>;
@@ -126,10 +158,15 @@ var leadstoneEnergyCell         = <ThermalExpansion:Cell:1>;
 var hardenedEnergyCell          = <ThermalExpansion:Cell:2>;
 var redstoneEnergyCell          = <ThermalExpansion:Cell:3>;
 var resonantEnergyCell          = <ThermalExpansion:Cell:4>;
-var machinistsWorkbench         = <ThermalExpansion:Device>;
+var workbench                   = <ThermalExpansion:Device:1>;
+var hardenedWorkbench           = <ThermalExpansion:Device:2>;
+var reinforcedWorkbench         = <ThermalExpansion:Device:3>;
+var resonantWorkbench           = <ThermalExpansion:Device:4>;
 var autonomousActivator         = <ThermalExpansion:Device:2>;
 var terrainSmasher              = <ThermalExpansion:Device:3>;
+var acquisitionApparatus        = <ThermalExpansion:Device:4>;
 var nullifier                   = <ThermalExpansion:Device:5>;
+var itemAllocator               = <ThermalExpansion:Device:6>;
 var steamDynamo                 = <ThermalExpansion:Dynamo>;
 var magmaticDynamo              = <ThermalExpansion:Dynamo:1>;
 var compressionDynamo           = <ThermalExpansion:Dynamo:2>;
@@ -144,35 +181,63 @@ var cache                       = <ThermalExpansion:Cache:1>;
 var hardenedCache               = <ThermalExpansion:Cache:2>;
 var reinforcedCache             = <ThermalExpansion:Cache:3>;
 var resonantCache               = <ThermalExpansion:Cache:4>;
+var plateFrame                  = <ThermalExpansion:Plate>;
+var redstonePlate               = <ThermalExpansion:Plate:1>;
+var impulsePlate                = <ThermalExpansion:Plate:2>;
+var translocationPlate          = <ThermalExpansion:Plate:3>;
+var chargePlate                 = <ThermalExpansion:Plate:4>;
+var excursionPlate              = <ThermalExpansion:Plate:5>;
+var teleportPlate               = <ThermalExpansion:Plate:6>;
 
 # Equipment
 var fluivac                     = <ThermalExpansion:pump>;
 var fluxTransfuser              = <ThermalExpansion:transfuser>;
 var bucket                      = <minecraft:bucket>;
 var lavaBucket                  = <minecraft:lava_bucket>;
+var crescentHammer              = <ThermalExpansion:wrench>;
+var battleWrench                = <ThermalExpansion:tool.battleWrenchInvar>;
 
 # Ore Dictionary Items
 var allLogs                     = <ore:logWood>;
 var allGlassBlocks              = <ore:blockGlass>;
+var allGlassPane                = <ore:paneGlass>;
 var allCopperIngots             = <ore:ingotCopper>;
 var allTinIngots                = <ore:ingotTin>;
 var allLeadIngots               = <ore:dustObsidian>;
 var allLeadDust                 = <ore:dustLead>;
-var allIronNugs                 = <ore:nuggetIron>;
 var allElectrumDust             = <ore:dustElectrum>;
 var allBronzeDust               = <ore:dustBronze>;
 var allInvarDust                = <ore:dustInvar>;
 var allAluminumBrassDust        = <ore:dustAluminumBrass>;
 var allObsidianDust             = <ore:dustObsidian>;
+var allIronNugs                 = <ore:nuggetIron>;
+var allTinNugs                  = <ore:nuggetTin>;
 var accioMaterial               = <ore:accioMaterial>;
-
-#var iron1 = <EnderIO:itemPowderIngot:1>;
-#var iron2 = <ThermalFoundation:material:0>;
 
 ################################################################
 ### Removal ####################################################
 ################################################################
-# All Gears
+# Teleport Plate
+recipes.remove(teleportPlate);
+
+# Augments for things removed
+recipes.remove(augTransmissionCoil);
+recipes.remove(augExcitationField);
+recipes.remove(augSecondaryGearbox);
+recipes.remove(augFluxLinkage);
+recipes.remove(augCryoCoil);
+recipes.remove(augSecondaryTransCoil);
+recipes.remove(augFluxModulation);
+recipes.remove(augCryoAmplifier);
+recipes.remove(augSecondarySieve);
+recipes.remove(augStabilizedFrame);
+recipes.remove(augGyroServo);
+recipes.remove(augNullificationChamber);
+recipes.remove(augAcceleratedExtrusion);
+recipes.remove(augIgneousCatalyst);
+recipes.remove(augPyroclasticGen);
+
+# All non smeltery gears
 recipes.remove(ironGear);
 recipes.remove(goldGear);
 recipes.remove(copperGear);
@@ -206,7 +271,8 @@ recipes.remove(energeticInfuser);
 recipes.remove(inductionSmelter);
 mods.thermalexpansion.Smelter.removeRecipe(<*>, <*>);
 
-# Phytogenic Insolator recipes
+# Phytogenic Insolator and all recipes
+recipes.remove(phytogenicInsolator);
 mods.thermalexpansion.Insolator.removeRecipe(<*>, <*>);
 
 # Enderium Ingot (Only produced by alloying in Smeltery)
@@ -221,6 +287,12 @@ recipes.remove(leadstoneEnergyCell);
 recipes.remove(hardenedEnergyCell);
 recipes.remove(redstoneEnergyCell);
 recipes.remove(resonantEnergyCell);
+
+# Acquisition Apparatus
+recipes.remove(acquisitionApparatus);
+
+# Item Allocator
+recipes.remove(itemAllocator);
 
 # Dynamos
 recipes.remove(steamDynamo);
@@ -255,11 +327,22 @@ recipes.remove(resonantCache);
 # Tesseract
 recipes.remove(tesseract);
 
+# Crescent Hammer
+recipes.remove(crescentHammer);
+
+# Battle Wrench
+recipes.remove(battleWrench);
+
 # FluiVac
 recipes.remove(fluivac);
 
 # Flux Transfuser
 recipes.remove(fluxTransfuser);
+
+# Rockwool
+recipes.remove(rockwool);
+furnace.remove(rockwool);
+mods.thermalexpansion.Furnace.removeRecipe(slag);
 
 ################################################################
 ### TINKER TIER ################################################
@@ -270,6 +353,30 @@ recipes.addShaped(portableTank, [
     [allCopperIngots,   tinGear,        allCopperIngots],
     [allGlassBlocks,    allGlassBlocks, allGlassBlocks],
     [allCopperIngots,   tinGear,        allCopperIngots]
+]);
+
+# Plate Frame
+recipes.remove(plateFrame);
+recipes.addShaped(plateFrame * 4, [
+    [null,          null,               null],
+    [allGlassPane,  allGlassPane,       allGlassPane],
+    [ironIngot,     ironPressurePlate,  ironIngot]
+]);
+
+# Augment Integrated Servo Mechanism
+recipes.remove(augServoMechanism);
+recipes.addShaped(augServoMechanism, [
+    [null,          allTinNugs, null],
+    [allTinNugs,    tinGear,    allTinNugs],
+    [null,          allTinNugs, null]
+]);
+
+# Augment Integrated Hopper Apparatus
+recipes.remove(augHopperApparatus);
+recipes.addShaped(augHopperApparatus, [
+    [null,          allIronNugs,    null],
+    [allIronNugs,   tinGear,        allIronNugs],
+    [null,          allIronNugs,    null]
 ]);
 
 ################################################################
@@ -460,8 +567,11 @@ recipes.addShaped(cyclicAssembler3, [
 ]);
 
 # Machinist's Workbench
-recipes.remove(machinistsWorkbench);
-recipes.addShaped(machinistsWorkbench, [
+recipes.remove(workbench);
+recipes.remove(hardenedWorkbench);
+recipes.remove(reinforcedWorkbench);
+recipes.remove(resonantWorkbench);
+recipes.addShaped(resonantWorkbench, [
     [paper,         paper,          paper],
     [allTinIngots,  craftingTable,  allTinIngots],
     [allTinIngots,  chest,          allTinIngots]
@@ -489,6 +599,26 @@ recipes.addShaped(nullifier, [
     [allTinIngots,  null,       allTinIngots],
     [ironGear,      null,       ironGear],
     [allTinIngots,  lavaBucket, allTinIngots]
+]);
+
+# Charge Plate
+recipes.remove(chargePlate);
+recipes.addShapeless(chargePlate, [redstonePlate, basicCapacitor]);
+
+# Augment Secondary Reception Coil
+recipes.remove(augSecondaryReCoil);
+recipes.addShaped(augSecondaryReCoil, [
+    [null,              allCopperIngots,    null],
+    [allCopperIngots,   nitor,              allCopperIngots],
+    [null,              allCopperIngots,    null]
+]);
+
+# Augment Trivection Chamber
+recipes.remove(augTrivectionChamber);
+recipes.addShaped(augTrivectionChamber, [
+    [null,          searedBrick2,   null],
+    [searedBrick2,  oven,           searedBrick2],
+    [null,          nitor,          null]
 ]);
 
 # Pyrotheum Dust
@@ -624,6 +754,31 @@ recipes.addShaped(magmaCrucible3, [
     [elementium,        logicProcessor, elementium]
 ]);
 
+# Excursion Plate
+recipes.remove(excursionPlate);
+recipes.addShapeless(excursionPlate, [chargePlate, telluraTumultuous]);
+
+# Augment Overclocked Modular Gearbox
+recipes.remove(augOverclockedGearbox);
+recipes.addShaped(augOverclockedGearbox, [
+    [null,      invarGear,      null],
+    [invarGear, logicProcessor, invarGear],
+    [null,      invarGear,      null]
+]);
+
+# Augment Space-Time Flux Unifier
+recipes.remove(augSpaceTimeFlux);
+recipes.addShaped(augSpaceTimeFlux, [
+    [null,              null,           null],
+    [telluraTumultuous, enderiumGear,   telluraTumultuous],
+    [null,              null,           null]
+]);
+recipes.addShaped(augSpaceTimeFlux, [
+    [null,  telluraTumultuous,  null],
+    [null,  enderiumGear,       null],
+    [null,  telluraTumultuous,  null]
+]);
+
 # Resonant Machine Frame
 recipes.remove(resonantMachineFrame);
 recipes.addShaped(resonantMachineFrame, [
@@ -631,7 +786,6 @@ recipes.addShaped(resonantMachineFrame, [
     [telluraResolute,   reinforcedMachineFrame, telluraResolute],
     [elementium,        logicProcessor,         elementium]
 ]);
-
 
 ################################################################
 ### VOID TIER ##################################################
