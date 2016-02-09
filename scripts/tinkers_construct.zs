@@ -8,6 +8,7 @@ var searedBrick2                = <TConstruct:materials:37>;
 var blockOfSolidEnder           = <TConstruct:MetalBlock:10>;
 var enderShard                  = <GrimoireOfGaia:item.GrimoireOfGaia.Shard:5>;
 var enderPowder                 = <EnderIO:itemPowderIngot:5>;
+var monsterJerky                = <TConstruct:jerky:5>;
 
 # Devices
 var gearCast                    = <TConstruct:gearCast>;
@@ -18,7 +19,8 @@ var allGoldOre                  = <ore:oreGold>;
 ################################################################
 ### Removal ####################################################
 ################################################################
-
+# Monster Jerky
+mods.tconstruct.Drying.removeRecipe(monsterJerky);
 
 ################################################################
 ### TINKER TIER ################################################

@@ -23,7 +23,7 @@ var vibrantAlloy                = <EnderIO:itemAlloy:2>;
 var redstoneAlloy               = <EnderIO:itemAlloy:3>;
 var conductiveIron              = <EnderIO:itemAlloy:4>;
 var pulsatingIron               = <EnderIO:itemAlloy:5>;
-var darkSteel                   = <EnderIO:itemAlloy:6>;
+var darksteelIngot              = <EnderIO:itemAlloy:6>;
 var soulariumIngot              = <EnderIO:itemAlloy:7>;
 var soulariumBlock              = <EnderIO:blockIngotStorage:7>;
 var basicItemFilter             = <EnderIO:itemBasicFilterUpgrade>;
@@ -162,6 +162,14 @@ var gliderWings                 = <EnderIO:itemGliderWing:1>;
 var soulVial                    = <EnderIO:itemSoulVessel>;
 var experienceRod               = <EnderIO:itemXpTransfer>;
 var hangGlider                  = <OpenBlocks:hangglider>;
+var thaumiumHelm                = <Thaumcraft:ItemHelmetThaumium>;
+var thaumiumChest               = <Thaumcraft:ItemChestplateThaumium>;
+var thaumiumLeggings            = <Thaumcraft:ItemLeggingsThaumium>;
+var thaumiumBoots               = <Thaumcraft:ItemBootsThaumium>;
+var darksteelHelm               = <EnderIO:item.darkSteel_helmet>;
+var darksteelChest              = <EnderIO:item.darkSteel_chestplate>;
+var darksteelLeggings           = <EnderIO:item.darkSteel_leggings>;
+var darksteelBoots              = <EnderIO:item.darkSteel_boots>;
 
 # Ore Dictionary Items
 var allSand                     = <ore:sand>;
@@ -641,6 +649,50 @@ mods.thaumcraft.Arcane.addShaped(
 ]);
 recipes.addShapeless(gliderWings, [hangGlider]);
 
+# Darksteel Helm
+recipes.remove(darksteelHelm);
+recipes.addShaped(darksteelHelm, [
+    [darksteelIngot,    zLogicController,                       darksteelIngot],
+    [darksteelIngot,    thaumiumHelm.anyDamage().marked("inp"), darksteelIngot],
+    [null,              null,                                   null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Darksteel Chest
+recipes.remove(darksteelChest);
+recipes.addShaped(darksteelChest, [
+    [darksteelIngot,    null,                                       darksteelIngot],
+    [darksteelIngot,    thaumiumChest.anyDamage().marked("inp"),    darksteelIngot],
+    [invarGear,         darksteelIngot,                             invarGear]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Darksteel Leggings
+recipes.remove(darksteelLeggings);
+recipes.addShaped(darksteelLeggings, [
+    [darksteelIngot,    thaumiumLeggings.anyDamage().marked("inp"), darksteelIngot],
+    [invarGear,         null,                                       invarGear],
+    [darksteelIngot,    null,                                       darksteelIngot]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Darksteel Boots
+recipes.remove(darksteelBoots);
+recipes.addShaped(darksteelBoots, [
+    [darksteelIngot,   thaumiumBoots.anyDamage().marked("inp"),   darksteelIngot],
+    [null,              null,                                       null],
+    [null,              null,                                       null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
 # Existing Item Filter
 recipes.remove(existingItemFilter);
 recipes.addShaped(existingItemFilter, [
@@ -659,7 +711,7 @@ recipes.addShaped(speedUpgrade, [
 
 # Dark Pressure PLate
 recipes.remove(darkPressurePlate);
-recipes.addShapeless(darkPressurePlate, [ironPressurePlate, darkSteel]);
+recipes.addShapeless(darkPressurePlate, [ironPressurePlate, darksteelIngot]);
 
 # Ender Fluid Conduit
 recipes.remove(enderFluidConduit);
@@ -688,12 +740,12 @@ recipes.remove(telePad);
 recipes.addShaped(telePad, [
     [fusedQuartz,       enderCrystal,           fusedQuartz],
     [telluraEphemeral,  travelAnchor,           telluraDeliquescent],
-    [darkSteel,         resonantMachineFrame,   darkSteel]
+    [darksteelIngot,    resonantMachineFrame,   darksteelIngot]
 ]);
 recipes.addShaped(telePad, [
     [fusedQuartz,           enderCrystal,           fusedQuartz],
     [telluraDeliquescent,   travelAnchor,           telluraEphemeral],
-    [darkSteel,             resonantMachineFrame,   darkSteel]
+    [darksteelIngot,        resonantMachineFrame,   darksteelIngot]
 ]);
 
 # Dimentional Transeiver

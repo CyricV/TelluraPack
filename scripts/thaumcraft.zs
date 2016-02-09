@@ -20,7 +20,12 @@ var ironBinding                 = <TConstruct:binding:2>;
 var copperBinding               = <TConstruct:binding:13>;
 var thaumiumBinding             = <TConstruct:binding:31>;
 var silverBinding               = <TConstruct:binding:1023>;
+var thaumiumToughBinding        = <TConstruct:toughBinding:31>;
+var thaumiumPlate               = <TConstruct:heavyPlate:31>;
 var arcaneStoneBricks           = <Thaumcraft:blockCosmeticSolid:7>;
+var thaumiumIngot               = <Thaumcraft:ItemResource:2>;
+var enchantedFabric             = <Thaumcraft:ItemResource:7>;
+var voidIngot                   = <Thaumcraft:ItemResource:16>;
 var airShard                    = <Thaumcraft:ItemShard>;
 var fireShard                   = <Thaumcraft:ItemShard:1>;
 var waterShard                  = <Thaumcraft:ItemShard:2>;
@@ -42,6 +47,20 @@ var useCore                     = <Thaumcraft:ItemGolemCore:8>;
 
 # Devices
 var runicMatrix                 = <Thaumcraft:blockStoneDevice:2>;
+
+# Equipment
+var thaumiumHelm                = <Thaumcraft:ItemHelmetThaumium>;
+var thaumiumChest               = <Thaumcraft:ItemChestplateThaumium>;
+var thaumiumLeggings            = <Thaumcraft:ItemLeggingsThaumium>;
+var thaumiumBoots               = <Thaumcraft:ItemBootsThaumium>;
+var invarHelm                   = <ThermalFoundation:armor.helmetInvar>;
+var invarChest                  = <ThermalFoundation:armor.plateInvar>;
+var invarLeggings               = <ThermalFoundation:armor.legsInvar>;
+var invarBoots                  = <ThermalFoundation:armor.bootsInvar>;
+var voidHelm                    = <Thaumcraft:ItemHelmetVoid>;
+var voidChest                   = <Thaumcraft:ItemChestplateVoid>;
+var voidLeggings                = <Thaumcraft:ItemLeggingsVoid>;
+var voidBoots                   = <Thaumcraft:ItemBootsVoid>;
 
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
@@ -104,6 +123,50 @@ mods.thaumcraft.Arcane.addShaped(
     [arcaneStoneBricks, runeOfEarth,    arcaneStoneBricks]
 ]);
 
+# Thaumium Helm
+recipes.remove(thaumiumHelm);
+recipes.addShaped(thaumiumHelm, [
+    [enchantedFabric,   thaumiumIngot,                          enchantedFabric],
+    [thaumiumIngot,     invarHelm.anyDamage().marked("inp"),    thaumiumIngot],
+    [null,              null,                                   null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Thaumium Chest
+recipes.remove(thaumiumChest);
+recipes.addShaped(thaumiumChest, [
+    [enchantedFabric,   null,                                  enchantedFabric],
+    [thaumiumIngot,     invarChest.anyDamage().marked("inp"),   thaumiumIngot],
+    [null,              thaumiumPlate,                          null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Thaumium Leggings
+recipes.remove(thaumiumLeggings);
+recipes.addShaped(thaumiumLeggings, [
+    [thaumiumBinding,   invarLeggings.anyDamage().marked("inp"),    thaumiumBinding],
+    [thaumiumIngot,     null,                                       thaumiumIngot],
+    [thaumiumIngot,     null,                                       thaumiumIngot]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Thaumium Boots
+recipes.remove(thaumiumBoots);
+recipes.addShaped(thaumiumBoots, [
+    [thaumiumIngot, invarBoots.anyDamage().marked("inp"),   thaumiumIngot],
+    [null,          null,                                   null],
+    [null,          null,                                   null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
 ################################################################
 ### INFUSTION TIER #############################################
 ################################################################
@@ -153,3 +216,47 @@ mods.thaumcraft.Crucible.addRecipe(
 ################################################################
 ### VOID TIER ##################################################
 ################################################################
+
+# Void Helm
+recipes.remove(voidHelm);
+recipes.addShaped(voidHelm, [
+    [null,      voidIngot,                              null],
+    [voidIngot, thaumiumHelm.anyDamage().marked("inp"), voidIngot],
+    [null,      null,                                   null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Void Chest
+recipes.remove(voidChest);
+recipes.addShaped(voidChest, [
+    [voidIngot, null,                                       voidIngot],
+    [voidIngot, thaumiumChest.anyDamage().marked("inp"),    voidIngot],
+    [null,      voidIngot,                                  null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Void Leggings
+recipes.remove(voidLeggings);
+recipes.addShaped(voidLeggings, [
+    [voidIngot, thaumiumLeggings.anyDamage().marked("inp"), voidIngot],
+    [voidIngot, null,                                       voidIngot],
+    [null,      null,                                       null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Void Boots
+recipes.remove(voidBoots);
+recipes.addShaped(voidBoots, [
+    [voidIngot, thaumiumBoots.anyDamage().marked("inp"),    voidIngot],
+    [null,      null,                                       null],
+    [null,      null,                                       null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);

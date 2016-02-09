@@ -1,13 +1,16 @@
 # Materials
-var livingRock                  = <Botania:livingrock>;
-var livingRockSlab              = <Botania:livingrock0Slab>;
-var livingWood                  = <Botania:livingwood>;
-var manaSteel                   = <Botania:manaResource>;
+var livingrock                  = <Botania:livingrock>;
+var livingrockSlab              = <Botania:livingrock0Slab>;
+var livingwood                  = <Botania:livingwood>;
+var manasteelIngot              = <Botania:manaResource>;
 var manaPearl                   = <Botania:manaResource:1>;
 var manaDiamond                 = <Botania:manaResource:2>;
-var terraSteel                  = <Botania:manaResource:4>;
+var terrasteelIngot             = <Botania:manaResource:4>;
 var gaiaSpirit                  = <Botania:manaResource:5>;
-var terraSteelNug               = <Botania:manaResource:18>;
+var elementiumIngot             = <Botania:manaResource:7>;
+var pixieDust                   = <Botania:manaResource:8>;
+var terrasteelNug               = <Botania:manaResource:18>;
+var manaweaveCloth              = <Botania:manaResource:22>;
 var manaPowder                  = <Botania:manaResource:23>;
 var manaPylon                   = <Botania:pylon>;
 var naturaPylon                 = <Botania:pylon:1>;
@@ -57,6 +60,23 @@ var runicAltar                  = <Botania:runeAltar>;
 var terraPlate                  = <Botania:terraPlate>;
 var elvenGatewayCore            = <Botania:alfheimPortal>;
 
+# Equipment
+var thaumiumHelm                = <Thaumcraft:ItemHelmetThaumium>;
+var thaumiumChest               = <Thaumcraft:ItemChestplateThaumium>;
+var thaumiumLeggings            = <Thaumcraft:ItemLeggingsThaumium>;
+var thaumiumBoots               = <Thaumcraft:ItemBootsThaumium>;
+var manasteelHelm               = <Botania:manasteelHelm>;
+var manasteelChest              = <Botania:manasteelChest>;
+var manasteelLeggings           = <Botania:manasteelLegs>;
+var manasteelBoots              = <Botania:manasteelBoots>;
+var terrasteelHelm              = <Botania:terrasteelHelm>;
+var terrasteelChest             = <Botania:terrasteelChest>;
+var terrasteelLeggings          = <Botania:terrasteelLegs>;
+var terrasteelBoots             = <Botania:terrasteelBoots>;
+var elementiumHelm              = <Botania:elementiumHelm>;
+var elementiumChest             = <Botania:elementiumChest>;
+var elementiumLeggings          = <Botania:elementiumLegs>;
+var elementiumBoots             = <Botania:elementiumBoots>;
 
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
@@ -69,7 +89,6 @@ var anyPetal                    = <ore:anyPetal>;
 ################################################################
 ### ALCHEMY TIER ###############################################
 ################################################################
-
 # Apothecary
 recipes.remove(petalApothecary);
 recipes.addShaped(petalApothecary, [
@@ -81,31 +100,75 @@ recipes.addShaped(petalApothecary, [
 # Alchemy Catalyst
 recipes.remove(alchemyCatalyst);
 recipes.addShaped(alchemyCatalyst, [
-    [livingRock,    manaPearl,              livingRock],
+    [livingrock,    manaPearl,              livingrock],
     [goldIngot,     alchemicalConstruct,    goldIngot],
-    [livingRock,    livingRock,             livingRock]
+    [livingrock,    livingrock,             livingrock]
 ]);
 
 # Runic Altar
 recipes.remove(runicAltar);
 recipes.addShaped(runicAltar, [
-    [livingRockSlab,    gemstoneDust,   livingRockSlab],
+    [livingrockSlab,    gemstoneDust,   livingrockSlab],
     [balancedShard,     primalCharm,    balancedShard],
-    [livingRock,        manaDiamond,    livingRock]
+    [livingrock,        manaDiamond,    livingrock]
 ]);
 
 # Rune Of Water
 mods.botania.RuneAltar.removeRecipe(runeOfWater);
-mods.botania.RuneAltar.addRecipe(runeOfWater*2, [manaSteel, manaPowder, waterShard, blizzPowder, waterShard, manaPowder], 5200);
+mods.botania.RuneAltar.addRecipe(runeOfWater*2, [manasteelIngot, manaPowder, waterShard, blizzPowder, waterShard, manaPowder], 5200);
 # Rune Of Fire
 mods.botania.RuneAltar.removeRecipe(runeOfFire);
-mods.botania.RuneAltar.addRecipe(runeOfFire*2, [manaSteel, manaPowder, fireShard, blazePowder, fireShard, manaPowder], 5200);
+mods.botania.RuneAltar.addRecipe(runeOfFire*2, [manasteelIngot, manaPowder, fireShard, blazePowder, fireShard, manaPowder], 5200);
 # Rune Of Earth
 mods.botania.RuneAltar.removeRecipe(runeOfEarth);
-mods.botania.RuneAltar.addRecipe(runeOfEarth*2, [manaSteel, manaPowder, earthShard, basalzPowder, earthShard, manaPowder], 5200);
+mods.botania.RuneAltar.addRecipe(runeOfEarth*2, [manasteelIngot, manaPowder, earthShard, basalzPowder, earthShard, manaPowder], 5200);
 # Rune Of Air
 mods.botania.RuneAltar.removeRecipe(runeOfAir);
-mods.botania.RuneAltar.addRecipe(runeOfAir*2, [manaSteel, manaPowder, airShard, blitzPowder, airShard, manaPowder], 5200);
+mods.botania.RuneAltar.addRecipe(runeOfAir*2, [manasteelIngot, manaPowder, airShard, blitzPowder, airShard, manaPowder], 5200);
+
+# Manasteel Helm
+recipes.remove(manasteelHelm);
+recipes.addShaped(manasteelHelm, [
+    [manaweaveCloth,    manasteelIngot,                         manaweaveCloth],
+    [manasteelIngot,    thaumiumHelm.anyDamage().marked("inp"), manasteelIngot],
+    [null,              null,                                   null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Manasteel Chest
+recipes.remove(manasteelChest);
+recipes.addShaped(manasteelChest, [
+    [manaweaveCloth,    null,                                       manaweaveCloth],
+    [manasteelIngot,    thaumiumChest.anyDamage().marked("inp"),    manasteelIngot],
+    [manasteelIngot,    manaDiamond,                                manasteelIngot]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Manasteel Leggings
+recipes.remove(manasteelLeggings);
+recipes.addShaped(manasteelLeggings, [
+    [manasteelIngot,    thaumiumLeggings.anyDamage().marked("inp"), manasteelIngot],
+    [manasteelIngot,    null,                                       manasteelIngot],
+    [manasteelIngot,    null,                                       manasteelIngot]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Manasteel Boots
+recipes.remove(manasteelBoots);
+recipes.addShaped(manasteelBoots, [
+    [manasteelIngot,    thaumiumBoots.anyDamage().marked("inp"),    manasteelIngot],
+    [null,              null,                                       null],
+    [null,              null,                                       null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
 
 ################################################################
 ### INFUSTION TIER #############################################
@@ -129,7 +192,7 @@ recipes.remove(manaPylon);
 mods.thaumcraft.Infusion.addRecipe(
     "INFUSION",
     manaDiamond,
-    [manaSteel, goldIngot, manaSteel, goldIngot],
+    [manasteelIngot, goldIngot, manasteelIngot, goldIngot],
     "praecantatio 16, auram 8",
     manaPylon,
     4
@@ -141,9 +204,9 @@ mods.thaumcraft.Arcane.addShaped(
     "INFUSION",
     naturaPylon,
     "terra 30", [
-    [pulsatingIronNug,  terraSteelNug,  pulsatingIronNug],
-    [terraSteelNug,     manaPylon,      terraSteelNug],
-    [pulsatingIronNug,  terraSteelNug,  pulsatingIronNug]
+    [pulsatingIronNug,  terrasteelNug,  pulsatingIronNug],
+    [terrasteelNug,     manaPylon,      terrasteelNug],
+    [pulsatingIronNug,  terrasteelNug,  pulsatingIronNug]
 ]);
 
 # Botany Brewery
@@ -151,20 +214,108 @@ recipes.remove(botanicalBrewery);
 mods.thaumcraft.Infusion.addRecipe(
     "INFUSION",
     alchemicalCentrifuge,
-    [manaPearl, livingRockSlab, livingRockSlab, livingRockSlab, manaPearl, livingRockSlab, livingRockSlab, livingRockSlab],
+    [manaPearl, livingrockSlab, livingrockSlab, livingrockSlab, manaPearl, livingrockSlab, livingrockSlab, livingrockSlab],
     "sano 16, venenum 16, permutatio 32",
     botanicalBrewery,
     2
 );
 
-# Elven Gateway Core
-recipes.remove(elvenGatewayCore);
-mods.thaumcraft.Infusion.addRecipe(
-    "INFUSION",
-    livingWood,
-    [terraSteel, terraSteel, terraSteel, terraSteel],
-    "iter 32, herba 64, arbor 32",
-    elvenGatewayCore,
-    2
-);
+## Terrasteel Helm
+#recipes.remove(terrasteelHelm);
+#recipes.addShaped(terrasteelHelm, [
+#    [livingwood,        terrasteelIngot,                            livingwood],
+#    [terrasteelIngot,   manasteelHelm.anyDamage().marked("inp"),    terrasteelIngot],
+#    [null,              null,                                       null]],
+#    function(output, inputs, crafting) {
+#        return output.withDamage(max(0, inputs.inp.damage));
+#    }
+#);
+#
+## Terrasteel Chest
+#recipes.remove(terrasteelChest);
+#recipes.addShaped(terrasteelChest, [
+#    [terrasteelIngot,   null,                                       terrasteelIngot],
+#    [terrasteelIngot,   manasteelChest.anyDamage().marked("inp"),   terrasteelIngot],
+#    [livingwood,        terrasteelIngot,                            livingwood]],
+#    function(output, inputs, crafting) {
+#        return output.withDamage(max(0, inputs.inp.damage));
+#    }
+#);
+#
+## Terrasteel Leggings
+#recipes.remove(terrasteelLeggings);
+#recipes.addShaped(terrasteelLeggings, [
+#    [terrasteelIngot,   manasteelLeggings.anyDamage().marked("inp"),    terrasteelIngot],
+#    [livingwood,        null,                                           livingwood],
+#    [terrasteelIngot,   null,                                           terrasteelIngot]],
+#    function(output, inputs, crafting) {
+#        return output.withDamage(max(0, inputs.inp.damage));
+#    }
+#);
+#
+## Terrasteel Boots
+#recipes.remove(terrasteelBoots);
+#recipes.addShaped(terrasteelBoots, [
+#    [terrasteelIngot,   manasteelBoots.anyDamage().marked("inp"),   terrasteelIngot],
+#    [null,              null,                                       null],
+#    [null,              null,                                       null]],
+#    function(output, inputs, crafting) {
+#        return output.withDamage(max(0, inputs.inp.damage));
+#    }
+#);
+
+## Elven Gateway Core
+#recipes.remove(elvenGatewayCore);
+#mods.thaumcraft.Infusion.addRecipe(
+#    "INFUSION",
+#    livingwood,
+#    [terrasteelIngot, terrasteelIngot, terrasteelIngot, terrasteelIngot],
+#    "iter 32, herba 64, arbor 32",
+#    elvenGatewayCore,
+#    2
+#);
+#
+## Elementium Helm
+#recipes.remove(elementiumHelm);
+#recipes.addShaped(elementiumHelm, [
+#    [pixieDust,         elementiumIngot,                            pixieDust],
+#    [elementiumIngot,   manasteelHelm.anyDamage().marked("inp"),    elementiumIngot],
+#    [null,              null,                                       null]],
+#    function(output, inputs, crafting) {
+#        return output.withDamage(max(0, inputs.inp.damage));
+#    }
+#);
+#
+## Elementium Chest
+#recipes.remove(elementiumChest);
+#recipes.addShaped(elementiumChest, [
+#    [elementiumIngot,   null,                                       elementiumIngot],
+#    [elementiumIngot,   manasteelChest.anyDamage().marked("inp"),   elementiumIngot],
+#    [pixieDust,         elementiumIngot,                            pixieDust]],
+#    function(output, inputs, crafting) {
+#        return output.withDamage(max(0, inputs.inp.damage));
+#    }
+#);
+#
+## Elementium Leggings
+#recipes.remove(elementiumLeggings);
+#recipes.addShaped(elementiumLeggings, [
+#    [elementiumIngot,   manasteelLeggings.anyDamage().marked("inp"),    elementiumIngot],
+#    [elementiumIngot,   null,                                           elementiumIngot],
+#    [manaweaveCloth,    null,                                           manaweaveCloth]],
+#    function(output, inputs, crafting) {
+#        return output.withDamage(max(0, inputs.inp.damage));
+#    }
+#);
+#
+## Elementium Boots
+#recipes.remove(elementiumBoots);
+#recipes.addShaped(elementiumBoots, [
+#    [elementiumIngot,   manasteelBoots.anyDamage().marked("inp"),   elementiumIngot],
+#    [null,              null,                                       null],
+#    [null,              null,                                       null]],
+#    function(output, inputs, crafting) {
+#        return output.withDamage(max(0, inputs.inp.damage));
+#    }
+#);
 
