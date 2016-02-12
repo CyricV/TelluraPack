@@ -26,11 +26,12 @@ var paper                       = <minecraft:paper>;
 var packedIce                   = <minecraft:packed_ice>;
 var snowball                    = <minecraft:snowball>;
 var sand                        = <minecraft:sand>;
+var invarAxeHead                = <TConstruct:hatchetHead:1020>;
 var ironPlate                   = <TConstruct:heavyPlate:2>;
 var searedBrick                 = <TConstruct:materials:2>;
 var searedBrick2                = <TConstruct:materials:37>;
 var steelIngot                  = <TConstruct:materials:16>;
-var invarAxeHead                = <TConstruct:hatchetHead:1020>;
+var gearCast                    = <TConstruct:gearCast>;
 var rockwool                    = <ThermalExpansion:Rockwool:*>;
 var basicMachineFrame           = <ThermalExpansion:Frame>;
 var hardenedMachineFrame        = <ThermalExpansion:Frame:1>;
@@ -46,6 +47,7 @@ var tesseractFrameEmpty         = <ThermalExpansion:Frame:10>;
 var tesseractFrame              = <ThermalExpansion:Frame:11>;
 var hardenedGlass               = <ThermalExpansion:Glass>;
 var slag                        = <ThermalExpansion:material:514>;
+var pulverizedCoal              = <ThermalFoundation:material:2>;
 var ironGear                    = <ThermalFoundation:material:12>;
 var goldGear                    = <ThermalFoundation:material:13>;
 var enderiumBlend               = <ThermalFoundation:material:44>;
@@ -203,6 +205,7 @@ var allGlassBlocks              = <ore:blockGlass>;
 var allGlassPane                = <ore:paneGlass>;
 var allCopperIngots             = <ore:ingotCopper>;
 var allTinIngots                = <ore:ingotTin>;
+var oreDustCoal                 = <ore:dustCoal>;
 var allLeadIngots               = <ore:dustObsidian>;
 var allLeadDust                 = <ore:dustLead>;
 var allElectrumDust             = <ore:dustElectrum>;
@@ -253,6 +256,9 @@ recipes.remove(bronzeGear);
 recipes.remove(signalumGear);
 recipes.remove(lumiumGear);
 recipes.remove(enderiumGear);
+
+# Liquefacted Coal, only Magma Crucible
+mods.tconstruct.Smeltery.removeMelting(oreDustCoal);
 
 # Pulverizer and all recipes
 recipes.remove(pulverizer);
@@ -378,6 +384,38 @@ recipes.addShaped(augHopperApparatus, [
     [allIronNugs,   tinGear,        allIronNugs],
     [null,          allIronNugs,    null]
 ]);
+
+# Gears
+mods.tconstruct.Casting.removeTableRecipe(ironGear);
+mods.tconstruct.Casting.addTableRecipe(ironGear, <liquid:iron.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(goldGear);
+mods.tconstruct.Casting.addTableRecipe(goldGear, <liquid:gold.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(copperGear);
+mods.tconstruct.Casting.addTableRecipe(copperGear, <liquid:copper.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(tinGear);
+mods.tconstruct.Casting.addTableRecipe(tinGear, <liquid:tin.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(silverGear);
+mods.tconstruct.Casting.addTableRecipe(silverGear, <liquid:silver.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(leadGear);
+mods.tconstruct.Casting.addTableRecipe(leadGear, <liquid:lead.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(ferrousGear);
+mods.tconstruct.Casting.addTableRecipe(ferrousGear, <liquid:nickel.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(shinyGear);
+mods.tconstruct.Casting.addTableRecipe(shinyGear, <liquid:platinum.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(manaInfusedGear);
+mods.tconstruct.Casting.addTableRecipe(manaInfusedGear, <liquid:mithril.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(electrumGear);
+mods.tconstruct.Casting.addTableRecipe(electrumGear, <liquid:electrum.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(invarGear);
+mods.tconstruct.Casting.addTableRecipe(invarGear, <liquid:invar.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(bronzeGear);
+mods.tconstruct.Casting.addTableRecipe(bronzeGear, <liquid:bronze.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(signalumGear);
+mods.tconstruct.Casting.addTableRecipe(signalumGear, <liquid:signalum.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(lumiumGear);
+mods.tconstruct.Casting.addTableRecipe(lumiumGear, <liquid:lumium.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Casting.removeTableRecipe(enderiumGear);
+mods.tconstruct.Casting.addTableRecipe(enderiumGear, <liquid:enderium.molten> * 288, gearCast, false, 55);
 
 ################################################################
 ### ALCHEMY TIER ###############################################

@@ -1,4 +1,5 @@
 import mods.mfr.MiningLaser;
+import mods.mfr.SludgeBoiler;
 # Materials
 var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
 var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
@@ -8,6 +9,7 @@ var bedrock                     = <minecraft:bedrock>;
 var blazePowder                 = <minecraft:blaze_powder>;
 var book                        = <minecraft:book>;
 var bucket                      = <minecraft:bucket>;
+var ironIngot                   = <minecraft:iron_ingot>;
 var glowstoneDust               = <minecraft:glowstone_dust>;
 var paper                       = <minecraft:paper>;
 var sugarCane                   = <minecraft:reeds>;
@@ -19,6 +21,15 @@ var netherBrickFence            = <minecraft:nether_brick_fence>;
 var netherBrickSlab             = <minecraft:stone_slab:6>;
 var netherBrick                 = <minecraft:netherbrick>;
 var rubberBar                   = <MineFactoryReloaded:rubber.bar>;
+var plasticSheet                = <MineFactoryReloaded:plastic.sheet>;
+var rawPlastic                  = <MineFactoryReloaded:plastic.raw>;
+var searedBrick2                = <TConstruct:materials:37>;
+var alchemicalConstruct         = <Thaumcraft:blockMetalDevice:9>;
+var basicMachineFrame           = <ThermalExpansion:Frame>;
+var hardenedMachineFrame        = <ThermalExpansion:Frame:1>;
+var reinforcedMachineFrame      = <ThermalExpansion:Frame:2>;
+var resonantMachineFrame        = <ThermalExpansion:Frame:3>;
+var tesseractFrame              = <ThermalExpansion:Frame:11>;
 var sawdust                     = <ThermalExpansion:material:512>;
 var ironGear                    = <ThermalFoundation:material:12>;
 var goldGear                    = <ThermalFoundation:material:13>;
@@ -37,15 +48,20 @@ var bronzeGear                  = <ThermalFoundation:material:137>;
 var signalumGear                = <ThermalFoundation:material:138>;
 var lumiumGear                  = <ThermalFoundation:material:139>;
 var enderiumGear                = <ThermalFoundation:material:140>;
+var redAlloyWire                = <ProjRed|Transmission:projectred.transmission.wire>;
 
 # Devices
 var hopper                      = <minecraft:hopper>;
 var chest                       = <minecraft:chest>;
 var conveyorBelt                = <MineFactoryReloaded:conveyor:16>;
+var deepStorageUnit             = <MineFactoryReloaded:machine.1:3>;
+var sludgeBoiler                = <MineFactoryReloaded:machine.0:9>;
+var tank                        = <OpenBlocks:tank>;
 
 # Ore Dictionary Items
 var allIronNugs                 = <ore:nuggetIron>;
 var allGoldNugs                 = <ore:nuggetGold>;
+var oreRubber                   = <ore:itemRubber>;
 
 ################################################################
 ### Removal ####################################################
@@ -61,7 +77,7 @@ var allGoldNugs                 = <ore:nuggetGold>;
 ### TINKER TIER ################################################
 ################################################################
 # Conveyor Belt
-recipes.remove(conveyorBelt);
+recipes.remove(conveyorBelt * 8);
 recipes.addShaped(conveyorBelt, [
     [rubberBar,     rubberBar,  rubberBar],
     [copperGear,    ironGear,   copperGear],
@@ -76,13 +92,35 @@ recipes.addShaped(conveyorBelt, [
 ################################################################
 ### INFUSTION TIER #############################################
 ################################################################
+# Sludge Boiler
+recipes.remove(sludgeBoiler);
+recipes.addShaped(sludgeBoiler, [
+    [copperGear,    searedBrick2,           copperGear],
+    [searedBrick2,  alchemicalConstruct,    searedBrick2],
+    [ironIngot,     reinforcedMachineFrame, ironIngot]
+]);
+
+# Plastic Sheet
+recipes.remove(plasticSheet);
+mods.appeng.Inscriber.addRecipe([rawPlastic], null, null, plasticSheet, "Press");
+
+# Raw Plastic
+#furnace.remove(rawPlastic);
+SludgeBoiler.removeDrop(<*>);
+mods.tconstruct.Smeltery.addAlloy(<liquid:sludge> * 1000, [<liquid:coal> * 400, <liquid:petrotheum> * 50]);
+SludgeBoiler.addDrop(rawPlastic * 4);
 
 
 ################################################################
 ### VOID TIER ##################################################
 ################################################################
-
-
+# Deep Storage Unit
+recipes.remove(deepStorageUnit);
+recipes.addShaped(deepStorageUnit, [
+    [ironIngot, enderiumGear,   ironIngot],
+    [ironIngot, tesseractFrame, ironIngot],
+    [ironIngot, ironIngot,      ironIngot]
+]);
 
 
 

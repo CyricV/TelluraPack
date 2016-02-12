@@ -27,9 +27,10 @@ var glowstoneBlock              = <minecraft:glowstone>;
 var glowstoneDust               = <minecraft:glowstone_dust>;
 var goldOre                     = <minecraft:gold_ore>;
 var ironOre                     = <minecraft:iron_ore>;
+var lapisOre                    = <minecraft:lapis_ore>;
+var obsidian                    = <minecraft:obsidian>;
 var quartz                      = <minecraft:quartz>;
 var quartzOre                   = <minecraft:quartz_ore>;
-var lapisOre                    = <minecraft:lapis_ore>;
 var redstoneDust                = <minecraft:redstone>;
 var redstoneBlock               = <minecraft:redstone_block>;
 var redstoneOre                 = <minecraft:redstone_ore>;
@@ -44,6 +45,7 @@ var waterCluster                = <Thaumcraft:blockCrystal:2>;
 var earthCluster                = <Thaumcraft:blockCrystal:3>;
 var orderCluster                = <Thaumcraft:blockCrystal:4>;
 var entropyCluster              = <Thaumcraft:blockCrystal:5>;
+var invarIngot                  = <ThermalFoundation:material:72>;
 var copperOre                   = <ThermalFoundation:Ore>;
 var tinOre                      = <ThermalFoundation:Ore:1>;
 var silverOre                   = <ThermalFoundation:Ore:2>;
@@ -79,6 +81,8 @@ var glowstoneEssence            = <magicalcrops:magicalcrops_GlowstoneEssence>;
 var glowstoneSeed               = <magicalcrops:magicalcrops_GlowstoneSeeds>;
 var goldEssence                 = <magicalcrops:magicalcrops_GoldEssence>;
 var goldSeed                    = <magicalcrops:magicalcrops_GoldSeeds>;
+var invarEssence                = <magicalcrops:magicalcrops_InvarEssence>;
+var invarSeed                   = <magicalcrops:magicalcrops_InvarSeeds>;
 var ironEssence                 = <magicalcrops:magicalcrops_IronEssence>;
 var ironSeed                    = <magicalcrops:magicalcrops_IronSeeds>;
 var lapisEssence                = <magicalcrops:magicalcrops_LapisEssence>;
@@ -89,6 +93,8 @@ var natureEssence               = <magicalcrops:magicalcrops_NatureEssence>;
 var natureSeed                  = <magicalcrops:magicalcrops_NatureSeeds>;
 var nickelEssence               = <magicalcrops:magicalcrops_NickelEssence>;
 var nickelSeed                  = <magicalcrops:magicalcrops_NickelSeeds>;
+var obsidianEssence             = <magicalcrops:magicalcrops_ObsidianEssence>;
+var obsidianSeed                = <magicalcrops:magicalcrops_ObsidianSeeds>;
 var quartzEssence               = <magicalcrops:magicalcrops_QuartzEssence>;
 var quartzSeed                  = <magicalcrops:magicalcrops_QuartzSeeds>;
 var redstoneEssence             = <magicalcrops:magicalcrops_RedstoneEssence>;
@@ -306,6 +312,30 @@ recipes.addShaped(airSeed, [
     [airCluster,    accioEssence,   airCluster]
 ]);
 recipes.remove(airEssence);
+
+# Order Seed (Invar Seed)
+invarSeed.displayName = "Order Seed";
+invarEssence.displayName = "Order Essence";
+recipes.remove(invarSeed);
+recipes.addShaped(invarSeed, [
+    [orderCluster,  accioEssence,   orderCluster],
+    [accioEssence,  minicioSeed,    accioEssence],
+    [orderCluster,  accioEssence,   orderCluster]
+]);
+recipes.remove(invarEssence);
+recipes.removeShaped(invarIngot);
+
+# Entropy Seed (Obsidian Seed)
+obsidianSeed.displayName = "Entropy Seed";
+obsidianEssence.displayName = "Entropy Essence";
+recipes.remove(obsidianSeed);
+recipes.addShaped(obsidianSeed, [
+    [entropyCluster,    accioEssence,   entropyCluster],
+    [accioEssence,      minicioSeed,    accioEssence],
+    [entropyCluster,    accioEssence,   entropyCluster]
+]);
+recipes.remove(obsidianEssence);
+recipes.removeShaped(obsidian);
 
 ################################################################
 ### INFUSTION TIER #############################################

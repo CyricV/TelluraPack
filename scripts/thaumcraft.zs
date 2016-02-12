@@ -15,6 +15,12 @@ var runeOfSloth                 = <Botania:rune:12>;
 var runeOfWrath                 = <Botania:rune:13>;
 var runeOfEnvy                  = <Botania:rune:14>;
 var runeOfPride                 = <Botania:rune:15>;
+var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
+var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
+var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
+var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
+var orderEssence                = <magicalcrops:magicalcrops_InvarEssence>;
+var entropyEssence              = <magicalcrops:magicalcrops_ObsidianEssence>;
 var cobble                      = <minecraft:cobblestone>;
 var ironBinding                 = <TConstruct:binding:2>;
 var copperBinding               = <TConstruct:binding:13>;
@@ -44,6 +50,12 @@ var silverWandCap               = <Thaumcraft:WandCap:5>;
 var thaumiumWandCap             = <Thaumcraft:WandCap:6>;
 var emptyCore                   = <Thaumcraft:ItemGolemCore:1>;
 var useCore                     = <Thaumcraft:ItemGolemCore:8>;
+var crystalEssentiaAir          = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "aer"}]});
+var crystalEssentiaFire         = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "ignis"}]});
+var crystalEssentiaWater        = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "aqua"}]});
+var crystalEssentiaEarth        = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "terra"}]});
+var crystalEssentiaOrder        = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "ordo"}]});
+var crystalEssentiaEntropy      = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "perditio"}]});
 
 # Devices
 var runicMatrix                 = <Thaumcraft:blockStoneDevice:2>;
@@ -166,6 +178,66 @@ recipes.addShaped(thaumiumBoots, [
         return output.withDamage(max(0, inputs.inp.damage));
     }
 );
+
+# Air Shard
+mods.thaumcraft.Arcane.addShaped(
+    "ESSENTIACRYSTAL",
+    airShard * 4,
+    "aer 8", [
+    [airEssence,            crystalEssentiaAir, airEssence],
+    [crystalEssentiaAir,    balancedShard,      crystalEssentiaAir],
+    [airEssence,            crystalEssentiaAir, airEssence]
+]);
+
+# Fire Shard
+mods.thaumcraft.Arcane.addShaped(
+    "ESSENTIACRYSTAL",
+    fireShard * 4,
+    "ignis 8", [
+    [fireEssence,           crystalEssentiaFire,    fireEssence],
+    [crystalEssentiaFire,   balancedShard,          crystalEssentiaFire],
+    [fireEssence,           crystalEssentiaFire,    fireEssence]
+]);
+
+# Water Shard
+mods.thaumcraft.Arcane.addShaped(
+    "ESSENTIACRYSTAL",
+    waterShard * 4,
+    "aqua 8", [
+    [waterEssence,          crystalEssentiaWater,   waterEssence],
+    [crystalEssentiaWater,  balancedShard,          crystalEssentiaWater],
+    [waterEssence,          crystalEssentiaWater,   waterEssence]
+]);
+
+# Earth Shard
+mods.thaumcraft.Arcane.addShaped(
+    "ESSENTIACRYSTAL",
+    earthShard * 4,
+    "terra 8", [
+    [earthEssence,          crystalEssentiaEarth,   earthEssence],
+    [crystalEssentiaEarth,  balancedShard,          crystalEssentiaEarth],
+    [earthEssence,          crystalEssentiaEarth,   earthEssence]
+]);
+
+# Order Shard
+mods.thaumcraft.Arcane.addShaped(
+    "ESSENTIACRYSTAL",
+    orderShard * 4,
+    "ordo 8", [
+    [orderEssence,          crystalEssentiaOrder,   orderEssence],
+    [crystalEssentiaOrder,  balancedShard,          crystalEssentiaOrder],
+    [orderEssence,          crystalEssentiaOrder,   orderEssence]
+]);
+
+# Entropy Shard
+mods.thaumcraft.Arcane.addShaped(
+    "ESSENTIACRYSTAL",
+    entropyShard * 4,
+    "perditio 8", [
+    [entropyEssence,            crystalEssentiaEntropy, entropyEssence],
+    [crystalEssentiaEntropy,    balancedShard,          crystalEssentiaEntropy],
+    [entropyEssence,            crystalEssentiaEntropy, entropyEssence]
+]);
 
 ################################################################
 ### INFUSTION TIER #############################################

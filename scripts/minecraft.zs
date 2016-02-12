@@ -28,6 +28,7 @@ var ironPlate                   = <TConstruct:heavyPlate:2>;
 var ironToughBinding            = <TConstruct:toughBinding:2>;
 
 # Devices
+var furnace                     = <minecraft:furnace>;
 var hopper                      = <minecraft:hopper>;
 var chest                       = <minecraft:chest>;
 var stonePressurePlate          = <minecraft:stone_pressure_plate>;
@@ -56,6 +57,31 @@ var invarHelm                   = <ThermalFoundation:armor.helmetInvar>;
 var invarChest                  = <ThermalFoundation:armor.plateInvar>;
 var invarLeggings               = <ThermalFoundation:armor.legsInvar>;
 var invarBoots                  = <ThermalFoundation:armor.bootsInvar>;
+var woodenSword                 = <minecraft:wooden_sword>;
+var woodenShovel                = <minecraft:wooden_shovel>;
+var woodenPickaxe               = <minecraft:wooden_pickaxe>;
+var woodenAxe                   = <minecraft:wooden_axe>;
+var woodenHoe                   = <minecraft:wooden_hoe>;
+var stoneSword                  = <minecraft:stone_sword>;
+var stoneShovel                 = <minecraft:stone_shovel>;
+var stonePickaxe                = <minecraft:stone_pickaxe>;
+var stoneAxe                    = <minecraft:stone_axe>;
+var stoneHoe                    = <minecraft:stone_hoe>;
+var ironSword                   = <minecraft:iron_sword>;
+var ironShovel                  = <minecraft:iron_shovel>;
+var ironPickaxe                 = <minecraft:iron_pickaxe>;
+var ironAxe                     = <minecraft:iron_axe>;
+var ironHoe                     = <minecraft:iron_hoe>;
+var goldSword                   = <minecraft:golden_sword>;
+var goldShovel                  = <minecraft:golden_shovel>;
+var goldPickaxe                 = <minecraft:golden_pickaxe>;
+var goldAxe                     = <minecraft:golden_axe>;
+var goldHoe                     = <minecraft:golden_hoe>;
+var diamondSword                = <minecraft:diamond_sword>;
+var diamondShovel               = <minecraft:diamond_shovel>;
+var diamondPickaxe              = <minecraft:diamond_pickaxe>;
+var diamondAxe                  = <minecraft:diamond_axe>;
+var diamondHoe                  = <minecraft:diamond_hoe>;
 
 
 # Ore Dictionary Items
@@ -84,6 +110,41 @@ recipes.remove(ironHelm);
 recipes.remove(ironChest);
 recipes.remove(ironLeggings);
 recipes.remove(ironBoots);
+
+# Wooden Tools
+recipes.remove(woodenSword);
+recipes.remove(woodenShovel);
+recipes.remove(woodenPickaxe);
+recipes.remove(woodenAxe);
+
+# Stone Tools
+recipes.remove(stoneSword);
+recipes.remove(stoneShovel);
+recipes.remove(stonePickaxe);
+recipes.remove(stoneAxe);
+recipes.remove(stoneHoe);
+
+# Iron Tools
+recipes.remove(ironSword);
+recipes.remove(ironShovel);
+recipes.remove(ironPickaxe);
+recipes.remove(ironAxe);
+recipes.remove(ironHoe);
+
+# Gold Tools
+recipes.remove(goldSword);
+recipes.remove(goldShovel);
+recipes.remove(goldPickaxe);
+recipes.remove(goldAxe);
+recipes.remove(goldHoe);
+
+# Diamond Tools
+recipes.remove(diamondSword);
+recipes.remove(diamondShovel);
+recipes.remove(diamondPickaxe);
+recipes.remove(diamondAxe);
+recipes.remove(diamondHoe);
+
 
 ################################################################
 ### STONE TIER #################################################
