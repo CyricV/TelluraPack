@@ -1,4 +1,5 @@
 # Materials
+var pixieDust                   = <Botania:manaResource:8>;
 var runeOfWater                 = <Botania:rune>;
 var runeOfFire                  = <Botania:rune:1>;
 var runeOfEarth                 = <Botania:rune:2>;
@@ -15,6 +16,8 @@ var runeOfSloth                 = <Botania:rune:12>;
 var runeOfWrath                 = <Botania:rune:13>;
 var runeOfEnvy                  = <Botania:rune:14>;
 var runeOfPride                 = <Botania:rune:15>;
+var dynamicMaterial             = <customitems:dynamic_material>;
+var perpetualMaterial           = <customitems:perpetual_material>;
 var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
 var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
 var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
@@ -32,6 +35,7 @@ var arcaneStoneBricks           = <Thaumcraft:blockCosmeticSolid:7>;
 var thaumiumIngot               = <Thaumcraft:ItemResource:2>;
 var enchantedFabric             = <Thaumcraft:ItemResource:7>;
 var voidIngot                   = <Thaumcraft:ItemResource:16>;
+var voidSeed                    = <Thaumcraft:ItemResource:17>;
 var airShard                    = <Thaumcraft:ItemShard>;
 var fireShard                   = <Thaumcraft:ItemShard:1>;
 var waterShard                  = <Thaumcraft:ItemShard:2>;
@@ -288,6 +292,17 @@ mods.thaumcraft.Crucible.addRecipe(
 ################################################################
 ### VOID TIER ##################################################
 ################################################################
+# Perpetual Material
+perpetualMaterial.displayName = "\u00A78Perpetual Material";
+perpetualMaterial.addTooltip(format.gray("Being near this stuff makes you feel more serious."));
+
+# Dynamic Material
+dynamicMaterial.displayName = "\u00A75Dynamic Material";
+dynamicMaterial.addTooltip(format.gray("It hums. The humming makes you feel funny."));
+
+# Void Seed
+mods.thaumcraft.Crucible.removeRecipe(voidSeed);
+mods.thaumcraft.Crucible.addRecipe("ELDRITCHMINOR", voidSeed, pixieDust, "alienis 2, tenebrae 8, vacuos 8");
 
 # Void Helm
 recipes.remove(voidHelm);

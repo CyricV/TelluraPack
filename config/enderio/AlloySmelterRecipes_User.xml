@@ -28,11 +28,17 @@
 
 
 <AlloySmelterRecipes>
-
+<!--
+###########################################################
+### FURNACE DISSABLE ######################################
+###########################################################
+-->
     <vanillaFurnaceRecipes enabled="false" />
-
-    <recipeGroup name="Thermal Expansion" enabled="false" />
-
+<!--
+###########################################################
+### TELLURA ###############################################
+###########################################################
+-->
     <recipeGroup name="Tellura">
         <recipe name="Comb Silicon" energyCost="4000">
             <input>
@@ -80,21 +86,44 @@
             </output>
         </recipe>
         <!-- 
-        Accio Ingot
-            4 Accio Essence
-            1 Energized Ingot
+        Perpetual Material
+            1 Resolute Material
+            1 Void Metal
+            1 Deliquescent Material
         -->
-<!--         <recipe name="Accio Ingot" energyCost="64000">
+        <recipe name="Perpetual Material" energyCost="1200000">
             <input>
-                <itemStack modID="magicalcrops" itemName="magicalcrops_2AccioEssence" number="4" />
-                <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="1" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_EssenceIngots" />
+                <itemStack modID="Thaumcraft" itemName="ItemResource" itemMeta="16" />
+                <itemStack modID="ProjRed|Core" itemName="projectred.core.part" itemMeta="55" />
             </input>
             <output>
-                <itemStack modID="magicalcrops" itemName="magicalcrops_EssenceIngots" number="1" exp="4" />
+                <itemStack modID="customitems" itemName="perpetual_material" />
             </output>
-        </recipe> -->
+        </recipe>
+        <!-- 
+        Dynamic Material
+            1 Tumultuous Material
+            1 Void Metal
+            1 Ephemeral Material
+        -->
+        <recipe name="Dynamic Material" energyCost="1200000">
+            <input>
+                <itemStack modID="ProjRed|Core" itemName="projectred.core.part" itemMeta="10" />
+                <itemStack modID="Thaumcraft" itemName="ItemResource" itemMeta="16" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_EssenceIngots" itemMeta="1" />
+            </input>
+            <output>
+                <itemStack modID="customitems" itemName="dynamic_material" />
+            </output>
+        </recipe>
     </recipeGroup>
-
+<!--
+###########################################################
+### THERMAL EXPANSION TELLURA #############################
+###########################################################
+-->
+    <recipeGroup name="Thermal Expansion" enabled="false" />
     <recipeGroup name="Thermal Expansion Tellura" >
         <recipe name="Electrum Ingot" energyCost="2000" >
             <input>

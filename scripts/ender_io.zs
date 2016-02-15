@@ -75,6 +75,7 @@ var skeletonHead                = <minecraft:skull>;
 var zombieHead                  = <minecraft:skull:2>;
 var creeperHead                 = <minecraft:skull:4>;
 var clayBall                    = <minecraft:clay_ball>;
+var plasticSheet                = <MineFactoryReloaded:plastic.sheet>;
 var rubberBar                   = <MineFactoryReloaded:rubber.bar>;
 var searedBrick                 = <TConstruct:materials:2>;
 var searedBrick2                = <TConstruct:materials:37>;
@@ -498,12 +499,12 @@ recipes.addShaped(doubleLayerCapacitor, [
 recipes.remove(octadicCapacitor);
 recipes.addShaped(octadicCapacitor, [
     [null,          doubleLayerCapacitor,   null],
-    [vibrantAlloy,  pixieDust,              vibrantAlloy],
+    [vibrantAlloy,  plasticSheet,           vibrantAlloy],
     [null,          doubleLayerCapacitor,   null]
 ]);
 recipes.addShaped(octadicCapacitor, [
     [null,                  vibrantAlloy,   null],
-    [doubleLayerCapacitor,  pixieDust,      doubleLayerCapacitor],
+    [doubleLayerCapacitor,  plasticSheet,   doubleLayerCapacitor],
     [null,                  vibrantAlloy,   null]
 ]);
 

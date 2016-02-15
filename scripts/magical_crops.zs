@@ -38,6 +38,7 @@ var witherSkull                 = <minecraft:skull:1>;
 var wheatSeed                   = <minecraft:wheat_seeds>;
 var solidBlockOfEnder           = <TConstruct:MetalBlock:10>;
 var aluminumOre                 = <TConstruct:SearedBrick:5>;
+var congealedGreenSlime         = <TConstruct:slime.gel:1>;
 var primordialPearl             = <Thaumcraft:ItemEldritchObject:3>;
 var airCluster                  = <Thaumcraft:blockCrystal>;
 var fireCluster                 = <Thaumcraft:blockCrystal:1>;
@@ -81,6 +82,7 @@ var glowstoneEssence            = <magicalcrops:magicalcrops_GlowstoneEssence>;
 var glowstoneSeed               = <magicalcrops:magicalcrops_GlowstoneSeeds>;
 var goldEssence                 = <magicalcrops:magicalcrops_GoldEssence>;
 var goldSeed                    = <magicalcrops:magicalcrops_GoldSeeds>;
+var invarCrop                   = <magicalcrops:magicalcrops_InvarCrop>;
 var invarEssence                = <magicalcrops:magicalcrops_InvarEssence>;
 var invarSeed                   = <magicalcrops:magicalcrops_InvarSeeds>;
 var ironEssence                 = <magicalcrops:magicalcrops_IronEssence>;
@@ -93,6 +95,7 @@ var natureEssence               = <magicalcrops:magicalcrops_NatureEssence>;
 var natureSeed                  = <magicalcrops:magicalcrops_NatureSeeds>;
 var nickelEssence               = <magicalcrops:magicalcrops_NickelEssence>;
 var nickelSeed                  = <magicalcrops:magicalcrops_NickelSeeds>;
+var obsidianCrop                = <magicalcrops:magicalcrops_ObsidianCrop>;
 var obsidianEssence             = <magicalcrops:magicalcrops_ObsidianEssence>;
 var obsidianSeed                = <magicalcrops:magicalcrops_ObsidianSeeds>;
 var quartzEssence               = <magicalcrops:magicalcrops_QuartzEssence>;
@@ -316,6 +319,7 @@ recipes.remove(airEssence);
 # Order Seed (Invar Seed)
 invarSeed.displayName = "Order Seed";
 invarEssence.displayName = "Order Essence";
+invarCrop.displayName = "Order Crop";
 recipes.remove(invarSeed);
 recipes.addShaped(invarSeed, [
     [orderCluster,  accioEssence,   orderCluster],
@@ -328,6 +332,7 @@ recipes.removeShaped(invarIngot);
 # Entropy Seed (Obsidian Seed)
 obsidianSeed.displayName = "Entropy Seed";
 obsidianEssence.displayName = "Entropy Essence";
+obsidianCrop.displayName = "Entropy Crop";
 recipes.remove(obsidianSeed);
 recipes.addShaped(obsidianSeed, [
     [entropyCluster,    accioEssence,   entropyCluster],
@@ -448,7 +453,7 @@ recipes.remove(rubberEssence);
 recipes.remove(sulfurSeed);
 recipes.addShaped(sulfurSeed, [
     [allDustSulfur, crucioEssence,  allDustSulfur],
-    [crucioEssence, fireSeed,       crucioEssence],
+    [crucioEssence, obsidianSeed,   crucioEssence],
     [allDustSulfur, crucioEssence,  allDustSulfur]
 ]);
 recipes.remove(sulfurEssence);
@@ -466,7 +471,7 @@ recipes.remove(saltpeterEssence);
 recipes.remove(quartzSeed);
 recipes.addShaped(quartzSeed, [
     [allQuartzBlock,    crucioEssence,  allQuartzBlock],
-    [crucioEssence,     airSeed,        crucioEssence],
+    [crucioEssence,     invarSeed,      crucioEssence],
     [allQuartzBlock,    crucioEssence,  allQuartzBlock]
 ]);
 recipes.remove(quartzEssence);
@@ -491,6 +496,15 @@ recipes.addShaped(lapisOre, [
     [lapisEssence,  lapisEssence,   lapisEssence],
     [lapisEssence,  lapisEssence,   lapisEssence]
 ]);
+
+# Slime Seed
+recipes.remove(slimeSeed);
+recipes.addShaped(slimeSeed, [
+    [congealedGreenSlime,   crucioEssence,  congealedGreenSlime],
+    [crucioEssence,         waterSeed,      crucioEssence],
+    [congealedGreenSlime,   crucioEssence,  congealedGreenSlime]
+]);
+recipes.remove(slimeEssence);
 
 # Iron Seeds
 recipes.remove(ironSeed);

@@ -26,6 +26,7 @@ var paper                       = <minecraft:paper>;
 var packedIce                   = <minecraft:packed_ice>;
 var snowball                    = <minecraft:snowball>;
 var sand                        = <minecraft:sand>;
+var plasticSheet                = <MineFactoryReloaded:plastic.sheet>;
 var invarAxeHead                = <TConstruct:hatchetHead:1020>;
 var ironPlate                   = <TConstruct:heavyPlate:2>;
 var searedBrick                 = <TConstruct:materials:2>;
@@ -109,12 +110,13 @@ var augIgneousCatalyst          = <ThermalExpansion:augment:313>;
 var augPyroclasticGen           = <ThermalExpansion:augment:314>;
 
 # Devices
+var oven                        = <harvestcraft:oven>;
 var ironPressurePlate           = <minecraft:heavy_weighted_pressure_plate>;
 var chest                       = <minecraft:chest>;
 var craftingTable               = <minecraft:crafting_table>;
 var piston                      = <minecraft:piston>;
 var stickyPiston                = <minecraft:sticky_piston>;
-var oven                        = <harvestcraft:oven>;
+var tank                        = <OpenBlocks:tank>;
 var portableTank                = <ThermalExpansion:Tank:1>;
 var hardenedPortableTank        = <ThermalExpansion:Tank:2>;
 var reinforcedPortableTank      = <ThermalExpansion:Tank:3>;
@@ -477,7 +479,7 @@ recipes.addShaped(redstoneFurnace3, [
     [ironIngot,     resonantMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(redstoneFurnace3, [
-    [elementium,        enderiumGear,       elementium],
+    [plasticSheet,      enderiumGear,       plasticSheet],
     [telluraResolute,   redstoneFurnace2,   telluraResolute],
     [elementium,        logicProcessor,     elementium]
 ]);
@@ -515,7 +517,7 @@ recipes.addShaped(sawmill3, [
     [ironIngot,     resonantMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(sawmill3, [
-    [elementium,        enderiumGear,   elementium],
+    [plasticSheet,      enderiumGear,   plasticSheet],
     [telluraResolute,   sawmill2,       telluraResolute],
     [elementium,        logicProcessor, elementium]
 ]);
@@ -524,12 +526,12 @@ recipes.addShaped(sawmill3, [
 recipes.remove(fluidTransposer);
 recipes.addShaped(fluidTransposer0, [
     [ironIngot, fluidConduit,       ironIngot],
-    [bucket,    fluidConduit,       bucket],
+    [tank,      fluidConduit,       tank],
     [ironIngot, basicMachineFrame,  ironIngot]
 ]);
 recipes.addShaped(fluidTransposer1, [
     [ironIngot, fluidConduit,           ironIngot],
-    [bucket,    fluidConduit,           bucket],
+    [tank,      fluidConduit,           tank],
     [ironIngot, hardenedMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(fluidTransposer1, [
@@ -539,7 +541,7 @@ recipes.addShaped(fluidTransposer1, [
 ]);
 recipes.addShaped(fluidTransposer2, [
     [ironIngot, fluidConduit,           ironIngot],
-    [bucket,    fluidConduit,           bucket],
+    [tank,      fluidConduit,           tank],
     [ironIngot, reinforcedMachineFrame, ironIngot]
 ]);
 recipes.addShaped(fluidTransposer2, [
@@ -549,11 +551,11 @@ recipes.addShaped(fluidTransposer2, [
 ]);
 recipes.addShaped(fluidTransposer3, [
     [ironIngot, fluidConduit,           ironIngot],
-    [bucket,    fluidConduit,           bucket],
+    [tank,      fluidConduit,           tank],
     [ironIngot, resonantMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(fluidTransposer3, [
-    [elementium,        enderiumGear,       elementium],
+    [plasticSheet,      enderiumGear,       plasticSheet],
     [telluraResolute,   fluidTransposer2,   telluraResolute],
     [elementium,        logicProcessor,     elementium]
 ]);
@@ -591,12 +593,12 @@ recipes.addShaped(glacialPercipitator3, [
     [ironIngot, resonantMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(glacialPercipitator3, [
-    [elementium,        enderiumGear,           elementium],
+    [plasticSheet,      enderiumGear,           plasticSheet],
     [telluraResolute,   glacialPercipitator2,   telluraResolute],
     [elementium,        logicProcessor,         elementium]
 ]);
 
-# Cyrclic Assembler
+# Cyclic Assembler
 recipes.remove(cyclicAssembler3);
 recipes.addShaped(cyclicAssembler3, [
     [allIronNugs,   copperGear,         allIronNugs],
@@ -787,7 +789,7 @@ recipes.addShaped(magmaCrucible3, [
     [steelIngot,    resonantMachineFrame,       steelIngot]
 ]);
 recipes.addShaped(magmaCrucible3, [
-    [elementium,        enderiumGear,   elementium],
+    [plasticSheet,      enderiumGear,   plasticSheet],
     [telluraResolute,   magmaCrucible2, telluraResolute],
     [elementium,        logicProcessor, elementium]
 ]);
@@ -820,7 +822,7 @@ recipes.addShaped(augSpaceTimeFlux, [
 # Resonant Machine Frame
 recipes.remove(resonantMachineFrame);
 recipes.addShaped(resonantMachineFrame, [
-    [elementium,        enderiumGear,           elementium],
+    [plasticSheet,      enderiumGear,           plasticSheet],
     [telluraResolute,   reinforcedMachineFrame, telluraResolute],
     [elementium,        logicProcessor,         elementium]
 ]);

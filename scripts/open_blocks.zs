@@ -6,6 +6,7 @@ var stick                       = <minecraft:stick>;
 
 # Devices
 var tank                        = <OpenBlocks:tank>;
+var drain                       = <OpenBlocks:xpdrain>;
 
 # Equipment
 var gliderWing                  = <EnderIO:itemGliderWing>;

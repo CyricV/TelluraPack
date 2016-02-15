@@ -1,11 +1,49 @@
 import mods.mfr.MiningLaser;
 import mods.mfr.SludgeBoiler;
 # Materials
+var logicProcessor              = <appliedenergistics2:item.ItemMultiMaterial:22>;
+var calculationProcessor        = <appliedenergistics2:item.ItemMultiMaterial:23>;
+var engineeringProcessor        = <appliedenergistics2:item.ItemMultiMaterial:24>;
+var basicCard                   = <appliedenergistics2:item.ItemMultiMaterial:25>;
+var advancedCard                = <appliedenergistics2:item.ItemMultiMaterial:28>;
+var manasteelIngot              = <Botania:manaResource>;
+var manaPearl                   = <Botania:manaResource:1>;
+var manaDiamond                 = <Botania:manaResource:2>;
+var terrasteelIngot             = <Botania:manaResource:4>;
+var gaiaSpirit                  = <Botania:manaResource:5>;
+var elementiumIngot             = <Botania:manaResource:7>;
+var pixieDust                   = <Botania:manaResource:8>;
+var terrasteelNug               = <Botania:manaResource:18>;
+var manaweaveCloth              = <Botania:manaResource:22>;
+var manaPowder                  = <Botania:manaResource:23>;
+var manaLensPotency             = <Botania:lens:2>;
+var manaLensWarp                = <Botania:lens:18>;
+var manaPrism                   = <Botania:prism>;
+var dynamicMaterial             = <customitems:dynamic_material>;
+var perpetualMaterial           = <customitems:perpetual_material>;
+var electricalSteel             = <EnderIO:itemAlloy>;
+var energeticAlloy              = <EnderIO:itemAlloy:1>;
+var vibrantAlloy                = <EnderIO:itemAlloy:2>;
+var redstoneAlloy               = <EnderIO:itemAlloy:3>;
+var conductiveIron              = <EnderIO:itemAlloy:4>;
+var pulsatingIron               = <EnderIO:itemAlloy:5>;
+var darksteelIngot              = <EnderIO:itemAlloy:6>;
+var soulariumIngot              = <EnderIO:itemAlloy:7>;
+var basicCapacitor              = <EnderIO:itemBasicCapacitor>;
+var doubleLayerCapacitor        = <EnderIO:itemBasicCapacitor:1>;
+var octadicCapacitor            = <EnderIO:itemBasicCapacitor:2>;
+var zombieElectrode             = <EnderIO:itemFrankenSkull>;
+var zLogicController            = <EnderIO:itemFrankenSkull:1>;
+var frankNZombie                = <EnderIO:itemFrankenSkull:2>;
+var enderResonator              = <EnderIO:itemFrankenSkull:3>;
+var sentientEnder               = <EnderIO:itemFrankenSkull:4>;
+var fluidConduit                = <EnderIO:itemLiquidConduit>;
 var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
 var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
 var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
 var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
 var bedrock                     = <minecraft:bedrock>;
+var ironBars                    = <minecraft:iron_bars>;
 var blazePowder                 = <minecraft:blaze_powder>;
 var book                        = <minecraft:book>;
 var bucket                      = <minecraft:bucket>;
@@ -20,11 +58,29 @@ var netherBrickStairs           = <minecraft:nether_brick_stairs>;
 var netherBrickFence            = <minecraft:nether_brick_fence>;
 var netherBrickSlab             = <minecraft:stone_slab:6>;
 var netherBrick                 = <minecraft:netherbrick>;
+var upgradeLapis                = <MineFactoryReloaded:upgrade.radius>;
+var upgradeTin                  = <MineFactoryReloaded:upgrade.radius:1>;
+var upgradeIron                 = <MineFactoryReloaded:upgrade.radius:2>;
+var upgradeCopper               = <MineFactoryReloaded:upgrade.radius:3>;
+var upgradeBronze               = <MineFactoryReloaded:upgrade.radius:4>;
+var upgradeSilver               = <MineFactoryReloaded:upgrade.radius:5>;
+var upgradeGold                 = <MineFactoryReloaded:upgrade.radius:6>;
+var upgradeQuartz               = <MineFactoryReloaded:upgrade.radius:7>;
+var upgradeDiamond              = <MineFactoryReloaded:upgrade.radius:8>;
+var upgradePlatinum             = <MineFactoryReloaded:upgrade.radius:9>;
+var upgradeEmerald              = <MineFactoryReloaded:upgrade.radius:10>;
+var upgradeCobble               = <MineFactoryReloaded:upgrade.radius:11>;
 var rubberBar                   = <MineFactoryReloaded:rubber.bar>;
 var plasticSheet                = <MineFactoryReloaded:plastic.sheet>;
 var rawPlastic                  = <MineFactoryReloaded:plastic.raw>;
+var redAlloyWire                = <ProjRed|Transmission:projectred.transmission.wire>;
+var steelIngot                  = <TConstruct:materials:16>;
 var searedBrick2                = <TConstruct:materials:37>;
+var heavyPlateInvar             = <TConstruct:heavyPlate:1020>;
+var toolRodIron                 = <TConstruct:toolRod:2>;
 var alchemicalConstruct         = <Thaumcraft:blockMetalDevice:9>;
+var coreDecanting               = <Thaumcraft:ItemGolemCore:5>;
+var nitor                       = <Thaumcraft:ItemResource:1>;
 var basicMachineFrame           = <ThermalExpansion:Frame>;
 var hardenedMachineFrame        = <ThermalExpansion:Frame:1>;
 var reinforcedMachineFrame      = <ThermalExpansion:Frame:2>;
@@ -48,46 +104,198 @@ var bronzeGear                  = <ThermalFoundation:material:137>;
 var signalumGear                = <ThermalFoundation:material:138>;
 var lumiumGear                  = <ThermalFoundation:material:139>;
 var enderiumGear                = <ThermalFoundation:material:140>;
-var redAlloyWire                = <ProjRed|Transmission:projectred.transmission.wire>;
 
 # Devices
-var hopper                      = <minecraft:hopper>;
+var controller                  = <appliedenergistics2:tile.BlockController>;
+var farmingStation              = <EnderIO:blockFarmStation>;
 var chest                       = <minecraft:chest>;
+var hopper                      = <minecraft:hopper>;
+var jukebox                     = <minecraft:jukebox>;
+var noteBlock                   = <minecraft:noteblock>;
 var conveyorBelt                = <MineFactoryReloaded:conveyor:16>;
 var deepStorageUnit             = <MineFactoryReloaded:machine.1:3>;
 var sludgeBoiler                = <MineFactoryReloaded:machine.0:9>;
+var sewer                       = <MineFactoryReloaded:machine.0:10>;
+var autoJukebox                 = <MineFactoryReloaded:machine.1:7>;
+var laserDrill                  = <MineFactoryReloaded:machine.2>;
+var laserDrillPrecharger        = <MineFactoryReloaded:machine.2:1>;
+var redNoteBlock                = <MineFactoryReloaded:machine.2:4>;
+var fruitPicker                 = <MineFactoryReloaded:machine.2:6>;
+var fountain                    = <MineFactoryReloaded:machine.2:11>;
 var tank                        = <OpenBlocks:tank>;
+var arcaneBore                  = <Thaumcraft:blockWoodenDevice:5>;
+
+# Equipment
+var thaumometer                 = <Thaumcraft:ItemThaumometer>;
+var needlegun                   = <MineFactoryReloaded:needlegun>;
+var ammoEmpty                   = <MineFactoryReloaded:needlegun.ammo.empty>;
+var ammoNeedle                  = <MineFactoryReloaded:needlegun.ammo.standard>;
+var ammoShrapnel                = <MineFactoryReloaded:needlegun.ammo.pierce>;
+var ammoLava                    = <MineFactoryReloaded:needlegun.ammo.lava>;
+var ammoSludge                  = <MineFactoryReloaded:needlegun.ammo.sludge>;
+var ammoSewage                  = <MineFactoryReloaded:needlegun.ammo.sewage>;
+var ammoFire                    = <MineFactoryReloaded:needlegun.ammo.fire>;
+var ammoAnvil                   = <MineFactoryReloaded:needlegun.ammo.anvil>;
+var potatoGun                   = <MineFactoryReloaded:potatolauncher>;
+var spamr                       = <MineFactoryReloaded:rocketlauncher>;
+var rocketGuided                = <MineFactoryReloaded:rocket>;
+var rocket                      = <MineFactoryReloaded:rocket:1>;
+var wandFocusFire               = <Thaumcraft:FocusFire>;
+
 
 # Ore Dictionary Items
 var allIronNugs                 = <ore:nuggetIron>;
 var allGoldNugs                 = <ore:nuggetGold>;
 var oreRubber                   = <ore:itemRubber>;
+var orePlank                    = <ore:plankWood>;
 
 ################################################################
 ### Removal ####################################################
 ################################################################
-
+# Unused Ammos
+recipes.remove(ammoNeedle);
+recipes.remove(ammoFire);
+recipes.remove(ammoAnvil);
 
 ################################################################
 ### STONE TIER #################################################
 ################################################################
 
-
 ################################################################
 ### TINKER TIER ################################################
 ################################################################
 # Conveyor Belt
-recipes.remove(conveyorBelt * 8);
-recipes.addShaped(conveyorBelt, [
+recipes.remove(conveyorBelt);
+recipes.addShaped(conveyorBelt * 8, [
     [rubberBar,     rubberBar,  rubberBar],
     [copperGear,    ironGear,   copperGear],
     [null,          null,       null]
 ]);
 
+# Auto Jukebox
+recipes.remove(autoJukebox);
+recipes.addShaped(autoJukebox, [
+    [ironIngot, tinGear,    ironIngot],
+    [ironIngot, jukebox,    ironIngot],
+    [ironIngot, ironIngot,  ironIngot]
+]);
+
 ################################################################
 ### ALCHEMY TIER ###############################################
 ################################################################
+# Potato Cannon
+recipes.remove(potatoGun);
+recipes.addShaped(potatoGun, [
+    [steelIngot,    null,   steelIngot],
+    [steelIngot,    null,   steelIngot],
+    [steelIngot,    tank,   copperGear]
+]);
 
+# Upgrades
+upgradeLapis.displayName = "Range Upgrade 1";
+recipes.remove(upgradeLapis);
+recipes.addShapeless(upgradeLapis, [advancedCard, manaPearl]);
+upgradeTin.displayName = "Range Upgrade 2";
+recipes.remove(upgradeTin);
+recipes.addShapeless(upgradeTin, [upgradeLapis, conductiveIron]);
+upgradeIron.displayName = "Range Upgrade 3";
+recipes.remove(upgradeIron);
+recipes.addShapeless(upgradeIron, [upgradeTin, conductiveIron]);
+upgradeCopper.displayName = "Range Upgrade 4";
+recipes.remove(upgradeCopper);
+recipes.addShapeless(upgradeCopper, [upgradeIron, conductiveIron]);
+upgradeBronze.displayName = "Range Upgrade 5";
+recipes.remove(upgradeBronze);
+recipes.addShapeless(upgradeBronze, [upgradeCopper, conductiveIron]);
+upgradeSilver.displayName = "Range Upgrade 6";
+recipes.remove(upgradeSilver);
+recipes.addShapeless(upgradeSilver, [upgradeBronze, conductiveIron]);
+upgradeGold.displayName = "Range Upgrade 7";
+recipes.remove(upgradeGold);
+recipes.addShapeless(upgradeGold, [upgradeSilver, electricalSteel]);
+upgradeQuartz.displayName = "Range Upgrade 8";
+recipes.remove(upgradeQuartz);
+recipes.addShapeless(upgradeQuartz, [upgradeGold, electricalSteel]);
+upgradeDiamond.displayName = "Range Upgrade 9";
+recipes.remove(upgradeDiamond);
+recipes.addShapeless(upgradeDiamond, [upgradeQuartz, electricalSteel]);
+upgradePlatinum.displayName = "Range Upgrade 10";
+recipes.remove(upgradePlatinum);
+recipes.addShapeless(upgradePlatinum, [upgradeDiamond, electricalSteel]);
+upgradeEmerald.displayName = "Range Upgrade 11";
+recipes.remove(upgradeEmerald);
+recipes.addShapeless(upgradeEmerald, [upgradePlatinum, electricalSteel]);
+upgradeCobble.displayName = "Range Upgrade 0";
+recipes.remove(upgradeCobble);
+recipes.addShapeless(upgradeCobble, [basicCard, manaPearl]);
+
+
+# Sewer
+recipes.remove(sewer);
+recipes.addShaped(sewer, [
+    [ironBars,      ironBars,       ironBars],
+    [copperGear,    tank,           copperGear],
+    [ironIngot,     coreDecanting,  ironIngot]
+]);
+
+# Red Note Block
+recipes.remove(redNoteBlock);
+recipes.addShaped(redNoteBlock, [
+    [orePlank,  noteBlock,              orePlank],
+    [orePlank,  calculationProcessor,   orePlank],
+    [ironIngot, basicMachineFrame,      ironIngot]
+]);
+
+# Fountain
+recipes.remove(fountain);
+recipes.addShaped(fountain, [
+    [ironIngot, ironBars,           ironIngot],
+    [ironIngot, fluidConduit,       ironIngot],
+    [ironIngot, basicMachineFrame,  ironIngot]
+]);
+
+# Needle Gun Magazine
+recipes.remove(ammoEmpty);
+recipes.addShaped(ammoEmpty, [
+    [null,  allIronNugs,    steelIngot],
+    [null,  allIronNugs,    ironIngot],
+    [null,  allIronNugs,    ironIngot]
+]);
+
+# Needle Gun Shrapnel Ammo
+ammoShrapnel.displayName = "Basic Needles";
+recipes.remove(ammoShrapnel);
+recipes.addShapeless(ammoShrapnel, [toolRodIron, toolRodIron, toolRodIron, toolRodIron, toolRodIron, toolRodIron, toolRodIron, toolRodIron, ammoEmpty]);
+
+# Needle Gun Lava Ammo
+ammoLava.displayName = "Heat Needles";
+recipes.remove(ammoLava);
+mods.thaumcraft.Crucible.addRecipe(
+    "CRUCIBLE",
+    ammoLava,
+    ammoShrapnel,
+    "ignis 4"
+);
+
+# Needle Gun Sludge Ammo
+ammoSludge.displayName = "Acid Needles";
+recipes.remove(ammoSludge);
+mods.thaumcraft.Crucible.addRecipe(
+    "CRUCIBLE",
+    ammoSludge,
+    ammoShrapnel,
+    "venenum 4, aqua 4"
+);
+
+# Needle Gun Sewage Ammo
+ammoSewage.displayName = "Fever Needles";
+recipes.remove(ammoSewage);
+mods.thaumcraft.Crucible.addRecipe(
+    "CRUCIBLE",
+    ammoSewage,
+    ammoShrapnel,
+    "venenum 4, ignis 4"
+);
 
 ################################################################
 ### INFUSTION TIER #############################################
@@ -100,16 +308,43 @@ recipes.addShaped(sludgeBoiler, [
     [ironIngot,     reinforcedMachineFrame, ironIngot]
 ]);
 
+# Needle Gun
+recipes.remove(needlegun);
+recipes.addShaped(needlegun, [
+    [steelIngot,            steelIngot,             steelIngot],
+    [doubleLayerCapacitor,  doubleLayerCapacitor,   doubleLayerCapacitor],
+    [steelIngot,            steelIngot,             oreRubber]
+]);
+
+# SPAMR Launcher
+recipes.remove(spamr);
+recipes.addShaped(spamr, [
+    [steelIngot,    steelIngot, logicProcessor],
+    [null,          null,       null],
+    [steelIngot,    oreRubber,  steelIngot]
+]);
+
+# SPAMR
+recipes.remove(rocket);
+recipes.addShaped(rocket, [
+    [plasticSheet,  wandFocusFire,  plasticSheet],
+    [plasticSheet,  nitor,          plasticSheet],
+    [steelIngot,    nitor,          steelIngot]
+]);
+
+# Tracking SPAMR
+recipes.remove(rocketGuided);
+recipes.addShapeless(rocketGuided, [rocket, zLogicController]);
+
 # Plastic Sheet
 recipes.remove(plasticSheet);
 mods.appeng.Inscriber.addRecipe([rawPlastic], null, null, plasticSheet, "Press");
 
 # Raw Plastic
-#furnace.remove(rawPlastic);
+furnace.remove(rawPlastic);
 SludgeBoiler.removeDrop(<*>);
 mods.tconstruct.Smeltery.addAlloy(<liquid:sludge> * 1000, [<liquid:coal> * 400, <liquid:petrotheum> * 50]);
 SludgeBoiler.addDrop(rawPlastic * 4);
-
 
 ################################################################
 ### VOID TIER ##################################################
@@ -120,6 +355,44 @@ recipes.addShaped(deepStorageUnit, [
     [ironIngot, enderiumGear,   ironIngot],
     [ironIngot, tesseractFrame, ironIngot],
     [ironIngot, ironIngot,      ironIngot]
+]);
+
+# Fruit Picker
+recipes.remove(fruitPicker);
+recipes.addShaped(fruitPicker, [
+    [oreRubber, tinGear,        oreRubber],
+    [oreRubber, farmingStation, oreRubber],
+    [oreRubber, tinGear,        oreRubber]
+]);
+
+# Laser Drill Precharger
+recipes.remove(laserDrillPrecharger);
+mods.thaumcraft.Arcane.addShaped(
+    "ARCANEBORE",
+    laserDrillPrecharger,
+    "ordo 120, ignis 120", [
+    [octadicCapacitor,  engineeringProcessor,   heavyPlateInvar],
+    [arcaneBore,        manaLensPotency,        manaLensPotency],
+    [octadicCapacitor,  resonantMachineFrame,   heavyPlateInvar]
+]);
+
+# Laser Drill
+recipes.remove(laserDrill);
+mods.thaumcraft.Arcane.addShaped(
+    "ARCANEBORE",
+    laserDrill,
+    "perditio 120, aer 120", [
+    [perpetualMaterial, sentientEnder,  dynamicMaterial],
+    [manaLensPotency,   manaPrism,      manaLensPotency],
+    [heavyPlateInvar,   manaLensWarp,   heavyPlateInvar]
+]);
+mods.thaumcraft.Arcane.addShaped(
+    "ARCANEBORE",
+    laserDrill,
+    "perditio 120, aer 120", [
+    [dynamicMaterial,   sentientEnder,  perpetualMaterial],
+    [manaLensPotency,   manaPrism,      manaLensPotency],
+    [heavyPlateInvar,   manaLensWarp,   heavyPlateInvar]
 ]);
 
 
