@@ -52,6 +52,8 @@ var pulverizedCoal              = <ThermalFoundation:material:2>;
 var ironGear                    = <ThermalFoundation:material:12>;
 var goldGear                    = <ThermalFoundation:material:13>;
 var enderiumBlend               = <ThermalFoundation:material:44>;
+var copperIngotTF               = <ThermalFoundation:material:64>;
+var tinIngotTF                  = <ThermalFoundation:material:65>;
 var enderiumIngot               = <ThermalFoundation:material:76>;
 var copperGear                  = <ThermalFoundation:material:128>;
 var tinGear                     = <ThermalFoundation:material:129>;
@@ -205,8 +207,8 @@ var battleWrench                = <ThermalExpansion:tool.battleWrenchInvar>;
 var allLogs                     = <ore:logWood>;
 var allGlassBlocks              = <ore:blockGlass>;
 var allGlassPane                = <ore:paneGlass>;
-var allCopperIngots             = <ore:ingotCopper>;
-var allTinIngots                = <ore:ingotTin>;
+var oreCopperIngot              = <ore:ingotCopper>;
+var oreTinIngot                 = <ore:ingotTin>;
 var oreDustCoal                 = <ore:dustCoal>;
 var allLeadIngots               = <ore:dustObsidian>;
 var allLeadDust                 = <ore:dustLead>;
@@ -355,12 +357,19 @@ mods.thermalexpansion.Furnace.removeRecipe(slag);
 ################################################################
 ### TINKER TIER ################################################
 ################################################################
+# Unify Copper
+recipes.addShapeless(copperIngotTF, [oreCopperIngot]);
+recipes.addShapeless(tinIngotTF, [oreTinIngot]);
+
+################################################################
+### TINKER TIER ################################################
+################################################################
 # Portable Tank
 recipes.remove(portableTank);
 recipes.addShaped(portableTank, [
-    [allCopperIngots,   tinGear,        allCopperIngots],
+    [oreCopperIngot,   tinGear,        oreCopperIngot],
     [allGlassBlocks,    allGlassBlocks, allGlassBlocks],
-    [allCopperIngots,   tinGear,        allCopperIngots]
+    [oreCopperIngot,   tinGear,        oreCopperIngot]
 ]);
 
 # Plate Frame
@@ -613,8 +622,8 @@ recipes.remove(reinforcedWorkbench);
 recipes.remove(resonantWorkbench);
 recipes.addShaped(resonantWorkbench, [
     [paper,         paper,          paper],
-    [allTinIngots,  craftingTable,  allTinIngots],
-    [allTinIngots,  chest,          allTinIngots]
+    [oreTinIngot,  craftingTable,  oreTinIngot],
+    [oreTinIngot,  chest,          oreTinIngot]
 ]);
 
 # Autonomous Activator
@@ -622,23 +631,23 @@ recipes.remove(autonomousActivator);
 recipes.addShaped(autonomousActivator, [
     [copperGear,    tinGear,            copperGear],
     [tinGear,       blankCore,          tinGear],
-    [allTinIngots,  basicMachineFrame,  allTinIngots]
+    [oreTinIngot,  basicMachineFrame,  oreTinIngot]
 ]);
 
 # Terrain Smasher
 recipes.remove(terrainSmasher);
 recipes.addShaped(terrainSmasher, [
     [ironGear,      invarGear,  ironGear],
-    [allTinIngots,  blankCore,  allTinIngots],
-    [allTinIngots,  copperGear, allTinIngots]
+    [oreTinIngot,  blankCore,  oreTinIngot],
+    [oreTinIngot,  copperGear, oreTinIngot]
 ]);
 
 # Nullifier
 recipes.remove(nullifier);
 recipes.addShaped(nullifier, [
-    [allTinIngots,  null,       allTinIngots],
+    [oreTinIngot,  null,       oreTinIngot],
     [ironGear,      null,       ironGear],
-    [allTinIngots,  lavaBucket, allTinIngots]
+    [oreTinIngot,  lavaBucket, oreTinIngot]
 ]);
 
 # Charge Plate
@@ -648,9 +657,9 @@ recipes.addShapeless(chargePlate, [redstonePlate, basicCapacitor]);
 # Augment Secondary Reception Coil
 recipes.remove(augSecondaryReCoil);
 recipes.addShaped(augSecondaryReCoil, [
-    [null,              allCopperIngots,    null],
-    [allCopperIngots,   nitor,              allCopperIngots],
-    [null,              allCopperIngots,    null]
+    [null,              oreCopperIngot,    null],
+    [oreCopperIngot,   nitor,              oreCopperIngot],
+    [null,              oreCopperIngot,    null]
 ]);
 
 # Augment Trivection Chamber

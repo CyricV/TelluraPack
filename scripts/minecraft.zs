@@ -7,6 +7,7 @@ var bedrock                     = <minecraft:bedrock>;
 var blazePowder                 = <minecraft:blaze_powder>;
 var book                        = <minecraft:book>;
 var bucket                      = <minecraft:bucket>;
+var cobble                      = <minecraft:cobblestone>;
 var glowstoneDust               = <minecraft:glowstone_dust>;
 var ironIngot                   = <minecraft:iron_ingot>;
 var leather                     = <minecraft:leather>;
@@ -14,18 +15,19 @@ var paper                       = <minecraft:paper>;
 var sugarCane                   = <minecraft:reeds>;
 var rottenFlesh                 = <minecraft:rotten_flesh>;
 var waterBucket                 = <minecraft:water_bucket>;
-var sawdust                     = <ThermalExpansion:material:512>;
 var netherrack                  = <minecraft:netherrack>;
 var netherBrickBlock            = <minecraft:nether_brick>;
 var netherBrickStairs           = <minecraft:nether_brick_stairs>;
 var netherBrickFence            = <minecraft:nether_brick_fence>;
 var netherBrickSlab             = <minecraft:stone_slab:6>;
 var netherBrick                 = <minecraft:netherbrick>;
-var stonePlate                  = <TConstruct:heavyPlate:1>;
-var woodenPlate                 = <TConstruct:heavyPlate>;
+var heavyPlateStone             = <TConstruct:heavyPlate:1>;
+var heavyPlateWood              = <TConstruct:heavyPlate>;
 var electrumPlate               = <TConstruct:heavyPlate:1025>;
 var ironPlate                   = <TConstruct:heavyPlate:2>;
 var ironToughBinding            = <TConstruct:toughBinding:2>;
+var sawdust                     = <ThermalExpansion:material:512>;
+var ironGear                    = <ThermalFoundation:material:12>;
 
 # Devices
 var furnace                     = <minecraft:furnace>;
@@ -152,10 +154,39 @@ recipes.remove(diamondHoe);
 # Bedrock
 bedrock.displayName = "\u00A70\u00A7kAmalgam";
 
+# Furnace
+recipes.remove(furnace);
+recipes.addShaped(furnace, [
+    [cobble,    cobble,             cobble],
+    [cobble,    heavyPlateStone,    cobble],
+    [cobble,    cobble,             cobble]
+]);
+
 # Leather
 recipes.remove(leather);
 mods.botania.ManaInfusion.removeRecipe(leather);
 mods.tconstruct.Drying.addRecipe(rottenFlesh, leather, 6000);
+
+# Leather Helm
+recipes.addShapeless(leatherHelm, [leatherHelm.anyDamage().marked("inp"), oreLeather],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 64));
+    }
+);
+
+# Leather Chest
+recipes.addShapeless(leatherChest, [leatherChest.anyDamage().marked("inp"), oreLeather],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 64));
+    }
+);
+
+# Leather Leggings
+recipes.addShapeless(leatherLeggings, [leatherLeggings.anyDamage().marked("inp"), oreLeather],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 64));
+    }
+);
 
 # Leather Boots
 recipes.remove(leatherBoots);
@@ -164,6 +195,11 @@ recipes.addShaped(leatherBoots, [
     [oreLeather,    null,   oreLeather],
     [oreRubber,     null,   oreRubber]
 ]);
+recipes.addShapeless(leatherBoots, [leatherBoots.anyDamage().marked("inp"), oreLeather],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 64));
+    }
+);
 
 # Hardened Leather Helm
 recipes.remove(hLeatherHelm);
@@ -173,6 +209,11 @@ recipes.addShaped(hLeatherHelm, [
     [null,                  null,                                   null]],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+recipes.addShapeless(hLeatherHelm, [hLeatherHelm.anyDamage().marked("inp"), oreHardenedLeather],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 64));
     }
 );
 
@@ -186,6 +227,11 @@ recipes.addShaped(hLeatherChest, [
         return output.withDamage(max(0, inputs.inp.damage));
     }
 );
+recipes.addShapeless(hLeatherChest, [hLeatherChest.anyDamage().marked("inp"), oreHardenedLeather],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 64));
+    }
+);
 
 # Hardened Leather Leggings
 recipes.remove(hLeatherLeggings);
@@ -197,6 +243,11 @@ recipes.addShaped(hLeatherLeggings, [
         return output.withDamage(max(0, inputs.inp.damage));
     }
 );
+recipes.addShapeless(hLeatherLeggings, [hLeatherLeggings.anyDamage().marked("inp"), oreHardenedLeather],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 64));
+    }
+);
 
 # Hardened Leather Boots
 recipes.remove(hLeatherBoots);
@@ -206,6 +257,11 @@ recipes.addShaped(hLeatherBoots, [
     [null,                  null,                                   null]],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+recipes.addShapeless(hLeatherBoots, [hLeatherBoots.anyDamage().marked("inp"), oreHardenedLeather],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 64));
     }
 );
 
@@ -256,7 +312,7 @@ recipes.remove(hopper);
 recipes.addShaped(hopper, [
     [allIronNugs,   null,           allIronNugs],
     [allIronNugs,   chest,          allIronNugs],
-    [null,          allIronNugs,    null]
+    [null,          ironGear,    null]
 ]);
 
 
@@ -265,10 +321,10 @@ recipes.addShaped(hopper, [
 ################################################################
 # Stone Pressure Plate
 recipes.remove(stonePressurePlate);
-recipes.addShapeless(stonePressurePlate, [stonePlate, redstoneDust]);
+recipes.addShapeless(stonePressurePlate, [heavyPlateStone, redstoneDust]);
 # Wooden Pressure Plate
 recipes.remove(woodenPressurePlate);
-recipes.addShapeless(woodenPressurePlate, [woodenPlate, redstoneDust]);
+recipes.addShapeless(woodenPressurePlate, [heavyPlateWood, redstoneDust]);
 # Gold Pressure Plate
 recipes.remove(goldenPressurePlate);
 recipes.addShapeless(goldenPressurePlate, [electrumPlate, redstoneDust]);

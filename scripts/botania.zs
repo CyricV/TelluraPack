@@ -59,6 +59,7 @@ var botanicalBrewery            = <Botania:brewery>;
 var runicAltar                  = <Botania:runeAltar>;
 var terraPlate                  = <Botania:terraPlate>;
 var elvenGatewayCore            = <Botania:alfheimPortal>;
+var openCrate                   = <Botania:openCrate>;
 
 # Equipment
 var thaumiumHelm                = <Thaumcraft:ItemHelmetThaumium>;
@@ -81,10 +82,22 @@ var elementiumBoots             = <Botania:elementiumBoots>;
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
 var anyPetal                    = <ore:anyPetal>;
+var orePlank                    = <ore:plankWood>;
 
 ################################################################
 ### Removal ####################################################
 ################################################################
+
+################################################################
+### ALCHEMY TIER ###############################################
+################################################################
+# Open Crate
+recipes.remove(openCrate);
+recipes.addShaped(openCrate, [
+    [orePlank,  orePlank,   orePlank],
+    [orePlank,  null,       orePlank],
+    [orePlank,  null,       orePlank]
+]);
 
 ################################################################
 ### ALCHEMY TIER ###############################################
@@ -264,58 +277,58 @@ mods.thaumcraft.Infusion.addRecipe(
 #    }
 #);
 
-## Elven Gateway Core
-#recipes.remove(elvenGatewayCore);
-#mods.thaumcraft.Infusion.addRecipe(
-#    "INFUSION",
-#    livingwood,
-#    [terrasteelIngot, terrasteelIngot, terrasteelIngot, terrasteelIngot],
-#    "iter 32, herba 64, arbor 32",
-#    elvenGatewayCore,
-#    2
-#);
-#
-## Elementium Helm
-#recipes.remove(elementiumHelm);
-#recipes.addShaped(elementiumHelm, [
-#    [pixieDust,         elementiumIngot,                            pixieDust],
-#    [elementiumIngot,   manasteelHelm.anyDamage().marked("inp"),    elementiumIngot],
-#    [null,              null,                                       null]],
-#    function(output, inputs, crafting) {
-#        return output.withDamage(max(0, inputs.inp.damage));
-#    }
-#);
-#
-## Elementium Chest
-#recipes.remove(elementiumChest);
-#recipes.addShaped(elementiumChest, [
-#    [elementiumIngot,   null,                                       elementiumIngot],
-#    [elementiumIngot,   manasteelChest.anyDamage().marked("inp"),   elementiumIngot],
-#    [pixieDust,         elementiumIngot,                            pixieDust]],
-#    function(output, inputs, crafting) {
-#        return output.withDamage(max(0, inputs.inp.damage));
-#    }
-#);
-#
-## Elementium Leggings
-#recipes.remove(elementiumLeggings);
-#recipes.addShaped(elementiumLeggings, [
-#    [elementiumIngot,   manasteelLeggings.anyDamage().marked("inp"),    elementiumIngot],
-#    [elementiumIngot,   null,                                           elementiumIngot],
-#    [manaweaveCloth,    null,                                           manaweaveCloth]],
-#    function(output, inputs, crafting) {
-#        return output.withDamage(max(0, inputs.inp.damage));
-#    }
-#);
-#
-## Elementium Boots
-#recipes.remove(elementiumBoots);
-#recipes.addShaped(elementiumBoots, [
-#    [elementiumIngot,   manasteelBoots.anyDamage().marked("inp"),   elementiumIngot],
-#    [null,              null,                                       null],
-#    [null,              null,                                       null]],
-#    function(output, inputs, crafting) {
-#        return output.withDamage(max(0, inputs.inp.damage));
-#    }
-#);
+# Elven Gateway Core
+recipes.remove(elvenGatewayCore);
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    livingwood,
+    [terrasteelIngot, terrasteelIngot, terrasteelIngot, terrasteelIngot],
+    "iter 32, herba 64, arbor 32",
+    elvenGatewayCore,
+    2
+);
+
+# Elementium Helm
+recipes.remove(elementiumHelm);
+recipes.addShaped(elementiumHelm, [
+    [pixieDust,         elementiumIngot,                            pixieDust],
+    [elementiumIngot,   manasteelHelm.anyDamage().marked("inp"),    elementiumIngot],
+    [null,              null,                                       null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Elementium Chest
+recipes.remove(elementiumChest);
+recipes.addShaped(elementiumChest, [
+    [elementiumIngot,   null,                                       elementiumIngot],
+    [elementiumIngot,   manasteelChest.anyDamage().marked("inp"),   elementiumIngot],
+    [pixieDust,         elementiumIngot,                            pixieDust]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Elementium Leggings
+recipes.remove(elementiumLeggings);
+recipes.addShaped(elementiumLeggings, [
+    [elementiumIngot,   manasteelLeggings.anyDamage().marked("inp"),    elementiumIngot],
+    [elementiumIngot,   null,                                           elementiumIngot],
+    [manaweaveCloth,    null,                                           manaweaveCloth]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+
+# Elementium Boots
+recipes.remove(elementiumBoots);
+recipes.addShaped(elementiumBoots, [
+    [elementiumIngot,   manasteelBoots.anyDamage().marked("inp"),   elementiumIngot],
+    [null,              null,                                       null],
+    [null,              null,                                       null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
 

@@ -29,6 +29,16 @@ var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
 var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
 var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
 
+# Devices
+var partBuilder0                = <TConstruct:ToolStationBlock:1>;
+var partBuilder1                = <TConstruct:ToolStationBlock:2>;
+var partBuilder2                = <TConstruct:ToolStationBlock:3>;
+var partBuilder3                = <TConstruct:ToolStationBlock:4>;
+var stencilTable0               = <TConstruct:ToolStationBlock:10>;
+var stencilTable1               = <TConstruct:ToolStationBlock:11>;
+var stencilTable2               = <TConstruct:ToolStationBlock:12>;
+var stencilTable3               = <TConstruct:ToolStationBlock:13>;
+
 # Ore Dictionary Names
 var allIronNug                  = <ore:nuggetIron>;
 var allGoldNug                  = <ore:nuggetGole>;
@@ -52,6 +62,8 @@ var anyFluixCrystal             = <ore:anyFluixCrystal>;
 var anyPetal                    = <ore:anyPetal>;
 var allStickyStuff              = <ore:allStickyStuff>;
 var accioMaterial               = <ore:accioMaterial>;
+var oreStencilTable             = <ore:stencilTable>;
+var orePartBuilder              = <ore:partBuilder>;
 
 # Removal
 #accioMaterial.remove(fireEssence);
@@ -64,8 +76,17 @@ allCopperNug.remove(copperOreberry);
 allTinNug.remove(tinOreberry);
 allAluminumNug.remove(aluminumOreberry);
 
-# Add beeswax as slimeball
-slimeball.add(beeswax);
+# Stencil Table
+oreStencilTable.add(stencilTable0);
+oreStencilTable.add(stencilTable1);
+oreStencilTable.add(stencilTable2);
+oreStencilTable.add(stencilTable3);
+
+# Part Builder
+orePartBuilder.add(partBuilder0);
+orePartBuilder.add(partBuilder1);
+orePartBuilder.add(partBuilder2);
+orePartBuilder.add(partBuilder3);
 
 # Create anyQuartz
 anyQuartz.add(netherQuartz);
@@ -124,4 +145,3 @@ allStickyStuff.add(<MineFactoryReloaded:pinkslime>);
 allStickyStuff.add(<TConstruct:strangeFood>);
 allStickyStuff.add(<TConstruct:strangeFood:1>);
 allStickyStuff.add(<TConstruct:materials:36>);
-allStickyStuff.add(<harvestcraft:beeswaxItem>);

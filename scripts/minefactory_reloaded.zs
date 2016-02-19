@@ -166,10 +166,10 @@ recipes.remove(ammoAnvil);
 ################################################################
 # Conveyor Belt
 recipes.remove(conveyorBelt);
-recipes.addShaped(conveyorBelt * 8, [
-    [rubberBar,     rubberBar,  rubberBar],
-    [copperGear,    ironGear,   copperGear],
-    [null,          null,       null]
+recipes.addShaped(conveyorBelt * 12, [
+    [rubberBar, rubberBar,  rubberBar],
+    [ironGear,  ironGear,   ironGear],
+    [null,      null,       null]
 ]);
 
 # Auto Jukebox
