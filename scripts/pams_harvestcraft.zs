@@ -1,6 +1,13 @@
 # Materials
 var freshWater                  = <harvestcraft:freshwaterItem>;
 var freshMilk                   = <harvestcraft:freshmilkItem>;
+var ironIngot                   = <minecraft:iron_ingot>;
+var stoneSlab                   = <minecraft:stone_slab>;
+var smoothStone                 = <minecraft:stone>;
+var heavyPlateIron              = <TConstruct:heavyPlate:2>;
+var beeGrub                     = <harvestcraft:grubItem>;
+var beeQueen                    = <harvestcraft:queenbeeItem>;
+var beeEmptyQueen               = <harvestcraft:queenbeeItem:18>;
 
 # Devices
 
@@ -14,6 +21,8 @@ var potionMilk                  = <MineFactoryReloaded:milkbottle>;
 var clayBucketEmpty             = <IguanaTweaksTConstruct:clayBucketFired>;
 var clayBucketMilk              = <IguanaTweaksTConstruct:clayBucketMilk>;
 var clayBucketWater             = <IguanaTweaksTConstruct:clayBucketWater>;
+var juicer                      = <harvestcraft:juicerItem>;
+var lunchBox                    = <SpiceOfLife:lunchbox>;
 
 # Ore Dictionary Items
 var allGlassBlocks              = <ore:blockGlass>;
@@ -39,6 +48,37 @@ recipes.addShapeless(freshMilk * 4, [bucketMilk.giveBack(bucketEmpty)]);
 recipes.addShapeless(freshMilk * 4, [clayBucketMilk.giveBack(clayBucketEmpty)]);
 recipes.addShapeless(freshMilk * 4, [potionMilk.giveBack(potionEmpty)]);
 
+# Juicer
+recipes.remove(juicer);
+recipes.addShaped(juicer, [
+    [smoothStone,   null,   null],
+    [stoneSlab,     null,   null],
+    [null,          null,   null]
+]);
+
 ################################################################
 ### TINKER TIER ################################################
 ################################################################
+recipes.remove(lunchBox);
+recipes.addShaped(lunchBox, [
+    [ironIngot, null,           ironIngot],
+    [null,      heavyPlateIron, null],
+    [null,      null,           null]
+]);
+
+################################################################
+### ALCHEMY TIER ###############################################
+################################################################
+# Queen Bee
+mods.thaumcraft.Crucible.addRecipe(
+    "CRUCIBLE",
+    beeQueen,
+    beeEmptyQueen,
+    "victus 1"
+);
+mods.thaumcraft.Crucible.addRecipe(
+    "CRUCIBLE",
+    beeQueen,
+    beeGrub,
+    "sensus 1"
+);

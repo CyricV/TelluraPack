@@ -148,6 +148,7 @@ var allIronNugs                 = <ore:nuggetIron>;
 var allGoldNugs                 = <ore:nuggetGold>;
 var oreRubber                   = <ore:itemRubber>;
 var orePlank                    = <ore:plankWood>;
+var oreRawMeat                  = <ore:listAllmeatraw>;
 
 ################################################################
 ### Removal ####################################################
@@ -345,6 +346,14 @@ furnace.remove(rawPlastic);
 SludgeBoiler.removeDrop(<*>);
 mods.tconstruct.Smeltery.addAlloy(<liquid:sludge> * 1000, [<liquid:coal> * 400, <liquid:petrotheum> * 50]);
 SludgeBoiler.addDrop(rawPlastic * 4);
+
+# Pink Slime
+#for item in oreRawMeat.items {
+#    mods.thermalexpansion.Crucible.addRecipe(500000, item, <liquid:ender> * 8000);
+#}
+#InputRF, InputStack, OutputFluid
+#mods.thermalexpansion.Crucible.addRecipe(500000, oreRawMeat, <liquid:ender> * 8000);
+
 
 ################################################################
 ### VOID TIER ##################################################

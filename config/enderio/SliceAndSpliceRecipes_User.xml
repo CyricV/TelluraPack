@@ -1,3 +1,32 @@
 <SliceAndSpliceRecipes>
 
+    <recipeGroup name="Tellura" >
+        <recipe name="Rune Mind" energyCost="128000" >
+            <input>
+                <itemStack oreDictionary="nuggetTerrasteel" slot="0" />
+                <itemStack modID="Thaumcraft" itemName="ItemZombieBrain" slot="1" />
+                <itemStack oreDictionary="nuggetTerrasteel" slot="2" />
+                <itemStack oreDictionary="nuggetTerrasteel" slot="3" />
+                <itemStack modID="Botania" itemName="rune" itemMeta="4" slot="4" />
+                <itemStack oreDictionary="nuggetTerrasteel" slot="5" />
+            </input>
+            <output>
+                <itemStack modID="customitems" itemName="rune_mind" />
+            </output>
+        </recipe>
+        <recipe name="Wither Skull" energyCost="32000" >
+            <input>
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="0" />
+                <itemStack modID="minecraft" itemName="skull" slot="1" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="2" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="3" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="4" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="5" />
+            </input>
+            <output>
+                <itemStack modID="minecraft" itemName="skull" itemMeta="1" />
+            </output>
+        </recipe>
+    </recipeGroup>
+
 </SliceAndSpliceRecipes>

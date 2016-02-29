@@ -1,12 +1,17 @@
 # Materials
-var searedBrick                 = <TConstruct:materials:2>;
 var conduitBinder               = <EnderIO:itemMaterial:1>;
-var alumiteRod                  = <TConstruct:toolRod:15>;
+var obsidian                    = <minecraft:obsidian>;
 var stick                       = <minecraft:stick>;
+var searedBrick                 = <TConstruct:materials:2>;
+var alumiteRod                  = <TConstruct:toolRod:15>;
+var tinGear                     = <ThermalFoundation:material:129>;
 
 # Devices
+var vacuumChest                 = <EnderIO:blockVacuumChest>;
 var tank                        = <OpenBlocks:tank>;
+var vacuumHopper                = <OpenBlocks:vacuumhopper>;
 var drain                       = <OpenBlocks:xpdrain>;
+var brainInAJar                 = <Thaumcraft:blockJar:1>;
 
 # Equipment
 var gliderWing                  = <EnderIO:itemGliderWing>;
@@ -74,6 +79,13 @@ recipes.addShaped(hangGlider, [
 ################################################################
 ### INFUSTION TIER #############################################
 ################################################################
+# Vacuume Hopper
+recipes.remove(vacuumHopper);
+recipes.addShaped(vacuumHopper, [
+    [obsidian,  brainInAJar,    obsidian],
+    [obsidian,  vacuumChest,    obsidian],
+    [obsidian,  tinGear,        obsidian]
+]);
 
 
 ################################################################

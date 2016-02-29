@@ -117,7 +117,7 @@ recipes.remove(ironBoots);
 recipes.remove(woodenSword);
 recipes.remove(woodenShovel);
 recipes.remove(woodenPickaxe);
-recipes.remove(woodenAxe);
+#recipes.remove(woodenAxe);
 
 # Stone Tools
 recipes.remove(stoneSword);
@@ -170,21 +170,21 @@ mods.tconstruct.Drying.addRecipe(rottenFlesh, leather, 6000);
 # Leather Helm
 recipes.addShapeless(leatherHelm, [leatherHelm.anyDamage().marked("inp"), oreLeather],
     function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage - 64));
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
 # Leather Chest
 recipes.addShapeless(leatherChest, [leatherChest.anyDamage().marked("inp"), oreLeather],
     function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage - 64));
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
 # Leather Leggings
 recipes.addShapeless(leatherLeggings, [leatherLeggings.anyDamage().marked("inp"), oreLeather],
     function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage - 64));
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
@@ -197,7 +197,7 @@ recipes.addShaped(leatherBoots, [
 ]);
 recipes.addShapeless(leatherBoots, [leatherBoots.anyDamage().marked("inp"), oreLeather],
     function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage - 64));
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
@@ -213,7 +213,7 @@ recipes.addShaped(hLeatherHelm, [
 );
 recipes.addShapeless(hLeatherHelm, [hLeatherHelm.anyDamage().marked("inp"), oreHardenedLeather],
     function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage - 64));
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
@@ -229,7 +229,7 @@ recipes.addShaped(hLeatherChest, [
 );
 recipes.addShapeless(hLeatherChest, [hLeatherChest.anyDamage().marked("inp"), oreHardenedLeather],
     function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage - 64));
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
@@ -245,7 +245,7 @@ recipes.addShaped(hLeatherLeggings, [
 );
 recipes.addShapeless(hLeatherLeggings, [hLeatherLeggings.anyDamage().marked("inp"), oreHardenedLeather],
     function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage - 64));
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
@@ -261,31 +261,7 @@ recipes.addShaped(hLeatherBoots, [
 );
 recipes.addShapeless(hLeatherBoots, [hLeatherBoots.anyDamage().marked("inp"), oreHardenedLeather],
     function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage - 64));
-    }
-);
-
-# Iron Helm
-invarHelm.displayName = "Iron Plate Helm";
-recipes.remove(invarHelm);
-recipes.addShaped(invarHelm, [
-    [oreLeather,    ironIngot,                              oreLeather],
-    [ironIngot,     hLeatherHelm.anyDamage().marked("inp"), ironIngot],
-    [null,          null,                                   null]],
-    function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage));
-    }
-);
-
-# Iron Boots
-invarBoots.displayName = "Iron Plate Boots";
-recipes.remove(invarBoots);
-recipes.addShaped(invarBoots, [
-    [ironIngot, hLeatherBoots.anyDamage().marked("inp"),    ironIngot],
-    [null,      null,                                       null],
-    [null,      null,                                       null]],
-    function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage));
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
@@ -336,6 +312,23 @@ recipes.addShapeless(ironPressurePlate, [ironPlate, redstoneDust]);
 mods.tconstruct.Smeltery.removeMelting(ironPressurePlate);
 mods.tconstruct.Smeltery.addMelting(ironPressurePlate, <liquid:iron.molten> * 1152, 600, ironPressurePlate);
 
+# Iron Helm
+invarHelm.displayName = "Iron Plate Helm";
+recipes.remove(invarHelm);
+recipes.addShaped(invarHelm, [
+    [oreLeather,    ironIngot,                              oreLeather],
+    [ironIngot,     hLeatherHelm.anyDamage().marked("inp"), ironIngot],
+    [null,          null,                                   null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+recipes.addShapeless(invarHelm, [invarHelm.anyDamage().marked("inp"), ironIngot],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 50));
+    }
+);
+
 # Iron Chest
 invarChest.displayName = "Iron Plate Cuirass";
 recipes.remove(invarChest);
@@ -345,6 +338,11 @@ recipes.addShaped(invarChest, [
     [ironIngot,             ironPlate,                                  ironIngot]],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+recipes.addShapeless(invarChest, [invarChest.anyDamage().marked("inp"), ironIngot],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 
@@ -357,6 +355,28 @@ recipes.addShaped(invarLeggings, [
     [ironIngot,         null,                                       ironIngot]],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+recipes.addShapeless(invarLeggings, [invarLeggings.anyDamage().marked("inp"), ironIngot],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 50));
+    }
+);
+
+# Iron Boots
+invarBoots.displayName = "Iron Plate Boots";
+recipes.remove(invarBoots);
+recipes.addShaped(invarBoots, [
+    [ironIngot, hLeatherBoots.anyDamage().marked("inp"),    ironIngot],
+    [null,      null,                                       null],
+    [null,      null,                                       null]],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage));
+    }
+);
+recipes.addShapeless(invarBoots, [invarBoots.anyDamage().marked("inp"), ironIngot],
+    function(output, inputs, crafting) {
+        return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
 

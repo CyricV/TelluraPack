@@ -11,6 +11,13 @@ var pixieDust                   = <Botania:manaResource:8>;
 var prismarineShard             = <Botania:manaResource:10>;
 var manaweaveCloth              = <Botania:manaResource:22>;
 var runeOfFire                  = <Botania:rune:1>;
+var runeOfLust                  = <Botania:rune:9>;
+var runeOfGluttony              = <Botania:rune:10>;
+var runeOfGreed                 = <Botania:rune:11>;
+var runeOfSloth                 = <Botania:rune:12>;
+var runeOfWrath                 = <Botania:rune:13>;
+var runeOfEnvy                  = <Botania:rune:14>;
+var runeOfPride                 = <Botania:rune:15>;
 var alphGlass                   = <Botania:elfGlass>;
 var fusedQuartz                 = <EnderIO:blockFusedQuartz>;
 var endermanHead                = <EnderIO:blockEndermanSkull>;
@@ -97,6 +104,7 @@ var tesseractFrame              = <ThermalExpansion:Frame:11>;
 var ironGear                    = <ThermalFoundation:material:12>;
 var copperGear                  = <ThermalFoundation:material:128>;
 var tinGear                     = <ThermalFoundation:material:129>;
+var silverGear                  = <ThermalFoundation:material:130>;
 var invarGear                   = <ThermalFoundation:material:136>;
 var enderiumGear                = <ThermalFoundation:material:140>;
 var telluraTumultuous           = <ProjRed|Core:projectred.core.part:10>;
@@ -478,7 +486,12 @@ recipes.addShaped(itemConduit * 4, [
 recipes.remove(alloySmelter);
 recipes.addShaped(alloySmelter, [
     [searedBrick2,  searedBrick2,           searedBrick2],
-    [runeOfFire,    redstoneFurnace0,       runeOfFire],
+    [runeOfPride,   redstoneFurnace0,       runeOfEnvy],
+    [steelIngot,    reinforcedMachineFrame, steelIngot]
+]);
+recipes.addShaped(alloySmelter, [
+    [searedBrick2,  searedBrick2,           searedBrick2],
+    [runeOfEnvy,    redstoneFurnace0,       runeOfPride],
     [steelIngot,    reinforcedMachineFrame, steelIngot]
 ]);
 
@@ -598,9 +611,9 @@ recipes.addShaped(enderIO, [
 # Slice N Splice
 recipes.remove(sliceNSplice);
 recipes.addShaped(sliceNSplice, [
-    [soulariumIngot,    copperGear,             soulariumIngot],
+    [soulariumIngot,    silverGear,             soulariumIngot],
     [copperGear,        silverKnifeBlade,       copperGear],
-    [soulariumIngot,    resonantMachineFrame,   soulariumIngot]
+    [soulariumIngot,    reinforcedMachineFrame, soulariumIngot]
 ]);
 
 # Farming Station
@@ -617,9 +630,9 @@ mods.thaumcraft.Arcane.addShaped(
     "ASPECTS",
     gliderWing,
     "aer 10", [
-    [null,              alumiteRod,         enchantedFabric],
-    [alumiteRod,        enchantedFabric,    manaweaveCloth],
-    [enchantedFabric,   manaweaveCloth,     manaweaveCloth]
+    [null,          alumiteRod,     plasticSheet],
+    [alumiteRod,    plasticSheet,   manaweaveCloth],
+    [plasticSheet,  manaweaveCloth, enchantedFabric]
 ]);
 
 # Glider Wings
@@ -723,7 +736,6 @@ recipes.addShaped(enderFluidConduit * 16, [
 ]);
 
 # Item Conduit (High Count)
-recipes.remove(itemConduit);
 recipes.addShaped(itemConduit * 16, [
     [conduitBinder,     conduitBinder,      conduitBinder],
     [pulsatingIronNug,  pulsatingIronNug,   pulsatingIronNug],
@@ -739,12 +751,12 @@ recipes.addShaped(itemConduit * 16, [
 # Telepad Block
 recipes.remove(telePad);
 recipes.addShaped(telePad, [
-    [fusedQuartz,       enderCrystal,           fusedQuartz],
+    [plasticSheet,      enderCrystal,           plasticSheet],
     [telluraEphemeral,  travelAnchor,           telluraDeliquescent],
     [darksteelIngot,    resonantMachineFrame,   darksteelIngot]
 ]);
 recipes.addShaped(telePad, [
-    [fusedQuartz,           enderCrystal,           fusedQuartz],
+    [plasticSheet,          enderCrystal,           plasticSheet],
     [telluraDeliquescent,   travelAnchor,           telluraEphemeral],
     [darksteelIngot,        resonantMachineFrame,   darksteelIngot]
 ]);

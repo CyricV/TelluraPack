@@ -22,7 +22,7 @@ var runeOfEarth                 = <Botania:rune:2>;
 var runeOfAir                   = <Botania:rune:3>;
 var runeOfSpring                = <Botania:rune:4>;
 var runeOfSummer                = <Botania:rune:5>;
-var runeOfAutum                 = <Botania:rune:6>;
+var runeOfAutumn                = <Botania:rune:6>;
 var runeOfWinter                = <Botania:rune:7>;
 var runeOfMana                  = <Botania:rune:8>;
 var runeOfLust                  = <Botania:rune:9>;
@@ -33,8 +33,15 @@ var runeOfWrath                 = <Botania:rune:13>;
 var runeOfEnvy                  = <Botania:rune:14>;
 var runeOfPride                 = <Botania:rune:15>;
 var pulsatingIronNug            = <EnderIO:itemMaterial:3>;
+var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
+var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
+var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
+var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
+var orderEssence                = <magicalcrops:magicalcrops_InvarEssence>;
+var entropyEssence              = <magicalcrops:magicalcrops_ObsidianEssence>;
 var blazePowder                 = <minecraft:blaze_powder>;
 var goldIngot                   = <minecraft:gold_ingot>;
+var book                        = <minecraft:book>;
 var searedBrick                 = <TConstruct:materials:2>;
 var airShard                    = <Thaumcraft:ItemShard>;
 var fireShard                   = <Thaumcraft:ItemShard:1>;
@@ -78,18 +85,20 @@ var elementiumHelm              = <Botania:elementiumHelm>;
 var elementiumChest             = <Botania:elementiumChest>;
 var elementiumLeggings          = <Botania:elementiumLegs>;
 var elementiumBoots             = <Botania:elementiumBoots>;
+var lexicaBotania               = <Botania:lexicon>;
 
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
 var anyPetal                    = <ore:anyPetal>;
 var orePlank                    = <ore:plankWood>;
+var oreDustGold                 = <ore:dustGold>;
 
 ################################################################
 ### Removal ####################################################
 ################################################################
 
 ################################################################
-### ALCHEMY TIER ###############################################
+### STONE TIER #################################################
 ################################################################
 # Open Crate
 recipes.remove(openCrate);
@@ -102,6 +111,13 @@ recipes.addShaped(openCrate, [
 ################################################################
 ### ALCHEMY TIER ###############################################
 ################################################################
+# Lexica Botania
+recipes.remove(lexicaBotania);
+mods.thaumcraft.Arcane.addShapeless(
+    "ASPECTS",
+    lexicaBotania,
+    "terra 1", [book]);
+
 # Apothecary
 recipes.remove(petalApothecary);
 recipes.addShaped(petalApothecary, [
@@ -114,7 +130,7 @@ recipes.addShaped(petalApothecary, [
 recipes.remove(alchemyCatalyst);
 recipes.addShaped(alchemyCatalyst, [
     [livingrock,    manaPearl,              livingrock],
-    [goldIngot,     alchemicalConstruct,    goldIngot],
+    [oreDustGold,   alchemicalConstruct,    oreDustGold],
     [livingrock,    livingrock,             livingrock]
 ]);
 
@@ -138,6 +154,18 @@ mods.botania.RuneAltar.addRecipe(runeOfEarth*2, [manasteelIngot, manaPowder, ear
 # Rune Of Air
 mods.botania.RuneAltar.removeRecipe(runeOfAir);
 mods.botania.RuneAltar.addRecipe(runeOfAir*2, [manasteelIngot, manaPowder, airShard, blitzPowder, airShard, manaPowder], 5200);
+# Rune Of Spring
+mods.botania.RuneAltar.removeRecipe(runeOfSpring);
+mods.botania.RuneAltar.addRecipe(runeOfSpring, [entropyEssence, runeOfWater, waterEssence, fireEssence, runeOfFire], 8000);
+# Rune Of Summer
+mods.botania.RuneAltar.removeRecipe(runeOfSummer);
+mods.botania.RuneAltar.addRecipe(runeOfSummer, [orderEssence, runeOfAir, airEssence, earthEssence, runeOfEarth], 8000);
+# Rune Of Autumn
+mods.botania.RuneAltar.removeRecipe(runeOfAutumn);
+mods.botania.RuneAltar.addRecipe(runeOfAutumn, [entropyEssence, runeOfFire, fireEssence, airEssence, runeOfAir], 8000);
+# Rune Of Winter
+mods.botania.RuneAltar.removeRecipe(runeOfWinter);
+mods.botania.RuneAltar.addRecipe(runeOfWinter, [orderEssence, runeOfEarth, earthEssence, waterEssence, runeOfWater], 8000);
 
 # Manasteel Helm
 recipes.remove(manasteelHelm);
@@ -199,6 +227,31 @@ mods.thaumcraft.Infusion.addRecipe(
     terraPlate,
     4
 );
+
+# Rune Of Lust
+mods.botania.RuneAltar.removeRecipe(runeOfLust);
+mods.botania.RuneAltar.addRecipe(runeOfLust, [terrasteelIngot, runeOfAir, runeOfSpring], 12000);
+# Rune Of Gluttony
+mods.botania.RuneAltar.removeRecipe(runeOfGluttony);
+mods.botania.RuneAltar.addRecipe(runeOfGluttony, [terrasteelIngot, runeOfFire, runeOfWinter], 12000);
+# Rune Of Greed
+mods.botania.RuneAltar.removeRecipe(runeOfGreed);
+mods.botania.RuneAltar.addRecipe(runeOfGreed, [terrasteelIngot, runeOfEarth, runeOfAutumn], 12000);
+# Rune Of Sloth
+mods.botania.RuneAltar.removeRecipe(runeOfSloth);
+mods.botania.RuneAltar.addRecipe(runeOfSloth, [terrasteelIngot, runeOfWater, runeOfAutumn], 12000);
+# Rune Of Wrath
+mods.botania.RuneAltar.removeRecipe(runeOfWrath);
+mods.botania.RuneAltar.addRecipe(runeOfWrath, [terrasteelIngot, runeOfFire, runeOfSummer], 12000);
+# Rune Of Envy
+mods.botania.RuneAltar.removeRecipe(runeOfEnvy);
+mods.botania.RuneAltar.addRecipe(runeOfEnvy, [terrasteelIngot, runeOfWater, runeOfSummer], 12000);
+# Rune Of Pride
+mods.botania.RuneAltar.removeRecipe(runeOfPride);
+mods.botania.RuneAltar.addRecipe(runeOfPride, [terrasteelIngot, runeOfEarth, runeOfSpring], 12000);
+## Rune Of Void
+#mods.botania.RuneAltar.removeRecipe(runeOfVoid);
+#mods.botania.RuneAltar.addRecipe(runeOfVoid, [terrasteelIngot, runeOfAir, runeOfWinter], 12000);
 
 # Mana Pylon
 recipes.remove(manaPylon);

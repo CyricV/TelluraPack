@@ -30,6 +30,7 @@ var plasticSheet                = <MineFactoryReloaded:plastic.sheet>;
 var invarAxeHead                = <TConstruct:hatchetHead:1020>;
 var ironPlate                   = <TConstruct:heavyPlate:2>;
 var searedBrick                 = <TConstruct:materials:2>;
+var manyullynIngot              = <TConstruct:materials:5>;
 var searedBrick2                = <TConstruct:materials:37>;
 var steelIngot                  = <TConstruct:materials:16>;
 var gearCast                    = <TConstruct:gearCast>;
@@ -399,34 +400,78 @@ recipes.addShaped(augHopperApparatus, [
 # Gears
 mods.tconstruct.Casting.removeTableRecipe(ironGear);
 mods.tconstruct.Casting.addTableRecipe(ironGear, <liquid:iron.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(ironGear);
+mods.tconstruct.Smeltery.addMelting(ironGear, <liquid:iron.molten> * 288, 700, <minecraft:iron_block>);
+
 mods.tconstruct.Casting.removeTableRecipe(goldGear);
 mods.tconstruct.Casting.addTableRecipe(goldGear, <liquid:gold.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(goldGear);
+mods.tconstruct.Smeltery.addMelting(goldGear, <liquid:gold.molten> * 288, 500, <minecraft:gold_block>);
+
 mods.tconstruct.Casting.removeTableRecipe(copperGear);
 mods.tconstruct.Casting.addTableRecipe(copperGear, <liquid:copper.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(copperGear);
+mods.tconstruct.Smeltery.addMelting(copperGear, <liquid:copper.molten> * 288, 650, <TConstruct:MetalBlock:3>);
+
 mods.tconstruct.Casting.removeTableRecipe(tinGear);
 mods.tconstruct.Casting.addTableRecipe(tinGear, <liquid:tin.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(tinGear);
+mods.tconstruct.Smeltery.addMelting(tinGear, <liquid:tin.molten> * 288, 500, <TConstruct:MetalBlock:5>);
+
 mods.tconstruct.Casting.removeTableRecipe(silverGear);
 mods.tconstruct.Casting.addTableRecipe(silverGear, <liquid:silver.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(silverGear);
+mods.tconstruct.Smeltery.addMelting(silverGear, <liquid:silver.molten> * 288, 500, <ThermalFoundation:Storage:2>);
+
 mods.tconstruct.Casting.removeTableRecipe(leadGear);
 mods.tconstruct.Casting.addTableRecipe(leadGear, <liquid:lead.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(leadGear);
+mods.tconstruct.Smeltery.addMelting(leadGear, <liquid:lead.molten> * 288, 500, <ThermalFoundation:Storage:3>);
+
 mods.tconstruct.Casting.removeTableRecipe(ferrousGear);
 mods.tconstruct.Casting.addTableRecipe(ferrousGear, <liquid:nickel.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(ferrousGear);
+mods.tconstruct.Smeltery.addMelting(ferrousGear, <liquid:nickel.molten> * 288, 500, <ThermalFoundation:Storage:4>);
+
 mods.tconstruct.Casting.removeTableRecipe(shinyGear);
 mods.tconstruct.Casting.addTableRecipe(shinyGear, <liquid:platinum.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(shinyGear);
+mods.tconstruct.Smeltery.addMelting(shinyGear, <liquid:platinum.molten> * 288, 500, <ThermalFoundation:Storage:5>);
+
 mods.tconstruct.Casting.removeTableRecipe(manaInfusedGear);
 mods.tconstruct.Casting.addTableRecipe(manaInfusedGear, <liquid:mithril.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(manaInfusedGear);
+mods.tconstruct.Smeltery.addMelting(manaInfusedGear, <liquid:mithril.molten> * 288, 900, <ThermalFoundation:Storage:6>);
+
 mods.tconstruct.Casting.removeTableRecipe(electrumGear);
 mods.tconstruct.Casting.addTableRecipe(electrumGear, <liquid:electrum.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(electrumGear);
+mods.tconstruct.Smeltery.addMelting(electrumGear, <liquid:electrum.molten> * 288, 500, <ThermalFoundation:Storage:7>);
+
 mods.tconstruct.Casting.removeTableRecipe(invarGear);
 mods.tconstruct.Casting.addTableRecipe(invarGear, <liquid:invar.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(invarGear);
+mods.tconstruct.Smeltery.addMelting(invarGear, <liquid:invar.molten> * 288, 500, <ThermalFoundation:Storage:8>);
+
 mods.tconstruct.Casting.removeTableRecipe(bronzeGear);
 mods.tconstruct.Casting.addTableRecipe(bronzeGear, <liquid:bronze.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(bronzeGear);
+mods.tconstruct.Smeltery.addMelting(bronzeGear, <liquid:bronze.molten> * 288, 600, <TConstruct:MetalBlock:4>);
+
 mods.tconstruct.Casting.removeTableRecipe(signalumGear);
 mods.tconstruct.Casting.addTableRecipe(signalumGear, <liquid:signalum.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(signalumGear);
+mods.tconstruct.Smeltery.addMelting(signalumGear, <liquid:signalum.molten> * 288, 550, <ThermalFoundation:Storage:10>);
+
 mods.tconstruct.Casting.removeTableRecipe(lumiumGear);
 mods.tconstruct.Casting.addTableRecipe(lumiumGear, <liquid:lumium.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(lumiumGear);
+mods.tconstruct.Smeltery.addMelting(lumiumGear, <liquid:lumium.molten> * 288, 470, <ThermalFoundation:Storage:11>);
+
 mods.tconstruct.Casting.removeTableRecipe(enderiumGear);
 mods.tconstruct.Casting.addTableRecipe(enderiumGear, <liquid:enderium.molten> * 288, gearCast, false, 55);
+mods.tconstruct.Smeltery.removeMelting(enderiumGear);
+mods.tconstruct.Smeltery.addMelting(enderiumGear, <liquid:enderium.molten> * 288, 1100, <ThermalFoundation:Storage:12>);
 
 ################################################################
 ### ALCHEMY TIER ###############################################
@@ -452,7 +497,7 @@ recipes.remove(hardenedMachineFrame);
 recipes.addShaped(hardenedMachineFrame, [
     [steelIngot,    invarGear,          steelIngot],
     [manaSteel,     basicMachineFrame,  manaSteel],
-    [steelIngot,    invarGear,          steelIngot]
+    [steelIngot,    manyullynIngot,     steelIngot]
 ]);
 
 # Redstone Furnace
@@ -470,7 +515,7 @@ recipes.addShaped(redstoneFurnace1, [
 recipes.addShaped(redstoneFurnace1, [
     [steelIngot,    invarGear,          steelIngot],
     [manaSteel,     redstoneFurnace0,   manaSteel],
-    [thaumiumIngot, invarGear,          steelIngot]
+    [thaumiumIngot, manyullynIngot,     steelIngot]
 ]);
 recipes.addShaped(redstoneFurnace2, [
     [ironIngot,     searedBrick,            ironIngot],
@@ -506,9 +551,9 @@ recipes.addShaped(sawmill1, [
     [ironIngot,     hardenedMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(sawmill1, [
-    [thaumiumIngot, invarGear,  thaumiumIngot],
-    [manaSteel,     sawmill0,   manaSteel],
-    [thaumiumIngot, invarGear,  thaumiumIngot]
+    [thaumiumIngot, invarGear,      thaumiumIngot],
+    [manaSteel,     sawmill0,       manaSteel],
+    [thaumiumIngot, manyullynIngot, thaumiumIngot]
 ]);
 recipes.addShaped(sawmill2, [
     [ironIngot,     null,                   ironIngot],
@@ -546,7 +591,7 @@ recipes.addShaped(fluidTransposer1, [
 recipes.addShaped(fluidTransposer1, [
     [thaumiumIngot, invarGear,          thaumiumIngot],
     [manaSteel,     fluidTransposer0,   manaSteel],
-    [thaumiumIngot, invarGear,          thaumiumIngot]
+    [thaumiumIngot, manyullynIngot,     thaumiumIngot]
 ]);
 recipes.addShaped(fluidTransposer2, [
     [ironIngot, fluidConduit,           ironIngot],
@@ -584,7 +629,7 @@ recipes.addShaped(glacialPercipitator1, [
 recipes.addShaped(glacialPercipitator1, [
     [thaumiumIngot, invarGear,              thaumiumIngot],
     [manaSteel,     glacialPercipitator0,   manaSteel],
-    [thaumiumIngot, invarGear,              thaumiumIngot]
+    [thaumiumIngot, manyullynIngot,         thaumiumIngot]
 ]);
 recipes.addShaped(glacialPercipitator2, [
     [piston,    fluidConduit,           piston],
@@ -674,7 +719,7 @@ recipes.addShaped(augTrivectionChamber, [
 recipes.remove(pyrotheumDust);
 mods.thaumcraft.Arcane.addShaped(
     "ASPECTS",
-    pyrotheumDust,
+    pyrotheumDust * 2,
     "perditio 2, ignis 4", [
     [allBronzeDust, blazePowder,    allBronzeDust],
     [blazePowder,   salisMundus,    blazePowder],
@@ -685,7 +730,7 @@ mods.thaumcraft.Arcane.addShaped(
 recipes.remove(aerotheumDust);
 mods.thaumcraft.Arcane.addShaped(
     "ASPECTS",
-    aerotheumDust,
+    aerotheumDust * 2,
     "perditio 2, aer 4", [
     [allAluminumBrassDust,  blitzPowder,    allAluminumBrassDust],
     [blitzPowder,           salisMundus,    blitzPowder],
@@ -696,7 +741,7 @@ mods.thaumcraft.Arcane.addShaped(
 recipes.remove(cryotheumDust);
 mods.thaumcraft.Arcane.addShaped(
     "ASPECTS",
-    cryotheumDust,
+    cryotheumDust * 2,
     "ordo 2, aqua 4", [
     [allElectrumDust,   blizzPowder,    allElectrumDust],
     [blizzPowder,       salisMundus,    blizzPowder],
@@ -707,7 +752,7 @@ mods.thaumcraft.Arcane.addShaped(
 recipes.remove(petrotheumDust);
 mods.thaumcraft.Arcane.addShaped(
     "ASPECTS",
-    petrotheumDust,
+    petrotheumDust * 2,
     "ordo 2, terra 4", [
     [allInvarDust,  basalzPowder,   allInvarDust],
     [basalzPowder,  salisMundus,    basalzPowder],

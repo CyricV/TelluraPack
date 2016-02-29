@@ -4,6 +4,8 @@ var certusQuartzOre             = <appliedenergistics2:tile.OreQuartz>;
 var manaPearl                   = <Botania:manaResource:1>;
 var manaDiamond                 = <Botania:manaResource:2>;
 var dragonstone                 = <Botania:manaResource:9>;
+var runeOfEarth                 = <Botania:rune:2>;
+var runeOfSpring                = <Botania:rune:4>;
 var enderCrystal                = <EnderIO:itemMaterial:8>;
 var minicioEssence              = <magicalcrops:magicalcrops_1MinicioEssence>;
 var accioEssence                = <magicalcrops:magicalcrops_2AccioEssence>;
@@ -254,7 +256,7 @@ mods.thaumcraft.Arcane.addShaped(
     weakInfusionStone,
     "aer 20, terra 20, ignis 20, aqua 20, ordo 20, perditio 20", [
     [minicioEssence,    minicioEssence, minicioEssence],
-    [minicioEssence,    manaDiamond,    minicioEssence],
+    [minicioEssence,    runeOfEarth,    minicioEssence],
     [minicioEssence,    minicioEssence, minicioEssence]
 ]);
 
@@ -352,7 +354,7 @@ mods.thaumcraft.Arcane.addShaped(
     regularInfusionStone,
     "aer 60, terra 60, ignis 60, aqua 60, ordo 60, perditio 60", [
     [accioEssence,  accioEssence,   accioEssence],
-    [accioEssence,  manaPearl,      accioEssence],
+    [accioEssence,  runeOfSpring,   accioEssence],
     [accioEssence,  accioEssence,   accioEssence]
 ]);
 

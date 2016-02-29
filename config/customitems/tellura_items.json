@@ -9,6 +9,11 @@
             "maxStackSize": 1,
             "textureName": "dynamicMaterial",
             "name": "Dynamic Material"
+        },
+        {
+            "maxStackSize": 1,
+            "textureName": "runemind",
+            "name": "Rune Mind"
         }
     ]
 }
