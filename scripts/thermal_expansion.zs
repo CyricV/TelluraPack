@@ -18,6 +18,9 @@ var fireSeed                    = <magicalcrops:magicalcrops_FireSeeds>;
 var waterSeed                   = <magicalcrops:magicalcrops_WaterSeeds>;
 var airSeed                     = <magicalcrops:magicalcrops_AirSeeds>;
 var earthSeed                   = <magicalcrops:magicalcrops_EarthSeeds>;
+var telluraResolute             = <magicalcrops:magicalcrops_EssenceIngots>;
+var telluraEphemeral            = <magicalcrops:magicalcrops_EssenceIngots:1>;
+var bonemeal                    = <minecraft:dye:15>;
 var blazePowder                 = <minecraft:blaze_powder>;
 var fire                        = <minecraft:fire>;
 var glowstoneDust               = <minecraft:glowstone_dust>;
@@ -27,6 +30,8 @@ var packedIce                   = <minecraft:packed_ice>;
 var snowball                    = <minecraft:snowball>;
 var sand                        = <minecraft:sand>;
 var plasticSheet                = <MineFactoryReloaded:plastic.sheet>;
+var telluraTumultuous           = <ProjRed|Core:projectred.core.part:10>;
+var telluraDeliquescent         = <ProjRed|Core:projectred.core.part:55>;
 var invarAxeHead                = <TConstruct:hatchetHead:1020>;
 var ironPlate                   = <TConstruct:heavyPlate:2>;
 var searedBrick                 = <TConstruct:materials:2>;
@@ -49,6 +54,8 @@ var tesseractFrameEmpty         = <ThermalExpansion:Frame:10>;
 var tesseractFrame              = <ThermalExpansion:Frame:11>;
 var hardenedGlass               = <ThermalExpansion:Glass>;
 var slag                        = <ThermalExpansion:material:514>;
+var phytoGro                    = <ThermalExpansion:material:516>;
+var phytoGroRich                = <ThermalExpansion:material:517>;
 var pulverizedCoal              = <ThermalFoundation:material:2>;
 var ironGear                    = <ThermalFoundation:material:12>;
 var goldGear                    = <ThermalFoundation:material:13>;
@@ -82,10 +89,6 @@ var nitor                       = <Thaumcraft:ItemResource:1>;
 var thaumiumIngot               = <Thaumcraft:ItemResource:2>;
 var salisMundus                 = <Thaumcraft:ItemResource:14>;
 var voidMetalNug                = <Thaumcraft:ItemNugget:7>;
-var telluraTumultuous           = <ProjRed|Core:projectred.core.part:10>;
-var telluraDeliquescent         = <ProjRed|Core:projectred.core.part:55>;
-var telluraResolute             = <magicalcrops:magicalcrops_EssenceIngots>;
-var telluraEphemeral            = <magicalcrops:magicalcrops_EssenceIngots:1>;
 
 # Upgrades
 var augServoMechanism           = <ThermalExpansion:augment>;
@@ -113,6 +116,7 @@ var augIgneousCatalyst          = <ThermalExpansion:augment:313>;
 var augPyroclasticGen           = <ThermalExpansion:augment:314>;
 
 # Devices
+var electricLight               = <EnderIO:blockElectricLight>;
 var oven                        = <harvestcraft:oven>;
 var ironPressurePlate           = <minecraft:heavy_weighted_pressure_plate>;
 var chest                       = <minecraft:chest>;
@@ -282,8 +286,7 @@ recipes.remove(energeticInfuser);
 recipes.remove(inductionSmelter);
 mods.thermalexpansion.Smelter.removeRecipe(<*>, <*>);
 
-# Phytogenic Insolator and all recipes
-recipes.remove(phytogenicInsolator);
+# Phytogenic Insolator recipes
 mods.thermalexpansion.Insolator.removeRecipe(<*>, <*>);
 
 # Enderium Ingot (Only produced by alloying in Smeltery)
@@ -356,7 +359,7 @@ furnace.remove(rockwool);
 mods.thermalexpansion.Furnace.removeRecipe(slag);
 
 ################################################################
-### TINKER TIER ################################################
+### STONE TIER #################################################
 ################################################################
 # Unify Copper
 recipes.addShapeless(copperIngotTF, [oreCopperIngot]);
@@ -652,6 +655,39 @@ recipes.addShaped(glacialPercipitator3, [
     [elementium,        logicProcessor,         elementium]
 ]);
 
+# Phytogenic Insolator
+recipes.remove(phytogenicInsolator);
+# recipes.addShaped(phytogenicInsolator1, [
+#     [ironIngot,     copperGear,             ironIngot],
+#     [electricLight, null,                   electricLight],
+#     [ironIngot,     hardenedMachineFrame,   ironIngot]
+# ]);
+# recipes.addShaped(phytogenicInsolator1, [
+#     [thaumiumIngot, invarGear,              thaumiumIngot],
+#     [manaSteel,     phytogenicInsolator0,   manaSteel],
+#     [thaumiumIngot, manyullynIngot,         thaumiumIngot]
+# ]);
+# recipes.addShaped(phytogenicInsolator2, [
+#     [ironIngot,     copperGear,             ironIngot],
+#     [electricLight, null,                   electricLight],
+#     [ironIngot,     reinforcedMachineFrame, ironIngot]
+# ]);
+# recipes.addShaped(phytogenicInsolator2, [
+#     [thaumiumIngot, signalumGear,           thaumiumIngot],
+#     [terraSteel,    phytogenicInsolator1,   terraSteel],
+#     [thaumiumIngot, calculationProcessor,   thaumiumIngot]
+# ]);
+# recipes.addShaped(phytogenicInsolator3, [
+#     [ironIngot,     copperGear,             ironIngot],
+#     [electricLight, null,                   electricLight],
+#     [ironIngot,     resonantMachineFrame,   ironIngot]
+# ]);
+# recipes.addShaped(phytogenicInsolator3, [
+#     [plasticSheet,      enderiumGear,           plasticSheet],
+#     [telluraResolute,   phytogenicInsolator2,   telluraResolute],
+#     [elementium,        logicProcessor,         elementium]
+# ]);
+
 # Cyclic Assembler
 recipes.remove(cyclicAssembler3);
 recipes.addShaped(cyclicAssembler3, [
@@ -717,46 +753,34 @@ recipes.addShaped(augTrivectionChamber, [
 
 # Pyrotheum Dust
 recipes.remove(pyrotheumDust);
-mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
-    pyrotheumDust * 2,
-    "perditio 2, ignis 4", [
-    [allBronzeDust, blazePowder,    allBronzeDust],
+recipes.addShaped(pyrotheumDust * 4, [
+    [bonemeal,      blazePowder,    bonemeal],
     [blazePowder,   salisMundus,    blazePowder],
-    [allBronzeDust, blazePowder,    allBronzeDust]
+    [bonemeal,      blazePowder,    bonemeal]
 ]);
 
 # Aerotheum Dust
 recipes.remove(aerotheumDust);
-mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
-    aerotheumDust * 2,
-    "perditio 2, aer 4", [
-    [allAluminumBrassDust,  blitzPowder,    allAluminumBrassDust],
-    [blitzPowder,           salisMundus,    blitzPowder],
-    [allAluminumBrassDust,   blitzPowder,   allAluminumBrassDust]
+recipes.addShaped(aerotheumDust * 4, [
+    [bonemeal,      blitzPowder,    bonemeal],
+    [blitzPowder,   salisMundus,    blitzPowder],
+    [bonemeal,      blitzPowder,    bonemeal]
 ]);
 
 # Cryotheum Dust
 recipes.remove(cryotheumDust);
-mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
-    cryotheumDust * 2,
-    "ordo 2, aqua 4", [
-    [allElectrumDust,   blizzPowder,    allElectrumDust],
-    [blizzPowder,       salisMundus,    blizzPowder],
-    [allElectrumDust,   blizzPowder,    allElectrumDust]
+recipes.addShaped(cryotheumDust * 4, [
+    [bonemeal,      blizzPowder,    bonemeal],
+    [blizzPowder,   salisMundus,    blizzPowder],
+    [bonemeal,      blizzPowder,    bonemeal]
 ]);
 
 # Petrotheum Dust
 recipes.remove(petrotheumDust);
-mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
-    petrotheumDust * 2,
-    "ordo 2, terra 4", [
-    [allInvarDust,  basalzPowder,   allInvarDust],
+recipes.addShaped(petrotheumDust * 4, [
+    [bonemeal,      basalzPowder,   bonemeal],
     [basalzPowder,  salisMundus,    basalzPowder],
-    [allInvarDust,  basalzPowder,   allInvarDust]
+    [bonemeal,      basalzPowder,   bonemeal]
 ]);
 
 # Blaze Powder
@@ -765,10 +789,15 @@ mods.thaumcraft.Arcane.addShaped(
 recipes.remove(blazePowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(glowstoneDust, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, fireEssence, blazePowder * 2, <liquid:redstone> * 100);
-mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
-    blazePowder,
-    "ignis 4", [
+#mods.thaumcraft.Arcane.addShaped(
+#    "ASPECTS",
+#    blazePowder * 4,
+#    "ignis 2", [
+#    [null,          fireEssence,    null],
+#    [fireEssence,   allBronzeDust,  fireEssence],
+#    [null,          fireEssence,    null]
+#]);
+recipes.addShaped(blazePowder * 2, [
     [null,          fireEssence,    null],
     [fireEssence,   allBronzeDust,  fireEssence],
     [null,          fireEssence,    null]
@@ -780,10 +809,15 @@ mods.thaumcraft.Arcane.addShaped(
 recipes.remove(blizzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(snowball, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, waterEssence, blizzPowder * 2, <liquid:redstone> * 100);
-mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
-    blizzPowder,
-    "aqua 4", [
+#mods.thaumcraft.Arcane.addShaped(
+#    "ASPECTS",
+#    blizzPowder * 4,
+#    "aqua 2", [
+#    [null,          waterEssence,       null],
+#    [waterEssence,  allElectrumDust,    waterEssence],
+#    [null,          waterEssence,       null]
+#]);
+recipes.addShaped(blizzPowder * 2, [
     [null,          waterEssence,       null],
     [waterEssence,  allElectrumDust,    waterEssence],
     [null,          waterEssence,       null]
@@ -795,10 +829,15 @@ mods.thaumcraft.Arcane.addShaped(
 recipes.remove(blitzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(sand, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, airEssence, blitzPowder * 2, <liquid:redstone> * 100);
-mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
-    blitzPowder,
-    "aer 4", [
+#mods.thaumcraft.Arcane.addShaped(
+#    "ASPECTS",
+#    blitzPowder * 4,
+#    "aer 2", [
+#    [null,          airEssence,             null],
+#    [airEssence,    allAluminumBrassDust,   airEssence],
+#    [null,          airEssence,             null]
+#]);
+recipes.addShaped(blitzPowder * 2, [
     [null,          airEssence,             null],
     [airEssence,    allAluminumBrassDust,   airEssence],
     [null,          airEssence,             null]
@@ -810,14 +849,27 @@ mods.thaumcraft.Arcane.addShaped(
 recipes.remove(basalzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(allObsidianDust, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, earthEssence, basalzPowder * 2, <liquid:redstone> * 100);
-mods.thaumcraft.Arcane.addShaped(
-    "ASPECTS",
-    basalzPowder,
-    "terra 4", [
+#mods.thaumcraft.Arcane.addShaped(
+#    "ASPECTS",
+#    basalzPowder * 4,
+#    "terra 2", [
+#    [null,          earthEssence,   null],
+#    [earthEssence,  allInvarDust,   earthEssence],
+#    [null,          earthEssence,   null]
+#]);
+recipes.addShaped(basalzPowder * 2, [
     [null,          earthEssence,   null],
     [earthEssence,  allInvarDust,   earthEssence],
     [null,          earthEssence,   null]
 ]);
+
+# Phyto Gro
+recipes.remove(phytoGro);
+mods.thermalexpansion.Transposer.addFillRecipe(2000, bonemeal, phytoGro, <liquid:sewage> * 100);
+
+# Rich Phyto Gro
+recipes.remove(phytoGroRich);
+mods.thermalexpansion.Transposer.addFillRecipe(4000, phytoGro, phytoGroRich, <liquid:sewage> * 100);
 
 ################################################################
 ### INFUSTION TIER #############################################

@@ -28,6 +28,7 @@ var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
 var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
 var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
 var earthEssence                = <magicalcrops:magicalcrops_EarthEssence>;
+var firmTofu                    = <harvestcraft:firmtofuItem>;
 
 # Devices
 var partBuilder0                = <TConstruct:ToolStationBlock:1>;
@@ -75,6 +76,13 @@ allGoldNug.remove(goldOreberry);
 allCopperNug.remove(copperOreberry);
 allTinNug.remove(tinOreberry);
 allAluminumNug.remove(aluminumOreberry);
+
+# Non Tofu Raw Meat
+var oreTrueRawMeat              = <ore:trueRawMeat>;
+oreTrueRawMeat.mirror(<ore:listAllmeatraw>);
+oreTrueRawMeat.addAll(<ore:listAllfishraw>);
+oreTrueRawMeat.addAll(<ore:listAllfishraw>);
+oreTrueRawMeat.remove(firmTofu);
 
 # Stencil Table
 oreStencilTable.add(stencilTable0);

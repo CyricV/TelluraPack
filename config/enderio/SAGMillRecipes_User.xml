@@ -157,15 +157,15 @@
         </recipe>
     <!--
     LOGS
-    Sawdust 4
+    Sawdust 8
     -->
         <recipe name="Sawdust" energyCost="2400">
             <input>
                 <itemStack oreDictionary="logWood" />
             </input>
             <output>
-                <itemStack modID="ThermalExpansion" itemName="material" itemMeta="512" number="4" />
-                <itemStack modID="ThermalExpansion" itemName="material" itemMeta="512" number="1" chance="0.2"/>
+                <itemStack modID="ThermalExpansion" itemName="material" itemMeta="512" number="12" />
+                <itemStack modID="ThermalExpansion" itemName="material" itemMeta="512" number="4" chance="0.4"/>
             </output>
         </recipe>
     </recipeGroup>
@@ -181,6 +181,7 @@
                 <itemStack oreDictionary="sand" />
             </input>
             <output>
+                <itemStack modID="exnihilo" itemName="dust" number="1" chance="1" />
                 <itemStack modID="EnderIO" itemName="itemMaterial" number="1" itemMeta="0" chance="0.5" />
             </output>
         </recipe>

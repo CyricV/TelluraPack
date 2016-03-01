@@ -8,6 +8,7 @@ var blazePowder                 = <minecraft:blaze_powder>;
 var book                        = <minecraft:book>;
 var bucket                      = <minecraft:bucket>;
 var cobble                      = <minecraft:cobblestone>;
+var bonemeal                    = <minecraft:dye:15>;
 var glowstoneDust               = <minecraft:glowstone_dust>;
 var ironIngot                   = <minecraft:iron_ingot>;
 var leather                     = <minecraft:leather>;
@@ -379,6 +380,10 @@ recipes.addShapeless(invarBoots, [invarBoots.anyDamage().marked("inp"), ironIngo
         return output.withDamage(max(0, inputs.inp.damage - 50));
     }
 );
+
+# Bone Meal
+mods.tconstruct.Casting.addTableRecipe(bonemeal, <liquid:sewage> * 100, sawdust , true, 10);
+mods.thermalexpansion.Transposer.addFillRecipe(100, sawdust, bonemeal, <liquid:sewage> * 100);
 
 ################################################################
 ### ALCHEMY TIER ###############################################

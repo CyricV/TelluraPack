@@ -38,6 +38,7 @@ var frankNZombie                = <EnderIO:itemFrankenSkull:2>;
 var enderResonator              = <EnderIO:itemFrankenSkull:3>;
 var sentientEnder               = <EnderIO:itemFrankenSkull:4>;
 var fluidConduit                = <EnderIO:itemLiquidConduit>;
+var firmTofu                    = <harvestcraft:firmtofuItem>;
 var fireEssence                 = <magicalcrops:magicalcrops_FireEssence>;
 var waterEssence                = <magicalcrops:magicalcrops_WaterEssence>;
 var airEssence                  = <magicalcrops:magicalcrops_AirEssence>;
@@ -58,6 +59,7 @@ var netherBrickStairs           = <minecraft:nether_brick_stairs>;
 var netherBrickFence            = <minecraft:nether_brick_fence>;
 var netherBrickSlab             = <minecraft:stone_slab:6>;
 var netherBrick                 = <minecraft:netherbrick>;
+var industrialFertilizer        = <MineFactoryReloaded:fertilizer>;
 var upgradeLapis                = <MineFactoryReloaded:upgrade.radius>;
 var upgradeTin                  = <MineFactoryReloaded:upgrade.radius:1>;
 var upgradeIron                 = <MineFactoryReloaded:upgrade.radius:2>;
@@ -78,6 +80,7 @@ var steelIngot                  = <TConstruct:materials:16>;
 var searedBrick2                = <TConstruct:materials:37>;
 var heavyPlateInvar             = <TConstruct:heavyPlate:1020>;
 var toolRodIron                 = <TConstruct:toolRod:2>;
+var monsterJerky                = <TConstruct:jerky:5>;
 var alchemicalConstruct         = <Thaumcraft:blockMetalDevice:9>;
 var coreDecanting               = <Thaumcraft:ItemGolemCore:5>;
 var nitor                       = <Thaumcraft:ItemResource:1>;
@@ -148,6 +151,7 @@ var allIronNugs                 = <ore:nuggetIron>;
 var allGoldNugs                 = <ore:nuggetGold>;
 var oreRubber                   = <ore:itemRubber>;
 var orePlank                    = <ore:plankWood>;
+var oreTrueRawMeat              = <ore:trueRawMeat>;
 var oreRawMeat                  = <ore:listAllmeatraw>;
 
 ################################################################
@@ -157,6 +161,9 @@ var oreRawMeat                  = <ore:listAllmeatraw>;
 recipes.remove(ammoNeedle);
 recipes.remove(ammoFire);
 recipes.remove(ammoAnvil);
+
+# Industrial Fertilizer
+recipes.remove(industrialFertilizer);
 
 ################################################################
 ### STONE TIER #################################################
@@ -348,11 +355,17 @@ mods.tconstruct.Smeltery.addAlloy(<liquid:sludge> * 1000, [<liquid:coal> * 400, 
 SludgeBoiler.addDrop(rawPlastic * 4);
 
 # Pink Slime
-#for item in oreRawMeat.items {
-#    mods.thermalexpansion.Crucible.addRecipe(500000, item, <liquid:ender> * 8000);
-#}
-#InputRF, InputStack, OutputFluid
-#mods.thermalexpansion.Crucible.addRecipe(500000, oreRawMeat, <liquid:ender> * 8000);
+# I should not have to create the ore dictionary here, load order is dumb
+oreTrueRawMeat.mirror(<ore:listAllmeatraw>);
+oreTrueRawMeat.addAll(<ore:listAllfishraw>);
+oreTrueRawMeat.remove(firmTofu);
+oreTrueRawMeat.remove(firmTofu);
+oreTrueRawMeat.remove(firmTofu);
+oreTrueRawMeat.remove(firmTofu);
+for item in oreTrueRawMeat.items {
+    mods.thermalexpansion.Crucible.addRecipe(10000, item, <liquid:pinkslime> * 100);
+    mods.thermalexpansion.Transposer.addExtractRecipe(2000, item, <liquid:blood> * 50, monsterJerky, 100);
+}
 
 
 ################################################################

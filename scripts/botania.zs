@@ -9,6 +9,7 @@ var terrasteelIngot             = <Botania:manaResource:4>;
 var gaiaSpirit                  = <Botania:manaResource:5>;
 var elementiumIngot             = <Botania:manaResource:7>;
 var pixieDust                   = <Botania:manaResource:8>;
+var dragonStone                 = <Botania:manaResource:9>;
 var terrasteelNug               = <Botania:manaResource:18>;
 var manaweaveCloth              = <Botania:manaResource:22>;
 var manaPowder                  = <Botania:manaResource:23>;
@@ -58,6 +59,7 @@ var blizzPowder                 = <ThermalFoundation:material:1025>;
 var blitzPowder                 = <ThermalFoundation:material:1027>;
 var basalzPowder                = <ThermalFoundation:material:1029>;
 var gemstoneDust                = <WitchingGadgets:item.WG_Material:13>;
+var mithrilDust                 = <ThermalFoundation:material:38>;
 
 # Devices
 var alchemyCatalyst             = <Botania:alchemyCatalyst>;
@@ -69,10 +71,6 @@ var elvenGatewayCore            = <Botania:alfheimPortal>;
 var openCrate                   = <Botania:openCrate>;
 
 # Equipment
-var thaumiumHelm                = <Thaumcraft:ItemHelmetThaumium>;
-var thaumiumChest               = <Thaumcraft:ItemChestplateThaumium>;
-var thaumiumLeggings            = <Thaumcraft:ItemLeggingsThaumium>;
-var thaumiumBoots               = <Thaumcraft:ItemBootsThaumium>;
 var manasteelHelm               = <Botania:manasteelHelm>;
 var manasteelChest              = <Botania:manasteelChest>;
 var manasteelLeggings           = <Botania:manasteelLegs>;
@@ -86,6 +84,11 @@ var elementiumChest             = <Botania:elementiumChest>;
 var elementiumLeggings          = <Botania:elementiumLegs>;
 var elementiumBoots             = <Botania:elementiumBoots>;
 var lexicaBotania               = <Botania:lexicon>;
+var soulVial                    = <EnderIO:itemSoulVessel>;
+var thaumiumHelm                = <Thaumcraft:ItemHelmetThaumium>;
+var thaumiumChest               = <Thaumcraft:ItemChestplateThaumium>;
+var thaumiumLeggings            = <Thaumcraft:ItemLeggingsThaumium>;
+var thaumiumBoots               = <Thaumcraft:ItemBootsThaumium>;
 
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
@@ -385,3 +388,17 @@ recipes.addShaped(elementiumBoots, [
     }
 );
 
+################################################################
+### VOID TIER ##################################################
+################################################################
+
+# Gaia Pylon
+recipes.remove(gaiaPylon);
+mods.thaumcraft.Infusion.addRecipe(
+    "VOIDMETAL",
+    soulVial,
+    [dragonStone, mithrilDust, elementiumIngot, mithrilDust, dragonStone, mithrilDust, elementiumIngot, mithrilDust],
+    "telum 32, herba 32, auram 16, vinculum 16",
+    gaiaPylon,
+    6
+);

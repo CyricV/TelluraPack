@@ -3,8 +3,11 @@ var basicGear                   = <EnderIO:itemMachinePart:1>;
 var enderPowder                 = <EnderIO:itemPowderIngot:5>;
 var soulariumIngot              = <EnderIO:itemAlloy:7>;
 var enderShard                  = <GrimoireOfGaia:item.GrimoireOfGaia.Shard:5>;
+var firmTofu                    = <harvestcraft:firmtofuItem>;
 var enderPearl                  = <minecraft:ender_pearl>;
 var goldOre                     = <minecraft:gold_ore>;
+var rottenFlesh                 = <minecraft:rotten_flesh>;
+var coagulatedBlood             = <TConstruct:strangeFood:1>;
 var slimeSoil                   = <TConstruct:CraftedSoil:6>;
 var searedBrick                 = <TConstruct:materials:2>;
 var searedBrick2                = <TConstruct:materials:37>;
@@ -29,12 +32,17 @@ var canisterGreen               = <TConstruct:heartCanister:6>;
 
 # Ore Dictionary Items
 var allGoldOre                  = <ore:oreGold>;
+var oreTrueRawMeat              = <ore:trueRawMeat>;
 
 ################################################################
 ### Removal ####################################################
 ################################################################
 # Monster Jerky
 mods.tconstruct.Drying.removeRecipe(monsterJerky);
+
+# Blood from smeltery
+mods.tconstruct.Smeltery.removeMelting(rottenFlesh);
+mods.tconstruct.Smeltery.removeMelting(coagulatedBlood);
 
 ################################################################
 ### TINKER TIER ################################################
@@ -52,6 +60,19 @@ recipes.remove(slimeSoil);
 furnace.remove(searedBrick2);
 mods.thermalexpansion.Furnace.removeRecipe(slimeSoil);
 mods.thaumcraft.Crucible.addRecipe("ALCHEMICALMANUFACTURE", searedBrick2, searedBrick, "ignis 32");
+
+# Blood
+# I should not have to create the ore dictionary here, load order is dumb
+#oreTrueRawMeat.mirror(<ore:listAllmeatraw>);
+#oreTrueRawMeat.addAll(<ore:listAllfishraw>);
+#oreTrueRawMeat.remove(firmTofu);
+#for item in oreTrueRawMeat.items {
+#    #InputRF, InputStack, InputFluid, OutputStack, Chance
+#    mods.thermalexpansion.Transposer.addExtractRecipe(2000, item, <liquid:blood> * 50, monsterJerky, 100);
+#}
+monsterJerky.displayName = "Tough Jerky";
+# MOVED TO minefactory_reloaded.zs BECAUSE MINETWEAKER IS DUMB
+
 
 ################################################################
 ### INFUSTION TIER #############################################
