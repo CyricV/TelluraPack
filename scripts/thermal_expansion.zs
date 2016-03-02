@@ -169,10 +169,10 @@ var leadstoneEnergyCell         = <ThermalExpansion:Cell:1>;
 var hardenedEnergyCell          = <ThermalExpansion:Cell:2>;
 var redstoneEnergyCell          = <ThermalExpansion:Cell:3>;
 var resonantEnergyCell          = <ThermalExpansion:Cell:4>;
-var workbench                   = <ThermalExpansion:Device:1>;
-var hardenedWorkbench           = <ThermalExpansion:Device:2>;
-var reinforcedWorkbench         = <ThermalExpansion:Device:3>;
-var resonantWorkbench           = <ThermalExpansion:Device:4>;
+var workbench                   = <ThermalExpansion:Workbench:1>;
+var hardenedWorkbench           = <ThermalExpansion:Workbench:2>;
+var reinforcedWorkbench         = <ThermalExpansion:Workbench:3>;
+var resonantWorkbench           = <ThermalExpansion:Workbench:4>;
 var autonomousActivator         = <ThermalExpansion:Device:2>;
 var terrainSmasher              = <ThermalExpansion:Device:3>;
 var acquisitionApparatus        = <ThermalExpansion:Device:4>;
@@ -225,6 +225,7 @@ var allObsidianDust             = <ore:dustObsidian>;
 var allIronNugs                 = <ore:nuggetIron>;
 var allTinNugs                  = <ore:nuggetTin>;
 var accioMaterial               = <ore:accioMaterial>;
+var oreDyePurple                = <ore:dyePurple>;
 
 ################################################################
 ### Removal ####################################################
@@ -371,9 +372,9 @@ recipes.addShapeless(tinIngotTF, [oreTinIngot]);
 # Portable Tank
 recipes.remove(portableTank);
 recipes.addShaped(portableTank, [
-    [oreCopperIngot,   tinGear,        oreCopperIngot],
+    [oreCopperIngot,    copperGear,     oreCopperIngot],
     [allGlassBlocks,    allGlassBlocks, allGlassBlocks],
-    [oreCopperIngot,   tinGear,        oreCopperIngot]
+    [oreCopperIngot,    copperGear,     oreCopperIngot]
 ]);
 
 # Plate Frame
@@ -702,9 +703,9 @@ recipes.remove(hardenedWorkbench);
 recipes.remove(reinforcedWorkbench);
 recipes.remove(resonantWorkbench);
 recipes.addShaped(resonantWorkbench, [
-    [paper,         paper,          paper],
-    [oreTinIngot,  craftingTable,  oreTinIngot],
-    [oreTinIngot,  chest,          oreTinIngot]
+    [paper,         oreDyePurple,   paper],
+    [oreTinIngot,   craftingTable,  oreTinIngot],
+    [oreTinIngot,   chest,          oreTinIngot]
 ]);
 
 # Autonomous Activator

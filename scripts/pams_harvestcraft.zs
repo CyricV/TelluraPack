@@ -1,13 +1,17 @@
 # Materials
 var freshWater                  = <harvestcraft:freshwaterItem>;
 var freshMilk                   = <harvestcraft:freshmilkItem>;
-var ironIngot                   = <minecraft:iron_ingot>;
-var stoneSlab                   = <minecraft:stone_slab>;
-var smoothStone                 = <minecraft:stone>;
-var heavyPlateIron              = <TConstruct:heavyPlate:2>;
 var beeGrub                     = <harvestcraft:grubItem>;
 var beeQueen                    = <harvestcraft:queenbeeItem>;
 var beeEmptyQueen               = <harvestcraft:queenbeeItem:18>;
+var epicBacon                   = <harvestcraft:epicbaconItem>;
+var chocolateBacon              = <harvestcraft:chocolatebaconItem>;
+var technicolorEssence          = <magicalcrops:magicalcrops_DyeEssence>;
+var ironIngot                   = <minecraft:iron_ingot>;
+var stoneSlab                   = <minecraft:stone_slab>;
+var smoothStone                 = <minecraft:stone>;
+var sugar                       = <minecraft:sugar>;
+var heavyPlateIron              = <TConstruct:heavyPlate:2>;
 
 # Devices
 
@@ -82,3 +86,11 @@ mods.thaumcraft.Crucible.addRecipe(
     beeGrub,
     "sensus 1"
 );
+
+# Epic Bacon
+recipes.remove(epicBacon);
+recipes.addShaped(epicBacon, [
+    [sugar,                 technicolorEssence, sugar],
+    [technicolorEssence,    chocolateBacon,     technicolorEssence],
+    [sugar,                 technicolorEssence, sugar]
+]);

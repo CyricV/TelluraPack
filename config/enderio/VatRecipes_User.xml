@@ -89,6 +89,16 @@
                 <fluidStack name="fire_water" />
             </output>
         </recipe>
+        <recipe name="Primal Mana" energyCost="8000" >
+            <input>
+                <itemStack oreDictionary="dustMithril" slot="0" multiplier="1" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_5ZivicioEssence" slot="1" multiplier="1" />
+                <fluidStack name="fire_water" multiplier="0.1" />
+            </input>
+            <output>
+                <fluidStack name="mana" />
+            </output>
+        </recipe>
     </recipeGroup>
 
 </VatRecipes>

@@ -106,7 +106,7 @@ var furnace                     = <minecraft:furnace>;
 var hopper                      = <minecraft:hopper>;
 var chest                       = <minecraft:chest>;
 var ironPressurePlate           = <minecraft:heavy_weighted_pressure_plate>;
-var machinistsWorkbench         = <ThermalExpansion:Device>;
+var machinistsWorkbench         = <ThermalExpansion:Workbench:4>;
 var cyclicAssembler             = <ThermalExpansion:Machine:9>;
 
 # Equipment
