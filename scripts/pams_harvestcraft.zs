@@ -54,11 +54,7 @@ recipes.addShapeless(freshMilk * 4, [potionMilk.giveBack(potionEmpty)]);
 
 # Juicer
 recipes.remove(juicer);
-recipes.addShaped(juicer, [
-    [smoothStone,   null,   null],
-    [stoneSlab,     null,   null],
-    [null,          null,   null]
-]);
+recipes.addShapeless(juicer, [smoothStone, stoneSlab]);
 
 ################################################################
 ### TINKER TIER ################################################

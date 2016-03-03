@@ -29,6 +29,8 @@ var ironPlate                   = <TConstruct:heavyPlate:2>;
 var ironToughBinding            = <TConstruct:toughBinding:2>;
 var sawdust                     = <ThermalExpansion:material:512>;
 var ironGear                    = <ThermalFoundation:material:12>;
+var appleGolden                 = <minecraft:golden_apple>;
+var appleNotch                  = <minecraft:golden_apple:1>;
 
 # Devices
 var furnace                     = <minecraft:furnace>;
@@ -148,6 +150,9 @@ recipes.remove(diamondPickaxe);
 recipes.remove(diamondAxe);
 recipes.remove(diamondHoe);
 
+# Golden Apples
+recipes.remove(appleGolden);
+recipes.remove(appleNotch);
 
 ################################################################
 ### STONE TIER #################################################

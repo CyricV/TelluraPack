@@ -56,94 +56,94 @@ mods.thaumcraft.Crucible.removeRecipe(thaumiumGearBox);
 ################################################################
 # ME Essentia Storage Housing
 recipes.remove(meEssentiaHousing);
-recipes.addShaped(meEssentiaHousing, [
-    [thaumiumNug,   wardedGlass,    thaumiumNug],
-    [redAlloyWire,  null,           redAlloyWire],
-    [thaumiumNug,   thaumiumNug,    thaumiumNug]
-]);
+#recipes.addShaped(meEssentiaHousing, [
+#    [thaumiumNug,   wardedGlass,    thaumiumNug],
+#    [redAlloyWire,  null,           redAlloyWire],
+#    [thaumiumNug,   thaumiumNug,    thaumiumNug]
+#]);
 
 # 1K Essentia Storage Component
 mods.thaumcraft.Arcane.removeRecipe(oneKEssentiaComponent);
-mods.thaumcraft.Arcane.addShaped(
-    "thaumicenergistics.TESTORAGE",
-    oneKEssentiaComponent,
-    "ordo 2, ignis 1", [
-    [redAlloyWire,      pureCertusQuartz,       redAlloyWire],
-    [pureCertusQuartz,  calculationProcessor,   pureCertusQuartz],
-    [redAlloyWire,      pureCertusQuartz,       redAlloyWire]
-]);
+#mods.thaumcraft.Arcane.addShaped(
+#    "thaumicenergistics.TESTORAGE",
+#    oneKEssentiaComponent,
+#    "ordo 2, ignis 1", [
+#    [redAlloyWire,      pureCertusQuartz,       redAlloyWire],
+#    [pureCertusQuartz,  calculationProcessor,   pureCertusQuartz],
+#    [redAlloyWire,      pureCertusQuartz,       redAlloyWire]
+#]);
 
 # 1K Essentia Storage Cell
 recipes.remove(oneKEssentiaCell);
-recipes.addShaped(oneKEssentiaCell, [
-    [thaumiumNug,   wardedGlass,            thaumiumNug],
-    [redAlloyWire,  oneKEssentiaComponent,  redAlloyWire],
-    [thaumiumNug,   thaumiumNug,            thaumiumNug]
-]);
-recipes.addShapeless(oneKEssentiaCell, [oneKEssentiaComponent, meEssentiaHousing]);
+#recipes.addShaped(oneKEssentiaCell, [
+#    [thaumiumNug,   wardedGlass,            thaumiumNug],
+#    [redAlloyWire,  oneKEssentiaComponent,  redAlloyWire],
+#    [thaumiumNug,   thaumiumNug,            thaumiumNug]
+#]);
+#recipes.addShapeless(oneKEssentiaCell, [oneKEssentiaComponent, meEssentiaHousing]);
 
 ################################################################
 ### INFUSION TIER ##############################################
 ################################################################
 # 4K Essentia Storage Component
 mods.thaumcraft.Arcane.removeRecipe(fourKEssentiaComponent);
-mods.thaumcraft.Arcane.addShaped(
-    "thaumicenergistics.TESTORAGE",
-    fourKEssentiaComponent,
-    "ordo 4, ignis 2", [
-    [redAlloyWire,          oneKEssentiaComponent,  redAlloyWire],
-    [oneKEssentiaComponent, logicProcessor,         oneKEssentiaComponent],
-    [redAlloyWire,          oneKEssentiaComponent,  redAlloyWire]
-]);
+#mods.thaumcraft.Arcane.addShaped(
+#    "thaumicenergistics.TESTORAGE",
+#    fourKEssentiaComponent,
+#    "ordo 4, ignis 2", [
+#    [redAlloyWire,          oneKEssentiaComponent,  redAlloyWire],
+#    [oneKEssentiaComponent, logicProcessor,         oneKEssentiaComponent],
+#    [redAlloyWire,          oneKEssentiaComponent,  redAlloyWire]
+#]);
 
 # 4K Essentia Storage Cell
 recipes.remove(fourKEssentiaCell);
-recipes.addShaped(fourKEssentiaCell, [
-    [thaumiumNug,   wardedGlass,            thaumiumNug],
-    [redAlloyWire,  fourKEssentiaComponent, redAlloyWire],
-    [thaumiumNug,   thaumiumNug,            thaumiumNug]
-]);
-recipes.addShapeless(fourKEssentiaCell, [fourKEssentiaComponent, meEssentiaHousing]);
+#recipes.addShaped(fourKEssentiaCell, [
+#    [thaumiumNug,   wardedGlass,            thaumiumNug],
+#    [redAlloyWire,  fourKEssentiaComponent, redAlloyWire],
+#    [thaumiumNug,   thaumiumNug,            thaumiumNug]
+#]);
+#recipes.addShapeless(fourKEssentiaCell, [fourKEssentiaComponent, meEssentiaHousing]);
 
 ################################################################
 ### VOID TIER ##################################################
 ################################################################
 # 16K Essentia Storage Component
 mods.thaumcraft.Arcane.removeRecipe(sixteenKEssentiaComponent);
-mods.thaumcraft.Arcane.addShaped(
-    "thaumicenergistics.TESTORAGE",
-    sixteenKEssentiaComponent,
-    "ordo 8, ignis 4", [
-    [salisMundus,               fourKEssentiaComponent, salisMundus],
-    [fourKEssentiaComponent,    engineeringProcessor,   fourKEssentiaComponent],
-    [salisMundus,               fourKEssentiaComponent, salisMundus]
-]);
+#mods.thaumcraft.Arcane.addShaped(
+#    "thaumicenergistics.TESTORAGE",
+#    sixteenKEssentiaComponent,
+#    "ordo 8, ignis 4", [
+#    [salisMundus,               fourKEssentiaComponent, salisMundus],
+#    [fourKEssentiaComponent,    engineeringProcessor,   fourKEssentiaComponent],
+#    [salisMundus,               fourKEssentiaComponent, salisMundus]
+#]);
 
 # 16K Essentia Storage Cell
 recipes.remove(sixteenKEssentiaCell);
-recipes.addShaped(sixteenKEssentiaCell, [
-    [thaumiumNug,   wardedGlass,                thaumiumNug],
-    [redAlloyWire,  sixteenKEssentiaComponent,  redAlloyWire],
-    [thaumiumNug,   thaumiumNug,                thaumiumNug]
-]);
-recipes.addShapeless(sixteenKEssentiaCell, [sixteenKEssentiaComponent, meEssentiaHousing]);
+#recipes.addShaped(sixteenKEssentiaCell, [
+#    [thaumiumNug,   wardedGlass,                thaumiumNug],
+#    [redAlloyWire,  sixteenKEssentiaComponent,  redAlloyWire],
+#    [thaumiumNug,   thaumiumNug,                thaumiumNug]
+#]);
+#recipes.addShapeless(sixteenKEssentiaCell, [sixteenKEssentiaComponent, meEssentiaHousing]);
 
 # 64K Essentia Storage Component
 mods.thaumcraft.Arcane.removeRecipe(sixtyFourKEssentiaComponent);
-mods.thaumcraft.Arcane.addShaped(
-    "thaumicenergistics.TESTORAGE",
-    sixtyFourKEssentiaComponent,
-    "ordo 16, ignis 8", [
-    [salisMundus,               sixteenKEssentiaComponent,  salisMundus],
-    [sixteenKEssentiaComponent, engineeringProcessor,       sixteenKEssentiaComponent],
-    [salisMundus,               sixteenKEssentiaComponent,  salisMundus]
-]);
+#mods.thaumcraft.Arcane.addShaped(
+#    "thaumicenergistics.TESTORAGE",
+#    sixtyFourKEssentiaComponent,
+#    "ordo 16, ignis 8", [
+#    [salisMundus,               sixteenKEssentiaComponent,  salisMundus],
+#    [sixteenKEssentiaComponent, engineeringProcessor,       sixteenKEssentiaComponent],
+#    [salisMundus,               sixteenKEssentiaComponent,  salisMundus]
+#]);
 
 # 64K Essentia Storage Cell
 recipes.remove(sixtyFourKEssentiaCell);
-recipes.addShaped(sixtyFourKEssentiaCell, [
-    [thaumiumNug,   wardedGlass,                    thaumiumNug],
-    [redAlloyWire,  sixtyFourKEssentiaComponent,    redAlloyWire],
-    [thaumiumNug,   thaumiumNug,                    thaumiumNug]
-]);
-recipes.addShapeless(sixtyFourKEssentiaCell, [sixtyFourKEssentiaComponent, meEssentiaHousing]);
+#recipes.addShaped(sixtyFourKEssentiaCell, [
+#    [thaumiumNug,   wardedGlass,                    thaumiumNug],
+#    [redAlloyWire,  sixtyFourKEssentiaComponent,    redAlloyWire],
+#    [thaumiumNug,   thaumiumNug,                    thaumiumNug]
+#]);
+#recipes.addShapeless(sixtyFourKEssentiaCell, [sixtyFourKEssentiaComponent, meEssentiaHousing]);

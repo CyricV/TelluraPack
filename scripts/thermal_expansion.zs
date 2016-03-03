@@ -207,6 +207,8 @@ var bucket                      = <minecraft:bucket>;
 var lavaBucket                  = <minecraft:lava_bucket>;
 var crescentHammer              = <ThermalExpansion:wrench>;
 var battleWrench                = <ThermalExpansion:tool.battleWrenchInvar>;
+var multimeter                  = <ThermalExpansion:meter>;
+var conduitProbe                = <EnderIO:itemConduitProbe>;
 
 # Ore Dictionary Items
 var allLogs                     = <ore:logWood>;
@@ -871,6 +873,10 @@ mods.thermalexpansion.Transposer.addFillRecipe(2000, bonemeal, phytoGro, <liquid
 # Rich Phyto Gro
 recipes.remove(phytoGroRich);
 mods.thermalexpansion.Transposer.addFillRecipe(4000, phytoGro, phytoGroRich, <liquid:sewage> * 100);
+
+# Multi Meter
+recipes.remove(multimeter);
+recipes.addShapeless(multimeter, [conduitProbe, calculationProcessor]);
 
 ################################################################
 ### INFUSTION TIER #############################################

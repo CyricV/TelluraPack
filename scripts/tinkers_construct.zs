@@ -21,6 +21,7 @@ var voidMetalIngot              = <Thaumcraft:ItemResource:16>;
 var bloodSyringe                = <ThaumicHorizons:syringeBlood>;
 var voidPutty                   = <ThaumicHorizons:voidPutty>;
 var dynamicMaterial             = <customitems:dynamic_material>;
+var jeweledApple                = <TConstruct:diamondApple>;
 
 # Devices
 var gearCast                    = <TConstruct:gearCast>;
@@ -43,6 +44,9 @@ mods.tconstruct.Drying.removeRecipe(monsterJerky);
 # Blood from smeltery
 mods.tconstruct.Smeltery.removeMelting(rottenFlesh);
 mods.tconstruct.Smeltery.removeMelting(coagulatedBlood);
+
+# Jeweled Apple
+recipes.remove(jeweledApple);
 
 ################################################################
 ### TINKER TIER ################################################

@@ -107,6 +107,55 @@ var bronzeGear                  = <ThermalFoundation:material:137>;
 var signalumGear                = <ThermalFoundation:material:138>;
 var lumiumGear                  = <ThermalFoundation:material:139>;
 var enderiumGear                = <ThermalFoundation:material:140>;
+var factoryMachineBlock         = <MineFactoryReloaded:machineblock>;
+var roadMFR                     = <MineFactoryReloaded:road>;
+var roadMFRLite                 = <MineFactoryReloaded:road:1>;
+var roadMFRLiteI                = <MineFactoryReloaded:road:4>;
+var controllerHousing           = <MineFactoryReloaded:machineblock:1>;
+var detCord                     = <MineFactoryReloaded:detcord>;
+var prcMemory                   = <MineFactoryReloaded:rednet.memorycard>;
+var prc1                        = <MineFactoryReloaded:upgrade.logic>;
+var prc2                        = <MineFactoryReloaded:upgrade.logic:1>;
+var prc3                        = <MineFactoryReloaded:upgrade.logic:2>;
+var rawMeatIngot                = <MineFactoryReloaded:meat.ingot.raw>;
+var ingotCast                   = <TConstruct:metalPattern>;
+var fertileSoil                 = <MineFactoryReloaded:farmland>;
+var dirt                        = <minecraft:dirt>;
+var manaLenseWarp               = <Botania:lens:18>;
+
+var stainedPane0                = <MineFactoryReloaded:stainedglass.pane>;
+var stainedPane1                = <MineFactoryReloaded:stainedglass.pane:1>;
+var stainedPane2                = <MineFactoryReloaded:stainedglass.pane:2>;
+var stainedPane3                = <MineFactoryReloaded:stainedglass.pane:3>;
+var stainedPane4                = <MineFactoryReloaded:stainedglass.pane:4>;
+var stainedPane5                = <MineFactoryReloaded:stainedglass.pane:5>;
+var stainedPane6                = <MineFactoryReloaded:stainedglass.pane:6>;
+var stainedPane7                = <MineFactoryReloaded:stainedglass.pane:7>;
+var stainedPane8                = <MineFactoryReloaded:stainedglass.pane:8>;
+var stainedPane9                = <MineFactoryReloaded:stainedglass.pane:9>;
+var stainedPane10               = <MineFactoryReloaded:stainedglass.pane:10>;
+var stainedPane11               = <MineFactoryReloaded:stainedglass.pane:11>;
+var stainedPane12               = <MineFactoryReloaded:stainedglass.pane:12>;
+var stainedPane13               = <MineFactoryReloaded:stainedglass.pane:13>;
+var stainedPane14               = <MineFactoryReloaded:stainedglass.pane:14>;
+var stainedPane15               = <MineFactoryReloaded:stainedglass.pane:15>;
+
+var laserFocus0                 = <MineFactoryReloaded:laserfocus>;
+var laserFocus1                 = <MineFactoryReloaded:laserfocus:1>;
+var laserFocus2                 = <MineFactoryReloaded:laserfocus:2>;
+var laserFocus3                 = <MineFactoryReloaded:laserfocus:3>;
+var laserFocus4                 = <MineFactoryReloaded:laserfocus:4>;
+var laserFocus5                 = <MineFactoryReloaded:laserfocus:5>;
+var laserFocus6                 = <MineFactoryReloaded:laserfocus:6>;
+var laserFocus7                 = <MineFactoryReloaded:laserfocus:7>;
+var laserFocus8                 = <MineFactoryReloaded:laserfocus:8>;
+var laserFocus9                 = <MineFactoryReloaded:laserfocus:9>;
+var laserFocus10                = <MineFactoryReloaded:laserfocus:10>;
+var laserFocus11                = <MineFactoryReloaded:laserfocus:11>;
+var laserFocus12                = <MineFactoryReloaded:laserfocus:12>;
+var laserFocus13                = <MineFactoryReloaded:laserfocus:13>;
+var laserFocus14                = <MineFactoryReloaded:laserfocus:14>;
+var laserFocus15                = <MineFactoryReloaded:laserfocus:15>;
 
 # Devices
 var controller                  = <appliedenergistics2:tile.BlockController>;
@@ -127,6 +176,14 @@ var fruitPicker                 = <MineFactoryReloaded:machine.2:6>;
 var fountain                    = <MineFactoryReloaded:machine.2:11>;
 var tank                        = <OpenBlocks:tank>;
 var arcaneBore                  = <Thaumcraft:blockWoodenDevice:5>;
+var itemCollector               = <MineFactoryReloaded:machine.0:6>;
+var plasticTank                 = <MineFactoryReloaded:tank>;
+var plasticPipe                 = <MineFactoryReloaded:cable.plastic>;
+var rednetCable                 = <MineFactoryReloaded:cable.redstone>;
+var rednetEnergyCable           = <MineFactoryReloaded:cable.redstone:2>;
+var programableRednetController = <MineFactoryReloaded:rednet.logic>;
+var rednetHistorian             = <MineFactoryReloaded:rednet.panel>;
+var fishingRodMFR               = <MineFactoryReloaded:fishingrod>;
 
 # Equipment
 var thaumometer                 = <Thaumcraft:ItemThaumometer>;
@@ -144,7 +201,19 @@ var spamr                       = <MineFactoryReloaded:rocketlauncher>;
 var rocketGuided                = <MineFactoryReloaded:rocket>;
 var rocket                      = <MineFactoryReloaded:rocket:1>;
 var wandFocusFire               = <Thaumcraft:FocusFire>;
-
+var precisionSledgeHammer       = <MineFactoryReloaded:hammer>;
+var bootsPlastic                = <MineFactoryReloaded:plastic.boots>;
+var helmetPlastic               = <MineFactoryReloaded:plastic.helm>;
+var chestPlastic                = <MineFactoryReloaded:plastic.chest>;
+var leggingsPlastic             = <MineFactoryReloaded:plastic.legs>;
+var rednetMeter                 = <MineFactoryReloaded:rednet.meter>;
+var rednetMultimeter            = <MineFactoryReloaded:rednet.meter:1>;
+var safariNet                   = <MineFactoryReloaded:safarinet.singleuse>;
+var safariNetReusable           = <MineFactoryReloaded:safarinet.reusable>;
+var safariNetJailer             = <MineFactoryReloaded:safarinet.jailer>;
+var plasticStraw                = <MineFactoryReloaded:straw>;
+var plasticCup                  = <MineFactoryReloaded:plastic.cup>;
+var plasticBag                  = <MineFactoryReloaded:plastic.bag>;
 
 # Ore Dictionary Items
 var allIronNugs                 = <ore:nuggetIron>;
@@ -164,6 +233,70 @@ recipes.remove(ammoAnvil);
 
 # Industrial Fertilizer
 recipes.remove(industrialFertilizer);
+
+# Factory Machine Block
+recipes.remove(factoryMachineBlock);
+
+# Programable Rednet Controller Housing
+recipes.remove(controllerHousing);
+
+# Item Collector
+recipes.remove(itemCollector);
+
+# Plastic Tank
+recipes.remove(plasticTank);
+
+# MFR Conduits
+recipes.remove(plasticPipe);
+recipes.remove(rednetCable);
+recipes.remove(rednetEnergyCable);
+
+# Programable Rednet Controller
+recipes.remove(programableRednetController);
+
+# Rednet Historian
+recipes.remove(rednetHistorian);
+
+# MFR Road
+recipes.remove(roadMFR);
+recipes.remove(roadMFRLite);
+recipes.remove(roadMFRLiteI);
+
+# Precision Sledge Hammer
+recipes.remove(precisionSledgeHammer);
+
+# Det Cord and Fishing Pole
+recipes.remove(detCord);
+recipes.remove(fishingRodMFR);
+
+# Plastic Armor
+recipes.remove(bootsPlastic);
+recipes.remove(helmetPlastic);
+recipes.remove(chestPlastic);
+recipes.remove(leggingsPlastic);
+
+# Rednet Meters
+recipes.remove(rednetMeter);
+recipes.remove(rednetMultimeter);
+
+# PRCs
+recipes.remove(prcMemory);
+recipes.remove(prc1);
+recipes.remove(prc2);
+recipes.remove(prc3);
+
+# Safari Nets
+recipes.remove(safariNet);
+recipes.remove(safariNetJailer);
+recipes.remove(safariNetReusable);
+
+# Plastic Items
+recipes.remove(plasticStraw);
+recipes.remove(plasticBag);
+recipes.remove(plasticCup);
+
+# 
+#recipes.remove();
 
 ################################################################
 ### STONE TIER #################################################
@@ -187,6 +320,9 @@ recipes.addShaped(autoJukebox, [
     [ironIngot, jukebox,    ironIngot],
     [ironIngot, ironIngot,  ironIngot]
 ]);
+
+# Meat Ingot
+mods.tconstruct.Casting.addTableRecipe(rawMeatIngot, <liquid:pinkslime> * 100, ingotCast, false, 20);
 
 ################################################################
 ### ALCHEMY TIER ###############################################
@@ -237,14 +373,17 @@ upgradeCobble.displayName = "Range Upgrade 0";
 recipes.remove(upgradeCobble);
 recipes.addShapeless(upgradeCobble, [basicCard, manaPearl]);
 
-
 # Sewer
 recipes.remove(sewer);
 recipes.addShaped(sewer, [
-    [ironBars,      ironBars,       ironBars],
-    [copperGear,    tank,           copperGear],
-    [ironIngot,     coreDecanting,  ironIngot]
+    [ironBars,      ironBars,   ironBars],
+    [copperGear,    tank,       copperGear],
+    [ironIngot,     null,       ironIngot]
 ]);
+
+# Fertile Farmland
+recipes.remove(fertileSoil);
+mods.thermalexpansion.Transposer.addFillRecipe(2000, dirt, fertileSoil, <liquid:sewage> * 100);
 
 # Red Note Block
 recipes.remove(redNoteBlock);
@@ -354,7 +493,7 @@ SludgeBoiler.removeDrop(<*>);
 mods.tconstruct.Smeltery.addAlloy(<liquid:sludge> * 1000, [<liquid:coal> * 400, <liquid:petrotheum> * 50]);
 SludgeBoiler.addDrop(rawPlastic * 4);
 
-# Pink Slime
+# Pink Slime and Blood
 # I should not have to create the ore dictionary here, load order is dumb
 oreTrueRawMeat.mirror(<ore:listAllmeatraw>);
 oreTrueRawMeat.addAll(<ore:listAllfishraw>);
@@ -362,11 +501,108 @@ oreTrueRawMeat.remove(firmTofu);
 oreTrueRawMeat.remove(firmTofu);
 oreTrueRawMeat.remove(firmTofu);
 oreTrueRawMeat.remove(firmTofu);
-for item in oreTrueRawMeat.items {
-    mods.thermalexpansion.Crucible.addRecipe(10000, item, <liquid:pinkslime> * 100);
-    mods.thermalexpansion.Transposer.addExtractRecipe(2000, item, <liquid:blood> * 50, monsterJerky, 100);
-}
+#for item in oreTrueRawMeat.items {
+#    mods.thermalexpansion.Crucible.addRecipe(10000, item, <liquid:pinkslime> * 100);
+#    mods.thermalexpansion.Transposer.addExtractRecipe(2000, item, <liquid:blood> * 50, monsterJerky, 100);
+#}
 
+# Laser Focci
+recipes.remove(laserFocus0);
+recipes.addShaped(laserFocus0, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane0,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus1);
+recipes.addShaped(laserFocus1, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane1,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus2);
+recipes.addShaped(laserFocus2, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane2,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus3);
+recipes.addShaped(laserFocus3, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane3,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus4);
+recipes.addShaped(laserFocus4, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane4,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus5);
+recipes.addShaped(laserFocus5, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane5,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus6);
+recipes.addShaped(laserFocus6, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane6,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus7);
+recipes.addShaped(laserFocus7, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane7,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus8);
+recipes.addShaped(laserFocus8, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane8,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus9);
+recipes.addShaped(laserFocus9, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane9,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus10);
+recipes.addShaped(laserFocus10, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane10,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus11);
+recipes.addShaped(laserFocus11, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane11,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus12);
+recipes.addShaped(laserFocus12, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane12,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus13);
+recipes.addShaped(laserFocus13, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane13,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus14);
+recipes.addShaped(laserFocus14, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane14,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
+recipes.remove(laserFocus15);
+recipes.addShaped(laserFocus15, [
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy],
+    [logicProcessor,    stainedPane15,   logicProcessor],
+    [vibrantAlloy,      manaLensWarp,   vibrantAlloy]
+]);
 
 ################################################################
 ### VOID TIER ##################################################
