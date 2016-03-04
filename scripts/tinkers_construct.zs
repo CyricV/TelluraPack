@@ -63,7 +63,7 @@ mods.tconstruct.Casting.addTableRecipe(gearCast, <liquid:aluminumbrass.molten> *
 recipes.remove(slimeSoil);
 furnace.remove(searedBrick2);
 mods.thermalexpansion.Furnace.removeRecipe(slimeSoil);
-mods.thaumcraft.Crucible.addRecipe("ALCHEMICALMANUFACTURE", searedBrick2, searedBrick, "ignis 32");
+mods.thaumcraft.Crucible.addRecipe("ALCHEMICALMANUFACTURE", searedBrick2, searedBrick, "ignis 8");
 
 # Blood
 # I should not have to create the ore dictionary here, load order is dumb
