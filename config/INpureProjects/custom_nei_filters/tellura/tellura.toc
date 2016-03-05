@@ -1,0 +1,6 @@
+## Title: Tellura NEI Pruning
+## Author: CyricV
+## Version: 0.1
+projectred.js
+thermal_expansion.js
+minefactory_reloaded.js

@@ -7,6 +7,8 @@ var terraSteel                  = <Botania:manaResource:4>;
 var elementium                  = <Botania:manaResource:7>;
 var runeOfWrath                 = <Botania:rune:13>;
 var basicCapacitor              = <EnderIO:itemBasicCapacitor>;
+var doubleLayerCapacitor        = <EnderIO:itemBasicCapacitor:1>;
+var octadicCapacitor            = <EnderIO:itemBasicCapacitor:2>;
 var fluidConduit                = <EnderIO:itemLiquidConduit>;
 var pressurizedFluidConduit     = <EnderIO:itemLiquidConduit:1>;
 var enderCrystal                = <EnderIO:itemMaterial:8>;
@@ -114,6 +116,10 @@ var augTrivectionChamber        = <ThermalExpansion:augment:256>;
 var augAcceleratedExtrusion     = <ThermalExpansion:augment:312>;
 var augIgneousCatalyst          = <ThermalExpansion:augment:313>;
 var augPyroclasticGen           = <ThermalExpansion:augment:314>;
+var pneumaticServo              = <ThermalExpansion:material>;
+var coilReception               = <ThermalExpansion:material:1>;
+var coilTransmission            = <ThermalExpansion:material:2>;
+var coilConductance             = <ThermalExpansion:material:3>;
 
 # Devices
 var electricLight               = <EnderIO:blockElectricLight>;
@@ -201,6 +207,8 @@ var excursionPlate              = <ThermalExpansion:Plate:5>;
 var teleportPlate               = <ThermalExpansion:Plate:6>;
 
 # Equipment
+var fluxIgnitor                 = <ThermalExpansion:igniter>;
+var fluxChiller                 = <ThermalExpansion:chiller>;
 var fluivac                     = <ThermalExpansion:pump>;
 var fluxTransfuser              = <ThermalExpansion:transfuser>;
 var bucket                      = <minecraft:bucket>;
@@ -209,6 +217,11 @@ var crescentHammer              = <ThermalExpansion:wrench>;
 var battleWrench                = <ThermalExpansion:tool.battleWrenchInvar>;
 var multimeter                  = <ThermalExpansion:meter>;
 var conduitProbe                = <EnderIO:itemConduitProbe>;
+var spongePlain                 = <ThermalExpansion:Sponge:1>;
+var spongeMagmatic              = <ThermalExpansion:Sponge:2>;
+var allFluxCapacitor            = <ThermalExpansion:capacitor:*>;
+var allSatchel                  = <ThermalExpansion:satchel:*>;
+var lexicon                     = <ThermalFoundation:lexicon>;
 
 # Ore Dictionary Items
 var allLogs                     = <ore:logWood>;
@@ -228,6 +241,11 @@ var allIronNugs                 = <ore:nuggetIron>;
 var allTinNugs                  = <ore:nuggetTin>;
 var accioMaterial               = <ore:accioMaterial>;
 var oreDyePurple                = <ore:dyePurple>;
+var oreSlimeball                = <ore:slimeball>;
+var oreSawDust                  = <ore:dustWood>;
+var oreInvarDust                = <ore:dustInvar>;
+var oreBronzeDust               = <ore:dustBronze>;
+var oreRubber                   = <ore:itemRubber>;
 
 ################################################################
 ### Removal ####################################################
@@ -251,6 +269,21 @@ recipes.remove(augNullificationChamber);
 recipes.remove(augAcceleratedExtrusion);
 recipes.remove(augIgneousCatalyst);
 recipes.remove(augPyroclasticGen);
+
+# Flux Capacitors
+recipes.remove(allFluxCapacitor);
+
+# Satchels
+recipes.remove(allSatchel);
+
+# Components
+recipes.remove(pneumaticServo);
+recipes.remove(coilReception);
+recipes.remove(coilTransmission);
+recipes.remove(coilConductance);
+
+# Lexicon
+recipes.remove(lexicon);
 
 # All non smeltery gears
 recipes.remove(ironGear);
@@ -792,14 +825,14 @@ recipes.addShaped(petrotheumDust * 4, [
 recipes.remove(blazePowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(glowstoneDust, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, fireEssence, blazePowder * 2, <liquid:redstone> * 100);
-#mods.thaumcraft.Arcane.addShaped(
-#    "ASPECTS",
-#    blazePowder * 4,
-#    "ignis 2", [
-#    [null,          fireEssence,    null],
-#    [fireEssence,   allBronzeDust,  fireEssence],
-#    [null,          fireEssence,    null]
-#]);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    blazePowder * 4,
+    "ignis 2", [
+    [null,          fireEssence,    null],
+    [fireEssence,   allBronzeDust,  fireEssence],
+    [null,          fireEssence,    null]
+]);
 recipes.addShaped(blazePowder * 2, [
     [null,          fireEssence,    null],
     [fireEssence,   allBronzeDust,  fireEssence],
@@ -812,14 +845,14 @@ recipes.addShaped(blazePowder * 2, [
 recipes.remove(blizzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(snowball, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, waterEssence, blizzPowder * 2, <liquid:redstone> * 100);
-#mods.thaumcraft.Arcane.addShaped(
-#    "ASPECTS",
-#    blizzPowder * 4,
-#    "aqua 2", [
-#    [null,          waterEssence,       null],
-#    [waterEssence,  allElectrumDust,    waterEssence],
-#    [null,          waterEssence,       null]
-#]);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    blizzPowder * 4,
+    "aqua 2", [
+    [null,          waterEssence,       null],
+    [waterEssence,  allElectrumDust,    waterEssence],
+    [null,          waterEssence,       null]
+]);
 recipes.addShaped(blizzPowder * 2, [
     [null,          waterEssence,       null],
     [waterEssence,  allElectrumDust,    waterEssence],
@@ -832,14 +865,14 @@ recipes.addShaped(blizzPowder * 2, [
 recipes.remove(blitzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(sand, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, airEssence, blitzPowder * 2, <liquid:redstone> * 100);
-#mods.thaumcraft.Arcane.addShaped(
-#    "ASPECTS",
-#    blitzPowder * 4,
-#    "aer 2", [
-#    [null,          airEssence,             null],
-#    [airEssence,    allAluminumBrassDust,   airEssence],
-#    [null,          airEssence,             null]
-#]);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    blitzPowder * 4,
+    "aer 2", [
+    [null,          airEssence,             null],
+    [airEssence,    allAluminumBrassDust,   airEssence],
+    [null,          airEssence,             null]
+]);
 recipes.addShaped(blitzPowder * 2, [
     [null,          airEssence,             null],
     [airEssence,    allAluminumBrassDust,   airEssence],
@@ -852,14 +885,14 @@ recipes.addShaped(blitzPowder * 2, [
 recipes.remove(basalzPowder);
 mods.thermalexpansion.Transposer.removeFillRecipe(allObsidianDust, <liquid:redstone>);
 #mods.thermalexpansion.Transposer.addFillRecipe(2000, earthEssence, basalzPowder * 2, <liquid:redstone> * 100);
-#mods.thaumcraft.Arcane.addShaped(
-#    "ASPECTS",
-#    basalzPowder * 4,
-#    "terra 2", [
-#    [null,          earthEssence,   null],
-#    [earthEssence,  allInvarDust,   earthEssence],
-#    [null,          earthEssence,   null]
-#]);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    basalzPowder * 4,
+    "terra 2", [
+    [null,          earthEssence,   null],
+    [earthEssence,  allInvarDust,   earthEssence],
+    [null,          earthEssence,   null]
+]);
 recipes.addShaped(basalzPowder * 2, [
     [null,          earthEssence,   null],
     [earthEssence,  allInvarDust,   earthEssence],
@@ -877,6 +910,44 @@ mods.thermalexpansion.Transposer.addFillRecipe(4000, phytoGro, phytoGroRich, <li
 # Multi Meter
 recipes.remove(multimeter);
 recipes.addShapeless(multimeter, [conduitProbe, calculationProcessor]);
+
+# Sponge
+recipes.remove(spongePlain);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    spongePlain,
+    "aer 2, aqua 1", [
+    [oreSawDust,    oreSawDust,     oreSawDust],
+    [oreSawDust,    oreSlimeball,   oreSawDust],
+    [oreSawDust,    oreSawDust,     oreSawDust]
+]);
+
+# Magmatic Sponge
+recipes.remove(spongeMagmatic);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    spongeMagmatic,
+    "aer 8, ignis 4", [
+    [oreBronzeDust, oreInvarDust,   oreBronzeDust],
+    [oreInvarDust,  spongePlain,    oreInvarDust],
+    [oreBronzeDust, oreInvarDust,   oreBronzeDust]
+]);
+
+# Flux Igniter
+recipes.remove(fluxIgnitor);
+recipes.addShaped(fluxIgnitor, [
+    [null,              null,       cryotheumDust],
+    [oreRubber,         ironIngot,  null],
+    [basicCapacitor,    oreRubber,  null]
+]);
+
+# Flux Chiller
+recipes.remove(fluxChiller);
+recipes.addShaped(fluxChiller, [
+    [null,              null,       pyrotheumDust],
+    [oreRubber,         ironIngot,  null],
+    [basicCapacitor,    oreRubber,  null]
+]);
 
 ################################################################
 ### INFUSTION TIER #############################################
