@@ -25,15 +25,24 @@ var jeweledApple                = <TConstruct:diamondApple>;
 
 # Devices
 var gearCast                    = <TConstruct:gearCast>;
+var slabFurnace                 = <TConstruct:FurnaceSlab>;
+var minecraftFurnace            = <minecraft:furnace>;
 
 # Equipment
 var canisterRed                 = <TConstruct:heartCanister:2>;
 var canisterYellow              = <TConstruct:heartCanister:4>;
 var canisterGreen               = <TConstruct:heartCanister:6>;
+var sawStone                    = <ForgeMicroblock:sawStone>;
+var sawDiamond                  = <ForgeMicroblock:sawDiamond>;
+var sawIron                     = <ForgeMicroblock:sawIron>;
+#var sawArdite                   = <IguanaTweaksTConstruct:sawArdite>;
+#var sawCobalt                   = <IguanaTweaksTConstruct:sawCobalt>;
+#var sawManyullyn                = <IguanaTweaksTConstruct:sawManyullyn>;
 
 # Ore Dictionary Items
 var allGoldOre                  = <ore:oreGold>;
 var oreTrueRawMeat              = <ore:trueRawMeat>;
+var oreCobbleSlab               = <ore:slabCobblestone>;
 
 ################################################################
 ### Removal ####################################################
@@ -48,13 +57,29 @@ mods.tconstruct.Smeltery.removeMelting(coagulatedBlood);
 # Jeweled Apple
 recipes.remove(jeweledApple);
 
+# Microblock Saws
+recipes.remove(sawStone);
+recipes.remove(sawDiamond);
+recipes.remove(sawIron);
+#recipes.remove(sawArdite);
+#recipes.remove(sawCobalt);
+#recipes.remove(sawManyullyn);
+
 ################################################################
 ### TINKER TIER ################################################
 ################################################################
-# Gears
+# Gear Cast
 mods.tconstruct.Casting.removeTableRecipe(gearCast);
 mods.tconstruct.Casting.addTableRecipe(gearCast, <liquid:gold.molten> * 288, basicGear, true, 50);
 mods.tconstruct.Casting.addTableRecipe(gearCast, <liquid:aluminumbrass.molten> * 144, basicGear, true, 50);
+
+# Slab Furnace
+recipes.remove(slabFurnace);
+recipes.addShaped(slabFurnace * 2, [
+    [oreCobbleSlab, oreCobbleSlab,      oreCobbleSlab],
+    [null,          minecraftFurnace,   null],
+    [oreCobbleSlab, oreCobbleSlab,      oreCobbleSlab]
+]);
 
 ################################################################
 ### ALCHEMY TIER ###############################################
@@ -66,6 +91,7 @@ mods.thermalexpansion.Furnace.removeRecipe(slimeSoil);
 mods.thaumcraft.Crucible.addRecipe("ALCHEMICALMANUFACTURE", searedBrick2, searedBrick, "ignis 8");
 
 # Blood
+# MOVED TO THE FLUID TRANSPOSER PINK SLIME LOOP IN thermal_expansion.zs
 # I should not have to create the ore dictionary here, load order is dumb
 #oreTrueRawMeat.mirror(<ore:listAllmeatraw>);
 #oreTrueRawMeat.addAll(<ore:listAllfishraw>);
