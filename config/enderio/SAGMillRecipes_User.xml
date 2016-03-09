@@ -171,6 +171,22 @@
     </recipeGroup>
 <!--
 ###########################################################
+### VANILLA (OVERWRITE) ###################################
+###########################################################
+-->
+    <recipeGroup name="Vanilla" >
+        <recipe name="Wheat" energyCost="800" >
+            <input>
+                <itemStack modID="minecraft" itemName="wheat" />
+            </input>
+            <output>
+                <itemStack modID="harvestcraft" itemName="flourItem" number="2" />
+                <itemStack modID="minecraft" itemName="wheat_seeds" chance="0.2" />
+            </output>
+        </recipe>
+    </recipeGroup>
+<!--
+###########################################################
 ### ENDER IO TELLURA ######################################
 ###########################################################
 -->

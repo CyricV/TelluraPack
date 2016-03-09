@@ -12,6 +12,8 @@ var stoneSlab                   = <minecraft:stone_slab>;
 var smoothStone                 = <minecraft:stone>;
 var sugar                       = <minecraft:sugar>;
 var heavyPlateIron              = <TConstruct:heavyPlate:2>;
+var flourPH                     = <harvestcraft:flourItem>;
+var dough                       = <harvestcraft:doughItem>;
 
 # Devices
 
@@ -27,10 +29,13 @@ var clayBucketMilk              = <IguanaTweaksTConstruct:clayBucketMilk>;
 var clayBucketWater             = <IguanaTweaksTConstruct:clayBucketWater>;
 var juicer                      = <harvestcraft:juicerItem>;
 var lunchBox                    = <SpiceOfLife:lunchbox>;
+var leather                     = <minecraft:leather>;
+var leatherHard                 = <harvestcraft:hardenedleatherItem>;
 
 # Ore Dictionary Items
 var allGlassBlocks              = <ore:blockGlass>;
 var allStickyStuff              = <ore:allStickyStuff>;
+var orePressedWax               = <ore:materialPressedwax>;
 
 ################################################################
 ### Removal ####################################################
@@ -55,6 +60,14 @@ recipes.addShapeless(freshMilk * 4, [potionMilk.giveBack(potionEmpty)]);
 # Juicer
 recipes.remove(juicer);
 recipes.addShapeless(juicer, [smoothStone, stoneSlab]);
+
+# Hardened Leather
+recipes.remove(leatherHard);
+recipes.addShaped(leatherHard, [
+    [null,          orePressedWax,  null],
+    [orePressedWax, leather,        orePressedWax],
+    [null,          orePressedWax,  null]
+]);
 
 ################################################################
 ### TINKER TIER ################################################
@@ -90,3 +103,7 @@ recipes.addShaped(epicBacon, [
     [technicolorEssence,    chocolateBacon,     technicolorEssence],
     [sugar,                 technicolorEssence, sugar]
 ]);
+
+# Dough
+//InputRF, InputStack, OutputStack, InputFluid
+mods.thermalexpansion.Transposer.addFillRecipe(2000, flourPH, dough, <liquid:water> * 100);

@@ -5,6 +5,7 @@ var stick                       = <minecraft:stick>;
 var searedBrick                 = <TConstruct:materials:2>;
 var alumiteRod                  = <TConstruct:toolRod:15>;
 var tinGear                     = <ThermalFoundation:material:129>;
+var heavyPlateStone             = <TConstruct:heavyPlate:1>;
 
 # Devices
 var vacuumChest                 = <EnderIO:blockVacuumChest>;
@@ -12,6 +13,8 @@ var tank                        = <OpenBlocks:tank>;
 var vacuumHopper                = <OpenBlocks:vacuumhopper>;
 var drain                       = <OpenBlocks:xpdrain>;
 var brainInAJar                 = <Thaumcraft:blockJar:1>;
+var buttonBig                   = <OpenBlocks:bigbutton>;
+var buttonStone                 = <minecraft:stone_button>;
 
 # Equipment
 var gliderWing                  = <EnderIO:itemGliderWing>;
@@ -32,7 +35,7 @@ var allStickyStuff              = <ore:allStickyStuff>;
 ### STONE TIER #################################################
 ################################################################
 recipes.remove(tank);
-recipes.addShaped(tank * 4, [
+recipes.addShaped(tank * 2, [
     [searedBrick,       conduitBinder,  searedBrick],
     [allGlassBlocks,    null,           allGlassBlocks],
     [searedBrick,       conduitBinder,  searedBrick]
@@ -41,7 +44,9 @@ recipes.addShaped(tank * 4, [
 ################################################################
 ### TINKER TIER ################################################
 ################################################################
-
+# Big Button
+recipes.remove(buttonBig);
+recipes.addShapeless(buttonBig, [buttonStone, heavyPlateStone]);
 
 ################################################################
 ### ALCHEMY TIER ###############################################

@@ -27,17 +27,19 @@ var carpentersBlock             = <CarpentersBlocks:blockCarpentersBlock>;
 
 
 # Devices
-var hopper                      = <minecraft:hopper>;
-var chest                       = <minecraft:chest>;
-var stonePressurePlate          = <minecraft:stone_pressure_plate>;
-var woodenPressurePlate         = <minecraft:wooden_pressure_plate>;
-var goldenPressurePlate         = <minecraft:light_weighted_pressure_plate>;
-var ironPressurePlate           = <minecraft:heavy_weighted_pressure_plate>;
 var carpentersPressurePlate     = <CarpentersBlocks:blockCarpentersPressurePlate>;
+var buttonCarpenter             = <CarpentersBlocks:blockCarpentersButton>;
+var leverCarpenter              = <CarpentersBlocks:blockCarpentersLever>;
+var doorCarpenter               = <CarpentersBlocks:itemCarpentersDoor>;
+var doorCarpenterGarage         = <CarpentersBlocks:blockCarpentersGarageDoor>;
+var woodenPressurePlate         = <minecraft:wooden_pressure_plate>;
+var lever                       = <minecraft:lever>;
+var buttonWood                  = <minecraft:wooden_button>;
+var doorTrap                    = <minecraft:trapdoor>;
+var doorWood                    = <minecraft:wooden_door>;
 
 # Ore Dictionary Items
-var allIronNugs                 = <ore:nuggetIron>;
-var allGoldNugs                 = <ore:nuggetGold>;
+var oreIronNug                  = <ore:nuggetIron>;
 var redstoneDust                = <ore:dustRedstone>;
 
 ################################################################
@@ -56,6 +58,26 @@ var redstoneDust                = <ore:dustRedstone>;
 # Carpenter's Pressure Plate
 recipes.remove(carpentersPressurePlate);
 recipes.addShapeless(carpentersPressurePlate, [woodenPressurePlate, carpentersBlock]);
+# Carpenter's Button
+recipes.remove(buttonCarpenter);
+recipes.addShapeless(buttonCarpenter, [buttonWood, carpentersBlock]);
+# Carpenter's Lever
+recipes.remove(leverCarpenter);
+recipes.addShapeless(leverCarpenter, [lever, carpentersBlock]);
+# Carpenter's Door
+recipes.remove(doorCarpenter);
+recipes.addShaped(doorCarpenter, [
+    [carpentersBlock,   carpentersBlock,    oreIronNug],
+    [carpentersBlock,   carpentersBlock,    redstoneDust],
+    [carpentersBlock,   carpentersBlock,    oreIronNug]
+]);
+# Carpenter's Garage Door
+recipes.remove(doorCarpenterGarage);
+recipes.addShaped(doorCarpenterGarage * 12, [
+    [oreIronNug,    doorCarpenter,  oreIronNug],
+    [oreIronNug,    doorCarpenter,  oreIronNug],
+    [oreIronNug,    doorCarpenter,  oreIronNug]
+]);
 
 ################################################################
 ### ALCHEMY TIER ###############################################

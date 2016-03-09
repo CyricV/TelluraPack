@@ -40,33 +40,6 @@
 ###########################################################
 -->
     <recipeGroup name="Tellura">
-        <recipe name="Comb Silicon" energyCost="4000">
-            <input>
-                <itemStack oreDictionary="sand" />
-                <itemStack modID="harvestcraft" itemName="waxcombItem" />
-            </input>
-            <output>
-                <itemStack modID="EnderIO" itemName="itemMaterial" itemMeta="0" number="2" exp="0.5" />
-            </output>
-        </recipe>
-        <recipe name="Wax Silicon" energyCost="4000">
-            <input>
-                <itemStack oreDictionary="sand" />
-                <itemStack modID="harvestcraft" itemName="beeswaxItem" />
-            </input>
-            <output>
-                <itemStack modID="EnderIO" itemName="itemMaterial" itemMeta="0" number="2" exp="0.5" />
-            </output>
-        </recipe>
-        <recipe name="Conductive Iron" energyCost="10000">
-            <input>
-                <itemStack modID="minecraft" itemName="redstone" />
-                <itemStack modID="minecraft" itemName="iron_ingot" />
-            </input>
-            <output>
-                <itemStack modID="EnderIO" itemName="itemAlloy" itemMeta="4" number="3" exp="0.5" />
-            </output>
-        </recipe>
         <recipe name="Infused Silicon" energyCost="6000">
             <input>
                 <itemStack modID="EnderIO" itemName="itemMaterial" itemMeta="0" />

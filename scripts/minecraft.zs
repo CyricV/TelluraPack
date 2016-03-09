@@ -31,15 +31,25 @@ var sawdust                     = <ThermalExpansion:material:512>;
 var ironGear                    = <ThermalFoundation:material:12>;
 var appleGolden                 = <minecraft:golden_apple>;
 var appleNotch                  = <minecraft:golden_apple:1>;
+var sugar                       = <minecraft:sugar>;
+var bread                       = <minecraft:bread>;
+var flourAE                     = <appliedenergistics2:item.ItemMultiMaterial:4>;
+var flourEnderIO                = <EnderIO:itemPowderIngot:8>;
 
 # Devices
-var furnace                     = <minecraft:furnace>;
+var furnaceMC                   = <minecraft:furnace>;
 var hopper                      = <minecraft:hopper>;
 var chest                       = <minecraft:chest>;
 var stonePressurePlate          = <minecraft:stone_pressure_plate>;
 var woodenPressurePlate         = <minecraft:wooden_pressure_plate>;
 var goldenPressurePlate         = <minecraft:light_weighted_pressure_plate>;
 var ironPressurePlate           = <minecraft:heavy_weighted_pressure_plate>;
+var lever                       = <minecraft:lever>;
+var buttonStone                 = <minecraft:stone_button>;
+var buttonWood                  = <minecraft:wooden_button>;
+var doorTrap                    = <minecraft:trapdoor>;
+var doorWood                    = <minecraft:wooden_door>;
+var doorIron                    = <minecraft:iron_door>;
 
 # Equipment
 var leatherHelm                 = <minecraft:leather_helmet>;
@@ -96,6 +106,9 @@ var redstoneDust                = <ore:dustRedstone>;
 var oreHardenedLeather          = <ore:materialHardenedleather>;
 var oreLeather                  = <ore:itemLeather>;
 var oreRubber                   = <ore:itemRubber>;
+var oreStick                    = <ore:stickWood>;
+var orePlank                    = <ore:plankWood>;
+var oreStone                    = <ore:stone>;
 # Power Recipe Fluid Transposer Fix
 #var accioMaterial               = <ore:accioMaterial>;
 #accioMaterial.remove(fireEssence);
@@ -154,6 +167,16 @@ recipes.remove(diamondHoe);
 recipes.remove(appleGolden);
 recipes.remove(appleNotch);
 
+# Sugar
+recipes.remove(sugar);
+
+# Bread
+recipes.remove(bread);
+furnace.remove(<*>, flourAE);
+furnace.remove(<*>, flourEnderIO);
+mods.thermalexpansion.Furnace.removeRecipe(flourAE);
+#mods.thermalexpansion.Furnace.removeRecipe(flourEnderIO);
+
 ################################################################
 ### STONE TIER #################################################
 ################################################################
@@ -161,8 +184,8 @@ recipes.remove(appleNotch);
 bedrock.displayName = "\u00A70\u00A7kAmalgam";
 
 # Furnace
-recipes.remove(furnace);
-recipes.addShaped(furnace, [
+recipes.remove(furnaceMC);
+recipes.addShaped(furnaceMC, [
     [cobble,    cobble,             cobble],
     [cobble,    heavyPlateStone,    cobble],
     [cobble,    cobble,             cobble]
@@ -292,9 +315,9 @@ recipes.addShaped(bucket, [
 # Hopper
 recipes.remove(hopper);
 recipes.addShaped(hopper, [
-    [allIronNugs,   null,           allIronNugs],
-    [allIronNugs,   chest,          allIronNugs],
-    [null,          ironGear,    null]
+    [allIronNugs,   null,       allIronNugs],
+    [allIronNugs,   chest,      allIronNugs],
+    [null,          ironGear,   null]
 ]);
 
 
@@ -303,20 +326,51 @@ recipes.addShaped(hopper, [
 ################################################################
 # Stone Pressure Plate
 recipes.remove(stonePressurePlate);
-recipes.addShapeless(stonePressurePlate, [heavyPlateStone, redstoneDust]);
+recipes.addShapeless(stonePressurePlate * 4, [heavyPlateStone, redstoneDust]);
 # Wooden Pressure Plate
 recipes.remove(woodenPressurePlate);
-recipes.addShapeless(woodenPressurePlate, [heavyPlateWood, redstoneDust]);
+recipes.addShapeless(woodenPressurePlate * 4, [heavyPlateWood, redstoneDust]);
 # Gold Pressure Plate
 recipes.remove(goldenPressurePlate);
-recipes.addShapeless(goldenPressurePlate, [electrumPlate, redstoneDust]);
+recipes.addShapeless(goldenPressurePlate * 4, [electrumPlate, redstoneDust]);
 mods.tconstruct.Smeltery.removeMelting(goldenPressurePlate);
 mods.tconstruct.Smeltery.addMelting(goldenPressurePlate, <liquid:electrum.molten> * 1152, 400, goldenPressurePlate);
 # Iron Pressure Plate
 recipes.remove(ironPressurePlate);
-recipes.addShapeless(ironPressurePlate, [ironPlate, redstoneDust]);
+recipes.addShapeless(ironPressurePlate * 4, [ironPlate, redstoneDust]);
 mods.tconstruct.Smeltery.removeMelting(ironPressurePlate);
 mods.tconstruct.Smeltery.addMelting(ironPressurePlate, <liquid:iron.molten> * 1152, 600, ironPressurePlate);
+# Lever
+recipes.remove(lever);
+recipes.addShapeless(lever * 2, [oreStick, redstoneDust, cobble]);
+# Wood Button
+recipes.remove(buttonWood);
+recipes.addShapeless(buttonWood * 4, [orePlank, redstoneDust]);
+# Stone Button
+recipes.remove(buttonStone);
+recipes.addShapeless(buttonStone * 4, [oreStone, redstoneDust]);
+# Wooden Door
+recipes.remove(doorWood);
+recipes.addShaped(doorWood, [
+    [orePlank,  orePlank,   allIronNugs],
+    [orePlank,  orePlank,   redstoneDust],
+    [orePlank,  orePlank,   allIronNugs]
+]);
+# Trap Door
+recipes.remove(doorTrap);
+recipes.addShaped(doorTrap * 2, [
+    [allIronNugs,   redstoneDust,   allIronNugs],
+    [orePlank,      orePlank,       orePlank],
+    [orePlank,      orePlank,       orePlank]
+]);
+# Iron Door
+recipes.remove(doorIron);
+recipes.addShaped(doorIron, [
+    [ironIngot, orePlank,   ironIngot],
+    [ironIngot, doorWood,   ironIngot],
+    [ironIngot, orePlank,   ironIngot]
+]);
+
 
 # Iron Helm
 invarHelm.displayName = "Iron Plate Helm";

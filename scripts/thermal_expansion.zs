@@ -554,7 +554,7 @@ recipes.addShaped(redstoneFurnace1, [
 recipes.addShaped(redstoneFurnace1, [
     [steelIngot,    invarGear,          steelIngot],
     [manaSteel,     redstoneFurnace0,   manaSteel],
-    [thaumiumIngot, manyullynIngot,     steelIngot]
+    [steelIngot,    manyullynIngot,     steelIngot]
 ]);
 recipes.addShaped(redstoneFurnace2, [
     [ironIngot,     searedBrick,            ironIngot],
@@ -590,9 +590,9 @@ recipes.addShaped(sawmill1, [
     [ironIngot,     hardenedMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(sawmill1, [
-    [thaumiumIngot, invarGear,      thaumiumIngot],
+    [steelIngot,    invarGear,      steelIngot],
     [manaSteel,     sawmill0,       manaSteel],
-    [thaumiumIngot, manyullynIngot, thaumiumIngot]
+    [steelIngot,    manyullynIngot, steelIngot]
 ]);
 recipes.addShaped(sawmill2, [
     [ironIngot,     null,                   ironIngot],
@@ -628,9 +628,9 @@ recipes.addShaped(fluidTransposer1, [
     [ironIngot, hardenedMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(fluidTransposer1, [
-    [thaumiumIngot, invarGear,          thaumiumIngot],
+    [steelIngot,    invarGear,          steelIngot],
     [manaSteel,     fluidTransposer0,   manaSteel],
-    [thaumiumIngot, manyullynIngot,     thaumiumIngot]
+    [steelIngot,    manyullynIngot,     steelIngot]
 ]);
 recipes.addShaped(fluidTransposer2, [
     [ironIngot, fluidConduit,           ironIngot],
@@ -666,9 +666,9 @@ recipes.addShaped(glacialPercipitator1, [
     [ironIngot, hardenedMachineFrame,   ironIngot]
 ]);
 recipes.addShaped(glacialPercipitator1, [
-    [thaumiumIngot, invarGear,              thaumiumIngot],
+    [steelIngot,    invarGear,              steelIngot],
     [manaSteel,     glacialPercipitator0,   manaSteel],
-    [thaumiumIngot, manyullynIngot,         thaumiumIngot]
+    [steelIngot,    manyullynIngot,         steelIngot]
 ]);
 recipes.addShaped(glacialPercipitator2, [
     [piston,    fluidConduit,           piston],
@@ -699,9 +699,9 @@ recipes.remove(phytogenicInsolator);
 #     [ironIngot,     hardenedMachineFrame,   ironIngot]
 # ]);
 # recipes.addShaped(phytogenicInsolator1, [
-#     [thaumiumIngot, invarGear,              thaumiumIngot],
-#     [manaSteel,     phytogenicInsolator0,   manaSteel],
-#     [thaumiumIngot, manyullynIngot,         thaumiumIngot]
+#     [steelIngot,  invarGear,              steelIngot],
+#     [manaSteel,   phytogenicInsolator0,   manaSteel],
+#     [steelIngot,  manyullynIngot,         steelIngot]
 # ]);
 # recipes.addShaped(phytogenicInsolator2, [
 #     [ironIngot,     copperGear,             ironIngot],
