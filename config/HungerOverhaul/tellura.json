@@ -1,0 +1,28 @@
+{
+    // a list of foods and their food values
+    // these values will take precedence over HO's default values
+    "foods": [
+        {
+            // the name of the item in "mod:name" format
+            "name": "customitems:nutrition_bar_r",
+            // [optional] the metadata value of the item (default: 0)
+            "meta": 0,
+            // the hunger value of the item (1 hunger = 1/2 hunger bar)
+            "hunger": 14,
+            // the saturation modifier (saturation = hunger * 2 * saturationModifier)
+            "saturationModifier": 0.6
+        },
+        {
+            "name": "customitems:nutrition_bar_g",
+            "meta": 0,
+            "hunger": 14,
+            "saturationModifier": 0.6
+        },
+        {
+            "name": "customitems:nutrition_bar_b",
+            "meta": 0,
+            "hunger": 14,
+            "saturationModifier": 0.6
+        }
+    ]
+}

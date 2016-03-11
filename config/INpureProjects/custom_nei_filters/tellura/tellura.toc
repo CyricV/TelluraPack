@@ -4,3 +4,4 @@
 projectred.js
 thermal_expansion.js
 minefactory_reloaded.js
+tinkers_construct.js

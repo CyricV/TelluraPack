@@ -174,7 +174,7 @@ recipes.remove(sugar);
 recipes.remove(bread);
 furnace.remove(<*>, flourAE);
 furnace.remove(<*>, flourEnderIO);
-mods.thermalexpansion.Furnace.removeRecipe(flourAE);
+#mods.thermalexpansion.Furnace.removeRecipe(flourAE);
 #mods.thermalexpansion.Furnace.removeRecipe(flourEnderIO);
 
 ################################################################
@@ -192,11 +192,13 @@ recipes.addShaped(furnaceMC, [
 ]);
 
 # Leather
+leather.displayName = "Hide";
 recipes.remove(leather);
 mods.botania.ManaInfusion.removeRecipe(leather);
 mods.tconstruct.Drying.addRecipe(rottenFlesh, leather, 6000);
 
 # Leather Helm
+leatherHelm.displayName = "Rawhide Cap";
 recipes.addShapeless(leatherHelm, [leatherHelm.anyDamage().marked("inp"), oreLeather],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage - 50));
@@ -204,6 +206,7 @@ recipes.addShapeless(leatherHelm, [leatherHelm.anyDamage().marked("inp"), oreLea
 );
 
 # Leather Chest
+leatherChest.displayName = "Rawhide Chestguard";
 recipes.addShapeless(leatherChest, [leatherChest.anyDamage().marked("inp"), oreLeather],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage - 50));
@@ -211,6 +214,7 @@ recipes.addShapeless(leatherChest, [leatherChest.anyDamage().marked("inp"), oreL
 );
 
 # Leather Leggings
+leatherLeggings.displayName = "Rawhide Pants";
 recipes.addShapeless(leatherLeggings, [leatherLeggings.anyDamage().marked("inp"), oreLeather],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage - 50));
@@ -218,11 +222,12 @@ recipes.addShapeless(leatherLeggings, [leatherLeggings.anyDamage().marked("inp")
 );
 
 # Leather Boots
+leatherBoots.displayName = "Rawhide Shoes";
 recipes.remove(leatherBoots);
 recipes.addShaped(leatherBoots, [
     [oreLeather,    null,   oreLeather],
     [oreLeather,    null,   oreLeather],
-    [oreRubber,     null,   oreRubber]
+    [null,          null,   null]
 ]);
 recipes.addShapeless(leatherBoots, [leatherBoots.anyDamage().marked("inp"), oreLeather],
     function(output, inputs, crafting) {
@@ -282,7 +287,7 @@ recipes.addShapeless(hLeatherLeggings, [hLeatherLeggings.anyDamage().marked("inp
 recipes.remove(hLeatherBoots);
 recipes.addShaped(hLeatherBoots, [
     [oreHardenedLeather,    leatherBoots.anyDamage().marked("inp"), oreHardenedLeather],
-    [null,                  null,                                   null],
+    [oreRubber,             null,                                   oreRubber],
     [null,                  null,                                   null]],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage));

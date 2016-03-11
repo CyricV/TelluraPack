@@ -1,7 +1,11 @@
 <SliceAndSpliceRecipes>
-
+<!--
+###########################################################
+### TELLURA ###############################################
+###########################################################
+-->
     <recipeGroup name="Tellura" >
-        <recipe name="Rune Mind" energyCost="128000" >
+        <recipe name="Runemind" energyCost="128000" >
             <input>
                 <itemStack oreDictionary="nuggetTerrasteel" slot="0" />
                 <itemStack modID="Thaumcraft" itemName="ItemZombieBrain" slot="1" />
@@ -11,7 +15,7 @@
                 <itemStack oreDictionary="nuggetTerrasteel" slot="5" />
             </input>
             <output>
-                <itemStack modID="customitems" itemName="rune_mind" />
+                <itemStack modID="customitems" itemName="runemind" />
             </output>
         </recipe>
         <recipe name="Wither Skull" energyCost="32000" >
@@ -25,6 +29,19 @@
             </input>
             <output>
                 <itemStack modID="minecraft" itemName="skull" itemMeta="1" />
+            </output>
+        </recipe>
+        <recipe name="Necrotic Bone" energyCost="16000" >
+            <input>
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="0" />
+                <itemStack modID="minecraft" itemName="bone" slot="1" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="2" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="3" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="4" />
+                <itemStack modID="magicalcrops" itemName="magicalcrops_WitherEssence" slot="5" />
+            </input>
+            <output>
+                <itemStack modID="TConstruct" itemName="materials" itemMeta="8" />
             </output>
         </recipe>
     </recipeGroup>

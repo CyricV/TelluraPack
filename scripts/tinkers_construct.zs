@@ -22,11 +22,20 @@ var bloodSyringe                = <ThaumicHorizons:syringeBlood>;
 var voidPutty                   = <ThaumicHorizons:voidPutty>;
 var dynamicMaterial             = <customitems:dynamic_material>;
 var jeweledApple                = <TConstruct:diamondApple>;
+var canister                    = <TConstruct:heartCanister>;
+var leather                     = <minecraft:leather>;
+var leatherHard                 = <harvestcraft:hardenedleatherItem>;
+var bindingIron                 = <TConstruct:binding:2>;
+var toughRodIron                = <TConstruct:toughRod:2>;
+var goldenHead                  = <TConstruct:goldHead>;
+var sugarcane                   = <minecraft:reeds>;
 
 # Devices
 var gearCast                    = <TConstruct:gearCast>;
 var slabFurnace                 = <TConstruct:FurnaceSlab>;
 var minecraftFurnace            = <minecraft:furnace>;
+var punjiStick                  = <TConstruct:trap.punji>;
+var shurikenCast                = <TConstruct:Cast>;
 
 # Equipment
 var canisterRed                 = <TConstruct:heartCanister:2>;
@@ -35,6 +44,19 @@ var canisterGreen               = <TConstruct:heartCanister:6>;
 var sawStone                    = <ForgeMicroblock:sawStone>;
 var sawDiamond                  = <ForgeMicroblock:sawDiamond>;
 var sawIron                     = <ForgeMicroblock:sawIron>;
+var woodHelm                    = <TConstruct:helmetWood>;
+var woodChest                   = <TConstruct:chestplateWood>;
+var woodLeggings                = <TConstruct:leggingsWood>;
+var woodBoots                   = <TConstruct:bootsWood>;
+var knapsack                    = <TConstruct:knapsack>;
+var travellersGoggles           = <TConstruct:travelGoggles>;
+var travellersVest              = <TConstruct:travelVest>;
+var travellersWings             = <TConstruct:travelWings>;
+var travellersBoots             = <TConstruct:travelBoots>;
+var travellersGloves            = <TConstruct:travelGlove>;
+var travellersBelt              = <TConstruct:travelBelt>;
+
+#Cant resolve! why?
 #var sawArdite                   = <IguanaTweaksTConstruct:sawArdite>;
 #var sawCobalt                   = <IguanaTweaksTConstruct:sawCobalt>;
 #var sawManyullyn                = <IguanaTweaksTConstruct:sawManyullyn>;
@@ -43,19 +65,43 @@ var sawIron                     = <ForgeMicroblock:sawIron>;
 var allGoldOre                  = <ore:oreGold>;
 var oreTrueRawMeat              = <ore:trueRawMeat>;
 var oreCobbleSlab               = <ore:slabCobblestone>;
+var oreIronNug                  = <ore:nuggetIron>;
+var oreAluminumNug              = <ore:nuggetAluminum>;
 
 ################################################################
 ### Removal ####################################################
 ################################################################
+# Wooden Armor
+recipes.remove(woodHelm);
+recipes.remove(woodChest);
+recipes.remove(woodLeggings);
+recipes.remove(woodBoots);
+
+# OP Travellers Gear
+recipes.remove(travellersGoggles);
+recipes.remove(travellersVest);
+recipes.remove(travellersWings);
+recipes.remove(travellersBoots);
+recipes.remove(travellersGloves);
+
 # Monster Jerky
 mods.tconstruct.Drying.removeRecipe(monsterJerky);
 
-# Blood from smeltery
+# Canister
+recipes.remove(canister);
+
+# Crafted blood from smeltery
 mods.tconstruct.Smeltery.removeMelting(rottenFlesh);
 mods.tconstruct.Smeltery.removeMelting(coagulatedBlood);
 
 # Jeweled Apple
 recipes.remove(jeweledApple);
+
+# Golden Head
+recipes.remove(goldenHead);
+
+# Shuriken Cast
+mods.tconstruct.Casting.removeTableRecipe(shurikenCast);
 
 # Microblock Saws
 recipes.remove(sawStone);
@@ -64,6 +110,13 @@ recipes.remove(sawIron);
 #recipes.remove(sawArdite);
 #recipes.remove(sawCobalt);
 #recipes.remove(sawManyullyn);
+
+################################################################
+### STONE TIER #################################################
+################################################################
+# Punji Stick
+recipes.remove(punjiStick);
+mods.tconstruct.Drying.addRecipe(sugarcane, punjiStick, 6000);
 
 ################################################################
 ### TINKER TIER ################################################
@@ -79,6 +132,22 @@ recipes.addShaped(slabFurnace * 2, [
     [oreCobbleSlab, oreCobbleSlab,      oreCobbleSlab],
     [null,          minecraftFurnace,   null],
     [oreCobbleSlab, oreCobbleSlab,      oreCobbleSlab]
+]);
+
+# Travellers Belt
+recipes.remove(travellersBelt);
+recipes.addShaped(travellersBelt, [
+    [null,          null,           null],
+    [oreIronNug,    bindingIron,    oreIronNug],
+    [leatherHard,   leatherHard,    leatherHard]
+]);
+
+# Knapsack
+recipes.remove(knapsack);
+recipes.addShaped(knapsack, [
+    [leatherHard,   leatherHard,    leatherHard],
+    [toughRodIron,  bindingIron,    toughRodIron],
+    [leatherHard,   leatherHard,    leatherHard]
 ]);
 
 ################################################################

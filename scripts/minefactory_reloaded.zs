@@ -118,7 +118,9 @@ var prc1                        = <MineFactoryReloaded:upgrade.logic>;
 var prc2                        = <MineFactoryReloaded:upgrade.logic:1>;
 var prc3                        = <MineFactoryReloaded:upgrade.logic:2>;
 var rawMeatIngot                = <MineFactoryReloaded:meat.ingot.raw>;
-var ingotCast                   = <TConstruct:metalPattern>;
+var rawMeatNugget               = <MineFactoryReloaded:meat.nugget.raw>;
+var castIngot                   = <TConstruct:metalPattern>;
+var castNugget                  = <TConstruct:metalPattern:27>;
 var fertileSoil                 = <MineFactoryReloaded:farmland>;
 var dirt                        = <minecraft:dirt>;
 var manaLenseWarp               = <Botania:lens:18>;
@@ -322,7 +324,8 @@ recipes.addShaped(autoJukebox, [
 ]);
 
 # Meat Ingot
-mods.tconstruct.Casting.addTableRecipe(rawMeatIngot, <liquid:pinkslime> * 100, ingotCast, false, 20);
+mods.tconstruct.Casting.addTableRecipe(rawMeatIngot, <liquid:pinkslime> * 144, castIngot, false, 20);
+mods.tconstruct.Casting.addTableRecipe(rawMeatNugget, <liquid:pinkslime> * 16, castNugget, false, 4);
 
 ################################################################
 ### ALCHEMY TIER ###############################################
@@ -501,10 +504,10 @@ oreTrueRawMeat.remove(firmTofu);
 oreTrueRawMeat.remove(firmTofu);
 oreTrueRawMeat.remove(firmTofu);
 oreTrueRawMeat.remove(firmTofu);
-#for item in oreTrueRawMeat.items {
-#    mods.thermalexpansion.Crucible.addRecipe(10000, item, <liquid:pinkslime> * 100);
-#    mods.thermalexpansion.Transposer.addExtractRecipe(2000, item, <liquid:blood> * 50, monsterJerky, 100);
-#}
+for item in oreTrueRawMeat.items {
+    mods.thermalexpansion.Crucible.addRecipe(10000, item, <liquid:pinkslime> * 72);
+    mods.thermalexpansion.Transposer.addExtractRecipe(2000, item, <liquid:blood> * 50, monsterJerky, 100);
+}
 
 # Laser Focci
 recipes.remove(laserFocus0);

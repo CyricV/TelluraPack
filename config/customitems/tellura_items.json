@@ -11,9 +11,37 @@
             "name": "Dynamic Material"
         },
         {
-            "maxStackSize": 1,
+            "maxStackSize": 64,
             "textureName": "runemind",
-            "name": "Rune Mind"
+            "name": "Runemind"
+        },
+        {
+            "maxStackSize": 64,
+            "textureName": "preparedHide",
+            "name": "Prepared Hide"
+        }
+    ],
+    "foods": [
+        {
+            "name": "Nutrition Bar R",
+            "textureName": "nutritionBarR",
+            "healAmount": 10,
+            "saturationModifier": 10,
+            "maxStackSize": 64
+        },
+        {
+            "name": "Nutrition Bar G",
+            "textureName": "nutritionBarG",
+            "healAmount": 10,
+            "saturationModifier": 10,
+            "maxStackSize": 64
+        },
+        {
+            "name": "Nutrition Bar B",
+            "textureName": "nutritionBarB",
+            "healAmount": 10,
+            "saturationModifier": 10,
+            "maxStackSize": 64
         }
     ]
 }

@@ -60,6 +60,8 @@ var blitzPowder                 = <ThermalFoundation:material:1027>;
 var basalzPowder                = <ThermalFoundation:material:1029>;
 var gemstoneDust                = <WitchingGadgets:item.WG_Material:13>;
 var mithrilDust                 = <ThermalFoundation:material:38>;
+var runemind                    = <customitems:runemind>;
+var floralFertilizer            = <Botania:fertilizer>;
 
 # Devices
 var alchemyCatalyst             = <Botania:alchemyCatalyst>;
@@ -89,6 +91,7 @@ var thaumiumHelm                = <Thaumcraft:ItemHelmetThaumium>;
 var thaumiumChest               = <Thaumcraft:ItemChestplateThaumium>;
 var thaumiumLeggings            = <Thaumcraft:ItemLeggingsThaumium>;
 var thaumiumBoots               = <Thaumcraft:ItemBootsThaumium>;
+var pestleAndMortar             = <Botania:pestleAndMortar>;
 
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
@@ -99,6 +102,8 @@ var oreDustGold                 = <ore:dustGold>;
 ################################################################
 ### Removal ####################################################
 ################################################################
+# Pestle and Mortar
+recipes.remove(pestleAndMortar);
 
 ################################################################
 ### STONE TIER #################################################
@@ -120,6 +125,22 @@ mods.thaumcraft.Arcane.addShapeless(
     "ASPECTS",
     lexicaBotania,
     "terra 1", [book]);
+
+# Floral Fertilizer and Powder
+recipes.remove(floralFertilizer);
+var dyeCounter = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] as int[];
+for i in dyeCounter {
+    var tempPetal   = <Botania:petal>.definition.makeStack(i - 1);
+    var tempPowder  = <Botania:dye>.definition.makeStack(i - 1);
+    recipes.remove(tempPowder);
+    recipes.addShapeless(tempPowder, [tempPetal]);
+    mods.thaumcraft.Crucible.addRecipe(
+        "CRUCIBLE",
+        floralFertilizer,
+        tempPowder,
+        "herba 1"
+    );
+}
 
 # Apothecary
 recipes.remove(petalApothecary);
@@ -338,7 +359,7 @@ recipes.remove(elvenGatewayCore);
 mods.thaumcraft.Infusion.addRecipe(
     "INFUSION",
     livingwood,
-    [terrasteelIngot, terrasteelIngot, terrasteelIngot, terrasteelIngot],
+    [runemind, terrasteelIngot, terrasteelIngot, manaPearl, terrasteelIngot, terrasteelIngot],
     "iter 32, herba 64, arbor 32",
     elvenGatewayCore,
     2

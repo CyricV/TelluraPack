@@ -168,6 +168,65 @@
                 <itemStack modID="ThermalExpansion" itemName="material" itemMeta="512" number="4" chance="0.4"/>
             </output>
         </recipe>
+    <!--
+    Flour (Rye)
+    -->
+        <recipe name="Rye" energyCost="800">
+            <input>
+                <itemStack modID="harvestcraft" itemName="ryeItem" />
+            </input>
+            <output>
+                <itemStack modID="harvestcraft" itemName="flourItem" number="1" />
+                <itemStack modID="harvestcraft" itemName="ryeseedItem" chance="0.1"/>
+            </output>
+        </recipe>
+    <!--
+    Flour (Potato)
+    -->
+        <recipe name="Potato" energyCost="800">
+            <input>
+                <itemStack modID="minecraft" itemName="potato" />
+            </input>
+            <output>
+                <itemStack modID="harvestcraft" itemName="flourItem" number="1" />
+            </output>
+        </recipe>
+    <!--
+    Flour (Rice)
+    -->
+        <recipe name="Rice" energyCost="800">
+            <input>
+                <itemStack modID="harvestcraft" itemName="riceItem" />
+            </input>
+            <output>
+                <itemStack modID="harvestcraft" itemName="flourItem" number="1" />
+                <itemStack modID="harvestcraft" itemName="riceseedItem" chance="0.1"/>
+            </output>
+        </recipe>
+    <!--
+    Flour (Oats)
+    -->
+        <recipe name="Oats" energyCost="800">
+            <input>
+                <itemStack modID="harvestcraft" itemName="oatsItem" />
+            </input>
+            <output>
+                <itemStack modID="harvestcraft" itemName="flourItem" number="1" />
+                <itemStack modID="harvestcraft" itemName="oatsseedItem" chance="0.1"/>
+            </output>
+        </recipe>
+    <!--
+    Flour (Barley)
+    -->
+        <recipe name="Barley" energyCost="800">
+            <input>
+                <itemStack modID="harvestcraft" itemName="barleyItem" />
+            </input>
+            <output>
+                <itemStack modID="harvestcraft" itemName="flourItem" number="1" />
+                <itemStack modID="harvestcraft" itemName="barleyseedItem" chance="0.1"/>
+            </output>
+        </recipe>
     </recipeGroup>
 <!--
 ###########################################################
@@ -180,8 +239,8 @@
                 <itemStack modID="minecraft" itemName="wheat" />
             </input>
             <output>
-                <itemStack modID="harvestcraft" itemName="flourItem" number="2" />
-                <itemStack modID="minecraft" itemName="wheat_seeds" chance="0.2" />
+                <itemStack modID="harvestcraft" itemName="flourItem" number="1" />
+                <itemStack modID="minecraft" itemName="wheat_seeds" chance="0.1" />
             </output>
         </recipe>
     </recipeGroup>
