@@ -160,6 +160,9 @@ var telePad                     = <EnderIO:blockTelePad>;
 var weatherObelisk              = <EnderIO:blockWeatherObelisk>;
 var redstoneFurnace             = <ThermalExpansion:Machine>;
 var redstoneFurnace0            = redstoneFurnace.withTag({Level: 0 as byte});
+var capacitorBankBasic          = <EnderIO:blockCapBank:1>;
+var capacitorBank               = <EnderIO:blockCapBank:2>;
+var capacitorBankVibrant        = <EnderIO:blockCapBank:3>;
 
 # Equipment
 var conduitProbe                = <EnderIO:itemConduitProbe>;
@@ -244,6 +247,19 @@ furnace.addRecipe(conduitBinder * 8, binderComposite);
 ################################################################
 ### TINKER TIER ################################################
 ################################################################
+# Basic Capacitor
+recipes.remove(basicCapacitor);
+recipes.addShaped(basicCapacitor, [
+    [null,          redstone,   null],
+    [allGoldNugs,   rubberBar,  allGoldNugs],
+    [null,          redstone,   null]
+]);
+recipes.addShaped(basicCapacitor, [
+    [null,      allGoldNugs,    null],
+    [redstone,  rubberBar,      redstone],
+    [null,      allGoldNugs,    null]
+]);
+
 # Fluid Conduit
 recipes.remove(fluidConduit);
 recipes.addShaped(fluidConduit * 16, [
@@ -281,18 +297,29 @@ recipes.addShaped(machineChassis, [
     [ironIngot,         allQuartz,  ironIngot]
 ]);
 
-# Basic Capacitor
-recipes.remove(basicCapacitor);
-recipes.addShaped(basicCapacitor, [
-    [null,          allGoldNugs,    redstone],
-    [allGoldNugs,   conductiveIron, allGoldNugs],
-    [redstone,      allGoldNugs,    null]
+# Double Layer Capacitor
+recipes.remove(doubleLayerCapacitor);
+recipes.addShaped(doubleLayerCapacitor, [
+    [null,              basicCapacitor,     null],
+    [conductiveIron,    prismarineShard,    conductiveIron],
+    [null,              basicCapacitor,     null]
 ]);
-recipes.addShaped(basicCapacitor, [
-    [redstone,      allGoldNugs,    null],
-    [allGoldNugs,   conductiveIron, allGoldNugs],
-    [null,          allGoldNugs,    redstone]
+recipes.addShaped(doubleLayerCapacitor, [
+    [null,              conductiveIron,     null],
+    [basicCapacitor,    prismarineShard,    basicCapacitor],
+    [null,              conductiveIron,     null]
 ]);
+
+# Capacitor Bank
+recipes.remove(capacitorBank);
+recipes.addShaped(capacitorBank, [
+    [steelIngot,            doubleLayerCapacitor,               steelIngot],
+    [doubleLayerCapacitor,  capacitorBankBasic.marked("inp"),   doubleLayerCapacitor],
+    [steelIngot,            doubleLayerCapacitor,               steelIngot]],
+    function(output, inputs, crafting) {
+        return output.withTag({type: "ACTIVATED", storedEnergyRF: inputs.inp.tag.storedEnergyRF});
+    }
+);
 
 # Stirling Generator
 recipes.remove(stirlingGenerator);
@@ -342,12 +369,12 @@ recipes.addShaped(powerMonitor, [
     [allTinIngot,   energyConduit,  allTinIngot]
 ]);
 
-# Vacuume Chest
+# Vacuum Chest
 recipes.remove(vacuumChest);
 recipes.addShaped(vacuumChest, [
-    [allTinIngot,   itemConduit,        allTinIngot],
+    [allTinIngot,   tinGear,            allTinIngot],
     [tinGear,       hopperhockFloating, tinGear],
-    [allTinIngot,   itemConduit,        allTinIngot]
+    [allTinIngot,   tinGear,            allTinIngot]
 ]);
 
 # Reservoir
@@ -375,6 +402,19 @@ recipes.addShaped(theVat, [
     [searedBrick2,  searedBrick2,           searedBrick2],
     [tank,          bucket,                 tank],
     [copperGear,    hardenedMachineFrame,   copperGear]
+]);
+
+# Combustion Generator
+recipes.remove(combustionGenerator);
+recipes.addShaped(combustionGenerator, [
+    [steelIngot,    doubleLayerCapacitor,   steelIngot],
+    [invarGear,     steelBlock,             invarGear],
+    [invarGear,     invarToughRod,          invarGear]
+]);
+recipes.addShaped(combustionGenerator, [
+    [steelIngot,    doubleLayerCapacitor,   steelIngot],
+    [invarGear,     stirlingGenerator,      invarGear],
+    [invarGear,     null,                   invarGear]
 ]);
 
 # Inventory Panel
@@ -479,8 +519,6 @@ recipes.addShaped(itemConduit * 4, [
 ################################################################
 # Tier Implies:
 #   Enhanced Energy Conduit
-#   Capacitor Bank
-#
 
 # Alloy Smelter
 recipes.remove(alloySmelter);
@@ -495,19 +533,6 @@ recipes.addShaped(alloySmelter, [
     [steelIngot,    reinforcedMachineFrame, steelIngot]
 ]);
 
-# Double Layer Capacitor
-recipes.remove(doubleLayerCapacitor);
-recipes.addShaped(doubleLayerCapacitor, [
-    [null,              basicCapacitor,     null],
-    [energeticAlloy,    prismarineShard,    energeticAlloy],
-    [null,              basicCapacitor,     null]
-]);
-recipes.addShaped(doubleLayerCapacitor, [
-    [null,              energeticAlloy,     null],
-    [basicCapacitor,    prismarineShard,    basicCapacitor],
-    [null,              energeticAlloy,     null]
-]);
-
 # Octadic Capacitor
 recipes.remove(octadicCapacitor);
 recipes.addShaped(octadicCapacitor, [
@@ -520,6 +545,17 @@ recipes.addShaped(octadicCapacitor, [
     [doubleLayerCapacitor,  plasticSheet,   doubleLayerCapacitor],
     [null,                  vibrantAlloy,   null]
 ]);
+
+# Vibrant Capacitor Bank
+recipes.remove(capacitorBankVibrant);
+recipes.addShaped(capacitorBankVibrant, [
+    [vibrantAlloy,      octadicCapacitor,               vibrantAlloy],
+    [octadicCapacitor,  capacitorBank.marked("inp"),    octadicCapacitor],
+    [vibrantAlloy,      octadicCapacitor,               vibrantAlloy]],
+    function(output, inputs, crafting) {
+        return output.withTag({type: "ACTIVATED", storedEnergyRF: inputs.inp.tag.storedEnergyRF});
+    }
+);
 
 # Vibrant Crystal
 recipes.remove(vibrantCrystal);
@@ -553,19 +589,6 @@ recipes.addShaped(reinforcedObsidian * 16, [
     [steelIngot,    darkIronBars,   steelIngot],
     [darkIronBars,  obsidian,       darkIronBars],
     [steelIngot,    darkIronBars,   steelIngot]
-]);
-
-# Combustion Generator
-recipes.remove(combustionGenerator);
-recipes.addShaped(combustionGenerator, [
-    [steelIngot,    doubleLayerCapacitor,   steelIngot],
-    [invarGear,     steelBlock,             invarGear],
-    [invarGear,     invarToughRod,          invarGear]
-]);
-recipes.addShaped(combustionGenerator, [
-    [steelIngot,    doubleLayerCapacitor,   steelIngot],
-    [invarGear,     stirlingGenerator,      invarGear],
-    [invarGear,     null,                   invarGear]
 ]);
 
 # Advanced Photovoltaic Cell

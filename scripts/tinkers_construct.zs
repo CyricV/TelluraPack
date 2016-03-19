@@ -1,12 +1,23 @@
 # Materials
+var runeFire                    = <Botania:rune:1>;
+var runeEarth                   = <Botania:rune:2>;
+var runeAir                     = <Botania:rune:3>;
+var dynamicMaterial             = <customitems:dynamic_material>;
 var basicGear                   = <EnderIO:itemMachinePart:1>;
 var enderPowder                 = <EnderIO:itemPowderIngot:5>;
 var soulariumIngot              = <EnderIO:itemAlloy:7>;
 var enderShard                  = <GrimoireOfGaia:item.GrimoireOfGaia.Shard:5>;
 var firmTofu                    = <harvestcraft:firmtofuItem>;
+var leatherHard                 = <harvestcraft:hardenedleatherItem>;
+var leather                     = <minecraft:leather>;
+var sugarcane                   = <minecraft:reeds>;
 var enderPearl                  = <minecraft:ender_pearl>;
 var goldOre                     = <minecraft:gold_ore>;
 var rottenFlesh                 = <minecraft:rotten_flesh>;
+var ballOfMoss                  = <TConstruct:materials:6>;
+var lavaCrystal                 = <TConstruct:materials:7>;
+var silkyCloth                  = <TConstruct:materials:25>;
+var silkyJewel                  = <TConstruct:materials:26>;
 var coagulatedBlood             = <TConstruct:strangeFood:1>;
 var slimeSoil                   = <TConstruct:CraftedSoil:6>;
 var searedBrick                 = <TConstruct:materials:2>;
@@ -17,18 +28,14 @@ var canisterEmpty               = <TConstruct:heartCanister>;
 var heartRed                    = <TConstruct:heartCanister:1>;
 var heartYellow                 = <TConstruct:heartCanister:3>;
 var heartGreen                  = <TConstruct:heartCanister:5>;
-var voidMetalIngot              = <Thaumcraft:ItemResource:16>;
-var bloodSyringe                = <ThaumicHorizons:syringeBlood>;
-var voidPutty                   = <ThaumicHorizons:voidPutty>;
-var dynamicMaterial             = <customitems:dynamic_material>;
 var jeweledApple                = <TConstruct:diamondApple>;
 var canister                    = <TConstruct:heartCanister>;
-var leather                     = <minecraft:leather>;
-var leatherHard                 = <harvestcraft:hardenedleatherItem>;
 var bindingIron                 = <TConstruct:binding:2>;
 var toughRodIron                = <TConstruct:toughRod:2>;
 var goldenHead                  = <TConstruct:goldHead>;
-var sugarcane                   = <minecraft:reeds>;
+var voidMetalIngot              = <Thaumcraft:ItemResource:16>;
+var bloodSyringe                = <ThaumicHorizons:syringeBlood>;
+var voidPutty                   = <ThaumicHorizons:voidPutty>;
 
 # Devices
 var gearCast                    = <TConstruct:gearCast>;
@@ -55,11 +62,6 @@ var travellersWings             = <TConstruct:travelWings>;
 var travellersBoots             = <TConstruct:travelBoots>;
 var travellersGloves            = <TConstruct:travelGlove>;
 var travellersBelt              = <TConstruct:travelBelt>;
-
-#Cant resolve! why?
-#var sawArdite                   = <IguanaTweaksTConstruct:sawArdite>;
-#var sawCobalt                   = <IguanaTweaksTConstruct:sawCobalt>;
-#var sawManyullyn                = <IguanaTweaksTConstruct:sawManyullyn>;
 
 # Ore Dictionary Items
 var allGoldOre                  = <ore:oreGold>;
@@ -107,9 +109,9 @@ mods.tconstruct.Casting.removeTableRecipe(shurikenCast);
 recipes.remove(sawStone);
 recipes.remove(sawDiamond);
 recipes.remove(sawIron);
-#recipes.remove(sawArdite);
-#recipes.remove(sawCobalt);
-#recipes.remove(sawManyullyn);
+
+# Silky Cloth
+recipes.remove(silkyCloth);
 
 ################################################################
 ### STONE TIER #################################################
@@ -150,6 +152,11 @@ recipes.addShaped(knapsack, [
     [leatherHard,   leatherHard,    leatherHard]
 ]);
 
+# Manyullyn
+mods.tconstruct.Smeltery.removeAlloy(<liquid:manyullyn.molten>);
+//OutputFluid, InputFluidArray
+mods.tconstruct.Smeltery.addAlloy(<liquid:manyullyn.molten> * 32, [<liquid:cobalt.molten> * 16, <liquid:ardite.molten> * 16]);
+
 ################################################################
 ### ALCHEMY TIER ###############################################
 ################################################################
@@ -160,7 +167,7 @@ mods.thermalexpansion.Furnace.removeRecipe(slimeSoil);
 mods.thaumcraft.Crucible.addRecipe("ALCHEMICALMANUFACTURE", searedBrick2, searedBrick, "ignis 8");
 
 # Blood
-# MOVED TO THE FLUID TRANSPOSER PINK SLIME LOOP IN thermal_expansion.zs
+# MOVED TO THE FLUID TRANSPOSER PINK SLIME LOOP IN minefactory_reloaded.zs
 # I should not have to create the ore dictionary here, load order is dumb
 #oreTrueRawMeat.mirror(<ore:listAllmeatraw>);
 #oreTrueRawMeat.addAll(<ore:listAllfishraw>);
@@ -170,8 +177,34 @@ mods.thaumcraft.Crucible.addRecipe("ALCHEMICALMANUFACTURE", searedBrick2, seared
 #    mods.thermalexpansion.Transposer.addExtractRecipe(2000, item, <liquid:blood> * 50, monsterJerky, 100);
 #}
 monsterJerky.displayName = "Tough Jerky";
-# MOVED TO minefactory_reloaded.zs BECAUSE MINETWEAKER IS DUMB
 
+# Lava Crystal
+recipes.remove(lavaCrystal);
+mods.thaumcraft.Crucible.addRecipe(
+    "CRUCIBLE",
+    lavaCrystal,
+    runeFire,
+    "ignis 16, vitreus 8"
+);
+
+# Silky Jewel
+recipes.remove(silkyJewel);
+mods.thaumcraft.Crucible.addRecipe(
+    "CRUCIBLE",
+    silkyJewel,
+    runeAir,
+    "pannus 16, lucrum 8"
+);
+
+# Ball of Moss
+recipes.remove(ballOfMoss);
+recipes.remove(silkyJewel);
+mods.thaumcraft.Crucible.addRecipe(
+    "CRUCIBLE",
+    ballOfMoss,
+    runeEarth,
+    "herba 16, sano 8"
+);
 
 ################################################################
 ### INFUSTION TIER #############################################

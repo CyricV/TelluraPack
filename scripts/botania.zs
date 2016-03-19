@@ -62,6 +62,7 @@ var gemstoneDust                = <WitchingGadgets:item.WG_Material:13>;
 var mithrilDust                 = <ThermalFoundation:material:38>;
 var runemind                    = <customitems:runemind>;
 var floralFertilizer            = <Botania:fertilizer>;
+var livingwoodTwig              = <Botania:manaResource:3>;
 
 # Devices
 var alchemyCatalyst             = <Botania:alchemyCatalyst>;
@@ -74,14 +75,17 @@ var openCrate                   = <Botania:openCrate>;
 
 # Equipment
 var manasteelHelm               = <Botania:manasteelHelm>;
+var manasteelHelmRevealing      = <Botania:manasteelHelmReveal>;
 var manasteelChest              = <Botania:manasteelChest>;
 var manasteelLeggings           = <Botania:manasteelLegs>;
 var manasteelBoots              = <Botania:manasteelBoots>;
 var terrasteelHelm              = <Botania:terrasteelHelm>;
+var terrasteelHelmRevealing     = <Botania:terrasteelHelmReveal>;
 var terrasteelChest             = <Botania:terrasteelChest>;
 var terrasteelLeggings          = <Botania:terrasteelLegs>;
 var terrasteelBoots             = <Botania:terrasteelBoots>;
 var elementiumHelm              = <Botania:elementiumHelm>;
+var elementiumHelmRevealing     = <Botania:elementiumHelmReveal>;
 var elementiumChest             = <Botania:elementiumChest>;
 var elementiumLeggings          = <Botania:elementiumLegs>;
 var elementiumBoots             = <Botania:elementiumBoots>;
@@ -92,6 +96,8 @@ var thaumiumChest               = <Thaumcraft:ItemChestplateThaumium>;
 var thaumiumLeggings            = <Thaumcraft:ItemLeggingsThaumium>;
 var thaumiumBoots               = <Thaumcraft:ItemBootsThaumium>;
 var pestleAndMortar             = <Botania:pestleAndMortar>;
+var allFlugelTiara              = <Botania:flightTiara:*>;
+var gogglesOfRevealing          = <Thaumcraft:ItemGoggles>;
 
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
@@ -104,6 +110,9 @@ var oreDustGold                 = <ore:dustGold>;
 ################################################################
 # Pestle and Mortar
 recipes.remove(pestleAndMortar);
+
+# All Flugel Tiaras
+recipes.remove(allFlugelTiara);
 
 ################################################################
 ### STONE TIER #################################################
@@ -310,7 +319,26 @@ mods.thaumcraft.Infusion.addRecipe(
     2
 );
 
-## Terrasteel Helm
+# Terrasteel Helm
+recipes.remove(terrasteelHelm);
+recipes.remove(terrasteelHelmRevealing);
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelHelm,
+    [runeOfSpring, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig],
+    "metallum 12, herba 12, tutamen 16, praecantatio 16",
+    terrasteelHelm,
+    2
+);
+recipes.addShapeless(terrasteelHelmRevealing, [terrasteelHelm, gogglesOfRevealing]);
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelHelmRevealing,
+    [runeOfSpring, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig],
+    "metallum 12, herba 12, tutamen 16, praecantatio 16",
+    terrasteelHelmRevealing,
+    2
+);
 #recipes.remove(terrasteelHelm);
 #recipes.addShaped(terrasteelHelm, [
 #    [livingwood,        terrasteelIngot,                            livingwood],
@@ -320,8 +348,17 @@ mods.thaumcraft.Infusion.addRecipe(
 #        return output.withDamage(max(0, inputs.inp.damage));
 #    }
 #);
-#
-## Terrasteel Chest
+
+# Terrasteel Chest
+recipes.remove(terrasteelChest);
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelChest,
+    [runeOfSummer, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig],
+    "metallum 12, herba 12, tutamen 24, praecantatio 16",
+    terrasteelChest,
+    2
+);
 #recipes.remove(terrasteelChest);
 #recipes.addShaped(terrasteelChest, [
 #    [terrasteelIngot,   null,                                       terrasteelIngot],
@@ -331,8 +368,17 @@ mods.thaumcraft.Infusion.addRecipe(
 #        return output.withDamage(max(0, inputs.inp.damage));
 #    }
 #);
-#
-## Terrasteel Leggings
+
+# Terrasteel Leggings
+recipes.remove(terrasteelLeggings);
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelLeggings,
+    [runeOfAutumn, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig],
+    "metallum 12, herba 12, tutamen 20, praecantatio 16",
+    terrasteelLeggings,
+    2
+);
 #recipes.remove(terrasteelLeggings);
 #recipes.addShaped(terrasteelLeggings, [
 #    [terrasteelIngot,   manasteelLeggings.anyDamage().marked("inp"),    terrasteelIngot],
@@ -342,8 +388,17 @@ mods.thaumcraft.Infusion.addRecipe(
 #        return output.withDamage(max(0, inputs.inp.damage));
 #    }
 #);
-#
-## Terrasteel Boots
+
+# Terrasteel Boots
+recipes.remove(terrasteelBoots);
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelBoots,
+    [runeOfWinter, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig, terrasteelIngot, livingwoodTwig],
+    "metallum 12, herba 12, tutamen 12, praecantatio 16",
+    terrasteelBoots,
+    2
+);
 #recipes.remove(terrasteelBoots);
 #recipes.addShaped(terrasteelBoots, [
 #    [terrasteelIngot,   manasteelBoots.anyDamage().marked("inp"),   terrasteelIngot],
@@ -367,46 +422,56 @@ mods.thaumcraft.Infusion.addRecipe(
 
 # Elementium Helm
 recipes.remove(elementiumHelm);
-recipes.addShaped(elementiumHelm, [
-    [pixieDust,         elementiumIngot,                            pixieDust],
-    [elementiumIngot,   manasteelHelm.anyDamage().marked("inp"),    elementiumIngot],
-    [null,              null,                                       null]],
-    function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage));
-    }
+recipes.remove(elementiumHelmRevealing);
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelHelm,
+    [runeOfSpring, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot],
+    "metallum 12, auram 12, tutamen 16, praecantatio 16",
+    elementiumHelm,
+    2
+);
+recipes.addShapeless(elementiumHelmRevealing, [elementiumHelm, gogglesOfRevealing]);
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelHelmRevealing,
+    [runeOfSpring, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot],
+    "metallum 12, auram 12, tutamen 16, praecantatio 16",
+    elementiumHelmRevealing,
+    2
 );
 
 # Elementium Chest
 recipes.remove(elementiumChest);
-recipes.addShaped(elementiumChest, [
-    [elementiumIngot,   null,                                       elementiumIngot],
-    [elementiumIngot,   manasteelChest.anyDamage().marked("inp"),   elementiumIngot],
-    [pixieDust,         elementiumIngot,                            pixieDust]],
-    function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage));
-    }
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelChest,
+    [runeOfSummer, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot],
+    "metallum 12, auram 12, tutamen 24, praecantatio 16",
+    elementiumChest,
+    2
 );
 
 # Elementium Leggings
 recipes.remove(elementiumLeggings);
-recipes.addShaped(elementiumLeggings, [
-    [elementiumIngot,   manasteelLeggings.anyDamage().marked("inp"),    elementiumIngot],
-    [elementiumIngot,   null,                                           elementiumIngot],
-    [manaweaveCloth,    null,                                           manaweaveCloth]],
-    function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage));
-    }
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelLeggings,
+    [runeOfAutumn, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot],
+    "metallum 12, auram 12, tutamen 20, praecantatio 16",
+    elementiumLeggings,
+    2
 );
 
 # Elementium Boots
 recipes.remove(elementiumBoots);
-recipes.addShaped(elementiumBoots, [
-    [elementiumIngot,   manasteelBoots.anyDamage().marked("inp"),   elementiumIngot],
-    [null,              null,                                       null],
-    [null,              null,                                       null]],
-    function(output, inputs, crafting) {
-        return output.withDamage(max(0, inputs.inp.damage));
-    }
+mods.thaumcraft.Infusion.addRecipe(
+    "INFUSION",
+    manasteelBoots,
+    [runeOfWinter, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot, pixieDust, elementiumIngot],
+    "metallum 12, auram 12, tutamen 12, praecantatio 16",
+    elementiumBoots,
+    2
 );
 
 ################################################################

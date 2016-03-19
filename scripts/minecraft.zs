@@ -35,6 +35,10 @@ var sugar                       = <minecraft:sugar>;
 var bread                       = <minecraft:bread>;
 var flourAE                     = <appliedenergistics2:item.ItemMultiMaterial:4>;
 var flourEnderIO                = <EnderIO:itemPowderIngot:8>;
+var tesseractFrame              = <ThermalExpansion:Frame:11>;
+var obsidian                    = <minecraft:obsidian>;
+var enderEye                    = <minecraft:ender_eye>;
+var enderPearl                  = <minecraft:ender_pearl>;
 
 # Devices
 var furnaceMC                   = <minecraft:furnace>;
@@ -50,6 +54,7 @@ var buttonWood                  = <minecraft:wooden_button>;
 var doorTrap                    = <minecraft:trapdoor>;
 var doorWood                    = <minecraft:wooden_door>;
 var doorIron                    = <minecraft:iron_door>;
+var enderChest                  = <minecraft:ender_chest>;
 
 # Equipment
 var leatherHelm                 = <minecraft:leather_helmet>;
@@ -109,6 +114,7 @@ var oreRubber                   = <ore:itemRubber>;
 var oreStick                    = <ore:stickWood>;
 var orePlank                    = <ore:plankWood>;
 var oreStone                    = <ore:stone>;
+var oreObsidianDust             = <ore:dustObsidian>;
 # Power Recipe Fluid Transposer Fix
 #var accioMaterial               = <ore:accioMaterial>;
 #accioMaterial.remove(fireEssence);
@@ -271,8 +277,8 @@ recipes.addShapeless(hLeatherChest, [hLeatherChest.anyDamage().marked("inp"), or
 recipes.remove(hLeatherLeggings);
 recipes.addShaped(hLeatherLeggings, [
     [oreHardenedLeather,    leatherLeggings.anyDamage().marked("inp"),  oreHardenedLeather],
-    [oreHardenedLeather,    null,                                       oreHardenedLeather],
-    [oreLeather,            null,                                       oreLeather]],
+    [oreLeather,            null,                                       oreLeather],
+    [oreHardenedLeather,    null,                                       oreHardenedLeather]],
     function(output, inputs, crafting) {
         return output.withDamage(max(0, inputs.inp.damage));
     }
@@ -453,14 +459,33 @@ mods.thermalexpansion.Transposer.addFillRecipe(100, sawdust, bonemeal, <liquid:s
 ### ALCHEMY TIER ###############################################
 ################################################################
 # Blaze Powder
-#recipes.remove(blazePowder);
-#mods.thermalexpansion.Transposer.removeFillRecipe(glowstoneDust, <liquid:redstone>);
-#mods.thermalexpansion.Transposer.addFillRecipe(2000, fireEssence, blazePowder * 2, <liquid:redstone> * 100);
+# Moved to be with other powders in thermal_expansion.zs
 
+# Ender Eye
+recipes.remove(enderEye);
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    enderEye,
+    "aer 4, aqua 4, terra 4", [
+    [null,              oreObsidianDust,    null],
+    [oreObsidianDust,   enderPearl,         oreObsidianDust],
+    [null,              oreObsidianDust,    null]
+]);
 
 ################################################################
 ### INFUSTION TIER #############################################
 ################################################################
+# Ender Chest
+recipes.remove(enderChest);
+mods.thaumcraft.Arcane.addShaped(
+    "INFUION",
+    enderChest,
+    "aer 12, perditio 12", [
+    [obsidian,  chest,          obsidian],
+    [obsidian,  tesseractFrame, obsidian],
+    [obsidian,  obsidian,       obsidian]
+]);
+
 # Nether Materials Modification
 netherrack.displayName = "Nether Scrap";
 mods.thermalexpansion.Crucible.addRecipe(1000, netherrack, <liquid:iron.molten> * 16);

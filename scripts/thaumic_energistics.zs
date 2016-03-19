@@ -46,6 +46,36 @@ mods.thaumcraft.Research.removeResearch("thaumicenergistics.Pseudo.COREUSE");
 mods.thaumcraft.Research.removeResearch("thaumicenergistics.TETHAUMGBOX");
 mods.thaumcraft.Crucible.removeRecipe(thaumiumGearBox);
 
+# Essentia storage and manipulation
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.TEINFPROV");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.TEESSPROV");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.TEIO");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.TEESSTERM");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.TEESSVIBCMBR");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.TECORES");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.TESTORAGE");
+mods.thaumcraft.Research.orphanResearch("thaumicenergistics.Pseudo.WARDEDARCANA");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.Pseudo.WARDEDARCANA");
+mods.thaumcraft.Research.orphanResearch("thaumicenergistics.Pseudo.MIRROR");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.Pseudo.MIRROR");
+mods.thaumcraft.Research.orphanResearch("thaumicenergistics.Pseudo.DISTILESSENTIA");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.Pseudo.DISTILESSENTIA");
+mods.thaumcraft.Research.orphanResearch("thaumicenergistics.Pseudo.TUBEFILTER");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.Pseudo.TUBEFILTER");
+mods.thaumcraft.Research.orphanResearch("thaumicenergistics.Pseudo.INFUSION");
+mods.thaumcraft.Research.removeResearch("thaumicenergistics.Pseudo.INFUSION");
+
+# Research Shifting
+mods.thaumcraft.Research.moveResearch("thaumicenergistics.TEARCANETERM", "thaumicenergistics", 0, -2);
+mods.thaumcraft.Research.moveResearch("thaumicenergistics.TEVISINT", "thaumicenergistics", 0, -3);
+mods.thaumcraft.Research.moveResearch("thaumicenergistics.TEARCANEASSEMBLER", "thaumicenergistics", 0, -4);
+mods.thaumcraft.Research.moveResearch("thaumicenergistics.TEKNOWLEDGEINSCRIBER", "thaumicenergistics", 0, -5);
+mods.thaumcraft.Research.moveResearch("thaumicenergistics.Pseudo.VISPOWER", "thaumicenergistics", 1, -3);
+mods.thaumcraft.Research.moveResearch("thaumicenergistics.Pseudo.SCEPTRE", "thaumicenergistics", -1, -4);
+mods.thaumcraft.Research.moveResearch("thaumicenergistics.TECERTUSDUPE", "thaumicenergistics", 2, 0);
+mods.thaumcraft.Research.moveResearch("thaumicenergistics.Pseudo.ALCHEMICALDUPLICATION", "thaumicenergistics", 2, 1);
+
+
 ################################################################
 ### TINKER TIER ################################################
 ################################################################

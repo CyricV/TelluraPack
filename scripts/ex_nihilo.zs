@@ -106,8 +106,11 @@ var telluraDeliquescent         = <ProjRed|Core:projectred.core.part:55>;
 var telluraResolute             = <magicalcrops:magicalcrops_EssenceIngots>;
 var telluraEphemeral            = <magicalcrops:magicalcrops_EssenceIngots:1>;
 
+# Equipment
+
+
 # Devices
-var seive                       = <exnihilo:sifting_table>;
+var sieve                       = <exnihilo:sifting_table>;
 var allSieves                   = <exnihilo:sifting_table:*>;
 
 ################################################################
@@ -120,12 +123,13 @@ recipes.remove(allSieves);
 ### PRIMAL TIER ################################################
 ################################################################
 # Sieve
+sieve.displayName = "\u00A75Primal Sieve";
 mods.thaumcraft.Infusion.addRecipe(
-    "voidPutty",
+    "PRIMALSIEVE",
     primalPearl,
     [engineeringProcessor, soulariumIngot, voidPutty, soulariumIngot, engineeringProcessor, soulariumIngot, voidPutty, soulariumIngot, engineeringProcessor, soulariumIngot, voidPutty, soulariumIngot, engineeringProcessor, soulariumIngot, voidPutty, soulariumIngot],
     "machina 64, lucrum 128, vacuos 64, tenebrae 64",
-    seive,
+    sieve,
     8
 );
 

@@ -1,0 +1,5 @@
+/give CyricV TConstruct:pickaxe 1 0 {InfiTool: {BaseDurability:380, Head:14, BaseAttack:4, ToolEXP:592, Built:1, HarvestLevel:4, Attack:4, RenderHead:14, ModDurability:0.0, Handle:14, Broken:0, Shoddy:0.0, RenderHandle:14, Accessory:14, MiningSpeed:650, RenderAccessory:14, ToolLevel:1, Unbreaking:1, Damage:0, BonusDurability:0, TotalDurability:380, Modifiers:0}, display:{Name:"Bro Pickaxe"}}
+
+/give CyricV Thaumcraft:BlockJarNodeItem 1 0 {nodetype:0, nodemod:0, Aspects:[{amount:100,key:"terra"},{amount:100,key:"aer"}, {amount:100,key:"aqua"},{amount:100,key:"ignis"},{amount:100,key:"ordo"}, {amount:100,key:"perditio"}], nodeid: "0:0:0:0"}
+
+/give CyricV Thaumcraft:FocusShock 1 0 {upgrade: [{id:0}, {id:0}, {id:0}, {id:0}, {id:0}]}

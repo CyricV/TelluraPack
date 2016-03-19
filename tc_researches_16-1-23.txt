@@ -1,3 +1,5 @@
+BASICS
+
 WARP                                                Warp, Flux, and all things bad
 RESEARCH                                            Research
 ENCHANT                                             Enchantments
@@ -7,7 +9,7 @@ ORE                                                 Ores
 ASPECTS                                             Aspects of Magic
 KNOWFRAG                                            Knowledge Fragments
 RESEARCHER2                                         Research Mastery
-CRIMSON
+CRIMSON                                             The Crimson Cult
 NODEJAR                                             Node in a Jar
 RESEARCHER1                                         Research Expertise
 NODECATALYZATION                                    Node Catalyzation (Nodal Mechanics)
@@ -19,24 +21,25 @@ PLANTS                                              Plants & Trees
 NODEPRESERVE                                        Node Preserver
 PECH                                                The Pech
 
+THAUMATURGY
 
 NODESTABILIZER                                      Node Stabilizer
 WANDPEDFOC                                          Conpound Recharge Focus
-VAMPBAT
-ROD_bone
+VAMPBAT                                             Tier 5 Upgrade: Vampire Bats
+ROD_bone                                            Bone Wand Core
 BASICTHAUMATURGY                                    Basic Wand Craft
 FOCUSEXCAVATION                                     Wand Focus: Excavation
 SCEPTRE                                             Crafting Sceptres
-ROD_quartz_staff
-FOCUSHELLBAT
-VISCHARGERELAY
-ROD_ice
+ROD_quartz_staff                                    Quartz Staff Core
+FOCUSHELLBAT                                        Wand Focus: Nine Hells
+VISCHARGERELAY                                      Vis Charging Relay
+ROD_ice                                             Icy Wand Core
 NODESTABILIZERADV                                   Advanced Node Stabalizer
 ROD_reed                                            Reed Wand Core
 ROD_greatwood_staff                                 Magic Staves
 ROD_silverwood_staff                                Silverwood Staff Core
 FOCUSFROST                                          Wand Focus: Frost
-VISAMULET
+VISAMULET                                           Vis Storage
 FOCALMANIPULATION                                   Focal Manipulation
 FOCUSFIRE                                           Wand Foci
 CAP_gold                                            Gold Wand Caps
@@ -47,198 +50,203 @@ CAP_copper                                          Copper Wand Caps
 ROD_reed_staff                                      Reed Staff Core
 FOCUSSHOCK                                          Wand Focus: Shock
 CAP_silver                                          Silver Wand Caps
-ROD_quartz
+ROD_quartz                                          Quartz Wand Core
 CAP_iron
-FOCUSWARDING
-ROD_obsidian
+FOCUSWARDING                                        Wand Focus: Warding
+ROD_obsidian                                        Obsidian Wand Core
 FOCUSPORTABLEHOLE                                   Wand Focus: Portable Hole
-CAP_thaumium
+CAP_thaumium                                        Thaumium Wand Caps
 ROD_wood
 ROD_greatwood                                       Greatwood Wand Core
-ROD_blaze
-ROD_bone_staff
-ROD_obsidian_staff
+ROD_blaze                                           Blaze Rod Wand Core
+ROD_bone_staff                                      Bone Staff Core
+ROD_obsidian_staff                                  Ogsidian Staff Core
 FOCUSTRADE                                          Wand Focus: Equal Trade
-ROD_ice_staff
+ROD_ice_staff                                       Icy Staff Core
 WANDPED                                             Wand Recharge Pedestal
 ROD_blaze_staff                                     Blaze Rod Staff Core
 
+ALCHEMY
 
 ALUMENTUM                                           Alumentum
-BATHSALTS
+BATHSALTS                                           Purifying Bath Salts
 CRUCIBLE                                            Basic Alchemy
 ENTROPICPROCESSING                                  Entropic Processing
 TRANSIRON                                           Metal Transmutation
 THAUMATORIUM                                        Automated Alchemy
 ALCHEMICALMANUFACTURE                               Alchemical Manufacture
-LIQUIDDEATH
+LIQUIDDEATH                                         Liquid Death
 TUBES                                               Essentia Tubes
-TRANSTIN
-SANESOAP
-ETHEREALBLOOM
+TRANSTIN                                            Tin Transmutation
+SANESOAP                                            Sanitizing Soap
+ETHEREALBLOOM                                       Ethereal Bloom
 TALLOW                                              Magic Tallow
-PURESILVER
-PURETIN
-TRANSCOPPER
+PURESILVER                                          Silver Purification
+PURETIN                                             Tin Purification
+TRANSCOPPER                                         Copper Transmutation
 ESSENTIACRYSTAL                                     Essentia Crystalization
-ARCANESPA
+ARCANESPA                                           Arcane Spa
 CENTRIFUGE                                          Alchemical Centrifuge
-TRANSSILVER
-PUREIRON
+TRANSSILVER                                         Silver Transmutation
+PUREIRON                                            Metal Purification
 ALCHEMICALDUPLICATION                               Alchemical Duplication
 JARVOID                                             Void Jar
 NITOR                                               Nitor
-BOTTLETAINT
-PUREGOLD
+BOTTLETAINT                                         Bottled Taint
+PUREGOLD                                            Gold Purification
 DISTILESSENTIA                                      Essentia Distillation
 PHIAL                                               Glass Phial
 TUBEFILTER                                          Advanced Essentia Tubes
-PURELEAD
+PURELEAD                                            Lead Purification
 THAUMIUM                                            Magical Metallurgy
-TRANSLEAD
-TRANSGOLD
-PURECOPPER
+TRANSLEAD                                           Lead Transmutation
+TRANSGOLD                                           Gold Transmutation
+PURECOPPER                                          Copper Purification
 JARLABEL                                            Warded Jars and Labels
 
+ARTIFICE
 
-RUNICEMERGENCY
+RUNICEMERGENCY                                      Amulet of Emergency Shielding
 GOGGLES                                             Goggles of Revealing
-ENCHFABRIC
-ELEMENTALPICK
-ELEMENTALAXE
-TABLE
+ENCHFABRIC                                          Enchanted Fabric
+ELEMENTALPICK                                       Pickaxe of the Core
+ELEMENTALAXE                                        Axe of the Stream
+TABLE                                               Table
 INFERNALFURNACE                                     Infernal Furnace
-BANNERS
-ELEMENTALSHOVEL
-LEVITATOR
-HOVERGIRDLE
+BANNERS                                             Banners
+ELEMENTALSHOVEL                                     Shovel of the Earthmover
+LEVITATOR                                           Arcane Levitator
+HOVERGIRDLE                                         Thaumostatic Girdle
 WARDEDARCANA                                        Warded Arcana
-BASICARTIFACE
-FLUXSCRUB
-THAUMOMETER
+BASICARTIFACE                                       Basic Artifacing
+FLUXSCRUB                                           Flux Scrubber
+THAUMOMETER                                         Thaumometer
 BOOTSTRAVELLER                                      Boots of the Traveller
-RESTABLE
-MIRRORESSENTIA
-PRIMALARROW
-ARCANEEAR
-GRATE
-RUNICCHARGED
-RUNICHEALING
-HOVERHARNESS
-MIRROR
-LAMPGROWTH
-MASKGRINNINGDEVIL
-ELEMENTALHOE
-MIRRORHAND
-ARCTABLE
+RESTABLE                                            Research Table
+MIRRORESSENTIA                                      Essentia Mirrors
+PRIMALARROW                                         Primal Arrow
+ARCANEEAR                                           Arcane Ear
+GRATE                                               Item Grate
+RUNICCHARGED                                        Charged Ring of Shielding
+RUNICHEALING                                        Revitalizing Ring of Shielding
+HOVERHARNESS                                        Thaumostatic Harness
+MIRROR                                              Mirror Magic
+LAMPGROWTH                                          Lamp of Growth
+MASKGRINNINGDEVIL                                   Frinning Devil Faceplate
+ELEMENTALHOE                                        Hoe of Growth
+MIRRORHAND                                          Magical Hand Mirror
+ARCTABLE                                            Arcane Worktable
 INFUSION                                            Infusion
-RUNICKINETIC
-PAVEWARD
-MASKANGRYGHOST
-MASKSIPPINGFIEND
-ARCANELAMP
-ARMORFORTRESS
-BELLOWS
-HELMGOGGLES
-RUNICARMOR
-RUNICAUGMENTATION
-LAMPFERTILITY
-BONEBOW
-ARCANESTONE
-SINSTONE
-ELEMENTALSWORD
-PAVETRAVEL
-JARBRAIN
+RUNICKINETIC                                        Kinetic Girdle of Shielding
+PAVEWARD                                            Paving Stone of Warding
+MASKANGRYGHOST                                      Angry Ghost Faceplate
+MASKSIPPINGFIEND                                    Sipping Fiend Faceplate
+ARCANELAMP                                          Arcane Lamp
+ARMORFORTRESS                                       Thaumium Fortress Armor
+BELLOWS                                             Arcane Bellows
+HELMGOGGLES                                         Helm of Revealing
+RUNICARMOR                                          Runic Shielding
+RUNICAUGMENTATION                                   Runic Shielding Augmentation
+LAMPFERTILITY                                       Lamp of Fertility
+BONEBOW                                             Bone Bow
+ARCANESTONE                                         Arcane Stone
+SINSTONE                                            Sinister Loadstone
+ELEMENTALSWORD                                      Sword of the Zephyr
+PAVETRAVEL                                          Paving Stone of Travel
+JARBRAIN                                            Brain in a Jar
 ARCANEBORE                                          Arcane Bore
-INFUSIONENCHANTMENT
+INFUSIONENCHANTMENT                                 Infusion Enchantment
 
 
-GOLEMCLAY
-UPGRADEWATER
-HUNGRYCHEST
-GOLEMTALLOW
-GOLEMWOOD
-GOLEMFLESH
-UPGRADEEARTH
-TINYDART
-UPGRADEFIRE
-UPGRADEENTROPY
+GOLEMCLAY                                           Clay Golem
+UPGRADEWATER                                        Golem Upgrade: Water
+HUNGRYCHEST                                         Hungry Chest
+GOLEMTALLOW                                         Tallow Golem
+GOLEMWOOD                                           Wood Golem
+GOLEMFLESH                                          Flesh Golem
+UPGRADEEARTH                                        Golem Upgrade: Earth
+TINYDART                                            Tingy Dart Launcher
+UPGRADEFIRE                                         Golem Upgrade: Fire
+UPGRADEENTROPY                                      Golem Upgrade: Entropy
 COREUSE                                             Golem Core: Use
-TINYHAMMER
-TRAVELTRUNK
-TINYBOWTIE
-GOLEMBELL
-CORESORTING
-GOLEMTHAUMIUM
-TINYHAT
-TINYFEZ
-CORELUMBER
-TINYGLASSES
-TINYVISOR
-UPGRADEAIR
-COREFISHING
+TINYHAMMER                                          Golem Mace
+TRAVELTRUNK                                         Traveling Trunk
+TINYBOWTIE                                          Tiny Bowties
+GOLEMBELL                                           Golemancer's Bell
+CORESORTING                                         Golem Core: Sorting
+GOLEMTHAUMIUM                                       Thaumium Golem
+TINYHAT                                             Tiny Hats
+TINYFEZ                                             Tiny Fezzes
+CORELUMBER                                          Golem Core: Chop
+TINYGLASSES                                         Tiny Spectacles
+TINYVISOR                                           Golem Visor
+UPGRADEAIR                                          Golem Upgrade: Air
+COREFISHING                                         Golem Core: Fishing
 COREGATHER                                          Golem Core: Gather
-COREHARVEST
-COREBUTCHER
-COREGUARD
-ADVANCEDGOLEM
-TINYARMOR
-COREFILL
-GOLEMFETTER
-GOLEMSTRAW
-COREALCHEMY
-GOLEMSTONE
-GOLEMIRON
-CORELIQUID
-COREEMPTY
-UPGRADEORDER
+COREHARVEST                                         Golem Core: Harvest
+COREBUTCHER                                         Golem Core: Butcher
+COREGUARD                                           Golem Core: Guard
+ADVANCEDGOLEM                                       Advanced Golems
+TINYARMOR                                           Golem Iron Plating
+COREFILL                                            Golem Core: Fill
+GOLEMFETTER                                         Golem Fetter
+GOLEMSTRAW                                          Straw Golem
+COREALCHEMY                                         Golem Core: Alchemy
+GOLEMSTONE                                          Stone  Golem
+GOLEMIRON                                           Iron Golem
+CORELIQUID                                          Golem Core: Decanting
+COREEMPTY                                           Golem Core: Empty
+UPGRADEORDER                                        Golem Upgrade: Order
 
+ELDRITCH
 
 ELDRITCHMAJOR                                       Eldritch Revelation
-ADVALCHEMYFURNACE
-ARMORVOIDFORTRESS
+ADVALCHEMYFURNACE                                   Advanced Alchemical Furnace
+ARMORVOIDFORTRESS                                   Void Thaumaturge Robes
 ELDRITCHMINOR                                       Eldritch Epiphany
-ENTEROUTER
-FOCUSPRIMAL
-ESSENTIARESERVOIR
-SANITYCHECK
-ROD_primal_staff
-OCULUS
-OUTERREV
-PRIMALCRUSHER
-PRIMPEARL
-PRIMNODE
-CAP_void
-VOIDMETAL
+ENTEROUTER                                          The Outer Lands
+FOCUSPRIMAL                                         Wand Focus: Primal
+ESSENTIARESERVOIR                                   Advanced Essentia Storage
+SANITYCHECK                                         Sanity Check
+ROD_primal_staff                                    Staff Core of the Primal
+OCULUS                                              Opening the Eye
+OUTERREV                                            Revelations in the Outer Lands
+PRIMALCRUSHER                                       Primal Crusher
+PRIMPEARL                                           Primordial Pearl
+PRIMNODE                                            Primordial Node Manipulation
+CAP_void                                            Void metal Wand Caps
+VOIDMETAL                                           Void metal
 
+thaumicenergistics
 
 thaumicenergistics.TEESSVIBCMBR                     Vibration Chamber
 thaumicenergistics.Pseudo.COREUSE                   Golem Core: Use (fake)
-thaumicenergistics.TECERTUSDUPE
+thaumicenergistics.TECERTUSDUPE                     Quartz Duplication
 thaumicenergistics.TEARCANETERM                     Arcane Crafting Terminal
-thaumicenergistics.Pseudo.DISTILESSENTIA
-thaumicenergistics.Pseudo.VISPOWER
-thaumicenergistics.TEARCANEASSEMBLER
-thaumicenergistics.TEINFPROV
+thaumicenergistics.Pseudo.DISTILESSENTIA            Essentia Distillation (fake)
+thaumicenergistics.Pseudo.VISPOWER                  Harnessing Vis (fake)
+thaumicenergistics.TEARCANEASSEMBLER                Arcane Assembler
+thaumicenergistics.TEINFPROV                        Infusion Provider
 thaumicenergistics.TEFOCUSWRENCH
 thaumicenergistics.TEIO                             Digi-sentia Transportation
 thaumicenergistics.TECORES                          Digi-sentia
 thaumicenergistics.TERESEARCH
-thaumicenergistics.Pseudo.TUBEFILTER
+thaumicenergistics.Pseudo.TUBEFILTER                Advanced Essentia Tubes (fake)
 thaumicenergistics.TETHAUMGBOX                      Thaumium Gear Box
 thaumicenergistics.TEVISINT                         Vis Relay Interface
-thaumicenergistics.Pseudo.INFUSION
+thaumicenergistics.Pseudo.INFUSION                  Infusion (fake)
 thaumicenergistics.TESTORAGE                        Digi-sentia Storage
-thaumicenergistics.TEKNOWLEDGEINSCRIBER
-thaumicenergistics.Pseudo.ALCHEMICALDUPLICATION
+thaumicenergistics.TEKNOWLEDGEINSCRIBER             Knowledge Inscription
+thaumicenergistics.Pseudo.ALCHEMICALDUPLICATION     Alchemical Duplication (fake)
 thaumicenergistics.TEIRONGEARBOX                    Iron Gear Box
-thaumicenergistics.Pseudo.MIRROR
-thaumicenergistics.TEESSTERM
-thaumicenergistics.TEESSPROV
-thaumicenergistics.Pseudo.WARDEDARCANA
+thaumicenergistics.Pseudo.MIRROR                    Mirror Magic (fake)
+thaumicenergistics.TEESSTERM                        Essentia Monitoring
+thaumicenergistics.TEESSPROV                        Essentia Provider
+thaumicenergistics.Pseudo.WARDEDARCANA              Warded Arcana (fake)
 thaumicenergistics.Pseudo.FOCUSFIRE
-thaumicenergistics.Pseudo.SCEPTRE
+thaumicenergistics.Pseudo.SCEPTRE                   Crafting Scepters (fake)
 
+ThaumicHorizons
 
 alchIncubation
 blastPhial
@@ -270,7 +278,7 @@ synthSkin
 lensEarth
 mirrorAmulet
 focusContainment
-essentiaInjection
+essentiaInjection                                   Blood Alchemy
 catInfusion
 amphibious
 selfInfusion
@@ -308,64 +316,65 @@ healingVat
 cloneSelf
 generalInfusion
 meatGrowth
-voidPutty
+voidPutty                                           Void Putty
 
+WITCHGADG
 
 ENCH_BACKSTAB
-PRIMORDIALARMOR
+PRIMORDIALARMOR                                     Primordial Armor
 ENCH_STEALTH
 ENCH_INVISIBLEGEAR
 CALCULATOR
-PRIMORDIALGEARSET
-ENDERBAG
+PRIMORDIALGEARSET                                   Primordial Revelation
+ENDERBAG                                            Enderlinked Bag
 CLOAK_STORAGE
-HUNGERBAG
-ALCHEMICALTRANSMOGRIFY
-WGFAKEPUREIRON
-WGFAKEBATHSALTS
-GEMCUTTING
-VOIDBAG
-TERRAFORMFOCUS_MUSHROOM
-TERRAFORMFOCUS_COLDTAIGA
-ETHEREALWALL
+HUNGERBAG                                           Hungry Bag
+ALCHEMICALTRANSMOGRIFY                              Alchemical Transmogrification
+WGFAKEPUREIRON                                      Metal Purification (fake)
+WGFAKEBATHSALTS                                     Purifying Bath Salts (fake)
+GEMCUTTING                                          Gem Cutting
+VOIDBAG                                             Voidlinked Bag
+TERRAFORMFOCUS_MUSHROOM                             Terrestrial Focus: Mushroom Island
+TERRAFORMFOCUS_COLDTAIGA                            Terrestrial Focus: Cold Taiga
+ETHEREALWALL                                        Ethereal Wall
 ENCH_RIDEPROTECT
-TERRAFORMER
-TERRAFORMFOCUS_TAINT
-STONEEXTRUDER
-WGFAKEALCHEMICALMANUFACTURE
-PURECINNABAR
-TERRAFORMFOCUS_JUNGLE
-PRIMORDIALWEAPONRY
-ROSEVINE
-AGEINGSTONE
-ADVANCEDROBES
-WGFAKEJARLABEL
-WGFAKEELDRITCHMINOR
-CRYSTALCAPSULE
-LABELLIB
-EMPOWERPEARL
-MIRRORPUMP
+TERRAFORMER                                         Thaumic Terraforming
+TERRAFORMFOCUS_TAINT                                Terrestrial Focus: Tainted Lands
+STONEEXTRUDER                                       Thaumic Stone
+WGFAKEALCHEMICALMANUFACTURE                         Alchemical Manufacture (fake)
+PURECINNABAR                                        Cinnabar Purification
+TERRAFORMFOCUS_JUNGLE                               Terrestrial Focus: Jungle
+PRIMORDIALWEAPONRY                                  Primordial Weaponry
+ROSEVINE                                            Rose Vines
+AGEINGSTONE                                         Ageing Stone
+ADVANCEDROBES                                       Bewitched Fleece
+WGFAKEJARLABEL                                      Warded Jars and Labels (fake)
+WGFAKEELDRITCHMINOR                                 Eldritch Epiphany (fake)
+CRYSTALCAPSULE                                      Crystal Capsule
+LABELLIB                                            Aspect Library
+EMPOWERPEARL                                        Pearl Revitalization
+MIRRORPUMP                                          Essentia Pump
 WGBAUBLES
-WGFAKEENCHFABRIC
-SPINNINGWHEEL
-WGFAKECENTRIFUGE
+WGFAKEENCHFABRIC                                    Enchanted Fabric (fake)
+SPINNINGWHEEL                                       Spinning
+WGFAKECENTRIFUGE                                    Alchemical Centrifuge (fake)
 CLOAK_SPECTRAL
 CLOAK_WOLF
-WGFAKEMIRRORESSENTIA
+WGFAKEMIRRORESSENTIA                                Essentia Mirrors (fake)
 ENCH_UNVEILING
-WGFAKEPRIMPEARL
-TERRAFORMFOCUS_DESERT
+WGFAKEPRIMPEARL                                     Primordial Pearl (fake)
+TERRAFORMFOCUS_DESERT                               Terrestrial Focus: Desert
 CLOAK
-LABYRINTHSTRING
+LABYRINTHSTRING                                     Guiding Thread
 CLOAKKAMA
-WGPOTIONS
-METALLURGICPERFECTION_CLUSTERS
-TERRAFORMFOCUS_HELL
+WGPOTIONS                                           Status Effects
+METALLURGICPERFECTION_CLUSTERS                      Metallurgic Perfection: Purification
+TERRAFORMFOCUS_HELL                                 Terrestrial Focus: Hell
 INFERNALBLASTFURNACE                                Infernal Blast Furnace
-SCANCAMERA
+SCANCAMERA                                          Thaumic Iconograph
 WGFAKEINFUSIONENCHANTMENT
-PRIMORDIALGLOVE
-WGFAKEARCANESTONE
-WGFAKEINFERNALFURNACE
-BAGOFTRICKS
-SAUNASTOVE
+PRIMORDIALGLOVE                                     Primordial Gauntlet
+WGFAKEARCANESTONE                                   Arcane Stone (fake)
+WGFAKEINFERNALFURNACE                               Infernal Furnace (fake)
+BAGOFTRICKS                                         Bag of Tricks
+SAUNASTOVE                                          Thaumic Sauna Stove

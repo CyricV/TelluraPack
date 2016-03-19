@@ -935,16 +935,22 @@ mods.thaumcraft.Arcane.addShaped(
 
 # Flux Igniter
 recipes.remove(fluxIgnitor);
-recipes.addShaped(fluxIgnitor, [
-    [null,              null,       cryotheumDust],
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    fluxIgnitor,
+    "ignis 8, ordo 4", [
+    [null,              null,       pyrotheumDust],
     [oreRubber,         ironIngot,  null],
     [basicCapacitor,    oreRubber,  null]
 ]);
 
 # Flux Chiller
 recipes.remove(fluxChiller);
-recipes.addShaped(fluxChiller, [
-    [null,              null,       pyrotheumDust],
+mods.thaumcraft.Arcane.addShaped(
+    "ASPECTS",
+    fluxChiller,
+    "aqua 8, ordo 4", [
+    [null,              null,       cryotheumDust],
     [oreRubber,         ironIngot,  null],
     [basicCapacitor,    oreRubber,  null]
 ]);

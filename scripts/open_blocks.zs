@@ -4,7 +4,8 @@ var obsidian                    = <minecraft:obsidian>;
 var stick                       = <minecraft:stick>;
 var searedBrick                 = <TConstruct:materials:2>;
 var alumiteRod                  = <TConstruct:toolRod:15>;
-var tinGear                     = <ThermalFoundation:material:129>;
+var gearCopper                  = <ThermalFoundation:material:128>;
+var gearTin                     = <ThermalFoundation:material:129>;
 var heavyPlateStone             = <TConstruct:heavyPlate:1>;
 
 # Devices
@@ -21,15 +22,18 @@ var gliderWing                  = <EnderIO:itemGliderWing>;
 var gliderWingOB                = <OpenBlocks:generic>;
 var gliderWings                 = <EnderIO:itemGliderWing:1>;
 var hangGlider                  = <OpenBlocks:hangglider>;
+var devNull                     = <OpenBlocks:devnull>;
 
 # Ore Dictionary Items
 var allGlassBlocks              = <ore:blockGlass>;
 var allStickyStuff              = <ore:allStickyStuff>;
+var oreObsidianDust             = <ore:dustObsidian>;
 
 ################################################################
 ### Removal ####################################################
 ################################################################
-
+# Dev Null
+recipes.remove(devNull);
 
 ################################################################
 ### STONE TIER #################################################
@@ -86,10 +90,13 @@ recipes.addShaped(hangGlider, [
 ################################################################
 # Vacuume Hopper
 recipes.remove(vacuumHopper);
-recipes.addShaped(vacuumHopper, [
-    [obsidian,  brainInAJar,    obsidian],
-    [obsidian,  vacuumChest,    obsidian],
-    [obsidian,  tinGear,        obsidian]
+mods.thaumcraft.Arcane.addShaped(
+    "JARBRAIN",
+    vacuumHopper,
+    "aer 8 perditio 8", [
+    [oreObsidianDust,   brainInAJar,    oreObsidianDust],
+    [oreObsidianDust,   vacuumChest,    oreObsidianDust],
+    [oreObsidianDust,   gearCopper,     oreObsidianDust]
 ]);
 
 

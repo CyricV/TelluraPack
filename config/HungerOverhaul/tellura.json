@@ -4,6 +4,7 @@
     "foods": [
         {
             // the name of the item in "mod:name" format
+            // Nutrient Bar R
             "name": "customitems:nutrition_bar_r",
             // [optional] the metadata value of the item (default: 0)
             "meta": 0,
@@ -13,16 +14,67 @@
             "saturationModifier": 0.6
         },
         {
+            // Nutrient Bar G
             "name": "customitems:nutrition_bar_g",
             "meta": 0,
             "hunger": 14,
             "saturationModifier": 0.6
         },
         {
+            // Nutrient Bar B
             "name": "customitems:nutrition_bar_b",
             "meta": 0,
             "hunger": 14,
             "saturationModifier": 0.6
+        },
+        {
+            // Beet Burger
+            "name": "harvestcraft:beetburgerItem",
+            "meta": 0,
+            "hunger": 9,
+            "saturationModifier": 0.5
+        },
+        {
+            // Pulled Pork
+            "name": "harvestcraft:bbqpulledporkItem",
+            "meta": 0,
+            "hunger": 8,
+            "saturationModifier": 0.5
+        },
+        {
+            // Coleslaw Burger
+            "name": "harvestcraft:coleslawburgerItem",
+            "meta": 0,
+            "hunger": 9,
+            "saturationModifier": 0.5
+        },
+        {
+            // Lo Mein
+            "name": "harvestcraft:porklomeinItem",
+            "meta": 0,
+            "hunger": 8,
+            "saturationModifier": 0.8
+        },
+        {
+            // Ploughman's Lunch
+            "name": "harvestcraft:ploughmanslunchItem",
+            "meta": 0,
+            "hunger": 10,
+            "saturationModifier": 0.8
+        },
+        {
+            // Futo Maki
+            "name": "harvestcraft:futomakiItem",
+            "meta": 0,
+            "hunger": 3,
+            "saturationModifier": 0.8
+        },
+        {
+            // McPam
+            "name": "harvestcraft:mcpamItem",
+            "meta": 0,
+            "hunger": 8,
+            "saturationModifier": 0.5
         }
     ]
 }

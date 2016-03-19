@@ -227,7 +227,40 @@
                 <itemStack modID="harvestcraft" itemName="barleyseedItem" chance="0.1"/>
             </output>
         </recipe>
+    <!--
+    Obsidian Dust
+    -->
+        <recipe name="Obsidian" energyCost="800">
+            <input>
+                <itemStack modID="minecraft" itemName="obsidian" />
+            </input>
+            <output>
+                <itemStack oreDictionary="dustObsidian" number="2" />
+            </output>
+        </recipe>
+    <!--
+    ENDER PEARL
+    Ender Pearl Shard   3
+    Ender Pearl Powder  1
+    Ender Pearl Shard   1 (0.5)
+    -->
+        <recipe name="EnderPearl" energyCost="1600" >
+            <input>
+                <itemStack modID="minecraft" itemName="ender_pearl" />
+            </input>
+            <output>
+                <itemStack oreDictionary="shardEnderPearl" number="2" />
+                <itemStack oreDictionary="dustEnderPearl" number="1" chance="0.5"/>
+            </output>
+        </recipe>
     </recipeGroup>
+    <grindingBalls>
+        <excludes>
+            <itemStack modID="minecraft" itemName="ender_pearl" />
+            <itemStack modID="minecraft" itemName="diamond" />
+            <itemStack modID="minecraft" itemName="obsidian" />
+        </excludes>
+    </grindingBalls>
 <!--
 ###########################################################
 ### VANILLA (OVERWRITE) ###################################
@@ -332,22 +365,6 @@
             </input>
             <output>
                 <itemStack oreDictionary="dustGold" number="1" />
-            </output>
-        </recipe>
-    <!--
-    ENDER PEARL
-    Ender Pearl Shard   3
-    Ender Pearl Powder  1
-    Ender Pearl Shard   1 (0.5)
-    -->
-        <recipe name="EnderPearl" energyCost="1600" >
-            <input>
-                <itemStack modID="minecraft" itemName="ender_pearl" />
-            </input>
-            <output>
-                <itemStack oreDictionary="shardEnderPearl" number="1" />
-                <itemStack oreDictionary="shardEnderPearl" chance="0.2" />
-                <itemStack oreDictionary="dustEnderPearl" number="1" chance="0.5"/>
             </output>
         </recipe>
     </recipeGroup>

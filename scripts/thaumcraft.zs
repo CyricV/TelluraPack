@@ -63,6 +63,8 @@ var crystalEssentiaEntropy      = <Thaumcraft:ItemCrystalEssence>.withTag({Aspec
 
 # Devices
 var runicMatrix                 = <Thaumcraft:blockStoneDevice:2>;
+var brainInAJar                 = <Thaumcraft:blockJar:1>;
+var vacuumHopper                = <OpenBlocks:vacuumhopper>;
 
 # Equipment
 var thaumiumHelm                = <Thaumcraft:ItemHelmetThaumium>;
@@ -77,6 +79,8 @@ var voidHelm                    = <Thaumcraft:ItemHelmetVoid>;
 var voidChest                   = <Thaumcraft:ItemChestplateVoid>;
 var voidLeggings                = <Thaumcraft:ItemLeggingsVoid>;
 var voidBoots                   = <Thaumcraft:ItemBootsVoid>;
+var thaumostaticGirdle          = <Thaumcraft:ItemGirdleHover>;
+var thaumostaticHarness         = <Thaumcraft:HoverHarness>;
 
 # Ore Dictionary Items
 var ironNug                     = <ore:nuggetIron>;
@@ -88,6 +92,15 @@ var silverNug                   = <ore:nuggetSilver>;
 ################################################################
 ### Removal ####################################################
 ################################################################
+# Thaumostatic Girdle
+#mods.thaumcraft.Research.orphanResearch("HOVERGIRDLE");
+mods.thaumcraft.Research.removeResearch("HOVERGIRDLE");
+mods.thaumcraft.Infusion.removeRecipe(thaumostaticGirdle);
+
+# Thaumostatic Harness
+#mods.thaumcraft.Research.orphanResearch("HOVERHARNESS");
+mods.thaumcraft.Research.removeResearch("HOVERHARNESS");
+mods.thaumcraft.Infusion.removeRecipe(thaumostaticHarness);
 
 ################################################################
 ### TINKER TIER ################################################
@@ -99,6 +112,7 @@ recipes.addShaped(ironWandCap, [
     [ironNug,   ironBinding,    ironNug],
     [null,      null,           null]
 ]);
+mods.thaumcraft.Research.refreshResearchRecipe("BASICTHAUMATURGY");
 
 ################################################################
 ### ALCHEMY TIER ###############################################
@@ -114,10 +128,12 @@ mods.thaumcraft.Arcane.addShaped(
     [copperNug, copperBinding,  copperNug],
     [null,      null,           null]
 ]);
+mods.thaumcraft.Research.refreshResearchRecipe("CAP_copper");
 
 # Gold Wand Cap
 recipes.remove(goldWandCap);
 mods.thaumcraft.Arcane.removeRecipe(goldWandCap);
+mods.thaumcraft.Research.clearPrereqs("CAP_gold");
 mods.thaumcraft.Research.addPrereq("CAP_gold", "CAP_copper", false);
 mods.thaumcraft.Arcane.addShaped(
     "CAP_gold",
@@ -127,6 +143,7 @@ mods.thaumcraft.Arcane.addShaped(
     [goldNug,   copperWandCap,  goldNug],
     [null,      null,           null]
 ]);
+mods.thaumcraft.Research.refreshResearchRecipe("CAP_gold");
 
 # Runic Matrix
 mods.thaumcraft.Arcane.removeRecipe(runicMatrix);
@@ -138,6 +155,7 @@ mods.thaumcraft.Arcane.addShaped(
     [runeOfWater,       runeOfMana,     runeOfFire],
     [arcaneStoneBricks, runeOfEarth,    arcaneStoneBricks]
 ]);
+mods.thaumcraft.Research.refreshResearchRecipe("INFUSION");
 
 # Thaumium Helm
 recipes.remove(thaumiumHelm);
@@ -187,7 +205,7 @@ recipes.addShaped(thaumiumBoots, [
 mods.thaumcraft.Arcane.addShaped(
     "ESSENTIACRYSTAL",
     airShard * 4,
-    "aer 8", [
+    "aer 4", [
     [airEssence,            crystalEssentiaAir, airEssence],
     [crystalEssentiaAir,    balancedShard,      crystalEssentiaAir],
     [airEssence,            crystalEssentiaAir, airEssence]
@@ -197,7 +215,7 @@ mods.thaumcraft.Arcane.addShaped(
 mods.thaumcraft.Arcane.addShaped(
     "ESSENTIACRYSTAL",
     fireShard * 4,
-    "ignis 8", [
+    "ignis 4", [
     [fireEssence,           crystalEssentiaFire,    fireEssence],
     [crystalEssentiaFire,   balancedShard,          crystalEssentiaFire],
     [fireEssence,           crystalEssentiaFire,    fireEssence]
@@ -207,7 +225,7 @@ mods.thaumcraft.Arcane.addShaped(
 mods.thaumcraft.Arcane.addShaped(
     "ESSENTIACRYSTAL",
     waterShard * 4,
-    "aqua 8", [
+    "aqua 4", [
     [waterEssence,          crystalEssentiaWater,   waterEssence],
     [crystalEssentiaWater,  balancedShard,          crystalEssentiaWater],
     [waterEssence,          crystalEssentiaWater,   waterEssence]
@@ -217,7 +235,7 @@ mods.thaumcraft.Arcane.addShaped(
 mods.thaumcraft.Arcane.addShaped(
     "ESSENTIACRYSTAL",
     earthShard * 4,
-    "terra 8", [
+    "terra 4", [
     [earthEssence,          crystalEssentiaEarth,   earthEssence],
     [crystalEssentiaEarth,  balancedShard,          crystalEssentiaEarth],
     [earthEssence,          crystalEssentiaEarth,   earthEssence]
@@ -227,7 +245,7 @@ mods.thaumcraft.Arcane.addShaped(
 mods.thaumcraft.Arcane.addShaped(
     "ESSENTIACRYSTAL",
     orderShard * 4,
-    "ordo 8", [
+    "ordo 4", [
     [orderEssence,          crystalEssentiaOrder,   orderEssence],
     [crystalEssentiaOrder,  balancedShard,          crystalEssentiaOrder],
     [orderEssence,          crystalEssentiaOrder,   orderEssence]
@@ -237,7 +255,7 @@ mods.thaumcraft.Arcane.addShaped(
 mods.thaumcraft.Arcane.addShaped(
     "ESSENTIACRYSTAL",
     entropyShard * 4,
-    "perditio 8", [
+    "perditio 4", [
     [entropyEssence,            crystalEssentiaEntropy, entropyEssence],
     [crystalEssentiaEntropy,    balancedShard,          crystalEssentiaEntropy],
     [entropyEssence,            crystalEssentiaEntropy, entropyEssence]
@@ -257,17 +275,19 @@ mods.thaumcraft.Arcane.addShaped(
     [silverNug, silverBinding,  silverNug],
     [null,      null,           null]
 ]);
-# mods.thaumcraft.Infusion.removeRecipe(chargedSilverWandCap);
-# mods.thaumcraft.Infusion.addRecipe(
-#     "CAP_silver",
-#     silverWandCap,
-#     [airShard, fireShard, earthShard, waterShard],
-#     "potentia 8, praecantatio 8",
-#     chargedSilverWandCap,
-#     2
-# );
+mods.thaumcraft.Infusion.removeRecipe(chargedSilverWandCap);
+mods.thaumcraft.Infusion.addRecipe(
+    "CAP_silver",
+    silverWandCap,
+    [airShard, fireShard, earthShard, waterShard],
+    "potentia 8, praecantatio 4",
+    chargedSilverWandCap,
+    2
+);
+mods.thaumcraft.Research.refreshResearchRecipe("CAP_silver");
 
 # Thaumium Wand Cap
+mods.thaumcraft.Research.clearPrereqs("CAP_thaumium");
 mods.thaumcraft.Research.addPrereq("CAP_thaumium", "CAP_silver", false);
 recipes.remove(thaumiumWandCap);
 mods.thaumcraft.Arcane.removeRecipe(thaumiumWandCap);
@@ -279,6 +299,14 @@ mods.thaumcraft.Arcane.addShaped(
     [thaumiumNug,   silverWandCap,  thaumiumNug],
     [null,          null,           null]
 ]);
+mods.thaumcraft.Research.refreshResearchRecipe("CAP_thaumium");
+
+# Brain in a Jar research update
+mods.thaumcraft.Research.clearPages("JARBRAIN");
+mods.thaumcraft.Research.addPage("JARBRAIN", "tc.research_page.JARBRAIN");
+game.setLocalization("en_US", "tc.research_page.JARBRAIN", "You have discovered a way to partially reanimate the brains of those consumed by the Aberrant's rage.<BR>The brain retains some of the hunger it possessed as a zombie and while it can no longer consume brains, it still enjoys eating the thoughts and experiences of those slain nearby. Giving its jar a good shake will make it surrender some of its ill-gotten gains for your own use. You may be able to incorporate it into automation capable devices as well.<BR>You will see particles above the jar when it is full.");
+mods.thaumcraft.Research.addInfusionPage("JARBRAIN", brainInAJar);
+mods.thaumcraft.Research.addArcanePage("JARBRAIN", vacuumHopper);
 
 # Golem Use Core (make it easier)
 mods.thaumcraft.Infusion.removeRecipe(useCore);
@@ -347,3 +375,260 @@ recipes.addShaped(voidBoots, [
         return output.withDamage(max(0, inputs.inp.damage));
     }
 );
+
+
+################################################################
+### RESEARCH CONFIGURING #######################################
+################################################################
+#mods.thaumcraft.Research.moveResearch("CAP_iron", "BASICS", 0, 6);
+#mods.thaumcraft.Research.moveResearch("ROD_wood", "BASICS", 0, -6);
+
+# BASIC INFORMATION
+# Spooky Basics
+#mods.thaumcraft.Research.moveResearch("WARP", "BASICS", 0, 4);
+mods.thaumcraft.Research.moveResearch("CRIMSON", "BASICS", 0, 1);
+mods.thaumcraft.Research.moveResearch("WARP", "BASICS", 0, 4);
+
+# Starter Information
+mods.thaumcraft.Research.clearPrereqs("THAUMONOMICON");
+mods.thaumcraft.Research.moveResearch("THAUMONOMICON", "BASICS", 2, -2);
+mods.thaumcraft.Research.moveResearch("RESEARCH", "BASICS", 3, 0);
+mods.thaumcraft.Research.clearPrereqs("KNOWFRAG");
+mods.thaumcraft.Research.moveResearch("KNOWFRAG", "BASICS", 2, 2);
+mods.thaumcraft.Research.moveResearch("ENCHANT", "BASICS", 0, 3);
+mods.thaumcraft.Research.moveResearch("PECH", "BASICS", -2, 2);
+mods.thaumcraft.Research.moveResearch("NODES", "BASICS", -3, 0);
+mods.thaumcraft.Research.moveResearch("ORE", "BASICS", 0, -3);
+mods.thaumcraft.Research.moveResearch("PLANTS", "BASICS", -2, -2);
+
+# Research
+mods.thaumcraft.Research.moveResearch("RESEARCHER1", "BASICS", 4, 0);
+mods.thaumcraft.Research.moveResearch("DECONSTRUCTOR", "BASICS", 5, 0);
+mods.thaumcraft.Research.moveResearch("RESEARCHER2", "BASICS", 4, 1);
+mods.thaumcraft.Research.moveResearch("RESEARCHDUPE", "BASICS", 4, 2);
+
+# Node Stuff
+mods.thaumcraft.Research.moveResearch("NODETAPPER1", "BASICS", -4, 0);
+mods.thaumcraft.Research.moveResearch("NODETAPPER2", "BASICS", -5, 0);
+mods.thaumcraft.Research.moveResearch("NODEPRESERVE", "BASICS", -4, 1);
+mods.thaumcraft.Research.moveResearch("NODEJAR", "BASICS", -4, 2);
+mods.thaumcraft.Research.moveResearch("NODECATALYZATION", "BASICS", -5, 2);
+
+# THAUMATURGY
+# Caps
+mods.thaumcraft.Research.moveResearch("CAP_copper", "THAUMATURGY", 2, 0);
+mods.thaumcraft.Research.moveResearch("CAP_gold", "THAUMATURGY", 3, 0);
+mods.thaumcraft.Research.moveResearch("CAP_silver", "THAUMATURGY", 4, 0);
+mods.thaumcraft.Research.moveResearch("CAP_thaumium", "THAUMATURGY", 5, 0);
+
+# Foci
+mods.thaumcraft.Research.moveResearch("FOCUSFIRE", "THAUMATURGY", 0, -2);
+mods.thaumcraft.Research.moveResearch("FOCUSEXCAVATION", "THAUMATURGY", -1, -2);
+mods.thaumcraft.Research.moveResearch("FOCUSWARDING", "THAUMATURGY", -2, -2);
+mods.thaumcraft.Research.moveResearch("FOCUSTRADE", "THAUMATURGY", 1, -2);
+mods.thaumcraft.Research.moveResearch("FOCUSPORTABLEHOLE", "THAUMATURGY", 2, -2);
+mods.thaumcraft.Research.moveResearch("FOCUSPOUCH", "THAUMATURGY", 0, -3);
+mods.thaumcraft.Research.moveResearch("FOCUSFROST", "THAUMATURGY", -1, -3);
+mods.thaumcraft.Research.moveResearch("FOCUSSHOCK", "THAUMATURGY", 1, -3);
+mods.thaumcraft.Research.moveResearch("FOCUSHELLBAT", "THAUMATURGY", 2, -3);
+mods.thaumcraft.Research.moveResearch("VAMPBAT", "THAUMATURGY", 3, -3);
+
+# Rods
+mods.thaumcraft.Research.moveResearch("ROD_greatwood", "THAUMATURGY", 0, 3);
+mods.thaumcraft.Research.moveResearch("ROD_silverwood", "THAUMATURGY", 0, 5);
+mods.thaumcraft.Research.moveResearch("ROD_silverwood_staff", "THAUMATURGY", -1, 5);
+mods.thaumcraft.Research.moveResearch("SCEPTRE", "THAUMATURGY", 1, 5);
+mods.thaumcraft.Research.moveResearch("ROD_greatwood_staff", "THAUMATURGY", 0, 6);
+mods.thaumcraft.Research.moveResearch("ROD_obsidian", "THAUMATURGY", 2, 4);
+mods.thaumcraft.Research.moveResearch("ROD_obsidian_staff", "THAUMATURGY", 3, 4);
+mods.thaumcraft.Research.moveResearch("ROD_ice", "THAUMATURGY", 2, 3);
+mods.thaumcraft.Research.moveResearch("ROD_ice_staff", "THAUMATURGY", 3, 3);
+mods.thaumcraft.Research.moveResearch("ROD_quartz", "THAUMATURGY", 2, 2);
+mods.thaumcraft.Research.moveResearch("ROD_quartz_staff", "THAUMATURGY", 3, 2);
+mods.thaumcraft.Research.moveResearch("ROD_reed", "THAUMATURGY", -2, 4);
+mods.thaumcraft.Research.moveResearch("ROD_reed_staff", "THAUMATURGY", -3, 4);
+mods.thaumcraft.Research.moveResearch("ROD_blaze", "THAUMATURGY", -2, 3);
+mods.thaumcraft.Research.moveResearch("ROD_blaze_staff", "THAUMATURGY", -3, 3);
+mods.thaumcraft.Research.moveResearch("ROD_bone", "THAUMATURGY", -2, 2);
+mods.thaumcraft.Research.moveResearch("ROD_bone_staff", "THAUMATURGY", -3, 2);
+
+# Node
+mods.thaumcraft.Research.moveResearch("NODESTABILIZER", "THAUMATURGY", -4, -1);
+mods.thaumcraft.Research.moveResearch("NODESTABILIZERADV", "THAUMATURGY", -4, 0);
+mods.thaumcraft.Research.moveResearch("VISCHARGERELAY", "THAUMATURGY", -5, -2);
+mods.thaumcraft.Research.moveResearch("WANDPED", "THAUMATURGY", -5, -1);
+mods.thaumcraft.Research.moveResearch("WANDPEDFOC", "THAUMATURGY", -5, 0);
+mods.thaumcraft.Research.moveResearch("VISAMULET", "THAUMATURGY", -6, -1);
+mods.thaumcraft.Research.moveResearch("VISPOWER", "THAUMATURGY", -4, -2);
+mods.thaumcraft.Research.moveResearch("FOCALMANIPULATION", "THAUMATURGY", -4, -3);
+
+# ALCHEMY
+# Metal
+mods.thaumcraft.Research.moveResearch("THAUMIUM", "ALCHEMY", 0, 4);
+mods.thaumcraft.Research.moveResearch("TRANSIRON", "ALCHEMY", 1, 4);
+mods.thaumcraft.Research.moveResearch("TRANSGOLD", "ALCHEMY", 1, 3);
+mods.thaumcraft.Research.moveResearch("TRANSCOPPER", "ALCHEMY", 2, 3);
+mods.thaumcraft.Research.moveResearch("TRANSTIN", "ALCHEMY", 2, 4);
+mods.thaumcraft.Research.moveResearch("TRANSSILVER", "ALCHEMY", 2, 5);
+mods.thaumcraft.Research.moveResearch("TRANSLEAD", "ALCHEMY", 1, 5);
+mods.thaumcraft.Research.moveResearch("PUREIRON", "ALCHEMY", -1, 4);
+mods.thaumcraft.Research.moveResearch("PUREGOLD", "ALCHEMY", -1, 3);
+mods.thaumcraft.Research.moveResearch("PURECOPPER", "ALCHEMY", -2, 3);
+mods.thaumcraft.Research.moveResearch("PURETIN", "ALCHEMY", -2, 4);
+mods.thaumcraft.Research.moveResearch("PURESILVER", "ALCHEMY", -2, 5);
+mods.thaumcraft.Research.moveResearch("PURELEAD", "ALCHEMY", -1, 5);
+
+# Essentia Mannipulation
+mods.thaumcraft.Research.moveResearch("PHIAL", "ALCHEMY", 0, -3);
+mods.thaumcraft.Research.moveResearch("NITOR", "ALCHEMY", 0, -1);
+mods.thaumcraft.Research.setSpikey("NITOR", true);
+mods.thaumcraft.Research.moveResearch("ALUMENTUM", "ALCHEMY", 2, 0);
+mods.thaumcraft.Research.moveResearch("DISTILESSENTIA", "ALCHEMY", 2, -1);
+mods.thaumcraft.Research.moveResearch("JARLABEL", "ALCHEMY", 2, -2);
+mods.thaumcraft.Research.moveResearch("JARVOID", "ALCHEMY", 2, -3);
+mods.thaumcraft.Research.moveResearch("TUBES", "ALCHEMY", 3, -1);
+mods.thaumcraft.Research.moveResearch("ESSENTIACRYSTAL", "ALCHEMY", 3, -2);
+mods.thaumcraft.Research.moveResearch("TUBEFILTER", "ALCHEMY", 3, 0);
+mods.thaumcraft.Research.moveResearch("CENTRIFUGE", "ALCHEMY", 4, 0);
+mods.thaumcraft.Research.moveResearch("THAUMATORIUM", "ALCHEMY", 4, 1);
+
+# Essentia Use
+mods.thaumcraft.Research.moveResearch("ALCHEMICALDUPLICATION", "ALCHEMY", -3, 0);
+mods.thaumcraft.Research.moveResearch("ALCHEMICALMANUFACTURE", "ALCHEMY", -3, -1);
+mods.thaumcraft.Research.moveResearch("ENTROPICPROCESSING", "ALCHEMY", -4, 0);
+mods.thaumcraft.Research.moveResearch("LIQUIDDEATH", "ALCHEMY", -4, 1);
+mods.thaumcraft.Research.moveResearch("BOTTLETAINT", "ALCHEMY", -5, 0);
+mods.thaumcraft.Research.moveResearch("ETHEREALBLOOM", "ALCHEMY", -2, 1);
+mods.thaumcraft.Research.moveResearch("BATHSALTS", "ALCHEMY", -2, -3);
+mods.thaumcraft.Research.moveResearch("ARCANESPA", "ALCHEMY", -3, -3);
+mods.thaumcraft.Research.moveResearch("SANESOAP", "ALCHEMY", -2, -4);
+
+# ARTIFICE
+# Starting Information
+mods.thaumcraft.Research.moveResearch("BASICARTIFACE", "ARTIFICE", 0, 0);
+mods.thaumcraft.Research.moveResearch("TABLE", "ARTIFICE", 0, -2);
+mods.thaumcraft.Research.moveResearch("RESTABLE", "ARTIFICE", 1, -2);
+mods.thaumcraft.Research.moveResearch("ARCTABLE", "ARTIFICE", -1, -2);
+mods.thaumcraft.Research.moveResearch("THAUMOMETER", "ARTIFICE", 0, -3);
+mods.thaumcraft.Research.setSpikey("THAUMOMETER", true);
+mods.thaumcraft.Research.moveResearch("GRATE", "ARTIFICE", -1, -3);
+mods.thaumcraft.Research.moveResearch("ARCANESTONE", "ARTIFICE", 1, -3);
+mods.thaumcraft.Research.moveResearch("PAVETRAVEL", "ARTIFICE", 3, -3);
+mods.thaumcraft.Research.moveResearch("PAVEWARD", "ARTIFICE", 3, -2);
+mods.thaumcraft.Research.moveResearch("GOGGLES", "ARTIFICE", 0, -5);
+mods.thaumcraft.Research.moveResearch("SINSTONE", "ARTIFICE", 1, -5);
+mods.thaumcraft.Research.moveResearch("ARCANEEAR", "ARTIFICE", -1, -5);
+
+# Extras
+mods.thaumcraft.Research.moveResearch("WARDEDARCANA", "ARTIFICE", 5, -3);
+mods.thaumcraft.Research.moveResearch("LEVITATOR", "ARTIFICE", 5, -2);
+
+# Furnace Stuff
+mods.thaumcraft.Research.moveResearch("INFERNALFURNACE", "ARTIFICE", -3, -3);
+mods.thaumcraft.Research.moveResearch("BELLOWS", "ARTIFICE", -4, -3);
+mods.thaumcraft.Research.moveResearch("FLUXSCRUB", "ARTIFICE", -5, -3);
+
+# Fabric Derivatives
+mods.thaumcraft.Research.moveResearch("ENCHFABRIC", "ARTIFICE", 2, 0);
+mods.thaumcraft.Research.moveResearch("RUNICARMOR", "ARTIFICE", 3, 0);
+mods.thaumcraft.Research.moveResearch("RUNICCHARGED", "ARTIFICE", 3, -1);
+mods.thaumcraft.Research.moveResearch("RUNICHEALING", "ARTIFICE", 4, -1);
+mods.thaumcraft.Research.moveResearch("RUNICAUGMENTATION", "ARTIFICE", 4, 0);
+mods.thaumcraft.Research.moveResearch("RUNICEMERGENCY", "ARTIFICE", 4, 1);
+mods.thaumcraft.Research.moveResearch("RUNICKINETIC", "ARTIFICE", 3, 1);
+mods.thaumcraft.Research.moveResearch("BOOTSTRAVELLER", "ARTIFICE", 2, 3);
+
+# Runic Stuff
+mods.thaumcraft.Research.moveResearch("INFUSION", "ARTIFICE", 0, 3);
+mods.thaumcraft.Research.setSpikey("INFUSION", true);
+mods.thaumcraft.Research.moveResearch("ARCANELAMP", "ARTIFICE", 0, 2);
+mods.thaumcraft.Research.moveResearch("LAMPGROWTH", "ARTIFICE", 1, 2);
+mods.thaumcraft.Research.moveResearch("LAMPFERTILITY", "ARTIFICE", -1, 2);
+mods.thaumcraft.Research.moveResearch("ELEMENTALPICK", "ARTIFICE", -2, 6);
+mods.thaumcraft.Research.moveResearch("ELEMENTALAXE", "ARTIFICE", -1, 6);
+mods.thaumcraft.Research.moveResearch("ELEMENTALHOE", "ARTIFICE", 0, 6);
+mods.thaumcraft.Research.moveResearch("ELEMENTALSHOVEL", "ARTIFICE", 1, 6);
+mods.thaumcraft.Research.moveResearch("ELEMENTALSWORD", "ARTIFICE", 2, 6);
+mods.thaumcraft.Research.moveResearch("BONEBOW", "ARTIFICE", 3, 6);
+mods.thaumcraft.Research.moveResearch("PRIMALARROW", "ARTIFICE", 3, 5);
+mods.thaumcraft.Research.moveResearch("BANNERS", "ARTIFICE", 4, 3);
+mods.thaumcraft.Research.moveResearch("ARCANEBORE", "ARTIFICE", -4, 3);
+mods.thaumcraft.Research.moveResearch("MIRROR", "ARTIFICE", -4, 4);
+mods.thaumcraft.Research.moveResearch("MIRRORESSENTIA", "ARTIFICE", -5, 4);
+mods.thaumcraft.Research.moveResearch("MIRRORHAND", "ARTIFICE", -4, 5);
+mods.thaumcraft.Research.moveResearch("JARBRAIN", "ARTIFICE", -4, 2);
+mods.thaumcraft.Research.moveResearch("INFUSIONENCHANTMENT", "ARTIFICE", -4, 1);
+mods.thaumcraft.Research.moveResearch("ARMORFORTRESS", "ARTIFICE", -4, 0);
+mods.thaumcraft.Research.moveResearch("HELMGOGGLES", "ARTIFICE", -4, -1);
+mods.thaumcraft.Research.moveResearch("MASKGRINNINGDEVIL", "ARTIFICE", -5, 1);
+mods.thaumcraft.Research.moveResearch("MASKANGRYGHOST", "ARTIFICE", -5, 0);
+mods.thaumcraft.Research.moveResearch("MASKSIPPINGFIEND", "ARTIFICE", -5, -1);
+
+# GOLEMANCY
+# Start
+mods.thaumcraft.Research.moveResearch("HUNGRYCHEST", "GOLEMANCY", 0, -2);
+mods.thaumcraft.Research.moveResearch("GOLEMSTRAW", "GOLEMANCY", 0, 0);
+
+# Cores
+mods.thaumcraft.Research.moveResearch("COREGATHER", "GOLEMANCY", -4, 0);
+mods.thaumcraft.Research.moveResearch("COREEMPTY", "GOLEMANCY", -4, -1);
+mods.thaumcraft.Research.moveResearch("COREFILL", "GOLEMANCY", -5, 0);
+mods.thaumcraft.Research.moveResearch("COREGUARD", "GOLEMANCY", -5, 1);
+mods.thaumcraft.Research.moveResearch("COREHARVEST", "GOLEMANCY", -3, 1);
+mods.thaumcraft.Research.moveResearch("COREBUTCHER", "GOLEMANCY", -4, 1);
+mods.thaumcraft.Research.moveResearch("COREFISHING", "GOLEMANCY", -4, 2);
+mods.thaumcraft.Research.moveResearch("CORELUMBER", "GOLEMANCY", -3, 2);
+mods.thaumcraft.Research.moveResearch("COREUSE", "GOLEMANCY", -3, -1);
+mods.thaumcraft.Research.moveResearch("CORESORTING", "GOLEMANCY", -5, -1);
+mods.thaumcraft.Research.moveResearch("CORELIQUID", "GOLEMANCY", -6, 0);
+mods.thaumcraft.Research.moveResearch("COREALCHEMY", "GOLEMANCY", -6, -1);
+
+# Golem Tree
+mods.thaumcraft.Research.moveResearch("GOLEMWOOD", "GOLEMANCY", 0, 2);
+mods.thaumcraft.Research.moveResearch("TRAVELTRUNK", "GOLEMANCY", -1, 2);
+mods.thaumcraft.Research.moveResearch("GOLEMFLESH", "GOLEMANCY", 1, 2);
+mods.thaumcraft.Research.moveResearch("GOLEMCLAY", "GOLEMANCY", 0, 3);
+mods.thaumcraft.Research.moveResearch("GOLEMTALLOW", "GOLEMANCY", 1, 3);
+mods.thaumcraft.Research.moveResearch("GOLEMSTONE", "GOLEMANCY", 0, 4);
+mods.thaumcraft.Research.moveResearch("GOLEMFETTER", "GOLEMANCY", 1, 4);
+mods.thaumcraft.Research.moveResearch("GOLEMIRON", "GOLEMANCY", 0, 5);
+mods.thaumcraft.Research.moveResearch("GOLEMTHAUMIUM", "GOLEMANCY", 0, 6);
+
+# Upgrade Tree
+mods.thaumcraft.Research.moveResearch("GOLEMBELL", "GOLEMANCY", 2, 0);
+mods.thaumcraft.Research.moveResearch("UPGRADEORDER", "GOLEMANCY", 3, -3);
+mods.thaumcraft.Research.moveResearch("UPGRADEWATER", "GOLEMANCY", 3, -2);
+mods.thaumcraft.Research.moveResearch("UPGRADEEARTH", "GOLEMANCY", 3, -1);
+mods.thaumcraft.Research.moveResearch("UPGRADEAIR", "GOLEMANCY", 3, 1);
+mods.thaumcraft.Research.moveResearch("UPGRADEFIRE", "GOLEMANCY", 3, 2);
+mods.thaumcraft.Research.moveResearch("UPGRADEENTROPY", "GOLEMANCY", 3, 3);
+mods.thaumcraft.Research.moveResearch("ADVANCEDGOLEM", "GOLEMANCY", 5, 0);
+
+# Golem Accessories
+mods.thaumcraft.Research.moveResearch("TINYHAT", "GOLEMANCY", -2, 4);
+mods.thaumcraft.Research.moveResearch("TINYGLASSES", "GOLEMANCY", -2, 5);
+mods.thaumcraft.Research.moveResearch("TINYBOWTIE", "GOLEMANCY", -2, 6);
+mods.thaumcraft.Research.moveResearch("TINYFEZ", "GOLEMANCY", -2, 7);
+mods.thaumcraft.Research.moveResearch("TINYDART", "GOLEMANCY", -3, 4);
+mods.thaumcraft.Research.moveResearch("TINYVISOR", "GOLEMANCY", -3, 5);
+mods.thaumcraft.Research.moveResearch("TINYARMOR", "GOLEMANCY", -3, 6);
+mods.thaumcraft.Research.moveResearch("TINYHAMMER", "GOLEMANCY", -3, 7);
+
+# ELDRITCH
+# All of it
+mods.thaumcraft.Research.moveResearch("ELDRITCHMINOR", "ELDRITCH", 0, 0);
+mods.thaumcraft.Research.moveResearch("FOCUSPRIMAL", "ELDRITCH", 2, 0);
+mods.thaumcraft.Research.moveResearch("ROD_primal_staff", "ELDRITCH", 3, 0);
+mods.thaumcraft.Research.moveResearch("SANITYCHECK", "ELDRITCH", -2, 0);
+mods.thaumcraft.Research.moveResearch("VOIDMETAL", "ELDRITCH", 0, -1);
+mods.thaumcraft.Research.moveResearch("ESSENTIARESERVOIR", "ELDRITCH", 2, -1);
+mods.thaumcraft.Research.moveResearch("CAP_void", "ELDRITCH", -2, -1);
+mods.thaumcraft.Research.moveResearch("ARMORVOIDFORTRESS", "ELDRITCH", 0, -2);
+mods.thaumcraft.Research.moveResearch("ELDRITCHMAJOR", "ELDRITCH", 0, -3);
+mods.thaumcraft.Research.moveResearch("OCULUS", "ELDRITCH", 0, -4);
+mods.thaumcraft.Research.moveResearch("ENTEROUTER", "ELDRITCH", 0, -5);
+mods.thaumcraft.Research.moveResearch("OUTERREV", "ELDRITCH", 0, -6);
+mods.thaumcraft.Research.moveResearch("PRIMPEARL", "ELDRITCH", 0, 2);
+mods.thaumcraft.Research.moveResearch("ADVALCHEMYFURNACE", "ELDRITCH", -1, 2);
+mods.thaumcraft.Research.moveResearch("PRIMNODE", "ELDRITCH", 1, 2);
+mods.thaumcraft.Research.moveResearch("PRIMALCRUSHER", "ELDRITCH", 0, 3);

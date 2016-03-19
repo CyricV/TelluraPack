@@ -20,6 +20,18 @@ var nutritionBarG               = <customitems:nutrition_bar_g>;
 var nutritionBarB               = <customitems:nutrition_bar_b>;
 var salt                        = <harvestcraft:saltItem>;
 
+# Food
+var foodFutoMaki                = <harvestcraft:futomakiItem>;
+var foodCaliforniaRoll          = <harvestcraft:californiarollItem>;
+var foodSeaweed                 = <harvestcraft:seaweedItem>;
+var foodCucumber                = <harvestcraft:cucumberItem>;
+var foodRice                    = <harvestcraft:riceItem>;
+var foodAvocodo                 = <harvestcraft:avocadoItem>;
+var foodBoiledEgg               = <harvestcraft:boiledeggItem>;
+var foodGinger                  = <harvestcraft:gingerItem>;
+var foodRadish                  = <harvestcraft:radishItem>;
+var foodWinterSquash            = <harvestcraft:wintersquashItem>;
+
 # Devices
 
 # Equipment
@@ -37,6 +49,7 @@ var lunchBox                    = <SpiceOfLife:lunchbox>;
 var leather                     = <minecraft:leather>;
 var leatherHard                 = <harvestcraft:hardenedleatherItem>;
 var preparedHide                = <customitems:prepared_hide>;
+var cuttingBoard                = <harvestcraft:cuttingboardItem>;
 
 # Ore Dictionary Items
 var allGlassBlocks              = <ore:blockGlass>;
@@ -49,6 +62,8 @@ var oreGrain                    = <ore:listAllgrain>;
 var oreDyeRed                   = <ore:dyeRed>;
 var oreDyeGreen                 = <ore:dyeGreen>;
 var oreDyeBlue                  = <ore:dyeBlue>;
+var oreFruit                    = <ore:fruit>;
+var oreRawFish                  = <ore:listAllfishraw>;
 
 ################################################################
 ### Removal ####################################################
@@ -110,6 +125,30 @@ recipes.addShaped(preparedHide, [
     [null,          orePressedWax,  null]
 ]);
 mods.tconstruct.Drying.addRecipe(preparedHide, leatherHard, 8000);
+
+# Futo Maki
+recipes.remove(foodFutoMaki);
+recipes.addShapeless(foodFutoMaki * 6, [
+    cuttingBoard,
+    foodBoiledEgg,
+    foodGinger,
+    foodCucumber,
+    foodWinterSquash,
+    foodRice,
+    foodRadish,
+    foodSeaweed
+]);
+
+# California Roll
+recipes.remove(foodCaliforniaRoll);
+recipes.addShapeless(foodCaliforniaRoll * 6, [
+    cuttingBoard,
+    oreRawFish,
+    foodAvocodo,
+    foodCucumber,
+    foodSeaweed,
+    foodRice
+]);
 
 ################################################################
 ### TINKER TIER ################################################
@@ -173,7 +212,7 @@ recipes.addShaped(nutritionBarG , [
 # Nutrient Block B
 recipes.remove(nutritionBarB);
 recipes.addShaped(nutritionBarB , [
-    [oreCitrus,     oreDyeBlue,     oreCitrus],
+    [oreFruit,      oreDyeBlue,     oreFruit],
     [oreSawdust,    meatIngotRaw,   oreSawdust],
-    [oreCitrus,     salt,           oreCitrus]
+    [oreFruit,      salt,           oreFruit]
 ]);

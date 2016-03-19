@@ -11,7 +11,7 @@
                 <itemStack modID="Thaumcraft" itemName="ItemZombieBrain" slot="1" />
                 <itemStack oreDictionary="nuggetTerrasteel" slot="2" />
                 <itemStack oreDictionary="nuggetTerrasteel" slot="3" />
-                <itemStack modID="Botania" itemName="rune" itemMeta="4" slot="4" />
+                <itemStack modID="Botania" itemName="rune" itemMeta="14" slot="4" />
                 <itemStack oreDictionary="nuggetTerrasteel" slot="5" />
             </input>
             <output>
